@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories | NEXUS GLOBAL HOLDINGS</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Product Categories Page Styles */
+        .categories-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+
+        .categories-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .categories-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .categories-container {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-card-header {
+            padding: 40px 30px;
+            background: linear-gradient(135deg, var(--card-color-1) 0%, var(--card-color-2) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .category-card.digital-printing { --card-color-1: #6366f1; --card-color-2: #8b5cf6; }
+        .category-card.die-cutting { --card-color-1: #10b981; --card-color-2: #059669; }
+        .category-card.feeding-palletizing { --card-color-1: #f59e0b; --card-color-2: #d97706; }
+        .category-card.strapping-stitching { --card-color-1: #ef4444; --card-color-2: #dc2626; }
+        .category-card.folder-gluer { --card-color-1: #ec4899; --card-color-2: #db2777; }
+        .category-card.laminator { --card-color-1: #06b6d4; --card-color-2: #0891b2; }
+        .category-card.corrugator { --card-color-1: #8b5cf6; --card-color-2: #7c3aed; }
+        .category-card.flexo-printing { --card-color-1: #3b82f6; --card-color-2: #2563eb; }
+
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .category-card-description {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        .category-card-body {
+            padding: 30px;
+        }
+
+        .category-card-body p {
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .category-products-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .category-products-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .category-products-list li:last-child {
+            border-bottom: none;
+        }
+
+        .category-products-list li::before {
+            content: "•";
+            color: var(--card-color-1);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .category-card-footer {
+            padding: 0 30px 30px;
+        }
+
+        .view-category-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--card-color-1) 0%, var(--card-color-2) 100%);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .view-category-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-count {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .categories-hero h1 {
+                font-size: 2rem;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"></span>
+                    <div class="logo-text-wrapper">
+                        <span class="logo-text">NEXUS</span>
+                        <span class="logo-subtitle">GLOBAL HOLDINGS</span>
+                    </div>
+                </a>
+
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="registered-companies.html">Companies</a></li>
+                    <li><a href="supplier-registration.html">Supplier</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <select class="language-selector">
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                    </select>
+                    <a href="contact.html" class="cta-button">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="categories-hero">
+        <h1>Product Categories</h1>
+        <p>Explore our comprehensive range of corrugated packaging equipment solutions across 8 major categories</p>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="categories-container">
+        <div class="categories-grid">
+            <!-- Category 1: Digital Printing Machines -->
+            <div class="category-card digital-printing" onclick="window.location.href='category-digital-printing.html'">
+                <div class="category-card-header">
+                    <div class="category-icon">🖨️</div>
+                    <h3>Digital Printing Machines</h3>
+                    <p class="category-card-description">High-precision digital inkjet printing for personalized customization needs</p>
+                    <span class="product-count">6 Products</span>
+                </div>
+                <div class="category-card-body">
+                    <p>Advanced digital printing technology for high-quality corrugated board printing with exceptional color accuracy and production efficiency.</p>
+                    <ul class="category-products-list">
+                        <li>Glory160X HD</li>
+                        <li>Ultra2500W</li>
+                        <li>Ultra2500W Pro</li>
+                        <li>MCB2500</li>
+                        <li>MCB2512</li>
+                        <li>SCB1600</li>
+                    </ul>
+                </div>
+                <div class="category-card-footer">
+                    <a href="category-digital-printing.html" class="view-category-btn">View All Products →</a>
+                </div>
+            </div>
+
+            <!-- Category 2: Die-Cutting Machines -->
+            <div class="category-card die-cutting" onclick="window.location.href='category-die-cutting.html'">
+                <div class="category-card-header">
+                    <div class="category-icon">✂️</div>
+                    <h3>Die-Cutting Machines</h3>
+                    <p class="category-card-description">Precision die-cutting technology to enhance processing accuracy and efficiency</p>
+                    <span class="product-count">6 Products</span>
+                </div>
+                <div class="category-card-body">
+                    <p>State-of-the-art die-cutting solutions including laser and rotary systems for precise cutting and creasing operations.</p>
+                    <ul class="category-products-list">
+                        <li>MK1060F Laser Die-Cutter</li>
+                        <li>TD800S</li>
+                        <li>TD1650S</li>
+                        <li>DS106</li>
+                        <li>PYQ1040</li>
+                        <li>MK800SF</li>
+                    </ul>
+                </div>
+                <div class="category-card-footer">
+                    <a href="category-die-cutting.html" class="view-category-btn">View All Products →</a>
+                </div>
+            </div>
+
+            <!-- Category 3: Feeding/Palletizing Machines -->
+            <div class="category-card feeding-palletizing" onclick="window.location.href='category-feeding-palletizing.html'">
+                <div class="category-card-header">
+                    <div class="category-icon">🤖</div>
+                    <h3>Feeding/Palletizing Machines</h3>
+                    <p class="category-card-description">Front and back-end logistics automation to reduce labor and improve efficiency</p>
+                    <span class="product-count">6 Products</span>
+                </div>
+                <div class="category-card-body">
+                    <p>Intelligent automation solutions for material handling, featuring robotic palletizers with 3D vision AI systems.</p>
+                    <ul class="category-products-list">
+                        <li>MD-350 Intelligent Palletizer</li>
+                        <li>JXB Robotic Arm Feeder</li>
+                        <li>QSL2 Slope Type</li>
+                        <li>QSL3 Baffle Type</li>
+                        <li>QXY3 Bottom Print Type</li>
+                        <li>MD-180 Compact</li>
+                    </ul>
+                </div>
+                <div class="category-card-footer">
+                    <a href="category-feeding-palletizing.html" class="view-category-btn">View All Products →</a>
+                </div>
+            </div>
+
+            <!-- Category 4: Strapping/Stitching Machines -->
+            <div class="category-card strapping-stitching" onclick="window.location.href='category-strapping-stitching.html'">
+                <div class="category-card-header">
+                    <div class="category-icon">📦</div>
+                    <h3>Strapping/Stitching Machines</h3>
+                    <p class="category-card-description">Automated bundling and stitching for enhanced packaging security</p>
+                    <span class="product-count">5 Products</span>
+                </div>
+                <div class="category-card-body">
+                    <p>Comprehensive bundling solutions for secure packaging, including automatic strapping and stitching systems.</p>
+                    <ul class="category-products-list">
+                        <li>ST-600A Automatic Strapper</li>
+                        <li>ST-900B Heavy-Duty Strapper</li>
+                        <li>NS-208 Double-Head Stitcher</li>
+                        <li>GH-650 Automatic Folder Gluer</li>
+                        <li>SC-1200 Sheeter & Scorer</li>
+                    </ul>
+                </div>
+                <div class="category-card-footer">
+                    <a href="category-strapping-stitching.html" class="view-category-btn">View All Products →</a>
+                </div>
+            </div>
+
+            <!-- Category 5: Folder Gluer/Stitcher -->
+            <div class="category-card folder-gluer" onclick="window.location.href='category-folder-gluer.html'">
+                <div class="category-card-header">
+                    <div class="category-icon">📋</div>
+                    <h3>Folder Gluer/Stitcher</h3>
+                    <p class="category-card-description">Post-print automation to improve forming efficiency</p>
+                    <span class="product-count">3 Products</span>
+                </div>
+                <div class="category-card-body">
+                    <p>Advanced folder gluer systems for efficient box forming with precision gluing and stitching capabilities.</p>
+                    <ul class="category-products-list">
+                        <li>Auto Folder Gluer</li>
+                        <li>Stitcher Machine</li>
+                        <li>Inline Folder</li>
+                    </ul>
+                </div>
+                <div class="category-card-footer">
+                    <a href="category-folder-gluer.html" class="view-category-btn">View All Products →</a>
+                </div>
+            </div>
+
+            <!-- Category 6: Laminator/Filming Machine -->
+            <div class="category-card laminator" onclick="window.location.href='category-laminator.html'">
+                <div class="category-card-header">
+                    <div class="category-icon">🎨</div>
+                    <h3>Laminator/Filming Machine</h3>
+                    <p class="category-card-description">Surface treatment process optimization to enhance product quality</p>
+                    <span class="product-count">3 Products</span>
+                </div>
+                <div class="category-card-body">
+                    <p>Professional laminating solutions for surface protection and quality enhancement of corrugated products.</p>
+                    <ul class="category-products-list">
+                        <li>Automatic Laminator</li>
+                        <li>Filming Machine</li>
+                        <li>UV Coating Machine</li>
+                    </ul>
+                </div>
+                <div class="category-card-footer">
+                    <a href="category-laminator.html" class="view-category-btn">View All Products →</a>
+                </div>
+            </div>
+
+            <!-- Category 7: Corrugator Line -->
+            <div class="category-card corrugator" onclick="window.location.href='category-corrugator.html'">
+                <div class="category-card-header">
+                    <div class="category-icon">🏭</div>
+                    <h3>Corrugator Line</h3>
+                    <p class="category-card-description">High-speed corrugated board production for maximum output efficiency</p>
+                    <span class="product-count">3 Products</span>
+                </div>
+                <div class="category-card-body">
+                    <p>Complete corrugator production lines for high-volume manufacturing with advanced control systems.</p>
+                    <ul class="category-products-list">
+                        <li>Single Facer</li>
+                        <li>Double Facer</li>
+                        <li>High-Speed Corrugator</li>
+                    </ul>
+                </div>
+                <div class="category-card-footer">
+                    <a href="category-corrugator.html" class="view-category-btn">View All Products →</a>
+                </div>
+            </div>
+
+            <!-- Category 8: Flexo Printing Machines -->
+            <div class="category-card flexo-printing" onclick="window.location.href='category-flexo-printing.html'">
+                <div class="category-card-header">
+                    <div class="category-icon">🎨</div>
+                    <h3>Flexo Printing Machines</h3>
+                    <p class="category-card-description">Water-based flexographic printing for eco-friendly production</p>
+                    <span class="product-count">6 Products</span>
+                </div>
+                <div class="category-card-body">
+                    <p>Environmentally friendly flexographic printing solutions for sustainable packaging production.</p>
+                    <ul class="category-products-list">
+                        <li>Inline Flexo Printer</li>
+                        <li>Pre-printing Machine</li>
+                        <li>Water-based Printing</li>
+                        <li>High-Speed Flexo</li>
+                        <li>Multi-Color Flexo</li>
+                        <li>Flexo Folder Gluer</li>
+                    </ul>
+                </div>
+                <div class="category-card-footer">
+                    <a href="category-flexo-printing.html" class="view-category-btn">View All Products →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>NEXUS GLOBAL HOLDINGS</h4>
+                    <p>Your trusted partner in corrugated packaging equipment solutions</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="registered-companies.html">Companies</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>Email: info@nexusglobal.com</p>
+                    <p>Phone: +86 123 4567 8900</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
