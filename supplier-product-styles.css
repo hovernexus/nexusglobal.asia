@@ -1,0 +1,372 @@
+/* 供应商和产品管理样式 */
+
+/* 成功消息弹窗 */
+.success-message-overlay,
+.error-message-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+.success-message-box,
+.error-message-box {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: slideUp 0.3s ease;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+}
+
+.error-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+}
+
+.success-message-box h2,
+.error-message-box h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+.success-content,
+.error-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 30px;
+}
+
+.success-content p,
+.error-content p {
+    margin-bottom: 12px;
+}
+
+.success-content strong,
+.error-content strong {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.close-button {
+    padding: 12px 32px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* 已注册公司展示 */
+.registered-companies-section {
+    padding: 60px 0;
+    background-color: #f8fafc;
+}
+
+.companies-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1B365D;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: #64748b;
+}
+
+.companies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.company-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.company-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.company-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.company-name-en {
+    font-size: 14px;
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.company-location {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 12px;
+}
+
+.company-categories,
+.company-capacity {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 20px;
+    padding: 12px;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+}
+
+.view-profile-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #1B365D 0%, #0f2744 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.view-profile-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(27, 54, 93, 0.3);
+}
+
+/* 产品上传表单增强 */
+.upload-progress {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f9ff;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+}
+
+.upload-progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e7ff;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.upload-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+    transition: width 0.3s ease;
+}
+
+.upload-status {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #1e40af;
+}
+
+/* 文件上传区域 */
+.file-upload-area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.file-upload-area:hover {
+    border-color: #3b82f6;
+    background-color: #f0f9ff;
+}
+
+.file-upload-area.drag-over {
+    border-color: #2563eb;
+    background-color: #dbeafe;
+}
+
+.file-upload-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #64748b;
+}
+
+.file-upload-text {
+    font-size: 16px;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+.file-upload-hint {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.file-list {
+    margin-top: 20px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.file-icon {
+    font-size: 24px;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #1e293b;
+    font-weight: 500;
+}
+
+.file-size {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.file-remove {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 4px 8px;
+    transition: all 0.2s ease;
+}
+
+.file-remove:hover {
+    color: #dc2626;
+    transform: scale(1.2);
+}
+
+/* 表单验证样式 */
+.field-error {
+    border-color: #ef4444 !important;
+}
+
+.error-message {
+    font-size: 12px;
+    color: #ef4444;
+    margin-top: 4px;
+}
+
+.field-success {
+    border-color: #10b981 !important;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .success-message-box,
+    .error-message-box {
+        padding: 30px 20px;
+    }
+    
+    .companies-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .company-card {
+        padding: 20px;
+    }
+}
+

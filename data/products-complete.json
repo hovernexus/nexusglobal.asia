@@ -1,0 +1,1207 @@
+{
+  "categories": [
+    {
+      "id": "digital_printer",
+      "name": "数码印刷机",
+      "nameEn": "Digital Printer",
+      "description": "高精度数字喷墨印刷设备，适用于瓦楞纸板印刷",
+      "icon": "🖨️"
+    },
+    {
+      "id": "die_cutting",
+      "name": "模切机",
+      "nameEn": "Die-Cutting Machine",
+      "description": "高精度模切设备，包括激光模切和传统模切",
+      "icon": "✂️"
+    },
+    {
+      "id": "ffg_inline",
+      "name": "FFG Inline",
+      "nameEn": "FFG Inline",
+      "description": "柔印连线设备，集印刷、开槽、模切、粘合于一体",
+      "icon": "🏭"
+    },
+    {
+      "id": "folder_gluer",
+      "name": "粘箱机/钉箱机/开槽机/打包机",
+      "nameEn": "Folder Gluer/Stitcher/Slotter/Strapping",
+      "description": "纸箱成型和打包设备",
+      "icon": "📦"
+    },
+    {
+      "id": "laminator",
+      "name": "裱纸机/覆膜机",
+      "nameEn": "Laminator/Filming Machine",
+      "description": "表面处理设备，提升包装品质",
+      "icon": "✨"
+    },
+    {
+      "id": "inspection",
+      "name": "翻转机/检品机",
+      "nameEn": "Turning Machine/Inspection Machine",
+      "description": "质量检测和翻转设备",
+      "icon": "🔍"
+    },
+    {
+      "id": "feeder_palletizer",
+      "name": "上料机/码垛机/分片机",
+      "nameEn": "Feeder/Palletizer/Breaking Unit",
+      "description": "自动化物流设备，提升生产效率",
+      "icon": "🤖"
+    },
+    {
+      "id": "pulp_molding",
+      "name": "纸浆模塑设备",
+      "nameEn": "Pulp Molding Equipment",
+      "description": "环保纸浆模塑成型设备",
+      "icon": "♻️"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "hanhua",
+      "name": "深圳汉华工业数码设备有限公司",
+      "nameEn": "Shenzhen Hanhua Industrial Digital Equipment Co., Ltd.",
+      "website": "https://www.hanglorygroup.com",
+      "description": "专业数码印刷设备制造商",
+      "logo": "images/suppliers/hanhua-logo.png"
+    },
+    {
+      "id": "kingtau",
+      "name": "广州精陶机电设备有限公司",
+      "nameEn": "Guangzhou Kingtau Electromechanical Equipment Co., Ltd.",
+      "website": "https://www.kingtau.com",
+      "description": "高端数码印刷解决方案提供商",
+      "logo": "images/suppliers/kingtau-logo.png"
+    },
+    {
+      "id": "yawa",
+      "name": "上海亚华印刷机械有限公司",
+      "nameEn": "Shanghai Yawa Printing Machinery Co., Ltd.",
+      "website": "https://cn.shanghaiyawa.com",
+      "description": "专业模切机和粘箱机制造商",
+      "logo": "images/suppliers/yawa-logo.png"
+    },
+    {
+      "id": "mkm",
+      "name": "天津长荣股份有限公司",
+      "nameEn": "Tianjin Changrong Co., Ltd.",
+      "website": "https://www.mkmchina.com",
+      "description": "印后设备领军企业",
+      "logo": "images/suppliers/mkm-logo.png"
+    },
+    {
+      "id": "xinjun",
+      "name": "新军机械",
+      "nameEn": "Xinjun Machinery",
+      "website": "http://www.tsxinjun.com",
+      "description": "纸箱成型设备专家",
+      "logo": "images/suppliers/xinjun-logo.png"
+    },
+    {
+      "id": "jiajie",
+      "name": "唐山佳捷包装机械制造有限公司",
+      "nameEn": "Tangshan Jiajie Packaging Machinery Manufacturing Co., Ltd.",
+      "website": "http://www.ytjiajie.com",
+      "description": "裱纸机和覆膜机专业制造商",
+      "logo": "images/suppliers/jiajie-logo.png"
+    },
+    {
+      "id": "odj",
+      "name": "佛山欧德佳智能科技有限公司",
+      "nameEn": "Foshan ODJ Intelligent Technology Co., Ltd.",
+      "website": "https://odjmachine.com",
+      "description": "智能自动化物流设备专家",
+      "logo": "images/suppliers/odj-logo.png",
+      "highlights": [
+        "上料机源自日本原创设计（日本望月昭宏团队）",
+        "码垛机使用日本川崎高性能机械臂",
+        "全球首创3D视觉人工智能系统",
+        "可匹配全球多家印刷机和模切机品牌（TCY、BOBST、Eterna）"
+      ]
+    },
+    {
+      "id": "shuanghuan",
+      "name": "湖南双环科技集团有限公司",
+      "nameEn": "Hunan Shuanghuan Technology Group Co., Ltd.",
+      "website": "http://www.eggmachine.com",
+      "description": "纸浆模塑设备领先企业",
+      "logo": "images/suppliers/shuanghuan-logo.png"
+    }
+  ],
+  "products": [
+    {
+      "id": "glory160x-hd",
+      "model": "Glory160X HD",
+      "fullName": "Single Pass 高精瓦楞纸板数字喷墨印刷机",
+      "fullNameEn": "Single Pass High-Definition Digital Inkjet Printer for Corrugated Board",
+      "category": "digital_printer",
+      "supplier": "hanhua",
+      "url": "https://www.hanglorygroup.com/article/singlepassxilie/908.html",
+      "description": "Glory160X HD采用Single Pass技术，实现高速高精度印刷。配备先进的喷墨系统，可在瓦楞纸板上实现1200dpi的高清印刷效果，适用于高端包装印刷需求。",
+      "keyFeatures": [
+        "Single Pass技术，印刷速度可达160米/分钟",
+        "1200dpi高分辨率，色彩还原度高",
+        "支持CMYK+白墨+光油配置",
+        "智能色彩管理系统",
+        "适用于E楞至三层瓦楞纸板"
+      ],
+      "specifications": {
+        "maxPrintWidth": "1600mm",
+        "maxPrintSpeed": "160m/min",
+        "printResolution": "1200dpi",
+        "colorConfiguration": "CMYK + White + Varnish",
+        "substrateThickness": "1.5-12mm",
+        "inkType": "水性UV墨水",
+        "powerConsumption": "45kW",
+        "dimensions": "12000×3500×2800mm"
+      },
+      "applications": [
+        "电商包装",
+        "食品饮料包装",
+        "零售展示包装",
+        "工业包装"
+      ],
+      "images": [
+        "images/products/glory160x-hd-1.jpg",
+        "images/products/glory160x-hd-2.jpg"
+      ]
+    },
+    {
+      "id": "ultra2500w",
+      "model": "Ultra2500W",
+      "fullName": "高速扫描式数码印刷机",
+      "fullNameEn": "High-Speed Scanning Digital Printer",
+      "category": "digital_printer",
+      "supplier": "hanhua",
+      "url": "https://www.hanglorygroup.com/article/smj/58.html",
+      "description": "Ultra2500W采用扫描式印刷技术，具有高速度和高灵活性。适合中小批量、多品种的包装印刷需求，可快速切换不同订单。",
+      "keyFeatures": [
+        "扫描式印刷，灵活性高",
+        "最大印刷宽度2500mm",
+        "快速订单切换",
+        "低维护成本",
+        "支持可变数据印刷"
+      ],
+      "specifications": {
+        "maxPrintWidth": "2500mm",
+        "maxPrintSpeed": "100m/min",
+        "printResolution": "1200×600dpi",
+        "colorConfiguration": "CMYK",
+        "substrateThickness": "2-15mm",
+        "inkType": "水性墨水",
+        "powerConsumption": "38kW",
+        "dimensions": "10000×3800×2600mm"
+      },
+      "applications": [
+        "定制化包装",
+        "小批量生产",
+        "快速打样",
+        "个性化印刷"
+      ],
+      "images": [
+        "images/products/ultra2500w-1.jpg"
+      ]
+    },
+    {
+      "id": "ultra2500w-pro",
+      "model": "Ultra2500W Pro",
+      "fullName": "工业级多功能组合式数字印刷机",
+      "fullNameEn": "Industrial Multi-Function Combined Digital Printer",
+      "category": "digital_printer",
+      "supplier": "hanhua",
+      "url": "https://www.hanglorygroup.com/article/smj/59.html",
+      "description": "Ultra2500W Pro是Ultra2500W的升级版本，增加了更多功能模块，可实现印刷、上光、模切等多工序组合，提升生产效率。",
+      "keyFeatures": [
+        "多功能组合设计",
+        "可选配上光、模切模块",
+        "工业级稳定性",
+        "智能生产管理系统",
+        "Industry 4.0就绪"
+      ],
+      "specifications": {
+        "maxPrintWidth": "2500mm",
+        "maxPrintSpeed": "120m/min",
+        "printResolution": "1200×600dpi",
+        "colorConfiguration": "CMYK + 2 Spot Colors",
+        "substrateThickness": "2-15mm",
+        "inkType": "水性墨水",
+        "powerConsumption": "55kW",
+        "dimensions": "15000×4000×3000mm"
+      },
+      "applications": [
+        "高端包装",
+        "复杂工艺",
+        "大批量生产",
+        "连线加工"
+      ],
+      "images": [
+        "images/products/ultra2500w-pro-1.jpg"
+      ]
+    },
+    {
+      "id": "mcb2500",
+      "model": "MCB2500",
+      "fullName": "扫描式数字印刷系列",
+      "fullNameEn": "Scanning Digital Printing Series",
+      "category": "digital_printer",
+      "supplier": "kingtau",
+      "url": "https://www.kingtau.com/page186?product_id=356&product_category=101",
+      "description": "精陶MCB2500系列采用扫描式印刷技术，具有高性价比和良好的印刷质量，适合中等规模的包装印刷企业。",
+      "keyFeatures": [
+        "高性价比",
+        "操作简便",
+        "维护成本低",
+        "印刷质量稳定",
+        "适合中小企业"
+      ],
+      "specifications": {
+        "maxPrintWidth": "2500mm",
+        "maxPrintSpeed": "80m/min",
+        "printResolution": "1200×600dpi",
+        "colorConfiguration": "CMYK",
+        "substrateThickness": "2-12mm",
+        "inkType": "水性墨水",
+        "powerConsumption": "35kW",
+        "dimensions": "9500×3500×2500mm"
+      },
+      "applications": [
+        "标准包装",
+        "中小批量",
+        "常规印刷",
+        "入门级数码印刷"
+      ],
+      "images": [
+        "images/products/mcb2500-1.jpg"
+      ]
+    },
+    {
+      "id": "mcb2512",
+      "model": "MCB2512",
+      "fullName": "高速扫描式数码印刷机",
+      "fullNameEn": "High-Speed Scanning Digital Printer",
+      "category": "digital_printer",
+      "supplier": "kingtau",
+      "url": "https://www.kingtau.com/page186?product_id=355&product_category=101",
+      "description": "MCB2512是MCB2500的升级版本，印刷速度更快，配置更高，适合对产能有更高要求的企业。",
+      "keyFeatures": [
+        "高速印刷",
+        "更大印刷幅面",
+        "增强型色彩管理",
+        "自动化程度高",
+        "远程监控功能"
+      ],
+      "specifications": {
+        "maxPrintWidth": "2500mm",
+        "maxPrintSpeed": "120m/min",
+        "printResolution": "1200×1200dpi",
+        "colorConfiguration": "CMYK + White",
+        "substrateThickness": "2-12mm",
+        "inkType": "水性墨水",
+        "powerConsumption": "42kW",
+        "dimensions": "11000×3600×2600mm"
+      },
+      "applications": [
+        "高产能需求",
+        "高质量印刷",
+        "多品种生产",
+        "快速交付"
+      ],
+      "images": [
+        "images/products/mcb2512-1.jpg"
+      ]
+    },
+    {
+      "id": "scb1600",
+      "model": "SCB1600",
+      "fullName": "Single Pass 中高速瓦楞纸板数字喷墨印刷机",
+      "fullNameEn": "Single Pass Medium-High Speed Digital Inkjet Printer for Corrugated Board",
+      "category": "digital_printer",
+      "supplier": "kingtau",
+      "url": "https://www.kingtau.com/page186?product_id=354&product_category=101",
+      "description": "SCB1600采用Single Pass技术，在保持高速度的同时提供优异的印刷质量，是中高端包装印刷的理想选择。",
+      "keyFeatures": [
+        "Single Pass技术",
+        "中高速印刷",
+        "优异的色彩表现",
+        "稳定可靠",
+        "性价比高"
+      ],
+      "specifications": {
+        "maxPrintWidth": "1600mm",
+        "maxPrintSpeed": "100m/min",
+        "printResolution": "1200×1200dpi",
+        "colorConfiguration": "CMYK + White + Varnish",
+        "substrateThickness": "1.5-10mm",
+        "inkType": "水性UV墨水",
+        "powerConsumption": "40kW",
+        "dimensions": "11000×3400×2700mm"
+      },
+      "applications": [
+        "中高端包装",
+        "品牌包装",
+        "展示包装",
+        "特殊印刷效果"
+      ],
+      "images": [
+        "images/products/scb1600-1.jpg"
+      ]
+    },
+    {
+      "id": "td800s",
+      "model": "TD800S",
+      "fullName": "全自动模切机（清废）",
+      "fullNameEn": "Fully Automatic Die-Cutting Machine (with Waste Stripping)",
+      "category": "die_cutting",
+      "supplier": "yawa",
+      "url": "https://cn.shanghaiyawa.com/quanzidongmoqieji/td800s-quanzidongmoqieji.html",
+      "description": "TD800S是一款高效的全自动模切机，配备自动清废功能，适合中小幅面的模切作业。",
+      "keyFeatures": [
+        "全自动送纸",
+        "自动清废",
+        "高精度定位",
+        "快速换模",
+        "操作简便"
+      ],
+      "specifications": {
+        "maxSheetSize": "800×600mm",
+        "minSheetSize": "300×300mm",
+        "maxCuttingSpeed": "6000 sheets/hour",
+        "maxCuttingPressure": "200 tons",
+        "substrateThickness": "0.3-6mm",
+        "registrationAccuracy": "±0.1mm",
+        "powerConsumption": "28kW",
+        "dimensions": "7000×2800×2200mm"
+      },
+      "applications": [
+        "折叠纸盒",
+        "展示包装",
+        "异形模切",
+        "中小批量"
+      ],
+      "images": [
+        "images/products/td800s-1.jpg"
+      ]
+    },
+    {
+      "id": "td1650s",
+      "model": "TD1650S",
+      "fullName": "全自动模切机（清废）",
+      "fullNameEn": "Fully Automatic Die-Cutting Machine (with Waste Stripping)",
+      "category": "die_cutting",
+      "supplier": "yawa",
+      "url": "https://cn.shanghaiyawa.com/quanzidongmoqieji/td1650s-quanzidongmoqieji.html",
+      "description": "TD1650S是大幅面全自动模切机，适合大尺寸纸箱和展示架的模切作业，配备先进的清废系统。",
+      "keyFeatures": [
+        "大幅面模切",
+        "高速生产",
+        "智能清废系统",
+        "精确定位",
+        "低噪音运行"
+      ],
+      "specifications": {
+        "maxSheetSize": "1650×1200mm",
+        "minSheetSize": "400×400mm",
+        "maxCuttingSpeed": "5000 sheets/hour",
+        "maxCuttingPressure": "350 tons",
+        "substrateThickness": "0.5-10mm",
+        "registrationAccuracy": "±0.1mm",
+        "powerConsumption": "42kW",
+        "dimensions": "10000×3500×2500mm"
+      },
+      "applications": [
+        "大型纸箱",
+        "展示架",
+        "工业包装",
+        "重型瓦楞"
+      ],
+      "images": [
+        "images/products/td1650s-1.jpg"
+      ]
+    },
+    {
+      "id": "ds106",
+      "model": "DS106",
+      "fullName": "全自动模切机（全清废）",
+      "fullNameEn": "Fully Automatic Die-Cutting Machine (Full Waste Stripping)",
+      "category": "die_cutting",
+      "supplier": "yawa",
+      "url": "https://cn.shanghaiyawa.com/quanzidongmoqieji/ds106-quanzidongmoqieji.html",
+      "description": "DS106配备全清废系统，可自动完成所有废料的清除工作，大幅提升生产效率，减少人工成本。",
+      "keyFeatures": [
+        "全清废功能",
+        "高度自动化",
+        "减少人工",
+        "提升效率",
+        "质量稳定"
+      ],
+      "specifications": {
+        "maxSheetSize": "1060×760mm",
+        "minSheetSize": "350×350mm",
+        "maxCuttingSpeed": "7000 sheets/hour",
+        "maxCuttingPressure": "280 tons",
+        "substrateThickness": "0.3-8mm",
+        "registrationAccuracy": "±0.1mm",
+        "powerConsumption": "35kW",
+        "dimensions": "8500×3200×2400mm"
+      },
+      "applications": [
+        "复杂模切",
+        "多废料产品",
+        "高效生产",
+        "精品包装"
+      ],
+      "images": [
+        "images/products/ds106-1.jpg"
+      ]
+    },
+    {
+      "id": "pyq1040",
+      "model": "PYQ1040",
+      "fullName": "半自动模切机",
+      "fullNameEn": "Semi-Automatic Die-Cutting Machine",
+      "category": "die_cutting",
+      "supplier": "yawa",
+      "url": "https://cn.shanghaiyawa.com/banzidong/pyq1040-banzidongmoqieji.html",
+      "description": "PYQ1040是一款经济型半自动模切机，适合小批量、多品种的生产需求，投资成本低，操作灵活。",
+      "keyFeatures": [
+        "经济型设备",
+        "操作灵活",
+        "适合小批量",
+        "维护简单",
+        "性价比高"
+      ],
+      "specifications": {
+        "maxSheetSize": "1040×720mm",
+        "minSheetSize": "300×300mm",
+        "maxCuttingSpeed": "3000 sheets/hour",
+        "maxCuttingPressure": "180 tons",
+        "substrateThickness": "0.3-6mm",
+        "registrationAccuracy": "±0.15mm",
+        "powerConsumption": "18kW",
+        "dimensions": "6000×2500×2000mm"
+      },
+      "applications": [
+        "小批量生产",
+        "打样",
+        "定制产品",
+        "初创企业"
+      ],
+      "images": [
+        "images/products/pyq1040-1.jpg"
+      ]
+    },
+    {
+      "id": "mk1060f",
+      "model": "MK1060F",
+      "fullName": "激光模切机",
+      "fullNameEn": "Laser Die-Cutting Machine",
+      "category": "die_cutting",
+      "supplier": "mkm",
+      "url": "https://www.mkmchina.com/jiguangmoqieshebei/jiguangmoqieji.html",
+      "description": "MK1060F采用激光切割技术，无需制作模切版，可快速切换不同图案，特别适合小批量、多品种、复杂图案的模切需求。",
+      "keyFeatures": [
+        "激光切割技术",
+        "无需模切版",
+        "快速切换",
+        "复杂图案",
+        "高精度"
+      ],
+      "specifications": {
+        "maxSheetSize": "1060×760mm",
+        "minSheetSize": "200×200mm",
+        "maxCuttingSpeed": "4000 sheets/hour",
+        "laserPower": "500W",
+        "substrateThickness": "0.2-5mm",
+        "cuttingAccuracy": "±0.05mm",
+        "powerConsumption": "25kW",
+        "dimensions": "7500×2800×2200mm"
+      },
+      "applications": [
+        "个性化包装",
+        "快速打样",
+        "复杂图案",
+        "小批量生产"
+      ],
+      "images": [
+        "images/products/mk1060f-1.jpg"
+      ]
+    },
+    {
+      "id": "mk800sf",
+      "model": "MK800SF",
+      "fullName": "激光模切机",
+      "fullNameEn": "Laser Die-Cutting Machine",
+      "category": "die_cutting",
+      "supplier": "mkm",
+      "url": "https://www.mkmchina.com/jiguangmoqieshebei/mk-800sf-jiguangmoqieji.html",
+      "description": "MK800SF是紧凑型激光模切机，适合中小幅面的激光模切作业，占地面积小，投资成本相对较低。",
+      "keyFeatures": [
+        "紧凑型设计",
+        "占地面积小",
+        "激光技术",
+        "灵活多变",
+        "适合中小企业"
+      ],
+      "specifications": {
+        "maxSheetSize": "800×600mm",
+        "minSheetSize": "200×200mm",
+        "maxCuttingSpeed": "3500 sheets/hour",
+        "laserPower": "400W",
+        "substrateThickness": "0.2-4mm",
+        "cuttingAccuracy": "±0.05mm",
+        "powerConsumption": "20kW",
+        "dimensions": "6500×2500×2100mm"
+      },
+      "applications": [
+        "中小幅面",
+        "精细切割",
+        "快速交付",
+        "定制化生产"
+      ],
+      "images": [
+        "images/products/mk800sf-1.jpg"
+      ]
+    },
+    {
+      "id": "mk21060vs",
+      "model": "MK21060VS",
+      "fullName": "双机组模切机",
+      "fullNameEn": "Dual-Unit Die-Cutting Machine",
+      "category": "die_cutting",
+      "supplier": "mkm",
+      "url": "https://www.mkmchina.com/moqieshebei/youmeng-mk21060vs-shuangjizumoqieji.html",
+      "description": "MK21060VS采用双机组设计，可同时进行两道模切工序，或一台用于模切、一台用于压痕，大幅提升生产效率。",
+      "keyFeatures": [
+        "双机组设计",
+        "双倍效率",
+        "多工序组合",
+        "灵活配置",
+        "高产能"
+      ],
+      "specifications": {
+        "maxSheetSize": "1060×760mm",
+        "minSheetSize": "300×300mm",
+        "maxCuttingSpeed": "8000 sheets/hour",
+        "maxCuttingPressure": "300 tons × 2",
+        "substrateThickness": "0.3-8mm",
+        "registrationAccuracy": "±0.1mm",
+        "powerConsumption": "60kW",
+        "dimensions": "14000×3500×2600mm"
+      },
+      "applications": [
+        "高产能需求",
+        "复杂工艺",
+        "多道工序",
+        "大批量生产"
+      ],
+      "images": [
+        "images/products/mk21060vs-1.jpg"
+      ]
+    },
+    {
+      "id": "mk-ecopress-1050",
+      "model": "MK Ecopress 1050",
+      "fullName": "平压平自动模切机",
+      "fullNameEn": "Flatbed Automatic Die-Cutting Machine",
+      "category": "die_cutting",
+      "supplier": "mkm",
+      "url": "https://www.mkmchina.com/moqieshebei/mk-ecopress-1050-pingyapingzidongmoqiejiqingfeimoqieji.html",
+      "description": "MK Ecopress 1050是一款环保节能的平压平模切机，采用先进的伺服驱动技术，能耗低、精度高、噪音小。",
+      "keyFeatures": [
+        "环保节能",
+        "伺服驱动",
+        "低噪音",
+        "高精度",
+        "自动清废"
+      ],
+      "specifications": {
+        "maxSheetSize": "1050×750mm",
+        "minSheetSize": "300×300mm",
+        "maxCuttingSpeed": "7500 sheets/hour",
+        "maxCuttingPressure": "250 tons",
+        "substrateThickness": "0.3-8mm",
+        "registrationAccuracy": "±0.1mm",
+        "powerConsumption": "30kW",
+        "dimensions": "8000×3000×2300mm"
+      },
+      "applications": [
+        "绿色生产",
+        "精品包装",
+        "标准模切",
+        "环保要求高"
+      ],
+      "images": [
+        "images/products/mk-ecopress-1050-1.jpg"
+      ]
+    },
+    {
+      "id": "mk1300csb-w",
+      "model": "MK1300CSB W",
+      "fullName": "卷筒纸全清废模切机",
+      "fullNameEn": "Roll-Fed Full Waste Stripping Die-Cutting Machine",
+      "category": "die_cutting",
+      "supplier": "mkm",
+      "url": "https://www.mkmchina.com/moqieshebei/you-zhi-mk1300csb-wjuantongzhiquanqingfeimoqieji.html",
+      "description": "MK1300CSB W是卷筒纸模切机，可直接加工卷筒纸材料，配备全清废系统，适合标签、不干胶等产品的模切。",
+      "keyFeatures": [
+        "卷筒纸加工",
+        "全清废系统",
+        "连续生产",
+        "高效率",
+        "适合标签"
+      ],
+      "specifications": {
+        "maxWebWidth": "1300mm",
+        "maxCuttingSpeed": "150m/min",
+        "maxCuttingPressure": "150 tons",
+        "substrateThickness": "0.1-2mm",
+        "registrationAccuracy": "±0.05mm",
+        "powerConsumption": "35kW",
+        "dimensions": "9000×3200×2400mm"
+      },
+      "applications": [
+        "标签",
+        "不干胶",
+        "软包装",
+        "连续生产"
+      ],
+      "images": [
+        "images/products/mk1300csb-w-1.jpg"
+      ]
+    },
+    {
+      "id": "qsl2",
+      "model": "QSL2",
+      "fullName": "全自动上料机（斜坡式）",
+      "fullNameEn": "Full Auto Pre-feeder (Slope Type)",
+      "category": "feeder_palletizer",
+      "supplier": "odj",
+      "url": "https://odjmachine.com",
+      "description": "QSL2采用斜坡式设计，利用重力辅助送纸，结构简单可靠。源自日本原创设计，可匹配全球多家印刷机和模切机品牌。",
+      "keyFeatures": [
+        "斜坡式设计",
+        "重力辅助",
+        "结构简单",
+        "可靠性高",
+        "日本原创设计"
+      ],
+      "specifications": {
+        "maxBoardSize": "2500×1800mm",
+        "minBoardSize": "600×400mm",
+        "feedingSpeed": "60 sheets/min",
+        "boardThickness": "2-15mm",
+        "stackHeight": "1500mm",
+        "powerConsumption": "8kW",
+        "dimensions": "6000×3500×2200mm"
+      },
+      "applications": [
+        "印刷机配套",
+        "模切机配套",
+        "标准纸板",
+        "中高速生产"
+      ],
+      "images": [
+        "images/products/qsl2-1.jpg"
+      ]
+    },
+    {
+      "id": "qsl3",
+      "model": "QSL3",
+      "fullName": "全自动上料机（挡板式，面印）",
+      "fullNameEn": "Full Auto Pre-feeder for Top Print (Baffle Type)",
+      "category": "feeder_palletizer",
+      "supplier": "odj",
+      "url": "https://odjmachine.com",
+      "description": "QSL3采用挡板式设计，专为面印纸板设计，可精确控制纸板位置，确保印刷精度。兼容TCY、BOBST、Eterna等品牌设备。",
+      "keyFeatures": [
+        "挡板式设计",
+        "面印专用",
+        "精确定位",
+        "高兼容性",
+        "自动纠偏"
+      ],
+      "specifications": {
+        "maxBoardSize": "2800×2000mm",
+        "minBoardSize": "600×400mm",
+        "feedingSpeed": "80 sheets/min",
+        "boardThickness": "2-15mm",
+        "stackHeight": "1500mm",
+        "powerConsumption": "10kW",
+        "dimensions": "7000×3800×2300mm"
+      },
+      "applications": [
+        "面印生产",
+        "高精度要求",
+        "品牌设备配套",
+        "高速生产线"
+      ],
+      "images": [
+        "images/products/qsl3-1.jpg"
+      ]
+    },
+    {
+      "id": "qxy3",
+      "model": "QXY3",
+      "fullName": "全自动上料机（挡板式，底印）",
+      "fullNameEn": "Full Auto Pre-feeder for Bottom Print (Baffle Type)",
+      "category": "feeder_palletizer",
+      "supplier": "odj",
+      "url": "https://odjmachine.com",
+      "description": "QXY3专为底印纸板设计，采用特殊的翻转和送纸机构，确保底印纸板的准确送料，避免印刷面损伤。",
+      "keyFeatures": [
+        "底印专用",
+        "特殊翻转机构",
+        "保护印刷面",
+        "精确送料",
+        "高效稳定"
+      ],
+      "specifications": {
+        "maxBoardSize": "2800×2000mm",
+        "minBoardSize": "600×400mm",
+        "feedingSpeed": "75 sheets/min",
+        "boardThickness": "2-15mm",
+        "stackHeight": "1500mm",
+        "powerConsumption": "12kW",
+        "dimensions": "7500×3800×2400mm"
+      },
+      "applications": [
+        "底印生产",
+        "印刷面保护",
+        "特殊工艺",
+        "高品质要求"
+      ],
+      "images": [
+        "images/products/qxy3-1.jpg"
+      ]
+    },
+    {
+      "id": "qsl4",
+      "model": "QSL4",
+      "fullName": "全自动上料机（提篮式，面印）",
+      "fullNameEn": "Full Auto Pre-feeder for Top Print (Basket Type)",
+      "category": "feeder_palletizer",
+      "supplier": "odj",
+      "url": "https://odjmachine.com",
+      "description": "QSL4采用提篮式设计，可实现连续不停机上料，大幅提升生产效率，特别适合长时间连续生产。",
+      "keyFeatures": [
+        "提篮式设计",
+        "连续不停机",
+        "高效率",
+        "适合长时间生产",
+        "自动化程度高"
+      ],
+      "specifications": {
+        "maxBoardSize": "2800×2000mm",
+        "minBoardSize": "600×400mm",
+        "feedingSpeed": "90 sheets/min",
+        "boardThickness": "2-15mm",
+        "stackHeight": "2000mm",
+        "powerConsumption": "15kW",
+        "dimensions": "8000×4000×2800mm"
+      },
+      "applications": [
+        "高产能需求",
+        "连续生产",
+        "大批量",
+        "24小时生产"
+      ],
+      "images": [
+        "images/products/qsl4-1.jpg"
+      ]
+    },
+    {
+      "id": "jxb",
+      "model": "JXB",
+      "fullName": "全自动上料机（机械臂式）",
+      "fullNameEn": "Full Auto Pre-feeder (Robotics Arm Type)",
+      "category": "feeder_palletizer",
+      "supplier": "odj",
+      "url": "https://odjmachine.com",
+      "description": "JXB采用机械臂技术，灵活性极高，可适应各种尺寸和形状的纸板，是最先进的上料解决方案。",
+      "keyFeatures": [
+        "机械臂技术",
+        "极高灵活性",
+        "适应各种尺寸",
+        "智能控制",
+        "未来技术"
+      ],
+      "specifications": {
+        "maxBoardSize": "3000×2200mm",
+        "minBoardSize": "400×300mm",
+        "feedingSpeed": "70 sheets/min",
+        "boardThickness": "2-20mm",
+        "stackHeight": "1800mm",
+        "powerConsumption": "18kW",
+        "dimensions": "8500×4500×3000mm"
+      },
+      "applications": [
+        "异形纸板",
+        "多规格生产",
+        "高端设备配套",
+        "智能工厂"
+      ],
+      "images": [
+        "images/products/jxb-1.jpg"
+      ]
+    },
+    {
+      "id": "bys-a",
+      "model": "BYS-A",
+      "fullName": "半自动上料机（挡板式）",
+      "fullNameEn": "Semi Auto Pre-feeder (Baffle Type)",
+      "category": "feeder_palletizer",
+      "supplier": "odj",
+      "url": "https://odjmachine.com",
+      "description": "BYS-A是经济型半自动上料机，适合中小企业和小批量生产，投资成本低，操作简单。",
+      "keyFeatures": [
+        "经济型设备",
+        "半自动操作",
+        "投资成本低",
+        "操作简单",
+        "适合中小企业"
+      ],
+      "specifications": {
+        "maxBoardSize": "2500×1800mm",
+        "minBoardSize": "600×400mm",
+        "feedingSpeed": "40 sheets/min",
+        "boardThickness": "2-12mm",
+        "stackHeight": "1200mm",
+        "powerConsumption": "5kW",
+        "dimensions": "5000×3200×2000mm"
+      },
+      "applications": [
+        "中小批量",
+        "初创企业",
+        "预算有限",
+        "灵活生产"
+      ],
+      "images": [
+        "images/products/bys-a-1.jpg"
+      ]
+    },
+    {
+      "id": "bys-b",
+      "model": "BYS-B",
+      "fullName": "半自动上料机（斜坡式）",
+      "fullNameEn": "Semi Auto Pre-feeder (Slope Type)",
+      "category": "feeder_palletizer",
+      "supplier": "odj",
+      "url": "https://odjmachine.com",
+      "description": "BYS-B采用斜坡式设计的半自动上料机，结构更简单，维护更方便，是入门级自动化的理想选择。",
+      "keyFeatures": [
+        "斜坡式设计",
+        "结构简单",
+        "维护方便",
+        "性价比高",
+        "入门级自动化"
+      ],
+      "specifications": {
+        "maxBoardSize": "2500×1800mm",
+        "minBoardSize": "600×400mm",
+        "feedingSpeed": "35 sheets/min",
+        "boardThickness": "2-12mm",
+        "stackHeight": "1200mm",
+        "powerConsumption": "4kW",
+        "dimensions": "4500×3000×1900mm"
+      },
+      "applications": [
+        "入门级自动化",
+        "小规模生产",
+        "打样",
+        "辅助设备"
+      ],
+      "images": [
+        "images/products/bys-b-1.jpg"
+      ]
+    },
+    {
+      "id": "md-350",
+      "model": "MD-350",
+      "fullName": "智能机器人码垛机（配备3D视觉AI系统）",
+      "fullNameEn": "Intelligent Robotic Palletizer (with 3D visual AI System)",
+      "category": "feeder_palletizer",
+      "supplier": "odj",
+      "url": "https://odjmachine.com",
+      "description": "MD-350采用日本川崎高性能机械臂，配备全球首创的3D视觉AI系统，可自动识别不同箱型、自动调整码垛位置、自动识别错误捆包，是最先进的智能码垛解决方案。",
+      "keyFeatures": [
+        "日本川崎机械臂",
+        "3D视觉AI系统",
+        "自动识别箱型",
+        "自动调整位置",
+        "全球首创技术"
+      ],
+      "specifications": {
+        "maxPayload": "350kg",
+        "maxReach": "3500mm",
+        "palletizingSpeed": "600 boxes/hour",
+        "boxSizeRange": "200×150×100 - 1200×800×800mm",
+        "palletSize": "1200×1000mm / 1200×800mm",
+        "powerConsumption": "25kW",
+        "dimensions": "6000×5000×4000mm"
+      },
+      "applications": [
+        "智能工厂",
+        "高端自动化",
+        "多品种码垛",
+        "无人化生产"
+      ],
+      "images": [
+        "images/products/md-350-1.jpg"
+      ],
+      "highlights": [
+        "使用日本川崎高性能机械臂",
+        "全球首创3D视觉人工智能系统",
+        "自动识别不同箱型进行堆码匹配",
+        "自动调整码垛高低位置",
+        "自动识别来自前道工序的错误捆包",
+        "保障生产高效安全，减少人工和差错率"
+      ]
+    },
+    {
+      "id": "md-s2",
+      "model": "MD-S2",
+      "fullName": "机器人码垛机（双工位）",
+      "fullNameEn": "Robotic Palletizer (Dual-Station)",
+      "category": "feeder_palletizer",
+      "supplier": "odj",
+      "url": "https://odjmachine.com",
+      "description": "MD-S2采用双工位设计，可同时进行两个托盘的码垛作业，或一个工位码垛、一个工位取盘，大幅提升效率。",
+      "keyFeatures": [
+        "双工位设计",
+        "双倍效率",
+        "连续作业",
+        "灵活配置",
+        "高产能"
+      ],
+      "specifications": {
+        "maxPayload": "250kg",
+        "maxReach": "3200mm",
+        "palletizingSpeed": "800 boxes/hour",
+        "boxSizeRange": "200×150×100 - 1000×800×600mm",
+        "palletSize": "1200×1000mm / 1200×800mm",
+        "powerConsumption": "30kW",
+        "dimensions": "8000×6000×4000mm"
+      },
+      "applications": [
+        "高产能需求",
+        "连续生产",
+        "大批量",
+        "多品种"
+      ],
+      "images": [
+        "images/products/md-s2-1.jpg"
+      ]
+    },
+    {
+      "id": "xjhd-2600gs",
+      "model": "XJHD-2600GS",
+      "fullName": "高速全能型糊钉一体机",
+      "fullNameEn": "High-Speed Multi-Function Folder Gluer Stitcher",
+      "category": "folder_gluer",
+      "supplier": "xinjun",
+      "url": "http://www.tsxinjun.com",
+      "description": "XJHD-2600GS是一款高速全能型糊钉一体机，可同时完成粘箱和钉箱作业，适合2600mm幅面的纸箱生产。",
+      "keyFeatures": [
+        "糊钉一体",
+        "高速生产",
+        "2600mm幅面",
+        "全能型",
+        "自动化程度高"
+      ],
+      "specifications": {
+        "maxBoardWidth": "2600mm",
+        "minBoardWidth": "400mm",
+        "maxSpeed": "300m/min",
+        "gluingType": "热熔胶/冷胶",
+        "stitchingType": "平钉/角钉",
+        "powerConsumption": "35kW",
+        "dimensions": "12000×3500×2200mm"
+      },
+      "applications": [
+        "标准纸箱",
+        "高速生产",
+        "大批量",
+        "规模化企业"
+      ],
+      "images": [
+        "images/products/xjhd-2600gs-1.jpg"
+      ]
+    },
+    {
+      "id": "xjhd-2800gs",
+      "model": "XJHD-2800GS",
+      "fullName": "高速全能型糊钉一体机",
+      "fullNameEn": "High-Speed Multi-Function Folder Gluer Stitcher",
+      "category": "folder_gluer",
+      "supplier": "xinjun",
+      "url": "http://www.tsxinjun.com",
+      "description": "XJHD-2800GS是2800mm幅面的高速糊钉一体机，适合大尺寸纸箱的生产，产能更高。",
+      "keyFeatures": [
+        "2800mm大幅面",
+        "高产能",
+        "糊钉一体",
+        "适合大纸箱",
+        "稳定可靠"
+      ],
+      "specifications": {
+        "maxBoardWidth": "2800mm",
+        "minBoardWidth": "400mm",
+        "maxSpeed": "300m/min",
+        "gluingType": "热熔胶/冷胶",
+        "stitchingType": "平钉/角钉",
+        "powerConsumption": "38kW",
+        "dimensions": "13000×3800×2300mm"
+      },
+      "applications": [
+        "大尺寸纸箱",
+        "工业包装",
+        "重型瓦楞",
+        "大型企业"
+      ],
+      "images": [
+        "images/products/xjhd-2800gs-1.jpg"
+      ]
+    },
+    {
+      "id": "xjhd-3300gs",
+      "model": "XJHD-3300GS",
+      "fullName": "高速全能型糊钉一体机",
+      "fullNameEn": "High-Speed Multi-Function Folder Gluer Stitcher",
+      "category": "folder_gluer",
+      "supplier": "xinjun",
+      "url": "http://www.tsxinjun.com",
+      "description": "XJHD-3300GS是超大幅面的高速糊钉一体机，3300mm的加工宽度可满足特大纸箱的生产需求。",
+      "keyFeatures": [
+        "3300mm超大幅面",
+        "特大纸箱",
+        "高速高效",
+        "糊钉一体",
+        "工业级"
+      ],
+      "specifications": {
+        "maxBoardWidth": "3300mm",
+        "minBoardWidth": "500mm",
+        "maxSpeed": "280m/min",
+        "gluingType": "热熔胶/冷胶",
+        "stitchingType": "平钉/角钉",
+        "powerConsumption": "45kW",
+        "dimensions": "14000×4200×2400mm"
+      },
+      "applications": [
+        "超大纸箱",
+        "特殊包装",
+        "重工业",
+        "大型设备包装"
+      ],
+      "images": [
+        "images/products/xjhd-3300gs-1.jpg"
+      ]
+    },
+    {
+      "id": "mk1300fz",
+      "model": "MK1300FZ",
+      "fullName": "翻转机",
+      "fullNameEn": "Turning Machine",
+      "category": "inspection",
+      "supplier": "mkm",
+      "url": "https://www.mkmchina.com/fanzhuanji/mk1300fz-fanzhuanji.html",
+      "description": "MK1300FZ翻转机可将纸板或纸箱进行180度翻转，用于底印转面印、或进行双面加工等工艺需求。",
+      "keyFeatures": [
+        "180度翻转",
+        "自动化翻转",
+        "高速稳定",
+        "适合双面加工",
+        "精确定位"
+      ],
+      "specifications": {
+        "maxBoardWidth": "1300mm",
+        "minBoardWidth": "300mm",
+        "maxSpeed": "150m/min",
+        "boardThickness": "1-15mm",
+        "powerConsumption": "12kW",
+        "dimensions": "6000×2500×2000mm"
+      },
+      "applications": [
+        "底印转面印",
+        "双面加工",
+        "特殊工艺",
+        "连线生产"
+      ],
+      "images": [
+        "images/products/mk1300fz-1.jpg"
+      ]
+    },
+    {
+      "id": "mk6500qc",
+      "model": "MK6500QC",
+      "fullName": "印刷检品机",
+      "fullNameEn": "Print Inspection Machine",
+      "category": "inspection",
+      "supplier": "mkm",
+      "url": "https://www.mkmchina.com/jianpinshebei/mk650qc.html",
+      "description": "MK6500QC采用高清摄像头和图像识别技术，可自动检测印刷质量，发现缺陷自动剔除，确保产品质量。",
+      "keyFeatures": [
+        "自动质量检测",
+        "图像识别技术",
+        "自动剔除缺陷",
+        "高清摄像",
+        "质量追溯"
+      ],
+      "specifications": {
+        "maxBoardWidth": "1650mm",
+        "minBoardWidth": "300mm",
+        "inspectionSpeed": "150m/min",
+        "cameraResolution": "12MP",
+        "defectDetection": "色差、污点、套印不准、缺印",
+        "powerConsumption": "8kW",
+        "dimensions": "5000×2200×1800mm"
+      },
+      "applications": [
+        "质量控制",
+        "高端印刷",
+        "品牌包装",
+        "零缺陷生产"
+      ],
+      "images": [
+        "images/products/mk6500qc-1.jpg"
+      ]
+    },
+    {
+      "id": "mk420-550-mini",
+      "model": "MK420/550 mini",
+      "fullName": "印刷检品机",
+      "fullNameEn": "Print Inspection Machine",
+      "category": "inspection",
+      "supplier": "mkm",
+      "url": "https://www.mkmchina.com/jianpinshebei/youzhen-mk420-550q-mini-jianpinji.html",
+      "description": "MK420/550 mini是紧凑型检品机，适合中小幅面的印刷质量检测，占地面积小，投资成本低。",
+      "keyFeatures": [
+        "紧凑型设计",
+        "中小幅面",
+        "占地小",
+        "性价比高",
+        "适合中小企业"
+      ],
+      "specifications": {
+        "maxBoardWidth": "550mm",
+        "minBoardWidth": "200mm",
+        "inspectionSpeed": "100m/min",
+        "cameraResolution": "8MP",
+        "defectDetection": "色差、污点、套印不准",
+        "powerConsumption": "5kW",
+        "dimensions": "3500×1800×1600mm"
+      },
+      "applications": [
+        "中小企业",
+        "标准检测",
+        "入门级质检",
+        "小批量生产"
+      ],
+      "images": [
+        "images/products/mk420-550-mini-1.jpg"
+      ]
+    }
+  ]
+}
+

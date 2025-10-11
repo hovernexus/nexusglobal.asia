@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Detail - NEXUS Global</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product-navigation.css">
+    <style>
+        .article-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5f8d 100%);
+            color: white;
+            padding: 120px 0 60px;
+        }
+
+        .article-header {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .article-category {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .article-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .article-content {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .article-body {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #333;
+        }
+
+        .article-body h2 {
+            font-size: 2rem;
+            margin: 50px 0 20px;
+            color: #1e3a5f;
+        }
+
+        .article-body h3 {
+            font-size: 1.6rem;
+            margin: 40px 0 15px;
+            color: #1e3a5f;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+        }
+
+        .article-body ul {
+            margin: 25px 0;
+            padding-left: 30px;
+        }
+
+        .article-body li {
+            margin-bottom: 15px;
+        }
+
+        .article-quote {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 30px;
+            margin: 40px 0;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        .article-footer {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 20px;
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            padding: 8px 20px;
+            background: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .share-btn {
+            padding: 12px 25px;
+            background: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .related-news {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .related-news h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1e3a5f;
+        }
+
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .article-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <!-- Main Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">⬡</span>
+                    <div class="logo-text-wrapper">
+                        <span class="logo-text">NEXUS</span>
+                        <span class="logo-subtitle">GLOBAL HOLDINGS</span>
+                    </div>
+                </a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li class="has-dropdown">
+                        <a href="#home" class="active">Home</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">About NEXUS</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#about">Company Overview <span class="arrow">→</span></a></li>
+                                        <li><a href="#mission">Our Mission <span class="arrow">→</span></a></li>
+                                        <li><a href="#team">Leadership Team <span class="arrow">→</span></a></li>
+                                        <li><a href="#history">Company History <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Why Choose Us</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#advantages">Core Advantages <span class="arrow">→</span></a></li>
+                                        <li><a href="#quality">Quality Assurance <span class="arrow">→</span></a></li>
+                                        <li><a href="#certifications">Certifications <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#solutions">Solutions</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">By Production Stage</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#complete-line">Complete Production Line <span class="arrow">→</span></a></li>
+                                        <li><a href="#equipment-upgrade">Equipment Upgrade <span class="arrow">→</span></a></li>
+                                        <li><a href="#automation">Automation Solutions <span class="arrow">→</span></a></li>
+                                        <li><a href="#maintenance">Maintenance & Support <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">By Industry</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#ecommerce">E-commerce Packaging <span class="arrow">→</span></a></li>
+                                        <li><a href="#food-beverage">Food & Beverage <span class="arrow">→</span></a></li>
+                                        <li><a href="#industrial">Industrial Packaging <span class="arrow">→</span></a></li>
+                                        <li><a href="#retail">Retail Packaging <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Support</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="ai-consultant.html">Solution Consulting <span class="arrow">→</span></a></li>
+                                        <li><a href="#cases">Case Studies <span class="arrow">→</span></a></li>
+                                        <li><a href="#roi">ROI Calculator <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Products Navigation Menu -->
+                    <li class="has-dropdown">
+                        <a href="#products">Products</a>
+                        <div class="mega-dropdown products-mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <!-- Digital Printing Machines -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Digital Printing Machines</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-detail-dynamic.html?id=glory160x-hd">Glory160X HD <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=ultra2500w">Ultra2500W <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=ultra2500w-pro">Ultra2500W Pro <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mcb2500">MCB2500 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mcb2512">MCB2512 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=scb1600">SCB1600 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=digital_printer" class="view-all">View All →</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Die-Cutting Machines -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Die-Cutting Machines</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-detail-dynamic.html?id=td800s">TD800S <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=td1650s">TD1650S <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=ds106">DS106 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk1060f">MK1060F Laser <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk800sf">MK800SF Laser <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk21060vs">MK21060VS Dual Unit <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=die_cutting" class="view-all">View All →</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Feeder & Palletizer -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Feeder & Palletizer</h4>
+                                    <ul class="mega-links">
+                                        <li class="featured"><a href="product-detail-dynamic.html?id=md-350">MD-350 Smart Palletizer <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=jxb">JXB Robotic Arm <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=qsl2">QSL2 Pre-Feeder <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=qsl3">QSL3 Baffle Type <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=qsl4">QSL4 Basket Type <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=md-s2">MD-S2 Dual Station <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=feeder_palletizer" class="view-all">View All →</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Folder Gluer & Stitcher -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Folder Gluer & Stitcher</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-detail-dynamic.html?id=xjhd-2600gs">XJHD-2600GS <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=xjhd-2800gs">XJHD-2800GS <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=xjhd-3300gs">XJHD-3300GS <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=folder_gluer" class="view-all">View All →</a></li>
+                                    </ul>
+                                    <h4 class="mega-column-title" style="margin-top: 1rem;">Inspection Machines</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-detail-dynamic.html?id=mk1300fz">MK1300FZ <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk6500qc">MK6500QC <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=inspection" class="view-all">View All →</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Other Equipment -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">FFG Inline</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-list.html?category=ffg_inline">FFG Inline Series <span class="arrow">→</span></a></li>
+                                    </ul>
+
+                                    <h4 class="mega-column-title" style="margin-top: 1rem;">Laminator & Filming</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-list.html?category=laminator">Laminator Series <span class="arrow">→</span></a></li>
+                                    </ul>
+
+                                    <h4 class="mega-column-title" style="margin-top: 1rem;">Pulp Molding</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-list.html?category=pulp_molding">Pulp Molding Series <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Quick Links -->
+                                <div class="mega-column mega-column-highlight">
+                                    <h4 class="mega-column-title">Quick Links</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-list.html" class="highlight-link">Product Overview <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?featured=true" class="highlight-link">Featured Products <span class="arrow">→</span></a></li>
+                                        <li><a href="#" class="highlight-link">Product Comparison <span class="arrow">→</span></a></li>
+                                        <li><a href="ai-consultant.html" class="highlight-link">AI Selection Consultant <span class="arrow">→</span></a></li>
+                                        <li><a href="contact.html" class="highlight-link">Get Quote <span class="arrow">→</span></a></li>
+                                    </ul>
+
+                                    <div class="mega-cta">
+                                        <h5>Need Help Choosing Equipment?</h5>
+                                        <p>Our expert team is ready to assist you</p>
+                                        <a href="contact.html" class="cta-button">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#service">Service & Support</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Pre-Sales Support</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="ai-consultant.html">AI Consultant <span class="arrow">→</span></a></li>
+                                        <li><a href="#diagnosis">Production Line Diagnosis <span class="arrow">→</span></a></li>
+                                        <li><a href="#quote">Get Quote <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">After-Sales Support</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#installation">Installation Service <span class="arrow">→</span></a></li>
+                                        <li><a href="#maintenance">Maintenance Service <span class="arrow">→</span></a></li>
+                                        <li><a href="#training">Training Programs <span class="arrow">→</span></a></li>
+                                        <li><a href="#spare-parts">Spare Parts <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Resources</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#manuals">User Manuals <span class="arrow">→</span></a></li>
+                                        <li><a href="#videos">Video Tutorials <span class="arrow">→</span></a></li>
+                                        <li><a href="#faq">FAQs <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="about-us.html">About Us</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Company</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#about">Company Overview <span class="arrow">→</span></a></li>
+                                        <li><a href="#mission">Mission & Vision <span class="arrow">→</span></a></li>
+                                        <li><a href="#team">Leadership Team <span class="arrow">→</span></a></li>
+                                        <li><a href="#careers">Careers <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Partnerships</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#certifications">Certifications <span class="arrow">→</span></a></li>
+                                        <li><a href="#partners">Our Partners <span class="arrow">→</span></a></li>
+                                        <li><a href="registered-companies.html">Registered Companies <span class="arrow">→</span></a></li>
+                                        <li><a href="supplier-registration.html">Become a Supplier <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="news.html">News</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Latest Updates</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#company-news">Company News <span class="arrow">→</span></a></li>
+                                        <li><a href="#industry-news">Industry News <span class="arrow">→</span></a></li>
+                                        <li><a href="#events">Events & Exhibitions <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Resources</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#blog">Blog <span class="arrow">→</span></a></li>
+                                        <li><a href="#whitepapers">Whitepapers <span class="arrow">→</span></a></li>
+                                        <li><a href="#press">Press Releases <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="contact.html">Contact</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Get in Touch</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#contact-form">Contact Form <span class="arrow">→</span></a></li>
+                                        <li><a href="ai-consultant.html">Online Consultation <span class="arrow">→</span></a></li>
+                                        <li><a href="#quote">Request Quote <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Locations</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#singapore">Singapore Office <span class="arrow">→</span></a></li>
+                                        <li><a href="#china">China Office <span class="arrow">→</span></a></li>
+                                        <li><a href="#global">Global Network <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="nav-actions">
+                    <select class="language-selector" aria-label="Language selector">
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                        <option value="pt">Português</option>
+                    </select>
+                    <button class="btn-cta">Get Quote</button>
+                </div>
+
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Hero -->
+    <section class="article-hero">
+        <div class="article-header">
+            <span class="article-category">TECHNOLOGY</span>
+            <h1 id="articleTitle">Loading...</h1>
+            <div class="article-meta">
+                <span id="articleDate">📅 Loading...</span>
+                <span id="articleAuthor">👤 Loading...</span>
+                <span id="articleReadTime">⏱️ Loading...</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <div class="article-image" id="articleImage">📰</div>
+        
+        <div class="article-body" id="articleBody">
+            <p>Loading article content...</p>
+        </div>
+
+        <div class="article-footer">
+            <h3 style="margin-bottom: 20px;">Tags</h3>
+            <div class="article-tags" id="articleTags">
+                <span class="tag">Loading...</span>
+            </div>
+
+            <h3 style="margin: 30px 0 20px;">Share this article</h3>
+            <div class="share-buttons">
+                <button class="share-btn">📘 Facebook</button>
+                <button class="share-btn">🐦 Twitter</button>
+                <button class="share-btn">💼 LinkedIn</button>
+                <button class="share-btn">✉️ Email</button>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related News -->
+    <section class="related-news">
+        <h2>Related Articles</h2>
+        <div class="news-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px;">
+            <!-- Related articles will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>NEXUS<span style="color: var(--accent-color);">Global</span></h3>
+                    <p>The world's leading platform for corrugated packaging equipment</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="supplier-registration.html">Supplier Registration</a></li>
+                        <li><a href="customer-registration.html">Customer Registration</a></li>
+                        <li><a href="#products">Browse Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>📍 Singapore</p>
+                    <p>📞 +65 6123 4567</p>
+                    <p>✉️ info@nexusglobal.asia</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NEXUS Global Holdings Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample news data
+        const newsData = {
+            'featured': {
+                title: 'NEXUS Global Launches AI-Powered Equipment Matching Platform',
+                date: 'December 15, 2024',
+                author: 'Editorial Team',
+                readTime: '8 min read',
+                category: 'Company Updates',
+                image: '🚀',
+                content: `
+                    <p>Singapore - NEXUS Global Holdings Inc. is proud to announce the launch of our revolutionary AI-powered equipment matching platform, marking a significant milestone in the digital transformation of the corrugated packaging industry.</p>
+
+                    <h2>Revolutionizing Equipment Selection</h2>
+                    <p>Finding the right equipment has traditionally been a time-consuming and complex process, often requiring weeks of research, multiple supplier consultations, and extensive technical comparisons. Our new AI-powered platform changes this paradigm entirely.</p>
+
+                    <p>The platform leverages advanced machine learning algorithms to analyze:</p>
+                    <ul>
+                        <li>Production requirements and capacity needs</li>
+                        <li>Budget constraints and financing options</li>
+                        <li>Technical specifications and compatibility</li>
+                        <li>Energy efficiency and sustainability goals</li>
+                        <li>Delivery timelines and installation requirements</li>
+                    </ul>
+
+                    <div class="article-quote">
+                        "This technology represents a quantum leap in how manufacturers discover and procure equipment. What used to take weeks now takes minutes, with better results and higher confidence." - Hover Shen, Co-Founder & CEO
+                    </div>
+
+                    <h2>Key Features</h2>
+                    <p>The new platform includes several groundbreaking features:</p>
+
+                    <h3>1. Intelligent Matching Algorithm</h3>
+                    <p>Our proprietary algorithm considers over 150 parameters to recommend the most suitable equipment options, ranked by compatibility score and total cost of ownership.</p>
+
+                    <h3>2. Virtual Equipment Tours</h3>
+                    <p>Experience equipment through immersive 3D visualizations and virtual factory tours, eliminating the need for costly site visits during the initial evaluation phase.</p>
+
+                    <h3>3. Real-Time Availability</h3>
+                    <p>See live inventory status, delivery timelines, and pricing from all suppliers in one unified interface.</p>
+
+                    <h3>4. Comparison Tools</h3>
+                    <p>Side-by-side comparisons of specifications, pricing, energy consumption, and total cost of ownership help you make informed decisions quickly.</p>
+
+                    <h2>Industry Impact</h2>
+                    <p>Early beta testers report dramatic improvements in their equipment procurement process:</p>
+                    <ul>
+                        <li>85% reduction in time spent researching equipment options</li>
+                        <li>40% improvement in finding equipment that matches requirements</li>
+                        <li>30% average cost savings through better price comparison</li>
+                        <li>95% user satisfaction rating</li>
+                    </ul>
+
+                    <h2>Looking Forward</h2>
+                    <p>This launch is just the beginning. We're already working on the next generation of features, including predictive maintenance integration, augmented reality equipment previews, and blockchain-based transaction security.</p>
+
+                    <p>The platform is now live and available to all registered users. New users can sign up for free and start exploring equipment options immediately.</p>
+                `,
+                tags: ['AI Technology', 'Platform Launch', 'Innovation', 'Digital Transformation']
+            },
+            '1': {
+                title: 'The Future of Digital Printing in Corrugated Packaging',
+                date: 'December 10, 2024',
+                author: 'Technical Team',
+                readTime: '5 min read',
+                category: 'Technology',
+                image: '🖨️',
+                content: `
+                    <p>Digital printing technology is revolutionizing the corrugated packaging industry, offering unprecedented flexibility, speed, and cost-effectiveness for short to medium production runs.</p>
+
+                    <h2>The Digital Advantage</h2>
+                    <p>Traditional flexographic printing requires expensive plates and lengthy setup times, making it economical only for large production runs. Digital printing eliminates these barriers, enabling:</p>
+
+                    <ul>
+                        <li>No minimum order quantities</li>
+                        <li>Instant design changes without new plates</li>
+                        <li>Personalization and variable data printing</li>
+                        <li>Faster time to market</li>
+                        <li>Reduced waste and inventory costs</li>
+                    </ul>
+
+                    <h2>Technology Trends</h2>
+                    <p>The latest generation of digital printing equipment offers impressive capabilities that were unimaginable just a few years ago...</p>
+                `,
+                tags: ['Digital Printing', 'Technology', 'Innovation']
+            }
+        };
+
+        // Load article based on URL parameter
+        function loadArticle() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id') || 'featured';
+            const article = newsData[articleId] || newsData['featured'];
+
+            document.getElementById('articleTitle').textContent = article.title;
+            document.getElementById('articleDate').textContent = `📅 ${article.date}`;
+            document.getElementById('articleAuthor').textContent = `👤 By ${article.author}`;
+            document.getElementById('articleReadTime').textContent = `⏱️ ${article.readTime}`;
+            document.getElementById('articleImage').textContent = article.image;
+            document.getElementById('articleBody').innerHTML = article.content;
+            
+            // Load tags
+            const tagsContainer = document.getElementById('articleTags');
+            tagsContainer.innerHTML = article.tags.map(tag => 
+                `<span class="tag">${tag}</span>`
+            ).join('');
+
+            // Update page title
+            document.title = `${article.title} - NEXUS Global`;
+        }
+
+        // Load article on page load
+        loadArticle();
+
+        // Share buttons
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('Share functionality will be implemented with social media APIs');
+            });
+        });
+    </script>
+</body>
+</html>

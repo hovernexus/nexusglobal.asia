@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier Registration - NEXUS GLOBAL HOLDINGS</title>
+    <meta name="description" content="Register as a certified equipment supplier with NEXUS GLOBAL HOLDINGS">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product-navigation.css">
+    <link rel="stylesheet" href="registration.css">
+    <link rel="stylesheet" href="supplier-product-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="supplier-product-handler.js" defer></script>
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">⬡</span>
+                    <div class="logo-text-wrapper">
+                        <span class="logo-text">NEXUS</span>
+                        <span class="logo-subtitle">GLOBAL HOLDINGS</span>
+                    </div>
+                </a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li class="has-dropdown">
+                        <a href="#home" class="active">Home</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">About NEXUS</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#about">Company Overview <span class="arrow">→</span></a></li>
+                                        <li><a href="#mission">Our Mission <span class="arrow">→</span></a></li>
+                                        <li><a href="#team">Leadership Team <span class="arrow">→</span></a></li>
+                                        <li><a href="#history">Company History <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Why Choose Us</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#advantages">Core Advantages <span class="arrow">→</span></a></li>
+                                        <li><a href="#quality">Quality Assurance <span class="arrow">→</span></a></li>
+                                        <li><a href="#certifications">Certifications <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#solutions">Solutions</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">By Production Stage</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#complete-line">Complete Production Line <span class="arrow">→</span></a></li>
+                                        <li><a href="#equipment-upgrade">Equipment Upgrade <span class="arrow">→</span></a></li>
+                                        <li><a href="#automation">Automation Solutions <span class="arrow">→</span></a></li>
+                                        <li><a href="#maintenance">Maintenance & Support <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">By Industry</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#ecommerce">E-commerce Packaging <span class="arrow">→</span></a></li>
+                                        <li><a href="#food-beverage">Food & Beverage <span class="arrow">→</span></a></li>
+                                        <li><a href="#industrial">Industrial Packaging <span class="arrow">→</span></a></li>
+                                        <li><a href="#retail">Retail Packaging <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Support</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="ai-consultant.html">Solution Consulting <span class="arrow">→</span></a></li>
+                                        <li><a href="#cases">Case Studies <span class="arrow">→</span></a></li>
+                                        <li><a href="#roi">ROI Calculator <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Products Navigation Menu -->
+                    <li class="has-dropdown">
+                        <a href="#products">Products</a>
+                        <div class="mega-dropdown products-mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <!-- Digital Printing Machines -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Digital Printing Machines</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-detail-dynamic.html?id=glory160x-hd">Glory160X HD <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=ultra2500w">Ultra2500W <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=ultra2500w-pro">Ultra2500W Pro <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mcb2500">MCB2500 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mcb2512">MCB2512 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=scb1600">SCB1600 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=digital_printer" class="view-all">View All →</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Die-Cutting Machines -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Die-Cutting Machines</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-detail-dynamic.html?id=td800s">TD800S <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=td1650s">TD1650S <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=ds106">DS106 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk1060f">MK1060F Laser <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk800sf">MK800SF Laser <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk21060vs">MK21060VS Dual Unit <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=die_cutting" class="view-all">View All →</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Feeder & Palletizer -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Feeder & Palletizer</h4>
+                                    <ul class="mega-links">
+                                        <li class="featured"><a href="product-detail-dynamic.html?id=md-350">MD-350 Smart Palletizer <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=jxb">JXB Robotic Arm <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=qsl2">QSL2 Pre-Feeder <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=qsl3">QSL3 Baffle Type <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=qsl4">QSL4 Basket Type <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=md-s2">MD-S2 Dual Station <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=feeder_palletizer" class="view-all">View All →</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Folder Gluer & Stitcher -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Folder Gluer & Stitcher</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-detail-dynamic.html?id=xjhd-2600gs">XJHD-2600GS <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=xjhd-2800gs">XJHD-2800GS <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=xjhd-3300gs">XJHD-3300GS <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=folder_gluer" class="view-all">View All →</a></li>
+                                    </ul>
+                                    <h4 class="mega-column-title" style="margin-top: 1rem;">Inspection Machines</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-detail-dynamic.html?id=mk1300fz">MK1300FZ <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk6500qc">MK6500QC <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=inspection" class="view-all">View All →</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Other Equipment -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">FFG Inline</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-list.html?category=ffg_inline">FFG Inline Series <span class="arrow">→</span></a></li>
+                                    </ul>
+
+                                    <h4 class="mega-column-title" style="margin-top: 1rem;">Laminator & Filming</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-list.html?category=laminator">Laminator Series <span class="arrow">→</span></a></li>
+                                    </ul>
+
+                                    <h4 class="mega-column-title" style="margin-top: 1rem;">Pulp Molding</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-list.html?category=pulp_molding">Pulp Molding Series <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Quick Links -->
+                                <div class="mega-column mega-column-highlight">
+                                    <h4 class="mega-column-title">Quick Links</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-list.html" class="highlight-link">Product Overview <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?featured=true" class="highlight-link">Featured Products <span class="arrow">→</span></a></li>
+                                        <li><a href="#" class="highlight-link">Product Comparison <span class="arrow">→</span></a></li>
+                                        <li><a href="ai-consultant.html" class="highlight-link">AI Selection Consultant <span class="arrow">→</span></a></li>
+                                        <li><a href="contact.html" class="highlight-link">Get Quote <span class="arrow">→</span></a></li>
+                                    </ul>
+
+                                    <div class="mega-cta">
+                                        <h5>Need Help Choosing Equipment?</h5>
+                                        <p>Our expert team is ready to assist you</p>
+                                        <a href="contact.html" class="cta-button">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#service">Service & Support</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Pre-Sales Support</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="ai-consultant.html">AI Consultant <span class="arrow">→</span></a></li>
+                                        <li><a href="#diagnosis">Production Line Diagnosis <span class="arrow">→</span></a></li>
+                                        <li><a href="#quote">Get Quote <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">After-Sales Support</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#installation">Installation Service <span class="arrow">→</span></a></li>
+                                        <li><a href="#maintenance">Maintenance Service <span class="arrow">→</span></a></li>
+                                        <li><a href="#training">Training Programs <span class="arrow">→</span></a></li>
+                                        <li><a href="#spare-parts">Spare Parts <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Resources</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#manuals">User Manuals <span class="arrow">→</span></a></li>
+                                        <li><a href="#videos">Video Tutorials <span class="arrow">→</span></a></li>
+                                        <li><a href="#faq">FAQs <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="about-us.html">About Us</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Company</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#about">Company Overview <span class="arrow">→</span></a></li>
+                                        <li><a href="#mission">Mission & Vision <span class="arrow">→</span></a></li>
+                                        <li><a href="#team">Leadership Team <span class="arrow">→</span></a></li>
+                                        <li><a href="#careers">Careers <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Partnerships</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#certifications">Certifications <span class="arrow">→</span></a></li>
+                                        <li><a href="#partners">Our Partners <span class="arrow">→</span></a></li>
+                                        <li><a href="registered-companies.html">Registered Companies <span class="arrow">→</span></a></li>
+                                        <li><a href="supplier-registration.html">Become a Supplier <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="news.html">News</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Latest Updates</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#company-news">Company News <span class="arrow">→</span></a></li>
+                                        <li><a href="#industry-news">Industry News <span class="arrow">→</span></a></li>
+                                        <li><a href="#events">Events & Exhibitions <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Resources</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#blog">Blog <span class="arrow">→</span></a></li>
+                                        <li><a href="#whitepapers">Whitepapers <span class="arrow">→</span></a></li>
+                                        <li><a href="#press">Press Releases <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="contact.html">Contact</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Get in Touch</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#contact-form">Contact Form <span class="arrow">→</span></a></li>
+                                        <li><a href="ai-consultant.html">Online Consultation <span class="arrow">→</span></a></li>
+                                        <li><a href="#quote">Request Quote <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Locations</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#singapore">Singapore Office <span class="arrow">→</span></a></li>
+                                        <li><a href="#china">China Office <span class="arrow">→</span></a></li>
+                                        <li><a href="#global">Global Network <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="nav-actions">
+                    <select class="language-selector" aria-label="Language selector">
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                        <option value="pt">Português</option>
+                    </select>
+                    <button class="btn-cta">Get Quote</button>
+                </div>
+
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Hero -->
+    <section class="registration-hero">
+        <div class="container">
+            <div class="registration-hero-content">
+                <h1 class="registration-hero-title">Supplier Registration</h1>
+                <p class="registration-hero-subtitle">Join our global network of certified equipment suppliers and reach thousands of corrugated packaging manufacturers across Asia</p>
+                <div class="registration-benefits">
+                    <div class="benefit-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Association Certification</span>
+                    </div>
+                    <div class="benefit-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Global Exposure</span>
+                    </div>
+                    <div class="benefit-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Product Showcase Platform</span>
+                    </div>
+                    <div class="benefit-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Direct Customer Access</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="registration-form-section">
+        <div class="container">
+            <form id="supplierRegistrationForm" class="registration-form">
+                <!-- Company Information -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <span class="section-number">1</span>
+                        Company Information
+                    </h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="companyName" class="form-label">Company Name *</label>
+                            <input type="text" id="companyName" name="companyName" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registrationNumber" class="form-label">Business Registration Number *</label>
+                            <input type="text" id="registrationNumber" name="registrationNumber" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="establishedYear" class="form-label">Established Year *</label>
+                            <input type="number" id="establishedYear" name="establishedYear" class="form-input" min="1900" max="2025" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country" class="form-label">Country *</label>
+                            <select id="country" name="country" class="form-select" required>
+                                <option value="">Select Country</option>
+                                <option value="China">China</option>
+                                <option value="India">India</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city" class="form-label">City *</label>
+                            <input type="text" id="city" name="city" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="address" class="form-label">Full Address *</label>
+                            <textarea id="address" name="address" class="form-textarea" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="website" class="form-label">Company Website</label>
+                            <input type="url" id="website" name="website" class="form-input" placeholder="https://">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="employeeCount" class="form-label">Number of Employees *</label>
+                            <select id="employeeCount" name="employeeCount" class="form-select" required>
+                                <option value="">Select Range</option>
+                                <option value="1-50">1-50</option>
+                                <option value="51-200">51-200</option>
+                                <option value="201-500">201-500</option>
+                                <option value="501-1000">501-1000</option>
+                                <option value="1000+">1000+</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Person -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <span class="section-number">2</span>
+                        Primary Contact Person
+                    </h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="contactName" class="form-label">Full Name *</label>
+                            <input type="text" id="contactName" name="contactName" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactTitle" class="form-label">Job Title *</label>
+                            <input type="text" id="contactTitle" name="contactTitle" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail" class="form-label">Email Address *</label>
+                            <input type="email" id="contactEmail" name="contactEmail" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactPhone" class="form-label">Phone Number *</label>
+                            <input type="tel" id="contactPhone" name="contactPhone" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactWhatsApp" class="form-label">WhatsApp Number</label>
+                            <input type="tel" id="contactWhatsApp" name="contactWhatsApp" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactWeChat" class="form-label">WeChat ID</label>
+                            <input type="text" id="contactWeChat" name="contactWeChat" class="form-input">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Categories -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <span class="section-number">3</span>
+                        Product Categories & Specialization
+                    </h2>
+                    <div class="form-group full-width">
+                        <label class="form-label">Select Product Categories You Supply * (Select all that apply)</label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="productCategories" value="Digital Printing Machines">
+                                <span>Digital Printing Machines</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="productCategories" value="Die-Cutting Machines">
+                                <span>Die-Cutting Machines</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="productCategories" value="FFG Inline">
+                                <span>FFG Inline</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="productCategories" value="Folder Gluer/Stitcher">
+                                <span>Folder Gluer/Stitcher</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="productCategories" value="Laminator/Filming Machine">
+                                <span>Laminator/Filming Machine</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="productCategories" value="Feeder/Palletizer">
+                                <span>Feeder/Palletizer</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="productCategories" value="Corrugator Line">
+                                <span>Corrugator Line</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="productCategories" value="Flexo Printing Machines">
+                                <span>Flexo Printing Machines</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="productDescription" class="form-label">Product Line Description *</label>
+                        <textarea id="productDescription" name="productDescription" class="form-textarea" rows="5" placeholder="Describe your main product lines, specializations, and unique selling points..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="annualProduction" class="form-label">Annual Production Capacity *</label>
+                        <select id="annualProduction" name="annualProduction" class="form-select" required>
+                            <option value="">Select Range</option>
+                            <option value="1-50">1-50 units/year</option>
+                            <option value="51-100">51-100 units/year</option>
+                            <option value="101-200">101-200 units/year</option>
+                            <option value="201-500">201-500 units/year</option>
+                            <option value="500+">500+ units/year</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="exportExperience" class="form-label">Export Experience *</label>
+                        <select id="exportExperience" name="exportExperience" class="form-select" required>
+                            <option value="">Select Option</option>
+                            <option value="No Experience">No Export Experience</option>
+                            <option value="1-3 years">1-3 years</option>
+                            <option value="3-5 years">3-5 years</option>
+                            <option value="5-10 years">5-10 years</option>
+                            <option value="10+ years">10+ years</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Certifications & Standards -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <span class="section-number">4</span>
+                        Certifications & Quality Standards
+                    </h2>
+                    <div class="form-group full-width">
+                        <label class="form-label">Certifications Held (Select all that apply)</label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="certifications" value="ISO 9001">
+                                <span>ISO 9001</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="certifications" value="ISO 14001">
+                                <span>ISO 14001</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="certifications" value="CE">
+                                <span>CE</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="certifications" value="UL">
+                                <span>UL</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="certifications" value="CPFPPPC Member">
+                                <span>CPFPPPC Member</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="certifications" value="ACCA Member">
+                                <span>ACCA Member</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="otherCertifications" class="form-label">Other Certifications</label>
+                        <input type="text" id="otherCertifications" name="otherCertifications" class="form-input" placeholder="List any other certifications...">
+                    </div>
+                </div>
+
+                <!-- Product Upload Section -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <span class="section-number">5</span>
+                        Initial Product Upload
+                    </h2>
+                    <p class="form-section-description">Upload your first product to showcase on our platform. You can add more products after registration.</p>
+                    
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="productName" class="form-label">Product Model/Name *</label>
+                            <input type="text" id="productName" name="productName" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productCategory" class="form-label">Product Category *</label>
+                            <select id="productCategory" name="productCategory" class="form-select" required>
+                                <option value="">Select Category</option>
+                                <option value="Digital Printing Machines">Digital Printing Machines</option>
+                                <option value="Die-Cutting Machines">Die-Cutting Machines</option>
+                                <option value="FFG Inline">FFG Inline</option>
+                                <option value="Folder Gluer/Stitcher">Folder Gluer/Stitcher</option>
+                                <option value="Laminator/Filming Machine">Laminator/Filming Machine</option>
+                                <option value="Feeder/Palletizer">Feeder/Palletizer</option>
+                                <option value="Corrugator Line">Corrugator Line</option>
+                                <option value="Flexo Printing Machines">Flexo Printing Machines</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productPrice" class="form-label">Price Range (USD) *</label>
+                            <select id="productPrice" name="productPrice" class="form-select" required>
+                                <option value="">Select Range</option>
+                                <option value="Under $50,000">Under $50,000</option>
+                                <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                                <option value="$100,000 - $250,000">$100,000 - $250,000</option>
+                                <option value="$250,000 - $500,000">$250,000 - $500,000</option>
+                                <option value="$500,000 - $1,000,000">$500,000 - $1,000,000</option>
+                                <option value="Over $1,000,000">Over $1,000,000</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="productFeatures" class="form-label">Key Features & Specifications *</label>
+                            <textarea id="productFeatures" name="productFeatures" class="form-textarea" rows="5" placeholder="List the main features, technical specifications, and advantages of this product..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="productApplications" class="form-label">Applications & Use Cases *</label>
+                            <textarea id="productApplications" name="productApplications" class="form-textarea" rows="4" placeholder="Describe typical applications, industries served, and use cases..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="productImages" class="form-label">Product Images *</label>
+                            <div class="file-upload-area">
+                                <input type="file" id="productImages" name="productImages" accept="image/*" multiple class="file-input">
+                                <div class="file-upload-label">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="17 8 12 3 7 8"></polyline>
+                                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                                    </svg>
+                                    <p>Click to upload or drag and drop</p>
+                                    <span>PNG, JPG up to 10MB (Maximum 5 images)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <span class="section-number">6</span>
+                        Terms & Conditions
+                    </h2>
+                    <div class="form-group full-width">
+                        <label class="checkbox-label terms-checkbox">
+                            <input type="checkbox" name="agreeTerms" required>
+                            <span>I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a> *</span>
+                        </label>
+                        <label class="checkbox-label terms-checkbox">
+                            <input type="checkbox" name="agreeVerification" required>
+                            <span>I confirm that all information provided is accurate and I authorize NEXUS to verify the details with relevant associations *</span>
+                        </label>
+                        <label class="checkbox-label terms-checkbox">
+                            <input type="checkbox" name="agreeMarketing">
+                            <span>I agree to receive marketing communications and product updates from NEXUS</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">
+                        <span>Submit Registration</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                    <p class="form-note">After submission, our team will review your application within 3-5 business days</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">NEXUS GLOBAL HOLDINGS</h3>
+                    <p class="footer-description">Your trusted partner in corrugated packaging equipment solutions</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#solutions">Solutions</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Registration</h4>
+                    <ul class="footer-links">
+                        <li><a href="supplier-registration.html">Supplier Registration</a></li>
+                        <li><a href="customer-registration.html">Customer Registration</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="registration.js"></script>
+</body>
+</html>

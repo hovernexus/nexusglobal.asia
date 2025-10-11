@@ -1,0 +1,117 @@
+{
+  "suppliers": [
+    {
+      "id": "sup001",
+      "companyName": "TechPack Solutions Ltd.",
+      "companyNameZh": "科技包装解决方案有限公司",
+      "country": "China",
+      "city": "Shanghai",
+      "website": "www.techpack-solutions.com",
+      "logo": "images/supplier-techpack-logo.png",
+      "registrationDate": "2024-10-01",
+      "status": "approved",
+      "products": [
+        {
+          "id": "tp-dp-001",
+          "name": "TechPrint Pro 2500",
+          "category": "Digital Printing Machines",
+          "description": "High-precision digital inkjet printing machine for personalized corrugated packaging",
+          "specifications": {
+            "printingSpeed": "200 m/min",
+            "maxWidth": "2500mm",
+            "resolution": "1200 x 1200 dpi",
+            "inkType": "Water-based UV ink"
+          },
+          "features": [
+            "Variable data printing capability",
+            "Quick job changeover (< 5 minutes)",
+            "Integrated quality inspection system",
+            "Energy-efficient LED UV curing"
+          ],
+          "image": "images/product-digital-printer.jpg"
+        },
+        {
+          "id": "tp-dc-001",
+          "name": "AutoCut Pro 1060",
+          "category": "Die-Cutting Machines",
+          "description": "Precision automatic die-cutting machine with laser positioning",
+          "specifications": {
+            "maxWidth": "1060mm",
+            "maxSpeed": "8000 sheets/hour",
+            "accuracy": "±0.1mm",
+            "automation": "Fully automatic"
+          },
+          "features": [
+            "Laser positioning system",
+            "Automatic waste removal",
+            "Touch screen control panel",
+            "Safety interlock system"
+          ],
+          "image": "images/product-die-cutter.webp"
+        }
+      ]
+    },
+    {
+      "id": "sup002",
+      "companyName": "Global Corrugated Equipment Co.",
+      "companyNameZh": "环球瓦楞设备公司",
+      "country": "Germany",
+      "city": "Munich",
+      "website": "www.globalcorrugated.de",
+      "logo": "images/supplier-global-logo.png",
+      "registrationDate": "2024-10-05",
+      "status": "approved",
+      "products": [
+        {
+          "id": "gc-ffg-001",
+          "name": "FlexoMaster FFG-3000",
+          "category": "FFG Inline",
+          "description": "High-speed FFG inline production line for mass production",
+          "specifications": {
+            "productionSpeed": "300 m/min",
+            "maxWidth": "3000mm",
+            "printingUnits": "4 color",
+            "automation": "Industry 4.0 ready"
+          },
+          "features": [
+            "Servo-driven precision control",
+            "Automatic ink circulation system",
+            "Real-time production monitoring",
+            "Remote diagnostics capability"
+          ],
+          "image": "images/hero-production-line-1.jpg"
+        }
+      ]
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust001",
+      "companyName": "Premium Packaging Industries",
+      "companyNameZh": "优质包装工业公司",
+      "country": "United States",
+      "city": "Los Angeles",
+      "website": "www.premiumpack.com",
+      "logo": "images/customer-premium-logo.png",
+      "registrationDate": "2024-10-03",
+      "status": "approved",
+      "industry": "E-commerce Packaging",
+      "annualCapacity": "50 million boxes",
+      "employeeCount": "200-500"
+    },
+    {
+      "id": "cust002",
+      "companyName": "Asia Pacific Corrugated Manufacturing",
+      "companyNameZh": "亚太瓦楞纸制造公司",
+      "country": "Singapore",
+      "city": "Singapore",
+      "website": "www.apcm.com.sg",
+      "logo": "images/customer-apcm-logo.png",
+      "registrationDate": "2024-10-06",
+      "status": "approved",
+      "industry": "Food & Beverage Packaging",
+      "annualCapacity": "100 million boxes",
+      "employeeCount": "500+"
+    }
+  ]
+}

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Upload - NEXUS GLOBAL HOLDINGS</title>
+    <meta name="description" content="Upload your equipment product to NEXUS GLOBAL HOLDINGS platform">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/registration.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .product-upload-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .upload-form-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .upload-section {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .upload-section:last-child {
+            border-bottom: none;
+        }
+        
+        .upload-section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-field {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-field.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .field-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+        
+        .field-label.required::after {
+            content: " *";
+            color: #e53e3e;
+        }
+        
+        .field-input,
+        .field-textarea,
+        .field-select {
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .field-input:focus,
+        .field-textarea:focus,
+        .field-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .field-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .feature-list-input {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .feature-item input {
+            flex: 1;
+        }
+        
+        .btn-add-feature,
+        .btn-remove-feature {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-add-feature {
+            background: #48bb78;
+            color: white;
+        }
+        
+        .btn-add-feature:hover {
+            background: #38a169;
+        }
+        
+        .btn-remove-feature {
+            background: #fc8181;
+            color: white;
+        }
+        
+        .btn-remove-feature:hover {
+            background: #f56565;
+        }
+        
+        .file-upload-area {
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            background: #f7fafc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .file-upload-area:hover {
+            border-color: #667eea;
+            background: #edf2f7;
+        }
+        
+        .file-upload-icon {
+            font-size: 48px;
+            color: #a0aec0;
+            margin-bottom: 12px;
+        }
+        
+        .file-upload-text {
+            font-size: 16px;
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+        
+        .file-upload-hint {
+            font-size: 14px;
+            color: #a0aec0;
+        }
+        
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px 48px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+        }
+        
+        .help-text {
+            font-size: 13px;
+            color: #718096;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">⬡</span>
+                    <div class="logo-text-wrapper">
+                        <span class="logo-text">NEXUS</span>
+                        <span class="logo-subtitle">GLOBAL HOLDINGS</span>
+                    </div>
+                </a>
+
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="index.html#solutions">Solutions</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <select class="language-selector" aria-label="Language selector">
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                        <option value="pt">Português</option>
+                    </select>
+                    <a href="#" class="btn btn-primary">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Upload Section -->
+    <section class="product-upload-section">
+        <div class="container">
+            <div class="upload-form-container">
+                <h1 style="font-size: 32px; font-weight: 700; color: #2c5282; margin-bottom: 12px;">
+                    Product Upload Form
+                </h1>
+                <p style="font-size: 16px; color: #718096; margin-bottom: 40px;">
+                    Upload your equipment product following the same format as our product detail pages. This ensures consistency and professional presentation.
+                </p>
+
+                <form id="productUploadForm">
+                    <!-- Section 1: Basic Product Information -->
+                    <div class="upload-section">
+                        <h2 class="upload-section-title">
+                            <span class="section-icon">1</span>
+                            Basic Product Information
+                        </h2>
+                        
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="field-label required">Product Name</label>
+                                <input type="text" class="field-input" name="productName" 
+                                       placeholder="e.g., NEXUS-FLEXO 850" required>
+                                <p class="help-text">Use a clear, professional product name</p>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label required">Product Subtitle</label>
+                                <input type="text" class="field-input" name="productSubtitle" 
+                                       placeholder="e.g., Medium Format Flexographic Printing Press" required>
+                                <p class="help-text">Brief description of product type</p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-field full-width">
+                                <label class="field-label required">Product Category</label>
+                                <select class="field-select" name="productCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Digital Printing Machines">Digital Printing Machines</option>
+                                    <option value="Die-Cutting Machines">Die-Cutting Machines</option>
+                                    <option value="FFG Inline">FFG Inline</option>
+                                    <option value="Folder Gluer/Stitcher">Folder Gluer/Stitcher</option>
+                                    <option value="Laminator/Filming Machine">Laminator/Filming Machine</option>
+                                    <option value="Corrugator Line">Corrugator Line</option>
+                                    <option value="Flexo Printing Machines">Flexo Printing Machines</option>
+                                    <option value="Feeder/Palletizer">Feeder/Palletizer</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-field full-width">
+                                <label class="field-label required">Product Description</label>
+                                <textarea class="field-textarea" name="productDescription" 
+                                          placeholder="Provide a comprehensive description of your product, its purpose, and main benefits..." required></textarea>
+                                <p class="help-text">2-3 paragraphs describing the product and its benefits</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Key Features (5 bullet points) -->
+                    <div class="upload-section">
+                        <h2 class="upload-section-title">
+                            <span class="section-icon">2</span>
+                            Key Features (5 Points)
+                        </h2>
+                        
+                        <div class="feature-list-input" id="keyFeaturesList">
+                            <div class="feature-item">
+                                <input type="text" class="field-input" name="keyFeature1" 
+                                       placeholder="e.g., Maximum output with printing speeds of up to 300 m/min" required>
+                            </div>
+                            <div class="feature-item">
+                                <input type="text" class="field-input" name="keyFeature2" 
+                                       placeholder="e.g., Top price/performance ratio and maximum productivity" required>
+                            </div>
+                            <div class="feature-item">
+                                <input type="text" class="field-input" name="keyFeature3" 
+                                       placeholder="e.g., High substrate flexibility for various packaging materials" required>
+                            </div>
+                            <div class="feature-item">
+                                <input type="text" class="field-input" name="keyFeature4" 
+                                       placeholder="e.g., Short makeready times for fast job changes" required>
+                            </div>
+                            <div class="feature-item">
+                                <input type="text" class="field-input" name="keyFeature5" 
+                                       placeholder="e.g., Advanced automation and easy handling" required>
+                            </div>
+                        </div>
+                        <p class="help-text">Provide exactly 5 key features that highlight your product's main advantages</p>
+                    </div>
+
+                    <!-- Section 3: Main Features (Core Functional Modules) -->
+                    <div class="upload-section">
+                        <h2 class="upload-section-title">
+                            <span class="section-icon">3</span>
+                            Main Features (Core Functional Modules)
+                        </h2>
+                        
+                        <div id="mainFeaturesContainer">
+                            <div class="feature-module" style="margin-bottom: 30px; padding: 20px; background: #f7fafc; border-radius: 8px;">
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label class="field-label required">Module Title</label>
+                                        <input type="text" class="field-input" name="module1Title" 
+                                               placeholder="e.g., Intelligent Unwinding and Tension Control System" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field full-width">
+                                        <label class="field-label required">Module Description</label>
+                                        <textarea class="field-textarea" name="module1Description" 
+                                                  placeholder="Describe this functional module in detail..." required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-module" style="margin-bottom: 30px; padding: 20px; background: #f7fafc; border-radius: 8px;">
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label class="field-label required">Module Title</label>
+                                        <input type="text" class="field-input" name="module2Title" 
+                                               placeholder="e.g., High-Precision Printing Units" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field full-width">
+                                        <label class="field-label required">Module Description</label>
+                                        <textarea class="field-textarea" name="module2Description" 
+                                                  placeholder="Describe this functional module in detail..." required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-module" style="margin-bottom: 30px; padding: 20px; background: #f7fafc; border-radius: 8px;">
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label class="field-label required">Module Title</label>
+                                        <input type="text" class="field-input" name="module3Title" 
+                                               placeholder="e.g., AI-Powered Quality Inspection System" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field full-width">
+                                        <label class="field-label required">Module Description</label>
+                                        <textarea class="field-textarea" name="module3Description" 
+                                                  placeholder="Describe this functional module in detail..." required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-module" style="margin-bottom: 30px; padding: 20px; background: #f7fafc; border-radius: 8px;">
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label class="field-label required">Module Title</label>
+                                        <input type="text" class="field-input" name="module4Title" 
+                                               placeholder="e.g., Automatic Rewinding and Slitting Station" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field full-width">
+                                        <label class="field-label required">Module Description</label>
+                                        <textarea class="field-textarea" name="module4Description" 
+                                                  placeholder="Describe this functional module in detail..." required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="help-text">Provide 3-4 core functional modules that describe the main components or systems of your product</p>
+                    </div>
+
+                    <!-- Section 4: Application Areas -->
+                    <div class="upload-section">
+                        <h2 class="upload-section-title">
+                            <span class="section-icon">4</span>
+                            Application Areas
+                        </h2>
+                        
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="field-label required">Application 1 - Title</label>
+                                <input type="text" class="field-input" name="app1Title" 
+                                       placeholder="e.g., Food Packaging" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="field-label required">Application 1 - Examples (comma-separated)</label>
+                                <input type="text" class="field-input" name="app1Examples" 
+                                       placeholder="e.g., Snack packaging, Frozen food bags, Confectionery wrappers" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="field-label required">Application 2 - Title</label>
+                                <input type="text" class="field-input" name="app2Title" 
+                                       placeholder="e.g., Pharmaceutical" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="field-label required">Application 2 - Examples (comma-separated)</label>
+                                <input type="text" class="field-input" name="app2Examples" 
+                                       placeholder="e.g., Medicine pouches, Blister packaging, Medical device labels" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="field-label">Application 3 - Title</label>
+                                <input type="text" class="field-input" name="app3Title" 
+                                       placeholder="e.g., Personal Care">
+                            </div>
+                            <div class="form-field">
+                                <label class="field-label">Application 3 - Examples (comma-separated)</label>
+                                <input type="text" class="field-input" name="app3Examples" 
+                                       placeholder="e.g., Cosmetic labels, Shampoo pouches, Wet wipes packaging">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="field-label">Application 4 - Title</label>
+                                <input type="text" class="field-input" name="app4Title" 
+                                       placeholder="e.g., Labels & Tags">
+                            </div>
+                            <div class="form-field">
+                                <label class="field-label">Application 4 - Examples (comma-separated)</label>
+                                <input type="text" class="field-input" name="app4Examples" 
+                                       placeholder="e.g., Product labels, Security labels, Promotional stickers">
+                            </div>
+                        </div>
+                        <p class="help-text">Provide at least 2 application areas. You can add up to 4 applications.</p>
+                    </div>
+
+                    <!-- Section 5: Technical Specifications -->
+                    <div class="upload-section">
+                        <h2 class="upload-section-title">
+                            <span class="section-icon">5</span>
+                            Technical Specifications
+                        </h2>
+                        
+                        <div class="spec-grid">
+                            <div class="form-field">
+                                <label class="field-label required">Specification 1 - Name</label>
+                                <input type="text" class="field-input" name="spec1Name" 
+                                       placeholder="e.g., Max. Web Width" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="field-label required">Specification 1 - Value</label>
+                                <input type="text" class="field-input" name="spec1Value" 
+                                       placeholder="e.g., 850 mm" required>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label required">Specification 2 - Name</label>
+                                <input type="text" class="field-input" name="spec2Name" 
+                                       placeholder="e.g., Printing Speed" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="field-label required">Specification 2 - Value</label>
+                                <input type="text" class="field-input" name="spec2Value" 
+                                       placeholder="e.g., Up to 300 m/min" required>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label required">Specification 3 - Name</label>
+                                <input type="text" class="field-input" name="spec3Name" 
+                                       placeholder="e.g., Number of Colors" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="field-label required">Specification 3 - Value</label>
+                                <input type="text" class="field-input" name="spec3Value" 
+                                       placeholder="e.g., 1-8 colors" required>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label">Specification 4 - Name</label>
+                                <input type="text" class="field-input" name="spec4Name" 
+                                       placeholder="e.g., Substrate Material">
+                            </div>
+                            <div class="form-field">
+                                <label class="field-label">Specification 4 - Value</label>
+                                <input type="text" class="field-input" name="spec4Value" 
+                                       placeholder="e.g., Paper, Film, Foil">
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label">Specification 5 - Name</label>
+                                <input type="text" class="field-input" name="spec5Name" 
+                                       placeholder="e.g., Power Consumption">
+                            </div>
+                            <div class="form-field">
+                                <label class="field-label">Specification 5 - Value</label>
+                                <input type="text" class="field-input" name="spec5Value" 
+                                       placeholder="e.g., 45 kW">
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label">Specification 6 - Name</label>
+                                <input type="text" class="field-input" name="spec6Name" 
+                                       placeholder="e.g., Machine Dimensions">
+                            </div>
+                            <div class="form-field">
+                                <label class="field-label">Specification 6 - Value</label>
+                                <input type="text" class="field-input" name="spec6Value" 
+                                       placeholder="e.g., 12000 x 2500 x 2200 mm">
+                            </div>
+                        </div>
+                        <p class="help-text">Provide at least 3 key technical specifications. You can add up to 10 specifications.</p>
+                    </div>
+
+                    <!-- Section 6: Product Images -->
+                    <div class="upload-section">
+                        <h2 class="upload-section-title">
+                            <span class="section-icon">6</span>
+                            Product Images
+                        </h2>
+                        
+                        <div class="form-row">
+                            <div class="form-field full-width">
+                                <label class="field-label required">Main Product Image</label>
+                                <div class="file-upload-area" onclick="document.getElementById('mainImage').click()">
+                                    <div class="file-upload-icon">📷</div>
+                                    <div class="file-upload-text">Click to upload main product image</div>
+                                    <div class="file-upload-hint">PNG, JPG or WEBP (max. 5MB)</div>
+                                </div>
+                                <input type="file" id="mainImage" name="mainImage" accept="image/*" style="display: none;" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-field full-width">
+                                <label class="field-label">Additional Product Images (up to 4)</label>
+                                <div class="file-upload-area" onclick="document.getElementById('additionalImages').click()">
+                                    <div class="file-upload-icon">🖼️</div>
+                                    <div class="file-upload-text">Click to upload additional images</div>
+                                    <div class="file-upload-hint">PNG, JPG or WEBP (max. 5MB each)</div>
+                                </div>
+                                <input type="file" id="additionalImages" name="additionalImages" accept="image/*" multiple style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 7: Downloads (Optional) -->
+                    <div class="upload-section">
+                        <h2 class="upload-section-title">
+                            <span class="section-icon">7</span>
+                            Downloads (Optional)
+                        </h2>
+                        
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="field-label">Product Brochure (PDF)</label>
+                                <input type="file" class="field-input" name="brochure" accept=".pdf">
+                                <p class="help-text">Upload product brochure in PDF format</p>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label">Technical Specification Sheet (PDF)</label>
+                                <input type="file" class="field-input" name="techSheet" accept=".pdf">
+                                <p class="help-text">Upload detailed technical specifications</p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="field-label">Installation Requirements (PDF)</label>
+                                <input type="file" class="field-input" name="installation" accept=".pdf">
+                                <p class="help-text">Upload installation guide or requirements</p>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label">Dimensional Drawings (DWG/PDF)</label>
+                                <input type="file" class="field-input" name="drawings" accept=".dwg,.pdf">
+                                <p class="help-text">Upload CAD drawings or dimensional diagrams</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit">
+                        Submit Product for Review
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NEXUS GLOBAL HOLDINGS</h3>
+                    <p>Connecting the corrugated packaging industry worldwide</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Form submission handler
+        document.getElementById('productUploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Product submitted successfully! Our team will review your submission and contact you shortly.');
+            // Here you would typically send the form data to your server
+        });
+        
+        // File upload preview
+        document.getElementById('mainImage').addEventListener('change', function(e) {
+            const fileName = e.target.files[0]?.name;
+            if (fileName) {
+                alert('Main image selected: ' + fileName);
+            }
+        });
+        
+        document.getElementById('additionalImages').addEventListener('change', function(e) {
+            const fileCount = e.target.files.length;
+            if (fileCount > 0) {
+                alert(fileCount + ' additional image(s) selected');
+            }
+        });
+    </script>
+</body>
+</html>
