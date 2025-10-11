@@ -54,7 +54,7 @@ function renderProductDetail(product) {
                 <div style="text-align: center; padding: 100px 20px;">
                     <h1 style="font-size: 48px; color: #1B365D; margin-bottom: 20px;">产品未找到</h1>
                     <p style="font-size: 18px; color: #64748b; margin-bottom: 30px;">抱歉,请求的产品不存在。</p>
-                    <a href="products-test.html" style="display: inline-block; padding: 15px 40px; background: #1B365D; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">返回产品列表</a>
+                    <a href="product-list.html" style="display: inline-block; padding: 15px 40px; background: #1B365D; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">返回产品列表</a>
                 </div>
             `;
         }
@@ -65,6 +65,8 @@ function renderProductDetail(product) {
     const category = categoriesData[product.category];
     
     console.log('Rendering product:', product);
+    console.log('Product has specifications?', !!product.specifications);
+    console.log('Specifications object:', JSON.stringify(product.specifications, null, 2));
     console.log('Supplier:', supplier);
     console.log('Category:', category);
     
@@ -76,8 +78,8 @@ function renderProductDetail(product) {
     if (breadcrumb) {
         breadcrumb.innerHTML = `
             <a href="index.html">首页 Home</a> › 
-            <a href="products-test.html">产品中心 Products</a> › 
-            <a href="products-test.html?category=${category.id}">${category.name}</a> › 
+            <a href="product-list.html">产品中心 Products</a> › 
+            <a href="product-list.html?category=${category.id}">${category.name}</a> › 
             <span id="breadcrumb-product">${product.model}</span>
         `;
     }
@@ -143,8 +145,12 @@ function renderProductDetail(product) {
     setupTabs();
     
     // 填充技术规格表
-    if (product.technicalSpecs) {
-        fillTechnicalSpecs(product.technicalSpecs);
+    console.log('Product specifications:', product.specifications);
+    console.log('Product technicalSpecs:', product.technicalSpecs);
+    if (product.specifications || product.technicalSpecs) {
+        fillTechnicalSpecs(product.specifications || product.technicalSpecs);
+    } else {
+        console.warn('No specifications found for product:', product.id);
     }
     
     // 填充应用场景
@@ -222,15 +228,44 @@ function setupTabs() {
 
 // 填充技术规格表
 function fillTechnicalSpecs(specs) {
-    const specsTable = document.querySelector('#technical-data .specs-table tbody');
-    if (!specsTable || !specs) return;
+    const specsTable = document.querySelector('#specs-tbody');
+    if (!specsTable || !specs) {
+        console.log('Specs table not found or specs is empty:', specsTable, specs);
+        return;
+    }
+    console.log('Filling technical specs:', specs);
     
-    specsTable.innerHTML = Object.entries(specs).map(([key, value]) => `
-        <tr>
-            <td style="font-weight: 600;">${key}</td>
-            <td>${value}</td>
-        </tr>
-    `).join('');
+    // 字段标签映射(中英文)
+    const fieldLabels = {
+        'maxPrintWidth': 'Max Print Width / 最大印刷宽度',
+        'maxPrintSpeed': 'Max Print Speed / 最大印刷速度',
+        'printResolution': 'Print Resolution / 印刷分辨率',
+        'colorConfiguration': 'Color Configuration / 色彩配置',
+        'substrateThickness': 'Substrate Thickness / 承印物厚度',
+        'inkType': 'Ink Type / 墨水类型',
+        'powerConsumption': 'Power Consumption / 功率',
+        'dimensions': 'Dimensions (L×W×H) / 设备尺寸',
+        'maxCuttingWidth': 'Max Cutting Width / 最大模切宽度',
+        'maxCuttingSpeed': 'Max Cutting Speed / 最大模切速度',
+        'cuttingAccuracy': 'Cutting Accuracy / 模切精度',
+        'maxPaperSize': 'Max Paper Size / 最大纸张尺寸',
+        'minPaperSize': 'Min Paper Size / 最小纸张尺寸',
+        'maxFeedingSpeed': 'Max Feeding Speed / 最大送纸速度',
+        'stackingCapacity': 'Stacking Capacity / 堆垛容量',
+        'palletizingSpeed': 'Palletizing Speed / 码垛速度',
+        'weight': 'Weight / 重量',
+        'voltage': 'Voltage / 电压'
+    };
+    
+    specsTable.innerHTML = Object.entries(specs).map(([key, value]) => {
+        const label = fieldLabels[key] || key;
+        return `
+            <tr>
+                <td style="font-weight: 600; padding: 12px; border-bottom: 1px solid #e5e7eb;">${label}</td>
+                <td style="padding: 12px; border-bottom: 1px solid #e5e7eb;">${value}</td>
+            </tr>
+        `;
+    }).join('');
 }
 
 // 填充应用场景
@@ -261,7 +296,7 @@ async function initProductDetailPage() {
                 <div style="text-align: center; padding: 100px 20px;">
                     <h1 style="font-size: 48px; color: #ef4444; margin-bottom: 20px;">数据加载失败</h1>
                     <p style="font-size: 18px; color: #64748b; margin-bottom: 30px;">无法加载产品数据,请稍后重试。</p>
-                    <a href="products-test.html" style="display: inline-block; padding: 15px 40px; background: #1B365D; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">返回产品列表</a>
+                    <a href="product-list.html" style="display: inline-block; padding: 15px 40px; background: #1B365D; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">返回产品列表</a>
                 </div>
             `;
         }
@@ -280,7 +315,7 @@ async function initProductDetailPage() {
                 <div style="text-align: center; padding: 100px 20px;">
                     <h1 style="font-size: 48px; color: #1B365D; margin-bottom: 20px;">缺少产品ID</h1>
                     <p style="font-size: 18px; color: #64748b; margin-bottom: 30px;">请从产品列表页面访问。</p>
-                    <a href="products-test.html" style="display: inline-block; padding: 15px 40px; background: #1B365D; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">返回产品列表</a>
+                    <a href="product-list.html" style="display: inline-block; padding: 15px 40px; background: #1B365D; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">返回产品列表</a>
                 </div>
             `;
         }

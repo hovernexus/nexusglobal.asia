@@ -105,14 +105,14 @@
   },
   "zh": {
     "nav": {
-      "home": "Home",
-      "solutions": "Solutions",
-      "products": "Products",
-      "service": "Service & Support",
-      "about": "About Us",
-      "news": "News",
-      "contact": "Contact",
-      "getQuote": "Get Quote"
+      "home": "首页",
+      "solutions": "解决方案",
+      "products": "产品",
+      "service": "服务与支持",
+      "about": "关于我们",
+      "news": "新闻",
+      "contact": "联系我们",
+      "getQuote": "获取报价"
     },
     "hero": {
       "title": "释放生产潜力，赢得市场竞争",

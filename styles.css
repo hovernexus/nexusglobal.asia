@@ -172,17 +172,16 @@ body {
 
 /* Mega Dropdown Menu Styles (K&B Style) */
 .mega-dropdown {
-    position: fixed;
-    top: 80px; /* Height of nav bar */
+    position: absolute;
+    top: 100%;
     left: 0;
-    right: 0;
-    width: 100%;
+    width: 100vw;
     background-color: #1e3a5f; /* Deep blue like K&B */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all var(--transition-base);
-    z-index: 9998;
+    z-index: 9999;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     max-height: 600px;
     overflow-y: auto;
@@ -2248,3 +2247,54 @@ body {
         min-height: auto;
     }
 }
+
+
+/* === Red Block Design for Registration CTA === */
+.registration-cta-red {
+    background: linear-gradient(135deg, #E31E24 0%, #c41920 100%);
+    box-shadow: 0 10px 40px rgba(227, 30, 36, 0.3);
+}
+
+.btn-supplier-red,
+.btn-customer-red {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-supplier-red {
+    background: white;
+    color: #E31E24;
+}
+
+.btn-supplier-red:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    background: #f8f9fa;
+}
+
+.btn-customer-red {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-customer-red:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-supplier-red svg,
+.btn-customer-red svg {
+    width: 24px;
+    height: 24px;
+}
+
