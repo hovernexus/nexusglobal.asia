@@ -3,7 +3,15 @@
 Official website for NEXUS GLOBAL HOLDINGS - Corrugated Packaging Equipment Solutions Expert
 
 ## Version
-**V8.2 Final** - Released October 11, 2025
+**V9.0** - Released October 11, 2025
+
+### What's New in V9.0
+- **Complete Navigation Restructure**: 7 main product categories
+- **Enhanced Product Classification**: Main category + Sub-category system
+- **Improved Dropdown Menu**: 7-column grid layout with Quick Links footer
+- **Better Organization**: Sub-category labels for clearer product grouping
+- **Optimized Display**: Fixed z-index issues, no more dropdown occlusion
+- **Responsive Design**: Adapts perfectly to all screen sizes
 
 ## Features
 
@@ -17,10 +25,14 @@ Official website for NEXUS GLOBAL HOLDINGS - Corrugated Packaging Equipment Solu
 
 ### Main Sections
 1. **Home** - Company overview and featured products
-2. **Products** - Complete product catalog with categories:
-   - Digital Printing Equipment
-   - Corrugated Production Lines
-   - Post-Press Equipment
+2. **Products** - Complete product catalog with 7 main categories:
+   - Digital Printing System (数码印刷系统)
+   - Flexo Inline (柔印联动生产线)
+   - Die-Cutting Machine (独立裁切设备)
+   - Finishing Equipment (后道成型设备)
+   - Surface Treatment (表面处理设备)
+   - Automation Unit (产线自动化单元)
+   - Eco-friendly Packaging (环保包装设备)
 3. **Solutions** - Industry solutions and case studies
 4. **Service & Support** - Technical support and documentation
 5. **About Us** - Company information and registered partners
@@ -135,6 +147,15 @@ For technical issues or questions, please refer to:
 © 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.
 
 ## Version History
+
+### V9.0 (2025-10-11)
+- Complete navigation restructure with 7 main categories
+- Enhanced product classification system (mainCategory + subCategory)
+- Improved dropdown menu design with 7-column grid layout
+- Added Quick Links footer in Products dropdown
+- Better responsive design for all screen sizes
+- Fixed z-index issues to prevent dropdown occlusion
+- Optimized sub-category labels for better organization
 
 ### V8.2 Final (2025-10-11)
 - Fixed navigation menu display issues

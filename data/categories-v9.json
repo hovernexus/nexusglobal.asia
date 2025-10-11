@@ -1,0 +1,253 @@
+{
+  "version": "9.0",
+  "lastUpdated": "2025-10-11",
+  "categories": [
+    {
+      "id": "digital_printing_system",
+      "name": "Digital Printing System",
+      "nameCn": "数码印刷系统",
+      "icon": "🖨️",
+      "order": 1,
+      "subCategories": [
+        {
+          "id": "single_pass",
+          "name": "Single Pass High-Speed Series",
+          "nameCn": "Single Pass 高速系列",
+          "order": 1
+        },
+        {
+          "id": "scanning",
+          "name": "Scanning Series",
+          "nameCn": "Scanning 扫描式系列",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": "flexo_inline",
+      "name": "Flexo Inline",
+      "nameCn": "柔印联动生产线",
+      "icon": "🏭",
+      "order": 2,
+      "subCategories": [
+        {
+          "id": "ffg_inline",
+          "name": "FFG Inline",
+          "nameCn": "印刷开槽裁切粘箱联动线 (FFG)",
+          "order": 1
+        },
+        {
+          "id": "jumbo_flexo",
+          "name": "Jumbo Flexo Bottom Printing",
+          "nameCn": "Jumbo Flexo Bottom Printing FFG 联动线",
+          "order": 2
+        },
+        {
+          "id": "top_print",
+          "name": "Top Print Flexo Press",
+          "nameCn": "上印式 (Top Print) 高清印刷机系列",
+          "order": 3
+        },
+        {
+          "id": "bottom_print",
+          "name": "Bottom Print Flexo Press",
+          "nameCn": "下印式 (Bottom Print) 印刷机系列",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "die_cutting_machine",
+      "name": "Die-Cutting Machine",
+      "nameCn": "独立裁切设备",
+      "icon": "✂️",
+      "order": 3,
+      "subCategories": [
+        {
+          "id": "auto_flatbed",
+          "name": "Full Auto Flatbed Die-Cutter",
+          "nameCn": "全自动平压平裁切机",
+          "order": 1
+        },
+        {
+          "id": "semi_auto_flatbed",
+          "name": "Semi Auto Flatbed Die-Cutter",
+          "nameCn": "半自动平压平裁切机",
+          "order": 2
+        },
+        {
+          "id": "rotary_die_cutter",
+          "name": "Rotary Die-Cutter",
+          "nameCn": "圆压圆裁切机",
+          "order": 3
+        },
+        {
+          "id": "laser_digital",
+          "name": "Laser/Digital Die-Cutter",
+          "nameCn": "激光/数码裁切机",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "finishing_equipment",
+      "name": "Finishing Equipment",
+      "nameCn": "后道成型设备",
+      "icon": "📦",
+      "order": 4,
+      "subCategories": [
+        {
+          "id": "folder_gluer",
+          "name": "Folder Gluer",
+          "nameCn": "粘箱/钉箱/糊钉一体机",
+          "order": 1
+        },
+        {
+          "id": "stitcher",
+          "name": "Stitcher",
+          "nameCn": "钉箱机",
+          "order": 2
+        },
+        {
+          "id": "slotter",
+          "name": "Slotter",
+          "nameCn": "独立开槽机",
+          "order": 3
+        },
+        {
+          "id": "strapping",
+          "name": "Strapping Machine",
+          "nameCn": "打包机/捆扎机",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "surface_treatment",
+      "name": "Surface Treatment",
+      "nameCn": "表面处理设备",
+      "icon": "✨",
+      "order": 5,
+      "subCategories": [
+        {
+          "id": "laminator_paper",
+          "name": "Paper Laminator",
+          "nameCn": "裱纸机/裱卡机",
+          "order": 1
+        },
+        {
+          "id": "laminator_card",
+          "name": "Card Laminator",
+          "nameCn": "裱卡机",
+          "order": 2
+        },
+        {
+          "id": "filming",
+          "name": "Filming Machine",
+          "nameCn": "覆膜机",
+          "order": 3
+        },
+        {
+          "id": "uv_coating",
+          "name": "UV Coating",
+          "nameCn": "上光/磨光机",
+          "order": 4
+        },
+        {
+          "id": "polishing",
+          "name": "Polishing Machine",
+          "nameCn": "磨光机",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "automation_unit",
+      "name": "Automation Unit",
+      "nameCn": "产线自动化单元",
+      "icon": "🤖",
+      "order": 6,
+      "subCategories": [
+        {
+          "id": "pre_feeder",
+          "name": "Pre-feeder",
+          "nameCn": "前端上料设备",
+          "order": 1
+        },
+        {
+          "id": "pre_feeder_robotic",
+          "name": "Robotic Arm Pre-feeder",
+          "nameCn": "机械臂式上料机",
+          "order": 2
+        },
+        {
+          "id": "pre_feeder_slope",
+          "name": "Slope Type Pre-feeder",
+          "nameCn": "斜坡式上料机",
+          "order": 3
+        },
+        {
+          "id": "pre_feeder_baffle",
+          "name": "Baffle/Basket Type Pre-feeder",
+          "nameCn": "鱼鳞式上料机",
+          "order": 4
+        },
+        {
+          "id": "palletizer",
+          "name": "Palletizer",
+          "nameCn": "后端码垛/清废设备",
+          "order": 5
+        },
+        {
+          "id": "waste_removal",
+          "name": "Waste Removal",
+          "nameCn": "清废设备",
+          "order": 6
+        },
+        {
+          "id": "transfer_equipment",
+          "name": "Transfer Equipment",
+          "nameCn": "工序间转运/辅助设备",
+          "order": 7
+        },
+        {
+          "id": "inspection",
+          "name": "Inspection Machine",
+          "nameCn": "印刷检品机",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "id": "eco_friendly_packaging",
+      "name": "Eco-friendly Packaging",
+      "nameCn": "环保包装设备",
+      "icon": "♻️",
+      "order": 7,
+      "subCategories": [
+        {
+          "id": "pulp_molding_auto",
+          "name": "Full Auto Pulp Molding",
+          "nameCn": "全自动滚转式纸浆模塑设备",
+          "order": 1
+        },
+        {
+          "id": "pulp_molding_semi",
+          "name": "Semi Auto Pulp Molding",
+          "nameCn": "半自动往复式纸浆模塑设备",
+          "order": 2
+        }
+      ]
+    }
+  ],
+  "categoryMapping": {
+    "digital_printer": "digital_printing_system",
+    "die_cutting": "die_cutting_machine",
+    "feeder_palletizer": "automation_unit",
+    "folder_gluer": "finishing_equipment",
+    "inspection": "automation_unit",
+    "laminator": "surface_treatment",
+    "pulp_molding": "eco_friendly_packaging"
+  }
+}
+

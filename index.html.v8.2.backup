@@ -83,195 +83,93 @@
                         </div>
                     </li>
                     <!-- Products Navigation Menu -->
-                    <!-- Products Navigation Menu - V9.0: 7 Main Categories -->
+                    <!-- Products Navigation Menu - V8.2 Fixed: 3 Main Categories -->
                     <li class="has-dropdown">
                         <a href="#products">Products</a>
-                        <div class="mega-dropdown products-mega-dropdown-v9">
+                        <div class="mega-dropdown products-mega-dropdown">
                             <div class="mega-dropdown-content">
                                 
-                                <!-- Category 1: 数码印刷系统 (Digital Printing System) -->
+                                <!-- Category 1: Digital Printing Equipment -->
                                 <div class="mega-column">
-                                    <h4 class="mega-column-title">
-                                        <span class="icon">🖨️</span>
-                                        <span>Digital Printing System</span>
-                                    </h4>
-                                    <p class="mega-column-subtitle">数码印刷系统</p>
+                                    <h4 class="mega-column-title">Digital Printing Equipment</h4>
                                     <ul class="mega-links">
-                                        <li class="category-subtitle">Single Pass 高速系列</li>
                                         <li><a href="product-detail-dynamic.html?id=glory160x-hd">Glory160X HD <span class="arrow">→</span></a></li>
-                                        <li><a href="product-detail-dynamic.html?id=scb1600">SCB1600 <span class="arrow">→</span></a></li>
-                                        
-                                        <li class="category-subtitle">Scanning 扫描式系列</li>
                                         <li><a href="product-detail-dynamic.html?id=ultra2500w">Ultra2500W <span class="arrow">→</span></a></li>
                                         <li><a href="product-detail-dynamic.html?id=ultra2500w-pro">Ultra2500W Pro <span class="arrow">→</span></a></li>
-                                        <li><a href="product-detail-dynamic.html?id=mcb2512">MCB2512 <span class="arrow">→</span></a></li>
                                         <li><a href="product-detail-dynamic.html?id=mcb2500">MCB2500 <span class="arrow">→</span></a></li>
-                                        
-                                        <li><a href="product-list.html?mainCategory=digital_printing_system" class="view-all">View All →</a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mcb2512">MCB2512 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=scb1600">SCB1600 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=digital_printer" class="view-all">View All Digital Printers →</a></li>
                                     </ul>
                                 </div>
 
-                                <!-- Category 2: 柔印联动生产线 (Flexo Inline) -->
+                                <!-- Category 2: Corrugated Production Lines -->
                                 <div class="mega-column">
-                                    <h4 class="mega-column-title">
-                                        <span class="icon">🏭</span>
-                                        <span>Flexo Inline</span>
-                                    </h4>
-                                    <p class="mega-column-subtitle">柔印联动生产线</p>
+                                    <h4 class="mega-column-title">Corrugated Production Lines</h4>
                                     <ul class="mega-links">
-                                        <li class="category-subtitle">印刷开槽裁切粘箱联动线 (FFG)</li>
-                                        <li><a href="product-list.html?subCategory=ffg_inline">FFG Inline Series <span class="arrow">→</span></a></li>
-                                        <li><a href="product-list.html?subCategory=jumbo_flexo">Jumbo Flexo Bottom Printing <span class="arrow">→</span></a></li>
+                                        <li class="category-subtitle">FFG Inline Systems</li>
+                                        <li><a href="product-list.html?category=ffg_inline">FFG Inline Series <span class="arrow">→</span></a></li>
                                         
-                                        <li class="category-subtitle">高清柔版印刷开槽机</li>
-                                        <li><a href="product-list.html?subCategory=top_print">Top Print Series <span class="arrow">→</span></a></li>
-                                        <li><a href="product-list.html?subCategory=bottom_print">Bottom Print Series <span class="arrow">→</span></a></li>
-                                        
-                                        <li><a href="product-list.html?mainCategory=flexo_inline" class="view-all">View All →</a></li>
-                                    </ul>
-                                </div>
-
-                                <!-- Category 3: 独立裁切设备 (Die-Cutting Machine) -->
-                                <div class="mega-column">
-                                    <h4 class="mega-column-title">
-                                        <span class="icon">✂️</span>
-                                        <span>Die-Cutting Machine</span>
-                                    </h4>
-                                    <p class="mega-column-subtitle">独立裁切设备</p>
-                                    <ul class="mega-links">
-                                        <li class="category-subtitle">全自动平压平裁切机</li>
-                                        <li><a href="product-detail-dynamic.html?id=ds106">DS106 <span class="arrow">→</span></a></li>
-                                        <li><a href="product-detail-dynamic.html?id=td1650s">TD1650S <span class="arrow">→</span></a></li>
+                                        <li class="category-subtitle" style="margin-top: 0.8rem;">Die-Cutting Machines</li>
                                         <li><a href="product-detail-dynamic.html?id=td800s">TD800S <span class="arrow">→</span></a></li>
-                                        <li><a href="product-detail-dynamic.html?id=mk-ecopress-1050">MK Ecopress 1050 <span class="arrow">→</span></a></li>
-                                        
-                                        <li class="category-subtitle">半自动平压平裁切机</li>
-                                        <li><a href="product-detail-dynamic.html?id=pyq1040">PYQ1040 <span class="arrow">→</span></a></li>
-                                        <li><a href="product-detail-dynamic.html?id=mk21060vs">MK21060VS <span class="arrow">→</span></a></li>
-                                        
-                                        <li class="category-subtitle">圆压圆 & 激光裁切机</li>
-                                        <li><a href="product-detail-dynamic.html?id=mk1300csb-w">MK1300CSB W <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=td1650s">TD1650S <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=ds106">DS106 <span class="arrow">→</span></a></li>
                                         <li><a href="product-detail-dynamic.html?id=mk1060f">MK1060F Laser <span class="arrow">→</span></a></li>
-                                        <li><a href="product-detail-dynamic.html?id=mk800sf">MK800SF Laser <span class="arrow">→</span></a></li>
-                                        
-                                        <li><a href="product-list.html?mainCategory=die_cutting_machine" class="view-all">View All →</a></li>
+                                        <li><a href="product-list.html?category=die_cutting" class="view-all">View All Die-Cutting →</a></li>
                                     </ul>
                                 </div>
 
-                                <!-- Category 4: 后道成型设备 (Finishing Equipment) -->
+                                <!-- Category 3: Post-Press Equipment -->
                                 <div class="mega-column">
-                                    <h4 class="mega-column-title">
-                                        <span class="icon">📦</span>
-                                        <span>Finishing Equipment</span>
-                                    </h4>
-                                    <p class="mega-column-subtitle">后道成型设备</p>
+                                    <h4 class="mega-column-title">Post-Press Equipment</h4>
                                     <ul class="mega-links">
-                                        <li class="category-subtitle">粘箱/钉箱/糊钉一体机</li>
+                                        <li class="category-subtitle">Folder Gluer & Stitcher</li>
                                         <li><a href="product-detail-dynamic.html?id=xjhd-2600gs">XJHD-2600GS <span class="arrow">→</span></a></li>
                                         <li><a href="product-detail-dynamic.html?id=xjhd-2800gs">XJHD-2800GS <span class="arrow">→</span></a></li>
                                         <li><a href="product-detail-dynamic.html?id=xjhd-3300gs">XJHD-3300GS <span class="arrow">→</span></a></li>
-                                        <li><a href="product-list.html?subCategory=folder_gluer">Folder Gluer Series <span class="arrow">→</span></a></li>
-                                        <li><a href="product-list.html?subCategory=stitcher">Stitcher Series <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=folder_gluer" class="view-all">View All →</a></li>
                                         
-                                        <li class="category-subtitle">独立开槽机 & 打包机</li>
-                                        <li><a href="product-list.html?subCategory=slotter">Slotter Series <span class="arrow">→</span></a></li>
-                                        <li><a href="product-list.html?subCategory=strapping">PP Strapping Machine <span class="arrow">→</span></a></li>
-                                        
-                                        <li><a href="product-list.html?mainCategory=finishing_equipment" class="view-all">View All →</a></li>
+                                        <li class="category-subtitle" style="margin-top: 0.8rem;">Laminator & Filming</li>
+                                        <li><a href="product-list.html?category=laminator">Laminator Series <span class="arrow">→</span></a></li>
                                     </ul>
                                 </div>
 
-                                <!-- Category 5: 表面处理设备 (Surface Treatment) -->
+                                <!-- Automation & Quality Control -->
                                 <div class="mega-column">
-                                    <h4 class="mega-column-title">
-                                        <span class="icon">✨</span>
-                                        <span>Surface Treatment</span>
-                                    </h4>
-                                    <p class="mega-column-subtitle">表面处理设备</p>
+                                    <h4 class="mega-column-title">Automation & QC</h4>
                                     <ul class="mega-links">
-                                        <li class="category-subtitle">裱纸机/裱卡机</li>
-                                        <li><a href="product-list.html?subCategory=laminator_paper">Laminator Series <span class="arrow">→</span></a></li>
-                                        <li><a href="product-list.html?subCategory=laminator_card">Card Laminator <span class="arrow">→</span></a></li>
-                                        
-                                        <li class="category-subtitle">覆膜机</li>
-                                        <li><a href="product-list.html?subCategory=filming">Filming Machine <span class="arrow">→</span></a></li>
-                                        
-                                        <li class="category-subtitle">上光/磨光机</li>
-                                        <li><a href="product-list.html?subCategory=uv_coating">UV Coating <span class="arrow">→</span></a></li>
-                                        <li><a href="product-list.html?subCategory=polishing">Polishing Machine <span class="arrow">→</span></a></li>
-                                        
-                                        <li><a href="product-list.html?mainCategory=surface_treatment" class="view-all">View All →</a></li>
-                                    </ul>
-                                </div>
-
-                                <!-- Category 6: 产线自动化单元 (Automation Unit) -->
-                                <div class="mega-column">
-                                    <h4 class="mega-column-title">
-                                        <span class="icon">🤖</span>
-                                        <span>Automation Unit</span>
-                                    </h4>
-                                    <p class="mega-column-subtitle">产线自动化单元</p>
-                                    <ul class="mega-links">
-                                        <li class="category-subtitle">前端上料设备</li>
+                                        <li class="category-subtitle">Feeder & Palletizer</li>
+                                        <li><a href="product-detail-dynamic.html?id=md-350">MD-350 Smart Palletizer <span class="arrow">→</span></a></li>
                                         <li><a href="product-detail-dynamic.html?id=jxb">JXB Robotic Arm <span class="arrow">→</span></a></li>
-                                        <li><a href="product-detail-dynamic.html?id=qsl2">QSL2 Slope Type <span class="arrow">→</span></a></li>
-                                        <li><a href="product-list.html?subCategory=pre_feeder">Pre-feeder Series <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=qsl2">QSL2 Pre-Feeder <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=feeder_palletizer" class="view-all">View All →</a></li>
                                         
-                                        <li class="category-subtitle">后端码垛/清废设备</li>
-                                        <li><a href="product-detail-dynamic.html?id=md-350">MD-350 AI Palletizer <span class="arrow">→</span></a></li>
-                                        <li><a href="product-detail-dynamic.html?id=md-s2">MD-S2 Dual-Station <span class="arrow">→</span></a></li>
-                                        <li><a href="product-list.html?subCategory=waste_removal">Waste Removal <span class="arrow">→</span></a></li>
-                                        
-                                        <li class="category-subtitle">工序间转运/辅助设备</li>
-                                        <li><a href="product-detail-dynamic.html?id=mk1300fz">MK1300FZ Turner <span class="arrow">→</span></a></li>
-                                        <li><a href="product-detail-dynamic.html?id=mk6500qc">MK6500QC Inspector <span class="arrow">→</span></a></li>
-                                        
-                                        <li><a href="product-list.html?mainCategory=automation_unit" class="view-all">View All →</a></li>
+                                        <li class="category-subtitle" style="margin-top: 0.8rem;">Inspection Machines</li>
+                                        <li><a href="product-detail-dynamic.html?id=mk1300fz">MK1300FZ <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk6500qc">MK6500QC <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=inspection" class="view-all">View All →</a></li>
                                     </ul>
                                 </div>
 
-                                <!-- Category 7: 环保包装设备 (Eco-friendly Packaging) -->
-                                <div class="mega-column">
-                                    <h4 class="mega-column-title">
-                                        <span class="icon">♻️</span>
-                                        <span>Eco-friendly Packaging</span>
-                                    </h4>
-                                    <p class="mega-column-subtitle">环保包装设备</p>
+                                <!-- Quick Links -->
+                                <div class="mega-column mega-column-highlight">
+                                    <h4 class="mega-column-title">Quick Links</h4>
                                     <ul class="mega-links">
-                                        <li class="category-subtitle">纸浆模塑设备</li>
-                                        <li><a href="product-list.html?subCategory=pulp_molding_auto">Full Auto Pulp Molding <span class="arrow">→</span></a></li>
-                                        <li><a href="product-list.html?subCategory=pulp_molding_semi">Semi Auto Pulp Molding <span class="arrow">→</span></a></li>
-                                        
-                                        <li><a href="product-list.html?mainCategory=eco_friendly_packaging" class="view-all">View All →</a></li>
+                                        <li><a href="product-list.html" class="highlight-link">All Products <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?featured=true" class="highlight-link">Featured Products <span class="arrow">→</span></a></li>
+                                        <li><a href="ai-consultant.html" class="highlight-link">AI Selection Assistant <span class="arrow">→</span></a></li>
+                                        <li><a href="contact.html" class="highlight-link">Request Quote <span class="arrow">→</span></a></li>
                                     </ul>
-                                </div>
 
-                            </div>
-                            
-                            <!-- Quick Links Footer -->
-                            <div class="mega-dropdown-footer">
-                                <div class="footer-links">
-                                    <a href="product-list.html" class="footer-link">
-                                        <span class="icon">📋</span>
-                                        <span>All Products</span>
-                                    </a>
-                                    <a href="product-list.html?featured=true" class="footer-link">
-                                        <span class="icon">⭐</span>
-                                        <span>Featured Products</span>
-                                    </a>
-                                    <a href="ai-consultant.html" class="footer-link">
-                                        <span class="icon">🤖</span>
-                                        <span>AI Selection Assistant</span>
-                                    </a>
-                                    <a href="contact.html" class="footer-link highlight">
-                                        <span class="icon">📞</span>
-                                        <span>Request Quote</span>
-                                    </a>
+                                    <div class="mega-cta">
+                                        <h5>Need Help Choosing?</h5>
+                                        <p>Our experts are ready to assist</p>
+                                        <a href="contact.html" class="cta-button">Contact Us</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-
                     <li class="has-dropdown">
                         <a href="#service">Service & Support</a>
                         <div class="mega-dropdown">

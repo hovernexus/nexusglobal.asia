@@ -266,3 +266,375 @@
     background: #555;
 }
 
+
+
+/* Category Subtitle Style - V8.2 */
+.products-mega-dropdown .mega-links li.category-subtitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #666;
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+    padding-left: 0;
+    pointer-events: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.products-mega-dropdown .mega-links li.category-subtitle:first-child {
+    margin-top: 0;
+}
+
+
+/* ======================================== */
+/*   V9.0 Navigation Styles Added Below    */
+/* ======================================== */
+/* ========================================
+   NEXUS V9.0 - Products Navigation Styles
+   7 Main Categories with Sub-categories
+   ======================================== */
+
+/* V9.0 Products Mega Dropdown Container */
+.products-mega-dropdown-v9 {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 1400px;
+    max-width: 1600px;
+    background: white;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+.has-dropdown:hover .products-mega-dropdown-v9 {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Dropdown Content Grid - 7 Columns */
+.products-mega-dropdown-v9 .mega-dropdown-content {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar */
+.products-mega-dropdown-v9 .mega-dropdown-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.products-mega-dropdown-v9 .mega-dropdown-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.products-mega-dropdown-v9 .mega-dropdown-content::-webkit-scrollbar-thumb {
+    background: #E31E24;
+    border-radius: 4px;
+}
+
+.products-mega-dropdown-v9 .mega-dropdown-content::-webkit-scrollbar-thumb:hover {
+    background: #c41a1f;
+}
+
+/* Column Styling */
+.products-mega-dropdown-v9 .mega-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* Column Title */
+.products-mega-dropdown-v9 .mega-column-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1B365D;
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #E31E24;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.products-mega-dropdown-v9 .mega-column-title .icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.products-mega-dropdown-v9 .mega-column-title span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Column Subtitle (Chinese Name) */
+.products-mega-dropdown-v9 .mega-column-subtitle {
+    font-size: 0.7rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+/* Links List */
+.products-mega-dropdown-v9 .mega-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.products-mega-dropdown-v9 .mega-links li {
+    margin: 0;
+}
+
+/* Category Subtitle (Sub-category Labels) */
+.products-mega-dropdown-v9 .mega-links li.category-subtitle {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    margin-bottom: 0.2rem;
+    padding-left: 0;
+    pointer-events: none;
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+}
+
+.products-mega-dropdown-v9 .mega-links li.category-subtitle:first-child {
+    margin-top: 0;
+}
+
+/* Product Links */
+.products-mega-dropdown-v9 .mega-links li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 0.5rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    line-height: 1.3;
+}
+
+.products-mega-dropdown-v9 .mega-links li a:hover {
+    background-color: #f8f9fa;
+    color: #E31E24;
+    padding-left: 0.75rem;
+}
+
+.products-mega-dropdown-v9 .mega-links li a .arrow {
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    color: #E31E24;
+}
+
+.products-mega-dropdown-v9 .mega-links li a:hover .arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* View All Link */
+.products-mega-dropdown-v9 .mega-links li a.view-all {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e0e0e0;
+    color: #E31E24;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.products-mega-dropdown-v9 .mega-links li a.view-all:hover {
+    background-color: #fff5f5;
+}
+
+.products-mega-dropdown-v9 .mega-links li a.view-all .arrow {
+    opacity: 1;
+}
+
+/* Dropdown Footer */
+.products-mega-dropdown-v9 .mega-dropdown-footer {
+    background: linear-gradient(135deg, #1B365D 0%, #2a4a7c 100%);
+    padding: 1.5rem 2rem;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.products-mega-dropdown-v9 .footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.products-mega-dropdown-v9 .footer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.products-mega-dropdown-v9 .footer-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.products-mega-dropdown-v9 .footer-link.highlight {
+    background: #E31E24;
+    border-color: #E31E24;
+}
+
+.products-mega-dropdown-v9 .footer-link.highlight:hover {
+    background: #c41a1f;
+    border-color: #c41a1f;
+}
+
+.products-mega-dropdown-v9 .footer-link .icon {
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+    .products-mega-dropdown-v9 {
+        min-width: 1200px;
+        max-width: 1400px;
+    }
+    
+    .products-mega-dropdown-v9 .mega-dropdown-content {
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .products-mega-dropdown-v9 .mega-column-title {
+        font-size: 0.85rem;
+    }
+    
+    .products-mega-dropdown-v9 .mega-links li a {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.4rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    .products-mega-dropdown-v9 {
+        min-width: 1000px;
+        max-width: 1200px;
+    }
+    
+    .products-mega-dropdown-v9 .mega-dropdown-content {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+    
+    .products-mega-dropdown-v9 .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+    .products-mega-dropdown-v9 {
+        min-width: 800px;
+        max-width: 1000px;
+        left: 0;
+        transform: translateX(0);
+    }
+    
+    .has-dropdown:hover .products-mega-dropdown-v9 {
+        transform: translateX(0) translateY(0);
+    }
+    
+    .products-mega-dropdown-v9 .mega-dropdown-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .products-mega-dropdown-v9 {
+        min-width: 600px;
+        max-width: 800px;
+    }
+    
+    .products-mega-dropdown-v9 .mega-dropdown-content {
+        grid-template-columns: repeat(2, 1fr);
+        max-height: 60vh;
+    }
+    
+    .products-mega-dropdown-v9 .footer-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-mega-dropdown-v9 {
+        position: static;
+        min-width: 100%;
+        max-width: 100%;
+        transform: none;
+        border-radius: 0;
+    }
+    
+    .products-mega-dropdown-v9 .mega-dropdown-content {
+        grid-template-columns: 1fr;
+        max-height: none;
+        padding: 1rem;
+    }
+    
+    .products-mega-dropdown-v9 .mega-dropdown-footer {
+        padding: 1rem;
+    }
+}
+
+/* Ensure dropdown is above other elements */
+.has-dropdown {
+    position: relative;
+}
+
+/* Prevent dropdown from being cut off */
+.navbar-menu {
+    overflow: visible;
+}
+
+/* Animation for smooth appearance */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.has-dropdown:hover .products-mega-dropdown-v9 {
+    animation: fadeInDown 0.3s ease;
+}
+
