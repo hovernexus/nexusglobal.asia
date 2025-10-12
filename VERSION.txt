@@ -1,0 +1,17 @@
+NEXUS GLOBAL HOLDINGS Website
+Version: 9.3
+Release Date: 2025-10-12
+Build: Production
+
+Updates in V9.3:
+- Added "NEXUS GLOBAL" logo overlay on AI consultant avatar using CSS
+- Implemented responsive design for logo across all devices (desktop, tablet, mobile)
+- Created comprehensive GitHub safe update guide
+- Maintained all V9.2 features and improvements
+
+Previous Versions:
+V9.2 - 2025-10-11
+- Updated AI consultant avatar
+- Fixed navigation menu (all English)
+- Updated homepage product cards (7 categories)
+

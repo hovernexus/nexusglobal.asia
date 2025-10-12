@@ -107,6 +107,32 @@ body {
     border-radius: 12px 12px 0 0;
 }
 
+/* V9.3 UPDATE: NEXUS GLOBAL Logo Overlay */
+.consultant-photo-banner::after {
+    content: 'NEXUS GLOBAL';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(59, 130, 246, 0.95) 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.consultant-photo-banner:hover::after {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
 .consultant-photo-banner img {
     width: 100%;
     height: 100%;
@@ -721,6 +747,15 @@ body {
     .message-bubble {
         max-width: 95%;
     }
+
+    /* V9.3: Adjust logo overlay for tablet */
+    .consultant-photo-banner::after {
+        font-size: 14px;
+        padding: 8px 16px;
+        top: 15px;
+        right: 15px;
+        letter-spacing: 1.5px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -744,5 +779,15 @@ body {
 
     .chat-input-wrapper {
         flex-wrap: wrap;
+    }
+
+    /* V9.3: Adjust logo overlay for mobile */
+    .consultant-photo-banner::after {
+        font-size: 12px;
+        padding: 6px 12px;
+        top: 10px;
+        right: 10px;
+        letter-spacing: 1px;
+        border-width: 1px;
     }
 }
