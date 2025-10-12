@@ -761,100 +761,104 @@
             </div>
 
             <div class="products-grid">
-                <!-- Product Card 1: Digital Printing System -->
+                <!-- Product Card 1: Digital Printing -->
                 <div class="product-card product-digital">
-                    <h3 class="product-title">Digital Printing System</h3>
+                    <h3 class="product-title">Digital Printing Machines</h3>
                     <p class="product-subtitle">High-precision digital inkjet printing for personalized customization needs</p>
                     <ul class="product-list">
                         <li><a href="product-detail-dynamic.html?id=glory160x-hd" style="color: inherit; text-decoration: none; cursor: pointer;">Glory160X HD</a></li>
                         <li><a href="product-detail-dynamic.html?id=mcb2512" style="color: inherit; text-decoration: none; cursor: pointer;">MCB2512</a></li>
                         <li><a href="product-detail-dynamic.html?id=ultra2500w-pro" style="color: inherit; text-decoration: none; cursor: pointer;">Ultra2500W Pro</a></li>
-                        <li><a href="product-detail-dynamic.html?id=techprint-pro-2500" style="color: inherit; text-decoration: none; cursor: pointer;">TechPrint Pro 2500</a></li>
                     </ul>
-                    <a href="category-digital-printing.html" class="product-link">View All Products →</a>
+                    <a href="product-list.html?category=digital-printing" class="product-link">View All Products →</a>
                 </div>
 
-                <!-- Product Card 2: Flexo Inline -->
-                <div class="product-card product-inline">
-                    <h3 class="product-title">Flexo Inline</h3>
-                    <p class="product-subtitle">Inline production technology for ultra-high efficiency mass production</p>
-                    <ul class="product-list">
-                        <li><a href="product-detail-dynamic.html?id=ffg-inline-series" style="color: inherit; text-decoration: none; cursor: pointer;">FFG Inline Series</a></li>
-                        <li><a href="product-detail-dynamic.html?id=jumbo-flexo-bottom" style="color: inherit; text-decoration: none; cursor: pointer;">Jumbo Flexo Bottom</a></li>
-                        <li><a href="product-detail-dynamic.html?id=top-print-series" style="color: inherit; text-decoration: none; cursor: pointer;">Top Print Series</a></li>
-                        <li><a href="product-detail-dynamic.html?id=bottom-print-series" style="color: inherit; text-decoration: none; cursor: pointer;">Bottom Print Series</a></li>
-                    </ul>
-                    <a href="category-flexo-inline.html" class="product-link">View All Products →</a>
-                </div>
-
-                <!-- Product Card 3: Die-Cutting Machine -->
+                <!-- Product Card 2: Die-Cutting -->
                 <div class="product-card product-cutting">
-                    <h3 class="product-title">Die-Cutting Machine</h3>
+                    <h3 class="product-title">Die-Cutting Machines</h3>
                     <p class="product-subtitle">Precision die-cutting technology to enhance processing accuracy and efficiency</p>
                     <ul class="product-list">
                         <li><a href="product-detail-dynamic.html?id=ds106" style="color: inherit; text-decoration: none; cursor: pointer;">DS106 Automatic Die-Cutter</a></li>
                         <li><a href="product-detail-dynamic.html?id=mk-ecopress-1050" style="color: inherit; text-decoration: none; cursor: pointer;">MK Ecopress 1050</a></li>
-                        <li><a href="product-detail-dynamic.html?id=mk1060f-laser" style="color: inherit; text-decoration: none; cursor: pointer;">MK1060F Laser Die-Cutter</a></li>
-                        <li><a href="product-detail-dynamic.html?id=autocut-pro-1060" style="color: inherit; text-decoration: none; cursor: pointer;">AutoCut Pro 1060</a></li>
+                        <li><a href="product-detail-dynamic.html?id=mk1060f" style="color: inherit; text-decoration: none; cursor: pointer;">MK1060F Laser Die-Cutter</a></li>
                     </ul>
-                    <a href="category-die-cutting.html" class="product-link">View All Products →</a>
+                    <a href="product-list.html?category=die-cutting" class="product-link">View All Products →</a>
                 </div>
 
-                <!-- Product Card 4: Finishing Equipment -->
+                <!-- Product Card 3: FFG Inline -->
+                <div class="product-card product-inline">
+                    <h3 class="product-title">FFG Inline</h3>
+                    <p class="product-subtitle">Inline production technology for ultra-high efficiency mass production</p>
+                    <ul class="product-list">
+                        <li><a href="product-detail.html?id=jumbo-flexo" style="color: inherit; text-decoration: none; cursor: pointer;">Jumbo Flexo Inline</a></li>
+                        <li><a href="product-detail.html?id=ffg-standard" style="color: inherit; text-decoration: none; cursor: pointer;">FFG Standard</a></li>
+                        <li><a href="product-detail.html?id=ffg-highspeed" style="color: inherit; text-decoration: none; cursor: pointer;">FFG High-Speed</a></li>
+                    </ul>
+                    <a href="product-list.html?category=ffg-inline" class="product-link">View All Products →</a>
+                </div>
+
+                <!-- Product Card 4: Folder Gluer -->
                 <div class="product-card product-folder">
-                    <h3 class="product-title">Finishing Equipment</h3>
+                    <h3 class="product-title">Folder Gluer/Stitcher</h3>
                     <p class="product-subtitle">Post-print automation to improve forming efficiency</p>
                     <ul class="product-list">
-                        <li><a href="product-detail-dynamic.html?id=xjhd-2600gs" style="color: inherit; text-decoration: none; cursor: pointer;">XJHD-2600GS Folder Gluer</a></li>
-                        <li><a href="product-detail-dynamic.html?id=folder-gluer-series" style="color: inherit; text-decoration: none; cursor: pointer;">Folder Gluer Series</a></li>
-                        <li><a href="product-detail-dynamic.html?id=stitcher-series" style="color: inherit; text-decoration: none; cursor: pointer;">Stitcher Series</a></li>
-                        <li><a href="product-detail-dynamic.html?id=pp-strapping-machine" style="color: inherit; text-decoration: none; cursor: pointer;">PP Strapping Machine</a></li>
+                        <li><a href="product-detail.html?id=auto-folder" style="color: inherit; text-decoration: none; cursor: pointer;">Auto Folder Gluer</a></li>
+                        <li><a href="product-detail.html?id=stitcher" style="color: inherit; text-decoration: none; cursor: pointer;">Stitcher Machine</a></li>
+                        <li><a href="product-detail.html?id=inline-folder" style="color: inherit; text-decoration: none; cursor: pointer;">Inline Folder</a></li>
                     </ul>
-                    <a href="category-finishing.html" class="product-link">View All Products →</a>
+                    <a href="product-list.html?category=folder-gluer" class="product-link">View All Products →</a>
                 </div>
 
-                <!-- Product Card 5: Surface Treatment -->
+                <!-- Product Card 5: Laminator -->
                 <div class="product-card product-laminator">
-                    <h3 class="product-title">Surface Treatment</h3>
+                    <h3 class="product-title">Laminator/Filming Machine</h3>
                     <p class="product-subtitle">Surface treatment process optimization to enhance product quality</p>
                     <ul class="product-list">
-                        <li><a href="product-detail-dynamic.html?id=laminator-series" style="color: inherit; text-decoration: none; cursor: pointer;">Laminator Series</a></li>
-                        <li><a href="product-detail-dynamic.html?id=filming-machine" style="color: inherit; text-decoration: none; cursor: pointer;">Filming Machine</a></li>
-                        <li><a href="product-detail-dynamic.html?id=uv-coating" style="color: inherit; text-decoration: none; cursor: pointer;">UV Coating Machine</a></li>
-                        <li><a href="product-detail-dynamic.html?id=polishing-machine" style="color: inherit; text-decoration: none; cursor: pointer;">Polishing Machine</a></li>
+                        <li>Automatic Laminator</li>
+                        <li>Filming Machine</li>
+                        <li>UV Coating Machine</li>
                     </ul>
-                    <a href="category-surface-treatment.html" class="product-link">View All Products →</a>
+                    <a href="product-list.html?category=laminator" class="product-link">View All Products →</a>
                 </div>
 
-                <!-- Product Card 6: Automation Unit -->
+                <!-- Product Card 6: Feeder/Palletizer -->
                 <div class="product-card product-feeder">
-                    <h3 class="product-title">Automation Unit</h3>
+                    <h3 class="product-title">Feeder/Palletizer</h3>
                     <p class="product-subtitle">Front and back-end logistics automation to reduce labor dependency</p>
                     <ul class="product-list">
-                        <li><a href="product-detail-dynamic.html?id=jxb-robotic-arm" style="color: inherit; text-decoration: none; cursor: pointer;">JXB Robotic Arm</a></li>
-                        <li><a href="product-detail-dynamic.html?id=md-350-ai-palletizer" style="color: inherit; text-decoration: none; cursor: pointer;">MD-350 AI Palletizer</a></li>
-                        <li><a href="product-detail-dynamic.html?id=mk1300fz-turner" style="color: inherit; text-decoration: none; cursor: pointer;">MK1300FZ Turner</a></li>
-                        <li><a href="product-detail-dynamic.html?id=mk6500qc-inspector" style="color: inherit; text-decoration: none; cursor: pointer;">MK6500QC Inspector</a></li>
+                        <li>Automatic Feeder</li>
+                        <li>Robotic Palletizer</li>
+                        <li>Conveyor Systems</li>
                     </ul>
-                    <a href="category-automation.html" class="product-link">View All Products →</a>
+                    <a href="product-list.html?category=feeder-palletizer" class="product-link">View All Products →</a>
                 </div>
 
-                <!-- Product Card 7: Eco-friendly Packaging -->
-                <div class="product-card product-eco">
-                    <h3 class="product-title">Eco-friendly Packaging</h3>
-                    <p class="product-subtitle">Sustainable packaging solutions for environmental protection</p>
+                <!-- Product Card 7: Corrugator Line -->
+                <div class="product-card product-corrugator">
+                    <h3 class="product-title">Corrugator Line</h3>
+                    <p class="product-subtitle">High-speed corrugated board production for maximum output efficiency</p>
                     <ul class="product-list">
-                        <li><a href="product-detail-dynamic.html?id=full-auto-pulp-molding" style="color: inherit; text-decoration: none; cursor: pointer;">Full Auto Pulp Molding</a></li>
-                        <li><a href="product-detail-dynamic.html?id=semi-auto-pulp-molding" style="color: inherit; text-decoration: none; cursor: pointer;">Semi Auto Pulp Molding</a></li>
-                        <li>Biodegradable Material Systems</li>
-                        <li>Recycling Equipment</li>
+                        <li>Single Facer</li>
+                        <li>Double Facer</li>
+                        <li>Corrugator Stacker</li>
                     </ul>
-                    <a href="category-eco-packaging.html" class="product-link">View All Products →</a>
+                    <a href="product-list.html?category=corrugator" class="product-link">View All Products →</a>
                 </div>
-            </div>
+
+                <!-- Product Card 8: Flexo Printing -->
+                <div class="product-card product-flexo">
+                    <h3 class="product-title">Flexo Printing Machines</h3>
+                    <p class="product-subtitle">High-speed flexographic printing for large-volume production</p>
+                    <ul class="product-list">
+                        <li>NEXUS-F Series</li>
+                        <li>NEXUS-F PRO Series</li>
+                        <li>NEXUS-F ULTRA Series</li>
+                    </ul>
+                    <a href="product-list.html?category=flexo-printing" class="product-link">View All Products →</a>
+                </div>
+
 
             </div>
-
         </div>
     </section>
 

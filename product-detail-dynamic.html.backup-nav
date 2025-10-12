@@ -1,18 +1,400 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexible Printing - Products | NEXUS GLOBAL HOLDINGS</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title id="page-title">Product Detail | NEXUS GLOBAL HOLDINGS</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="product-navigation.css">
-    <link rel="stylesheet" href="product-styles.css">
+    <style>
+        /* Product Detail Specific Styles */
+        .product-detail-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .breadcrumb {
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .product-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            align-items: start;
+        }
+
+        .product-info h1 {
+            font-size: 48px;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+        }
+
+        .product-subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .product-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .product-features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-features-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .product-features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .product-image-container {
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product-tabs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #e5e7eb;
+            flex-wrap: wrap;
+        }
+
+        .product-tab {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            margin-bottom: -2px;
+        }
+
+        .product-tab.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+
+        .product-tab:hover {
+            color: #2563eb;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #1e3a5f;
+            margin-bottom: 30px;
+        }
+
+        .section-description {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .application-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 30px;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .application-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .application-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .application-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .application-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .application-card li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .application-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .specs-table thead {
+            background: #1e3a5f;
+            color: white;
+        }
+
+        .specs-table th {
+            padding: 20px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .specs-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 15px;
+            color: #444;
+        }
+
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .specs-table tbody tr:hover {
+            background: #f9fafb;
+        }
+
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .download-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s;
+        }
+
+        .download-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+        }
+
+        .download-card h3 {
+            font-size: 18px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+
+        .download-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #2563eb;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .product-hero {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .product-info h1 {
+                font-size: 32px;
+            }
+
+            .product-tabs {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+            }
+
+            .product-tab {
+                white-space: nowrap;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation (same as index.html) -->
     <!-- Main Navigation -->
     <nav class="main-nav" id="mainNav">
         <div class="container">
@@ -308,286 +690,126 @@
         </div>
     </nav>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <div class="container">
-            <a href="/">NEXUS GLOBAL</a> &gt; <a href="/products">Products</a> &gt; <span>Flexible Printing</span>
+    <div class="product-detail-container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="index.html">NEXUS GLOBAL</a> > 
+            <a href="index.html#products">Products</a> > 
+            <span id="breadcrumb-product">Product Name</span>
+        </div>
+
+        <!-- Product Hero Section -->
+        <div class="product-hero">
+            <div class="product-info">
+                <h1 id="product-name">Loading...</h1>
+                <div class="product-subtitle" id="product-subtitle">Loading...</div>
+                <div class="product-description" id="product-description">Loading...</div>
+                <ul class="product-features-list" id="product-key-features">
+                    <!-- Key features will be loaded here -->
+                </ul>
+            </div>
+            <div class="product-image-container">
+                <img id="product-image" class="product-image" src="" alt="Product Image">
+            </div>
+        </div>
+
+        <!-- Product Tabs -->
+        <div class="product-tabs">
+            <button class="product-tab active" data-tab="main-features">Main Features</button>
+            <button class="product-tab" data-tab="applications">Applications</button>
+            <button class="product-tab" data-tab="technical-data">Technical Data</button>
+            <button class="product-tab" data-tab="downloads">Downloads</button>
+            <button class="product-tab" data-tab="contact">Contact</button>
+        </div>
+
+        <!-- Tab Content: Main Features -->
+        <div id="main-features" class="tab-content active">
+            <h2 class="section-title" id="features-title">Core Functional Modules</h2>
+            <p class="section-description" id="features-description"></p>
+            <div class="features-grid" id="features-grid">
+                <!-- Features will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Tab Content: Applications -->
+        <div id="applications" class="tab-content">
+            <h2 class="section-title">Application Areas</h2>
+            <div class="applications-grid" id="applications-grid">
+                <!-- Applications will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Tab Content: Technical Data -->
+        <div id="technical-data" class="tab-content">
+            <h2 class="section-title">Technical Specifications</h2>
+            <table class="specs-table" id="specs-table">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th id="spec-model-name">Model</th>
+                    </tr>
+                </thead>
+                <tbody id="specs-tbody">
+                    <!-- Specs will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tab Content: Downloads -->
+        <div id="downloads" class="tab-content">
+            <h2 class="section-title">Download Center</h2>
+            <div class="downloads-grid" id="downloads-grid">
+                <!-- Downloads will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Tab Content: Contact -->
+        <div id="contact" class="tab-content">
+            <h2 class="section-title">Contact Our Technical Experts</h2>
+            <p class="section-description">Fill in the form and we will get back to you shortly.</p>
+            <form class="contact-form" id="product-contact-form">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company *</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="inquiry-type">Inquiry Type *</label>
+                    <select id="inquiry-type" name="inquiry-type" required>
+                        <option value="">Select Type</option>
+                        <option value="quotation">Request Quotation</option>
+                        <option value="technical">Technical Information</option>
+                        <option value="demo">Schedule Demo</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
         </div>
     </div>
 
-    <!-- Hero Banner -->
-    <section class="hero-banner">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Flexible Printing Solutions</h1>
-                <h2>From NEXUS GLOBAL</h2>
-                <p class="hero-tagline">Precision, efficiency, and sustainability for your packaging production</p>
-                <p class="hero-description">
-                    NEXUS GLOBAL's flexible printing solutions deliver exceptional performance and versatility, 
-                    handling a wide range of substrates and applications with unmatched precision. Boost your 
-                    productivity and create high-quality packaging products with our advanced technology.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Category Title -->
-    <section class="category-section">
-        <div class="container">
-            <h2 class="category-title">Flexographic Printing Presses</h2>
-            <p class="category-subtitle">From NEXUS GLOBAL</p>
-        </div>
-    </section>
-
-    <!-- Product Grid -->
-    <section class="product-grid-section">
-        <div class="container">
-            <div class="product-grid">
-                <!-- Product Card 1 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag tag-green">NEXUS-F Series</span>
-                        <div class="product-img-placeholder">
-                            <svg width="200" height="150" viewBox="0 0 200 150">
-                                <rect width="200" height="150" fill="#f5f5f5"/>
-                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-model">NEXUS-FLEXO 850</h3>
-                        <p class="product-position">Medium Format Flexographic Press</p>
-                        <p class="product-desc">
-                            The NEXUS-FLEXO 850 series is the perfect solution for modern flexible packaging production 
-                            with speeds up to 300m/min.
-                        </p>
-                        <a href="product-detail.html" class="product-link">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 2 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag tag-blue">NEXUS-F PRO Series</span>
-                        <div class="product-img-placeholder">
-                            <svg width="200" height="150" viewBox="0 0 200 150">
-                                <rect width="200" height="150" fill="#f5f5f5"/>
-                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-model">NEXUS-FLEXO 1050 PRO</h3>
-                        <p class="product-position">Large Format Flexographic Press</p>
-                        <p class="product-desc">
-                            The large format flexographic presses of the NEXUS-FLEXO 1050 PRO series offer maximum 
-                            productivity for industrial packaging production.
-                        </p>
-                        <a href="product-detail.html" class="product-link">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 3 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag tag-orange">NEXUS-F ULTRA Series</span>
-                        <div class="product-img-placeholder">
-                            <svg width="200" height="150" viewBox="0 0 200 150">
-                                <rect width="200" height="150" fill="#f5f5f5"/>
-                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-model">NEXUS-FLEXO 1250 ULTRA</h3>
-                        <p class="product-position">Ultra-Wide Format Flexographic Press</p>
-                        <p class="product-desc">
-                            As one of the most powerful flexographic presses in its class, the NEXUS-FLEXO 1250 ULTRA 
-                            stands for maximum performance in high-volume production.
-                        </p>
-                        <a href="product-detail.html" class="product-link">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 4 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag tag-purple">NEXUS-F INLINE Series</span>
-                        <div class="product-img-placeholder">
-                            <svg width="200" height="150" viewBox="0 0 200 150">
-                                <rect width="200" height="150" fill="#f5f5f5"/>
-                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-model">NEXUS-FLEXO 850 INLINE</h3>
-                        <p class="product-position">Inline Flexographic Press with Converting</p>
-                        <p class="product-desc">
-                            The NEXUS-FLEXO 850 INLINE offers top performance with integrated converting solutions 
-                            for future-oriented in-house production.
-                        </p>
-                        <a href="product-detail.html" class="product-link">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 5 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag tag-green">NEXUS-F Series</span>
-                        <div class="product-img-placeholder">
-                            <svg width="200" height="150" viewBox="0 0 200 150">
-                                <rect width="200" height="150" fill="#f5f5f5"/>
-                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-model">NEXUS-FLEXO 650</h3>
-                        <p class="product-position">Compact Format Flexographic Press</p>
-                        <p class="product-desc">
-                            The compact NEXUS-FLEXO 650 is ideal for label and narrow-web printing with exceptional 
-                            quality and efficiency.
-                        </p>
-                        <a href="product-detail.html" class="product-link">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 6 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag tag-blue">NEXUS-F PRO Series</span>
-                        <div class="product-img-placeholder">
-                            <svg width="200" height="150" viewBox="0 0 200 150">
-                                <rect width="200" height="150" fill="#f5f5f5"/>
-                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-model">NEXUS-FLEXO 850 PRO S</h3>
-                        <p class="product-position">Smart Flexographic Press</p>
-                        <p class="product-desc">
-                            The NEXUS-FLEXO 850 PRO S with AI-powered quality control system ensures consistent 
-                            print quality and reduces waste.
-                        </p>
-                        <a href="product-detail.html" class="product-link">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Content Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="content-grid">
-                <div class="content-text">
-                    <h2>Why Choose NEXUS Flexible Printing Solutions?</h2>
-                    <p>
-                        Flexible printing is a crucial process in the packaging industry, transforming printed materials 
-                        into finished products. From flexible packaging and labels to specialty applications, our flexographic 
-                        presses play a vital role in creating the designs that bring products to life.
-                    </p>
-                    <ul class="feature-list">
-                        <li><strong>Precision printing:</strong> Achieve clean, accurate prints with minimal waste</li>
-                        <li><strong>High-speed operation:</strong> Maximize throughput and efficiency</li>
-                        <li><strong>Versatile substrate handling:</strong> Process a wide range of materials</li>
-                        <li><strong>Quick changeovers:</strong> Minimize downtime and optimize production flexibility</li>
-                        <li><strong>Sustainable technology:</strong> Reduce environmental impact with eco-friendly solutions</li>
-                    </ul>
-                </div>
-                <div class="content-image">
-                    <div class="content-img-placeholder">
-                        <svg width="500" height="350" viewBox="0 0 500 350">
-                            <rect width="500" height="350" fill="#f5f5f5"/>
-                            <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="18">Content Image</text>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Transform Your Production?</h2>
-            <p>Contact our technical experts to find the perfect solution for your needs.</p>
-            <div class="cta-buttons">
-                <a href="/contact" class="btn btn-primary">Contact Technical Expert</a>
-                <a href="/downloads" class="btn btn-secondary">Download Brochures</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Footer (same as index.html) -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>NEXUS GLOBAL HOLDINGS</h4>
-                    <p>Leading provider of innovative packaging solutions for the global market.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/solutions">Solutions</a></li>
-                        <li><a href="/products">Products</a></li>
-                        <li><a href="/service">Service & Support</a></li>
-                        <li><a href="/about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>Email: info@nexusglobal.asia</p>
-                    <p>Phone: +86 XXX XXXX XXXX</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">WeChat</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
-            </div>
+        <div class="footer-content">
+            <p>&copy; 2024 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="product-script.js"></script>
+    <script src="product-detail-loader-v3.js"></script>
 </body>
 </html>

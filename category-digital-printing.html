@@ -1,456 +1,593 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Printing Machines | NEXUS GLOBAL HOLDINGS</title>
+    <title>Flexible Printing - Products | NEXUS GLOBAL HOLDINGS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Category Page Styles */
-        .category-hero {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            color: white;
-            padding: 100px 20px 60px;
-            text-align: center;
-        }
-
-        .category-hero-icon {
-            font-size: 5rem;
-            margin-bottom: 20px;
-        }
-
-        .category-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .category-hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0.95;
-        }
-
-        .breadcrumb {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            font-size: 0.95rem;
-            margin-top: 20px;
-        }
-
-        .breadcrumb a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-        }
-
-        .breadcrumb a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        .breadcrumb span {
-            opacity: 0.6;
-        }
-
-        .category-content {
-            max-width: 1400px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .category-intro {
-            background: white;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            margin-bottom: 60px;
-        }
-
-        .category-intro h2 {
-            color: #1e293b;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .category-intro p {
-            color: #64748b;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .product-card-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #9ca3af;
-        }
-
-        .product-card-content {
-            padding: 30px;
-        }
-
-        .product-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 15px;
-        }
-
-        .product-model {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1e293b;
-        }
-
-        .featured-badge {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .product-name {
-            color: #64748b;
-            font-size: 1rem;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        .product-description {
-            color: #64748b;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .product-features {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-
-        .product-features li {
-            padding: 8px 0;
-            color: #475569;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .product-features li::before {
-            content: "✓";
-            color: #6366f1;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .product-card-footer {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .view-details-btn {
-            flex: 1;
-            padding: 12px;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            color: white;
-            text-align: center;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .view-details-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-        }
-
-        .get-quote-btn {
-            padding: 12px 20px;
-            background: white;
-            color: #6366f1;
-            border: 2px solid #6366f1;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .get-quote-btn:hover {
-            background: #6366f1;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .category-hero h1 {
-                font-size: 2rem;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="product-navigation.css">
+    <link rel="stylesheet" href="product-styles.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
+    <!-- Main Navigation -->
     <nav class="main-nav" id="mainNav">
         <div class="container">
             <div class="nav-content">
-                <a href="index.html" class="logo">
-                    <span class="logo-icon"></span>
+                <a href="/" class="logo">
+                    <span class="logo-icon">⬡</span>
                     <div class="logo-text-wrapper">
                         <span class="logo-text">NEXUS</span>
                         <span class="logo-subtitle">GLOBAL HOLDINGS</span>
                     </div>
                 </a>
 
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#solutions">Solutions</a></li>
-                    <li><a href="products.html" class="active">Products</a></li>
-                    <li><a href="registered-companies.html">Companies</a></li>
-                    <li><a href="supplier-registration.html">Supplier</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="has-dropdown">
+                        <a href="#home" class="active">Home</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">About NEXUS</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#about">Company Overview <span class="arrow">→</span></a></li>
+                                        <li><a href="#mission">Our Mission <span class="arrow">→</span></a></li>
+                                        <li><a href="#team">Leadership Team <span class="arrow">→</span></a></li>
+                                        <li><a href="#history">Company History <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Why Choose Us</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#advantages">Core Advantages <span class="arrow">→</span></a></li>
+                                        <li><a href="#quality">Quality Assurance <span class="arrow">→</span></a></li>
+                                        <li><a href="#certifications">Certifications <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#solutions">Solutions</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">By Production Stage</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#complete-line">Complete Production Line <span class="arrow">→</span></a></li>
+                                        <li><a href="#equipment-upgrade">Equipment Upgrade <span class="arrow">→</span></a></li>
+                                        <li><a href="#automation">Automation Solutions <span class="arrow">→</span></a></li>
+                                        <li><a href="#maintenance">Maintenance & Support <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">By Industry</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#ecommerce">E-commerce Packaging <span class="arrow">→</span></a></li>
+                                        <li><a href="#food-beverage">Food & Beverage <span class="arrow">→</span></a></li>
+                                        <li><a href="#industrial">Industrial Packaging <span class="arrow">→</span></a></li>
+                                        <li><a href="#retail">Retail Packaging <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Support</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="ai-consultant.html">Solution Consulting <span class="arrow">→</span></a></li>
+                                        <li><a href="#cases">Case Studies <span class="arrow">→</span></a></li>
+                                        <li><a href="#roi">ROI Calculator <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Products Navigation Menu -->
+                    <li class="has-dropdown">
+                        <a href="#products">Products</a>
+                        <div class="mega-dropdown products-mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <!-- Digital Printing Machines -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Digital Printing Machines</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-detail-dynamic.html?id=glory160x-hd">Glory160X HD <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=ultra2500w">Ultra2500W <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=ultra2500w-pro">Ultra2500W Pro <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mcb2500">MCB2500 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mcb2512">MCB2512 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=scb1600">SCB1600 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=digital_printer" class="view-all">View All →</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Die-Cutting Machines -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Die-Cutting Machines</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-detail-dynamic.html?id=td800s">TD800S <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=td1650s">TD1650S <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=ds106">DS106 <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk1060f">MK1060F Laser <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk800sf">MK800SF Laser <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk21060vs">MK21060VS Dual Unit <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=die_cutting" class="view-all">View All →</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Feeder & Palletizer -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Feeder & Palletizer</h4>
+                                    <ul class="mega-links">
+                                        <li class="featured"><a href="product-detail-dynamic.html?id=md-350">MD-350 Smart Palletizer <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=jxb">JXB Robotic Arm <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=qsl2">QSL2 Pre-Feeder <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=qsl3">QSL3 Baffle Type <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=qsl4">QSL4 Basket Type <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=md-s2">MD-S2 Dual Station <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=feeder_palletizer" class="view-all">View All →</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Folder Gluer & Stitcher -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Folder Gluer & Stitcher</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-detail-dynamic.html?id=xjhd-2600gs">XJHD-2600GS <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=xjhd-2800gs">XJHD-2800GS <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=xjhd-3300gs">XJHD-3300GS <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=folder_gluer" class="view-all">View All →</a></li>
+                                    </ul>
+                                    <h4 class="mega-column-title" style="margin-top: 1rem;">Inspection Machines</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-detail-dynamic.html?id=mk1300fz">MK1300FZ <span class="arrow">→</span></a></li>
+                                        <li><a href="product-detail-dynamic.html?id=mk6500qc">MK6500QC <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?category=inspection" class="view-all">View All →</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Other Equipment -->
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">FFG Inline</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-list.html?category=ffg_inline">FFG Inline Series <span class="arrow">→</span></a></li>
+                                    </ul>
+
+                                    <h4 class="mega-column-title" style="margin-top: 1rem;">Laminator & Filming</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-list.html?category=laminator">Laminator Series <span class="arrow">→</span></a></li>
+                                    </ul>
+
+                                    <h4 class="mega-column-title" style="margin-top: 1rem;">Pulp Molding</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-list.html?category=pulp_molding">Pulp Molding Series <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Quick Links -->
+                                <div class="mega-column mega-column-highlight">
+                                    <h4 class="mega-column-title">Quick Links</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="product-list.html" class="highlight-link">Product Overview <span class="arrow">→</span></a></li>
+                                        <li><a href="product-list.html?featured=true" class="highlight-link">Featured Products <span class="arrow">→</span></a></li>
+                                        <li><a href="#" class="highlight-link">Product Comparison <span class="arrow">→</span></a></li>
+                                        <li><a href="ai-consultant.html" class="highlight-link">AI Selection Consultant <span class="arrow">→</span></a></li>
+                                        <li><a href="contact.html" class="highlight-link">Get Quote <span class="arrow">→</span></a></li>
+                                    </ul>
+
+                                    <div class="mega-cta">
+                                        <h5>Need Help Choosing Equipment?</h5>
+                                        <p>Our expert team is ready to assist you</p>
+                                        <a href="contact.html" class="cta-button">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#service">Service & Support</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Pre-Sales Support</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="ai-consultant.html">AI Consultant <span class="arrow">→</span></a></li>
+                                        <li><a href="#diagnosis">Production Line Diagnosis <span class="arrow">→</span></a></li>
+                                        <li><a href="#quote">Get Quote <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">After-Sales Support</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#installation">Installation Service <span class="arrow">→</span></a></li>
+                                        <li><a href="#maintenance">Maintenance Service <span class="arrow">→</span></a></li>
+                                        <li><a href="#training">Training Programs <span class="arrow">→</span></a></li>
+                                        <li><a href="#spare-parts">Spare Parts <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Resources</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#manuals">User Manuals <span class="arrow">→</span></a></li>
+                                        <li><a href="#videos">Video Tutorials <span class="arrow">→</span></a></li>
+                                        <li><a href="#faq">FAQs <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="about-us.html">About Us</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Company</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#about">Company Overview <span class="arrow">→</span></a></li>
+                                        <li><a href="#mission">Mission & Vision <span class="arrow">→</span></a></li>
+                                        <li><a href="#team">Leadership Team <span class="arrow">→</span></a></li>
+                                        <li><a href="#careers">Careers <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Partnerships</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#certifications">Certifications <span class="arrow">→</span></a></li>
+                                        <li><a href="#partners">Our Partners <span class="arrow">→</span></a></li>
+                                        <li><a href="registered-companies.html">Registered Companies <span class="arrow">→</span></a></li>
+                                        <li><a href="supplier-registration.html">Become a Supplier <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="news.html">News</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Latest Updates</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#company-news">Company News <span class="arrow">→</span></a></li>
+                                        <li><a href="#industry-news">Industry News <span class="arrow">→</span></a></li>
+                                        <li><a href="#events">Events & Exhibitions <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Resources</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#blog">Blog <span class="arrow">→</span></a></li>
+                                        <li><a href="#whitepapers">Whitepapers <span class="arrow">→</span></a></li>
+                                        <li><a href="#press">Press Releases <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="contact.html">Contact</a>
+                        <div class="mega-dropdown">
+                            <div class="mega-dropdown-content">
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Get in Touch</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#contact-form">Contact Form <span class="arrow">→</span></a></li>
+                                        <li><a href="ai-consultant.html">Online Consultation <span class="arrow">→</span></a></li>
+                                        <li><a href="#quote">Request Quote <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-column-title">Locations</h4>
+                                    <ul class="mega-links">
+                                        <li><a href="#singapore">Singapore Office <span class="arrow">→</span></a></li>
+                                        <li><a href="#china">China Office <span class="arrow">→</span></a></li>
+                                        <li><a href="#global">Global Network <span class="arrow">→</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
 
                 <div class="nav-actions">
-                    <select class="language-selector">
+                    <select class="language-selector" aria-label="Language selector">
                         <option value="en">English</option>
                         <option value="zh">中文</option>
+                        <option value="pt">Português</option>
                     </select>
-                    <a href="contact.html" class="cta-button">Get Quote</a>
+                    <button class="btn-cta">Get Quote</button>
                 </div>
+
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="category-hero">
-        <div class="category-hero-icon">🖨️</div>
-        <h1>Digital Printing Machines</h1>
-        <p>High-precision digital inkjet printing solutions for personalized customization needs with exceptional color accuracy and production efficiency</p>
-        <div class="breadcrumb">
-            <a href="index.html">Home</a>
-            <span>›</span>
-            <a href="products.html">Products</a>
-            <span>›</span>
-            <span>Digital Printing</span>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">NEXUS GLOBAL</a> &gt; <a href="/products">Products</a> &gt; <span>Flexible Printing</span>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Flexible Printing Solutions</h1>
+                <h2>From NEXUS GLOBAL</h2>
+                <p class="hero-tagline">Precision, efficiency, and sustainability for your packaging production</p>
+                <p class="hero-description">
+                    NEXUS GLOBAL's flexible printing solutions deliver exceptional performance and versatility, 
+                    handling a wide range of substrates and applications with unmatched precision. Boost your 
+                    productivity and create high-quality packaging products with our advanced technology.
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- Category Content -->
-    <section class="category-content">
-        <!-- Category Introduction -->
-        <div class="category-intro">
-            <h2>About Digital Printing Technology</h2>
-            <p>Our digital printing machines represent the cutting edge of corrugated packaging printing technology. These advanced systems utilize high-precision digital inkjet technology to deliver exceptional print quality with vibrant colors and sharp details. Perfect for short-run production, variable data printing, and personalized packaging solutions, our digital printers offer unmatched flexibility and efficiency. With features like single-pass printing, high-speed operation, and minimal setup time, these machines are ideal for modern packaging operations that demand both quality and productivity.</p>
+    <!-- Product Category Title -->
+    <section class="category-section">
+        <div class="container">
+            <h2 class="category-title">Flexographic Printing Presses</h2>
+            <p class="category-subtitle">From NEXUS GLOBAL</p>
         </div>
+    </section>
 
-        <!-- Products Grid -->
-        <div class="products-grid">
-            <!-- Product 1: Glory160X HD -->
-            <div class="product-card" onclick="window.location.href='product-detail-dynamic.html?id=glory160x-hd'">
-                <div class="product-card-image">🖨️</div>
-                <div class="product-card-content">
-                    <div class="product-card-header">
-                        <h3 class="product-model">Glory160X HD</h3>
-                        <span class="featured-badge">⭐ Featured</span>
+    <!-- Product Grid -->
+    <section class="product-grid-section">
+        <div class="container">
+            <div class="product-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag tag-green">NEXUS-F Series</span>
+                        <div class="product-img-placeholder">
+                            <svg width="200" height="150" viewBox="0 0 200 150">
+                                <rect width="200" height="150" fill="#f5f5f5"/>
+                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
+                            </svg>
+                        </div>
                     </div>
-                    <p class="product-name">Single Pass High-Definition Digital Inkjet Printer for Corrugated Board</p>
-                    <p class="product-description">Glory160X HD adopts Single Pass technology for real-time high-speed printing with exceptional color accuracy and image quality.</p>
-                    <ul class="product-features">
-                        <li>Single Pass high-speed printing</li>
-                        <li>HD print quality (1200 DPI)</li>
-                        <li>Variable data printing support</li>
-                        <li>Low maintenance costs</li>
-                        <li>Eco-friendly water-based inks</li>
-                    </ul>
-                    <div class="product-card-footer">
-                        <a href="product-detail-dynamic.html?id=glory160x-hd" class="view-details-btn">View Details →</a>
-                        <a href="contact.html" class="get-quote-btn">Quote</a>
+                    <div class="product-info">
+                        <h3 class="product-model">NEXUS-FLEXO 850</h3>
+                        <p class="product-position">Medium Format Flexographic Press</p>
+                        <p class="product-desc">
+                            The NEXUS-FLEXO 850 series is the perfect solution for modern flexible packaging production 
+                            with speeds up to 300m/min.
+                        </p>
+                        <a href="product-detail.html" class="product-link">
+                            Learn more
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag tag-blue">NEXUS-F PRO Series</span>
+                        <div class="product-img-placeholder">
+                            <svg width="200" height="150" viewBox="0 0 200 150">
+                                <rect width="200" height="150" fill="#f5f5f5"/>
+                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-model">NEXUS-FLEXO 1050 PRO</h3>
+                        <p class="product-position">Large Format Flexographic Press</p>
+                        <p class="product-desc">
+                            The large format flexographic presses of the NEXUS-FLEXO 1050 PRO series offer maximum 
+                            productivity for industrial packaging production.
+                        </p>
+                        <a href="product-detail.html" class="product-link">
+                            Learn more
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag tag-orange">NEXUS-F ULTRA Series</span>
+                        <div class="product-img-placeholder">
+                            <svg width="200" height="150" viewBox="0 0 200 150">
+                                <rect width="200" height="150" fill="#f5f5f5"/>
+                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-model">NEXUS-FLEXO 1250 ULTRA</h3>
+                        <p class="product-position">Ultra-Wide Format Flexographic Press</p>
+                        <p class="product-desc">
+                            As one of the most powerful flexographic presses in its class, the NEXUS-FLEXO 1250 ULTRA 
+                            stands for maximum performance in high-volume production.
+                        </p>
+                        <a href="product-detail.html" class="product-link">
+                            Learn more
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag tag-purple">NEXUS-F INLINE Series</span>
+                        <div class="product-img-placeholder">
+                            <svg width="200" height="150" viewBox="0 0 200 150">
+                                <rect width="200" height="150" fill="#f5f5f5"/>
+                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-model">NEXUS-FLEXO 850 INLINE</h3>
+                        <p class="product-position">Inline Flexographic Press with Converting</p>
+                        <p class="product-desc">
+                            The NEXUS-FLEXO 850 INLINE offers top performance with integrated converting solutions 
+                            for future-oriented in-house production.
+                        </p>
+                        <a href="product-detail.html" class="product-link">
+                            Learn more
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag tag-green">NEXUS-F Series</span>
+                        <div class="product-img-placeholder">
+                            <svg width="200" height="150" viewBox="0 0 200 150">
+                                <rect width="200" height="150" fill="#f5f5f5"/>
+                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-model">NEXUS-FLEXO 650</h3>
+                        <p class="product-position">Compact Format Flexographic Press</p>
+                        <p class="product-desc">
+                            The compact NEXUS-FLEXO 650 is ideal for label and narrow-web printing with exceptional 
+                            quality and efficiency.
+                        </p>
+                        <a href="product-detail.html" class="product-link">
+                            Learn more
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag tag-blue">NEXUS-F PRO Series</span>
+                        <div class="product-img-placeholder">
+                            <svg width="200" height="150" viewBox="0 0 200 150">
+                                <rect width="200" height="150" fill="#f5f5f5"/>
+                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-model">NEXUS-FLEXO 850 PRO S</h3>
+                        <p class="product-position">Smart Flexographic Press</p>
+                        <p class="product-desc">
+                            The NEXUS-FLEXO 850 PRO S with AI-powered quality control system ensures consistent 
+                            print quality and reduces waste.
+                        </p>
+                        <a href="product-detail.html" class="product-link">
+                            Learn more
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Product 2: Ultra2500W -->
-            <div class="product-card" onclick="window.location.href='product-detail-dynamic.html?id=ultra2500w'">
-                <div class="product-card-image">🖨️</div>
-                <div class="product-card-content">
-                    <div class="product-card-header">
-                        <h3 class="product-model">Ultra2500W</h3>
-                    </div>
-                    <p class="product-name">High-Speed Scanning Digital Printing Machine</p>
-                    <p class="product-description">Ultra2500W is a high-speed scanning digital printer for corrugated board, offering excellent print quality and production efficiency.</p>
-                    <ul class="product-features">
-                        <li>High-speed scanning technology</li>
-                        <li>Wide format printing (2500mm)</li>
-                        <li>Excellent color reproduction</li>
-                        <li>Automated feeding system</li>
-                        <li>User-friendly interface</li>
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <h2>Why Choose NEXUS Flexible Printing Solutions?</h2>
+                    <p>
+                        Flexible printing is a crucial process in the packaging industry, transforming printed materials 
+                        into finished products. From flexible packaging and labels to specialty applications, our flexographic 
+                        presses play a vital role in creating the designs that bring products to life.
+                    </p>
+                    <ul class="feature-list">
+                        <li><strong>Precision printing:</strong> Achieve clean, accurate prints with minimal waste</li>
+                        <li><strong>High-speed operation:</strong> Maximize throughput and efficiency</li>
+                        <li><strong>Versatile substrate handling:</strong> Process a wide range of materials</li>
+                        <li><strong>Quick changeovers:</strong> Minimize downtime and optimize production flexibility</li>
+                        <li><strong>Sustainable technology:</strong> Reduce environmental impact with eco-friendly solutions</li>
                     </ul>
-                    <div class="product-card-footer">
-                        <a href="product-detail-dynamic.html?id=ultra2500w" class="view-details-btn">View Details →</a>
-                        <a href="contact.html" class="get-quote-btn">Quote</a>
+                </div>
+                <div class="content-image">
+                    <div class="content-img-placeholder">
+                        <svg width="500" height="350" viewBox="0 0 500 350">
+                            <rect width="500" height="350" fill="#f5f5f5"/>
+                            <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="18">Content Image</text>
+                        </svg>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Product 3: Ultra2500W Pro -->
-            <div class="product-card" onclick="window.location.href='product-detail-dynamic.html?id=ultra2500w-pro'">
-                <div class="product-card-image">🖨️</div>
-                <div class="product-card-content">
-                    <div class="product-card-header">
-                        <h3 class="product-model">Ultra2500W Pro</h3>
-                    </div>
-                    <p class="product-name">Industrial-Grade Multi-Function Combined Digital Printer</p>
-                    <p class="product-description">Ultra2500W Pro is an upgraded version of Ultra2500W with enhanced features and higher production capacity.</p>
-                    <ul class="product-features">
-                        <li>Enhanced printing speed</li>
-                        <li>Multi-color printing capability</li>
-                        <li>Advanced color management</li>
-                        <li>Integrated quality control</li>
-                        <li>Remote monitoring system</li>
-                    </ul>
-                    <div class="product-card-footer">
-                        <a href="product-detail-dynamic.html?id=ultra2500w-pro" class="view-details-btn">View Details →</a>
-                        <a href="contact.html" class="get-quote-btn">Quote</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 4: MCB2500 -->
-            <div class="product-card" onclick="window.location.href='product-detail-dynamic.html?id=mcb2500'">
-                <div class="product-card-image">🖨️</div>
-                <div class="product-card-content">
-                    <div class="product-card-header">
-                        <h3 class="product-model">MCB2500</h3>
-                    </div>
-                    <p class="product-name">Multi-Color Corrugated Board Digital Printer</p>
-                    <p class="product-description">MCB2500 offers versatile multi-color printing capabilities for various corrugated board applications.</p>
-                    <ul class="product-features">
-                        <li>Multi-color printing system</li>
-                        <li>Flexible production capacity</li>
-                        <li>Cost-effective operation</li>
-                        <li>Easy maintenance</li>
-                        <li>Compact footprint</li>
-                    </ul>
-                    <div class="product-card-footer">
-                        <a href="product-detail-dynamic.html?id=mcb2500" class="view-details-btn">View Details →</a>
-                        <a href="contact.html" class="get-quote-btn">Quote</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 5: MCB2512 -->
-            <div class="product-card" onclick="window.location.href='product-detail-dynamic.html?id=mcb2512'">
-                <div class="product-card-image">🖨️</div>
-                <div class="product-card-content">
-                    <div class="product-card-header">
-                        <h3 class="product-model">MCB2512</h3>
-                    </div>
-                    <p class="product-name">Enhanced Multi-Color Board Printer</p>
-                    <p class="product-description">MCB2512 is an enhanced version with improved printing resolution and faster production speed.</p>
-                    <ul class="product-features">
-                        <li>Higher resolution printing</li>
-                        <li>Faster production speed</li>
-                        <li>Advanced ink management</li>
-                        <li>Automated calibration</li>
-                        <li>Energy-efficient design</li>
-                    </ul>
-                    <div class="product-card-footer">
-                        <a href="product-detail-dynamic.html?id=mcb2512" class="view-details-btn">View Details →</a>
-                        <a href="contact.html" class="get-quote-btn">Quote</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 6: SCB1600 -->
-            <div class="product-card" onclick="window.location.href='product-detail-dynamic.html?id=scb1600'">
-                <div class="product-card-image">🖨️</div>
-                <div class="product-card-content">
-                    <div class="product-card-header">
-                        <h3 class="product-model">SCB1600</h3>
-                    </div>
-                    <p class="product-name">Compact Single-Color Board Printer</p>
-                    <p class="product-description">SCB1600 is a compact digital printer ideal for small to medium-sized production operations.</p>
-                    <ul class="product-features">
-                        <li>Compact design</li>
-                        <li>Single-color printing</li>
-                        <li>Easy operation</li>
-                        <li>Low initial investment</li>
-                        <li>Reliable performance</li>
-                    </ul>
-                    <div class="product-card-footer">
-                        <a href="product-detail-dynamic.html?id=scb1600" class="view-details-btn">View Details →</a>
-                        <a href="contact.html" class="get-quote-btn">Quote</a>
-                    </div>
-                </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Production?</h2>
+            <p>Contact our technical experts to find the perfect solution for your needs.</p>
+            <div class="cta-buttons">
+                <a href="/contact" class="btn btn-primary">Contact Technical Expert</a>
+                <a href="/downloads" class="btn btn-secondary">Download Brochures</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="main-footer">
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
+            <div class="footer-grid">
+                <div class="footer-col">
                     <h4>NEXUS GLOBAL HOLDINGS</h4>
-                    <p>Your trusted partner in corrugated packaging equipment solutions</p>
+                    <p>Leading provider of innovative packaging solutions for the global market.</p>
                 </div>
-                <div class="footer-column">
+                <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="registered-companies.html">Companies</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/solutions">Solutions</a></li>
+                        <li><a href="/products">Products</a></li>
+                        <li><a href="/service">Service & Support</a></li>
+                        <li><a href="/about">About Us</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
+                <div class="footer-col">
                     <h4>Contact</h4>
-                    <p>Email: info@nexusglobal.com</p>
-                    <p>Phone: +86 123 4567 8900</p>
+                    <p>Email: info@nexusglobal.asia</p>
+                    <p>Phone: +86 XXX XXXX XXXX</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">LinkedIn</a>
+                        <a href="#">WeChat</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
+                <p>&copy; 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script src="product-script.js"></script>
 </body>
 </html>
-

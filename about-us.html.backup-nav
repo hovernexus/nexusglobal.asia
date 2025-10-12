@@ -1,18 +1,335 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexible Printing - Products | NEXUS GLOBAL HOLDINGS</title>
+    <title>About Us - NEXUS Global</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="product-navigation.css">
-    <link rel="stylesheet" href="product-styles.css">
+    <style>
+        /* About Us Specific Styles */
+        .about-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5f8d 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-section:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e3a5f;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Company Story */
+        .company-story {
+            max-width: 1000px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #333;
+        }
+
+        .company-story p {
+            margin-bottom: 1.5rem;
+        }
+
+        .company-story strong {
+            color: #1e3a5f;
+        }
+
+        /* Founders Section */
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .founder-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .founder-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .founder-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .founder-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: 700;
+            margin-right: 30px;
+        }
+
+        .founder-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #1e3a5f;
+        }
+
+        .founder-info .title {
+            font-size: 1.1rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .founder-info .ownership {
+            font-size: 0.95rem;
+            color: #999;
+        }
+
+        .founder-bio {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Ownership Structure */
+        .ownership-diagram {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .ownership-level {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .ownership-box {
+            display: inline-block;
+            padding: 20px 40px;
+            border: 3px solid #1e3a5f;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .ownership-arrow {
+            text-align: center;
+            font-size: 2rem;
+            color: #1e3a5f;
+            margin: 20px 0;
+        }
+
+        .ownership-shareholders {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .shareholder {
+            text-align: center;
+        }
+
+        .shareholder-box {
+            padding: 20px 30px;
+            border: 3px solid #667eea;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #667eea;
+            background: white;
+            margin-bottom: 10px;
+        }
+
+        .shareholder-percentage {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e3a5f;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-member-avatar {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .team-member-info {
+            padding: 30px;
+        }
+
+        .team-member-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1e3a5f;
+        }
+
+        .team-member-info .role {
+            font-size: 1.1rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-member-info p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e3a5f;
+        }
+
+        .value-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .founders-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .ownership-shareholders {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <!-- Main Navigation -->
     <nav class="main-nav" id="mainNav">
         <div class="container">
@@ -308,233 +625,208 @@
         </div>
     </nav>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
+    <!-- Hero Section -->
+    <section class="about-hero">
         <div class="container">
-            <a href="/">NEXUS GLOBAL</a> &gt; <a href="/products">Products</a> &gt; <span>Flexible Printing</span>
+            <h1>About NEXUS Global</h1>
+            <p>Building the Future of Corrugated Packaging Through Innovation, Integration, and Global Collaboration</p>
         </div>
-    </div>
+    </section>
 
-    <!-- Hero Banner -->
-    <section class="hero-banner">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Flexible Printing Solutions</h1>
-                <h2>From NEXUS GLOBAL</h2>
-                <p class="hero-tagline">Precision, efficiency, and sustainability for your packaging production</p>
-                <p class="hero-description">
-                    NEXUS GLOBAL's flexible printing solutions deliver exceptional performance and versatility, 
-                    handling a wide range of substrates and applications with unmatched precision. Boost your 
-                    productivity and create high-quality packaging products with our advanced technology.
+    <!-- Company Story -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <p class="section-subtitle">Pioneering the Digital Transformation of Corrugated Packaging Industry</p>
+            <div class="company-story">
+                <p>
+                    Founded in <strong>Singapore</strong>, NEXUS Global Holdings Inc. represents a new paradigm in the corrugated packaging equipment industry. We are not just a marketplace—we are an <strong>intelligent ecosystem</strong> that connects manufacturers, suppliers, and end-users across the globe.
+                </p>
+                <p>
+                    Our vision is to <strong>revolutionize the corrugated packaging industry</strong> by creating the world's first comprehensive digital platform that integrates equipment sourcing, technical consultation, financing solutions, and after-sales support. We believe that the future of manufacturing lies in <strong>collaboration, transparency, and intelligent decision-making</strong>.
+                </p>
+                <p>
+                    With deep roots in <strong>Asia</strong> and a global perspective, NEXUS Global serves as a bridge between cutting-edge technology providers and forward-thinking manufacturers. We leverage <strong>AI-powered matching algorithms</strong>, comprehensive equipment databases, and industry expertise to help our clients make informed decisions that drive profitability and sustainability.
+                </p>
+                <p>
+                    Our platform features over <strong>500+ certified equipment suppliers</strong>, <strong>10,000+ product listings</strong>, and serves clients in more than <strong>80 countries</strong>. We are committed to making high-quality corrugated packaging equipment accessible, affordable, and optimized for every production need.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Product Category Title -->
-    <section class="category-section">
+    <!-- Founders Section -->
+    <section class="about-section">
         <div class="container">
-            <h2 class="category-title">Flexographic Printing Presses</h2>
-            <p class="category-subtitle">From NEXUS GLOBAL</p>
-        </div>
-    </section>
-
-    <!-- Product Grid -->
-    <section class="product-grid-section">
-        <div class="container">
-            <div class="product-grid">
-                <!-- Product Card 1 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag tag-green">NEXUS-F Series</span>
-                        <div class="product-img-placeholder">
-                            <svg width="200" height="150" viewBox="0 0 200 150">
-                                <rect width="200" height="150" fill="#f5f5f5"/>
-                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
-                            </svg>
+            <h2 class="section-title">Our Founders</h2>
+            <p class="section-subtitle">Visionary Leaders Driving Industry Transformation</p>
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <div class="founder-header">
+                        <div class="founder-avatar">HS</div>
+                        <div class="founder-info">
+                            <h3>Hover Shen (Shen Xiang)</h3>
+                            <div class="title">CMO (Chief Marketing Officer)</div>
+                            <div class="ownership">45.05% Shareholder</div>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-model">NEXUS-FLEXO 850</h3>
-                        <p class="product-position">Medium Format Flexographic Press</p>
-                        <p class="product-desc">
-                            The NEXUS-FLEXO 850 series is the perfect solution for modern flexible packaging production 
-                            with speeds up to 300m/min.
+                    <div class="founder-bio">
+                        <p>
+                            With over 15 years of experience in sales and marketing within the corrugated packaging industry, Hover brings exceptional expertise in building global partnerships and driving market expansion. His deep understanding of customer needs and market dynamics has been instrumental in establishing NEXUS Global's strong market presence.
                         </p>
-                        <a href="product-detail.html" class="product-link">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
+                        <p>
+                            As Chief Marketing Officer, Hover leads all sales and marketing initiatives, focusing on brand development, customer acquisition, and strategic partnerships. His vision is to position NEXUS Global as the most trusted and customer-centric platform in the packaging equipment industry, connecting manufacturers with world-class solutions through innovative marketing strategies and relationship building.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Product Card 2 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag tag-blue">NEXUS-F PRO Series</span>
-                        <div class="product-img-placeholder">
-                            <svg width="200" height="150" viewBox="0 0 200 150">
-                                <rect width="200" height="150" fill="#f5f5f5"/>
-                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
-                            </svg>
+                <div class="founder-card">
+                    <div class="founder-header">
+                        <div class="founder-avatar">EJ</div>
+                        <div class="founder-info">
+                            <h3>Edward Ju (Ju Yi)</h3>
+                            <div class="title">CEO (Chief Executive Officer)</div>
+                            <div class="ownership">45.05% Shareholder</div>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-model">NEXUS-FLEXO 1050 PRO</h3>
-                        <p class="product-position">Large Format Flexographic Press</p>
-                        <p class="product-desc">
-                            The large format flexographic presses of the NEXUS-FLEXO 1050 PRO series offer maximum 
-                            productivity for industrial packaging production.
+                    <div class="founder-bio">
+                        <p>
+                            With extensive industry background and resource advantages, Edward brings invaluable expertise in factory operations, equipment quality certification, and industry standards compliance. His deep connections with manufacturers, suppliers, and certification bodies across Asia have been crucial in establishing NEXUS Global's credibility and operational excellence.
                         </p>
-                        <a href="product-detail.html" class="product-link">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 3 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag tag-orange">NEXUS-F ULTRA Series</span>
-                        <div class="product-img-placeholder">
-                            <svg width="200" height="150" viewBox="0 0 200 150">
-                                <rect width="200" height="150" fill="#f5f5f5"/>
-                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-model">NEXUS-FLEXO 1250 ULTRA</h3>
-                        <p class="product-position">Ultra-Wide Format Flexographic Press</p>
-                        <p class="product-desc">
-                            As one of the most powerful flexographic presses in its class, the NEXUS-FLEXO 1250 ULTRA 
-                            stands for maximum performance in high-volume production.
+                        <p>
+                            As Chief Executive Officer, Edward oversees overall business strategy, quality assurance, and industry partnerships. He focuses on ensuring that all equipment listed on the platform meets the highest quality standards and certifications. His vision is to build a trusted ecosystem where manufacturers can confidently source certified, high-quality equipment backed by rigorous quality control and industry expertise.
                         </p>
-                        <a href="product-detail.html" class="product-link">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 4 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag tag-purple">NEXUS-F INLINE Series</span>
-                        <div class="product-img-placeholder">
-                            <svg width="200" height="150" viewBox="0 0 200 150">
-                                <rect width="200" height="150" fill="#f5f5f5"/>
-                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-model">NEXUS-FLEXO 850 INLINE</h3>
-                        <p class="product-position">Inline Flexographic Press with Converting</p>
-                        <p class="product-desc">
-                            The NEXUS-FLEXO 850 INLINE offers top performance with integrated converting solutions 
-                            for future-oriented in-house production.
-                        </p>
-                        <a href="product-detail.html" class="product-link">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 5 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag tag-green">NEXUS-F Series</span>
-                        <div class="product-img-placeholder">
-                            <svg width="200" height="150" viewBox="0 0 200 150">
-                                <rect width="200" height="150" fill="#f5f5f5"/>
-                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-model">NEXUS-FLEXO 650</h3>
-                        <p class="product-position">Compact Format Flexographic Press</p>
-                        <p class="product-desc">
-                            The compact NEXUS-FLEXO 650 is ideal for label and narrow-web printing with exceptional 
-                            quality and efficiency.
-                        </p>
-                        <a href="product-detail.html" class="product-link">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 6 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag tag-blue">NEXUS-F PRO Series</span>
-                        <div class="product-img-placeholder">
-                            <svg width="200" height="150" viewBox="0 0 200 150">
-                                <rect width="200" height="150" fill="#f5f5f5"/>
-                                <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="14">Product Image</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-model">NEXUS-FLEXO 850 PRO S</h3>
-                        <p class="product-position">Smart Flexographic Press</p>
-                        <p class="product-desc">
-                            The NEXUS-FLEXO 850 PRO S with AI-powered quality control system ensures consistent 
-                            print quality and reduces waste.
-                        </p>
-                        <a href="product-detail.html" class="product-link">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="content-section">
+    <!-- Ownership Structure -->
+    <section class="about-section">
         <div class="container">
-            <div class="content-grid">
-                <div class="content-text">
-                    <h2>Why Choose NEXUS Flexible Printing Solutions?</h2>
-                    <p>
-                        Flexible printing is a crucial process in the packaging industry, transforming printed materials 
-                        into finished products. From flexible packaging and labels to specialty applications, our flexographic 
-                        presses play a vital role in creating the designs that bring products to life.
-                    </p>
-                    <ul class="feature-list">
-                        <li><strong>Precision printing:</strong> Achieve clean, accurate prints with minimal waste</li>
-                        <li><strong>High-speed operation:</strong> Maximize throughput and efficiency</li>
-                        <li><strong>Versatile substrate handling:</strong> Process a wide range of materials</li>
-                        <li><strong>Quick changeovers:</strong> Minimize downtime and optimize production flexibility</li>
-                        <li><strong>Sustainable technology:</strong> Reduce environmental impact with eco-friendly solutions</li>
-                    </ul>
+            <h2 class="section-title">Ownership Structure</h2>
+            <p class="section-subtitle">Transparent Corporate Governance</p>
+            <div class="ownership-diagram">
+                <div class="ownership-level">
+                    <div class="ownership-box">Nexus Global Holdings Inc.</div>
                 </div>
-                <div class="content-image">
-                    <div class="content-img-placeholder">
-                        <svg width="500" height="350" viewBox="0 0 500 350">
-                            <rect width="500" height="350" fill="#f5f5f5"/>
-                            <text x="50%" y="50%" text-anchor="middle" fill="#999" font-size="18">Content Image</text>
-                        </svg>
+                <div class="ownership-arrow">↑</div>
+                <div class="ownership-shareholders">
+                    <div class="shareholder">
+                        <div class="shareholder-box">Hover Shen<br>(Shen Xiang)</div>
+                        <div class="shareholder-percentage">45.05%</div>
                     </div>
+                    <div class="shareholder">
+                        <div class="shareholder-box">Edward Ju<br>(Ju Yi)</div>
+                        <div class="shareholder-percentage">45.05%</div>
+                    </div>
+                    <div class="shareholder">
+                        <div class="shareholder-box">Stellar Bridge<br>Group Pte. Ltd.</div>
+                        <div class="shareholder-percentage">9.9%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <p class="section-subtitle">Experts Dedicated to Your Success</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-avatar">LW</div>
+                    <div class="team-member-info">
+                        <h3>Linda Wang</h3>
+                        <div class="role">Chief Operating Officer</div>
+                        <p>Linda oversees daily operations and ensures seamless execution of our platform services. With 12 years in supply chain management, she brings operational excellence to every aspect of our business.</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">MC</div>
+                    <div class="team-member-info">
+                        <h3>Michael Chen</h3>
+                        <div class="role">Head of Sales - Asia Pacific</div>
+                        <p>Michael leads our sales team across Asia Pacific, helping manufacturers find the perfect equipment solutions. His deep industry knowledge and client-first approach have earned him the trust of hundreds of clients.</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">ST</div>
+                    <div class="team-member-info">
+                        <h3>Sarah Tan</h3>
+                        <div class="role">Head of Customer Success</div>
+                        <p>Sarah ensures every client receives exceptional support throughout their journey with NEXUS. Her team provides technical consultation, financing guidance, and ongoing support to maximize client success.</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">DL</div>
+                    <div class="team-member-info">
+                        <h3>David Lee</h3>
+                        <div class="role">Head of Technology</div>
+                        <p>David leads our technology team in developing innovative features and maintaining our platform's reliability. His expertise in AI and machine learning drives our intelligent matching capabilities.</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">EK</div>
+                    <div class="team-member-info">
+                        <h3>Emily Kim</h3>
+                        <div class="role">Head of Marketing</div>
+                        <p>Emily crafts our brand story and connects with clients worldwide. Her strategic marketing initiatives have helped NEXUS Global become a recognized name in the corrugated packaging industry.</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">RG</div>
+                    <div class="team-member-info">
+                        <h3>Robert Garcia</h3>
+                        <div class="role">Head of Finance</div>
+                        <p>Robert manages our financial operations and develops innovative financing solutions for clients. His expertise in equipment leasing and trade finance opens new possibilities for manufacturers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <p class="section-subtitle">The Principles That Guide Everything We Do</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Customer First</h3>
+                    <p>Every decision we make starts with understanding our clients' needs and delivering solutions that drive their success.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Trust & Transparency</h3>
+                    <p>We build lasting relationships through honest communication, transparent processes, and unwavering integrity.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>We constantly push boundaries, embrace new technologies, and challenge conventional thinking to create better solutions.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Global Perspective</h3>
+                    <p>We think globally and act locally, connecting diverse markets and cultures to create a truly international ecosystem.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in everything we do, from platform performance to customer service to partner relationships.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Sustainability</h3>
+                    <p>We promote sustainable practices and help our clients adopt eco-friendly technologies for a better future.</p>
                 </div>
             </div>
         </div>
@@ -544,10 +836,10 @@
     <section class="cta-section">
         <div class="container">
             <h2>Ready to Transform Your Production?</h2>
-            <p>Contact our technical experts to find the perfect solution for your needs.</p>
+            <p>Join thousands of manufacturers who trust NEXUS Global for their equipment needs</p>
             <div class="cta-buttons">
-                <a href="/contact" class="btn btn-primary">Contact Technical Expert</a>
-                <a href="/downloads" class="btn btn-secondary">Download Brochures</a>
+                <a href="supplier-registration.html" class="btn btn-primary">Become a Supplier</a>
+                <a href="customer-registration.html" class="btn btn-secondary">Find Equipment</a>
             </div>
         </div>
     </section>
@@ -555,39 +847,42 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>NEXUS GLOBAL HOLDINGS</h4>
-                    <p>Leading provider of innovative packaging solutions for the global market.</p>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>NEXUS<span style="color: var(--accent-color);">Global</span></h3>
+                    <p>The world's leading platform for corrugated packaging equipment</p>
                 </div>
-                <div class="footer-col">
+                <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="/solutions">Solutions</a></li>
-                        <li><a href="/products">Products</a></li>
-                        <li><a href="/service">Service & Support</a></li>
-                        <li><a href="/about">About Us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>Email: info@nexusglobal.asia</p>
-                    <p>Phone: +86 XXX XXXX XXXX</p>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="supplier-registration.html">Supplier Registration</a></li>
+                        <li><a href="customer-registration.html">Customer Registration</a></li>
+                        <li><a href="#products">Browse Products</a></li>
+                    </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">WeChat</a>
-                    </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>📍 Singapore</p>
+                    <p>📞 +65 6123 4567</p>
+                    <p>✉️ info@nexusglobal.asia</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
+                <p>&copy; 2024 NEXUS Global Holdings Inc. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="product-script.js"></script>
+    <script src="script.js"></script>
+    <script src="language-switcher.js"></script>
 </body>
 </html>
