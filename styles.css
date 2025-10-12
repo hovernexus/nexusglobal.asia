@@ -32,7 +32,6 @@
     --color-bg-white: #ffffff;
     
     /* Gradients */
-    --gradient-eco: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
     --gradient-hero: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     --gradient-digital: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-cutting: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
@@ -40,6 +39,7 @@
     --gradient-folder: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
     --gradient-laminator: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     --gradient-feeder: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --gradient-eco: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
     
     /* Spacing */
     --spacing-xs: 8px;
@@ -764,6 +764,7 @@ body {
 .product-feeder::before {
     background: var(--gradient-feeder);
 }   
+
 .product-eco::before {
     background: var(--gradient-eco);
 }
