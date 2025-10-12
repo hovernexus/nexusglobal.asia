@@ -3,273 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Production Line Consultant - NEXUS GLOBAL HOLDINGS</title>
-    <meta name="description" content="Get instant expert advice on production line optimization, equipment selection, and technical support from our AI-powered consultant.">
-    <link rel="stylesheet" href="ai-consultant.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>AI Consultant - NEXUS GLOBAL HOLDINGS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product-navigation.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="consultant-header">
-        <div class="container">
-            <a href="index.html" class="back-link">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                Back to Home
-            </a>
-            <div class="header-title">
-                <h1>AI Production Line Consultant</h1>
-                <p>Intelligent Equipment Selection & Technical Support</p>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">NEXUS GLOBAL HOLDINGS</a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="service-support.html">Service & Support</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <select class="language-selector">
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                    <option value="pt">Português</option>
+                </select>
+                <a href="contact.html" class="btn btn-primary">Get Quote</a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
-    <main class="consultant-main">
+    <!-- AI Consultant Hero Section -->
+    <section class="ai-consultant-hero">
         <div class="container">
-            <div class="consultant-layout">
-                <!-- Left Sidebar - Consultant Info -->
-                <aside class="consultant-sidebar">
-                    <!-- Wide Professional Photo Banner -->
-                    <div class="consultant-photo-banner">
-                        <img src="images/customer-service-rep.jpg" alt="Professional Customer Service Representative" id="consultantBannerImage">
-                        <div class="photo-overlay">
-                            <h2 id="consultantName">NEXUS AI Assistant</h2>
-                            <p class="profile-status">
-                                <span class="status-dot"></span>
-                                Online - Ready to Help
-                            </p>
+            <div class="ai-consultant-content">
+                <div class="ai-consultant-image-large">
+                    <img src="images/ai-consultant-expanded.png" alt="NEXUS GLOBAL AI Consultant">
+                    <div class="consultant-badge">
+                        <span>AI-Powered Customer Service</span>
+                    </div>
+                </div>
+                <div class="ai-consultant-info">
+                    <h1>AI-Powered Solution Consulting</h1>
+                    <p class="subtitle">24/7 Intelligent Customer Service & Expert Consultation</p>
+                    
+                    <div class="ai-features">
+                        <div class="ai-feature-item">
+                            <div class="feature-icon">🤖</div>
+                            <h3>AI-Powered Analysis</h3>
+                            <p>Advanced AI algorithms analyze your production line requirements and provide customized recommendations</p>
+                        </div>
+                        
+                        <div class="ai-feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Instant Response</h3>
+                            <p>Get immediate answers to your questions 24/7 with our intelligent chatbot system</p>
+                        </div>
+                        
+                        <div class="ai-feature-item">
+                            <div class="feature-icon">👥</div>
+                            <h3>Expert Support</h3>
+                            <p>Connect with our technical experts for in-depth consultation and customized solutions</p>
+                        </div>
+                        
+                        <div class="ai-feature-item">
+                            <div class="feature-icon">📊</div>
+                            <h3>Data-Driven Insights</h3>
+                            <p>Receive detailed production line analysis and ROI projections based on your specific needs</p>
                         </div>
                     </div>
-
-                    <div class="consultant-features">
-                        <h3>What I Can Help With:</h3>
-                        <ul class="features-list">
-                            <li>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                Production Line Diagnosis
-                            </li>
-                            <li>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                Equipment Selection & Matching
-                            </li>
-                            <li>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                Technical Specifications
-                            </li>
-                            <li>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                Cost Optimization
-                            </li>
-                            <li>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                Service & Support Guidance
-                            </li>
-                            <li>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                Industry Knowledge Base
-                            </li>
+                    
+                    <div class="consultation-cta">
+                        <h2>Start Your Free Consultation</h2>
+                        <p>Our AI consultant will help you:</p>
+                        <ul>
+                            <li>✓ Analyze your current production line efficiency</li>
+                            <li>✓ Identify bottlenecks and optimization opportunities</li>
+                            <li>✓ Recommend suitable equipment and solutions</li>
+                            <li>✓ Provide cost-benefit analysis and ROI projections</li>
+                            <li>✓ Connect you with technical experts for detailed planning</li>
                         </ul>
-                    </div>
-
-                    <div class="consultant-stats">
-                        <div class="stat-item">
-                            <div class="stat-value">500+</div>
-                            <div class="stat-label">Clients Served</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">98%</div>
-                            <div class="stat-label">Satisfaction Rate</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">24/7</div>
-                            <div class="stat-label">Availability</div>
-                        </div>
-                    </div>
-
-                    <div class="consultant-switch">
-                        <button class="switch-btn" id="switchConsultant">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
-                            </svg>
-                            Switch to Technical Engineer
-                        </button>
-                    </div>
-                </aside>
-
-                <!-- Right Content - Chat Interface -->
-                <div class="chat-container">
-                    <!-- Quick Questions -->
-                    <div class="quick-questions" id="quickQuestions">
-                        <h3>Quick Start - Select a Topic:</h3>
-                        <div class="question-grid">
-                            <button class="question-btn" data-question="production-diagnosis">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                                </svg>
-                                <span>Production Line Diagnosis</span>
-                                <small>Analyze your current setup</small>
-                            </button>
-                            <button class="question-btn" data-question="equipment-selection">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="9" y1="9" x2="15" y2="15"></line>
-                                    <line x1="15" y1="9" x2="9" y2="15"></line>
-                                </svg>
-                                <span>Equipment Selection</span>
-                                <small>Find the right machines</small>
-                            </button>
-                            <button class="question-btn" data-question="technical-specs">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>Technical Specifications</span>
-                                <small>Get detailed parameters</small>
-                            </button>
-                            <button class="question-btn" data-question="cost-optimization">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="12" y1="1" x2="12" y2="23"></line>
-                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                                </svg>
-                                <span>Cost Optimization</span>
-                                <small>Maximize your ROI</small>
-                            </button>
-                            <button class="question-btn" data-question="service-support">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                                </svg>
-                                <span>Service & Support</span>
-                                <small>After-sales assistance</small>
-                            </button>
-                            <button class="question-btn" data-question="custom-inquiry">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary btn-large" onclick="startChat()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                                 </svg>
-                                <span>Custom Inquiry</span>
-                                <small>Ask anything else</small>
+                                Start AI Chat
                             </button>
-                        </div>
-                    </div>
-
-                    <!-- Chat Messages -->
-                    <div class="chat-messages" id="chatMessages">
-                        <div class="welcome-message">
-                            <div class="message-avatar">
-                                <img src="images/customer-service-rep.jpg" alt="AI">
-                            </div>
-                            <div class="message-content">
-                                <div class="message-bubble ai-message">
-                                    <p><strong>Welcome to NEXUS AI Production Line Consultant!</strong></p>
-                                    <p>I'm here to help you optimize your corrugated packaging production line. I can assist with:</p>
-                                    <ul>
-                                        <li>🔍 Diagnosing production bottlenecks</li>
-                                        <li>⚙️ Selecting the right equipment</li>
-                                        <li>📊 Analyzing technical requirements</li>
-                                        <li>💰 Optimizing costs and ROI</li>
-                                        <li>🛠️ Providing technical support</li>
-                                    </ul>
-                                    <p>Please select a topic above or type your question below to get started!</p>
-                                </div>
-                                <div class="message-time">Just now</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Chat Input -->
-                    <div class="chat-input-container">
-                        <div class="chat-input-wrapper">
-                            <button class="attach-btn" id="attachBtn" title="Attach file">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
-                                </svg>
-                            </button>
-                            <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" style="display: none;">
-                            <textarea 
-                                id="chatInput" 
-                                placeholder="Type your question here... (e.g., 'I need a digital printer for 1000 boxes/day')"
-                                rows="1"
-                            ></textarea>
-                            <button class="send-btn" id="sendBtn">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="input-hint">
-                            Press Enter to send, Shift+Enter for new line
+                            <a href="contact.html" class="btn btn-secondary btn-large">
+                                Request Human Expert
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Contact Form Modal -->
-    <div class="modal" id="contactModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Connect with Our Team</h2>
-                <button class="modal-close" id="modalClose">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Would you like to schedule a detailed consultation with our technical team?</p>
-                <form id="contactForm" class="contact-form">
-                    <div class="form-group">
-                        <label for="contactName">Name *</label>
-                        <input type="text" id="contactName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactEmail">Email *</label>
-                        <input type="email" id="contactEmail" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactPhone">Phone</label>
-                        <input type="tel" id="contactPhone">
-                    </div>
-                    <div class="form-group">
-                        <label for="contactCompany">Company</label>
-                        <input type="text" id="contactCompany">
-                    </div>
-                    <div class="form-group">
-                        <label for="contactMessage">Message</label>
-                        <textarea id="contactMessage" rows="4"></textarea>
-                    </div>
-                    <div class="form-actions">
-                        <button type="button" class="btn-secondary" id="cancelBtn">Cancel</button>
-                        <button type="submit" class="btn-primary">Submit Request</button>
-                    </div>
-                </form>
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Our AI Consultation Works</h2>
+            
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Describe Your Needs</h3>
+                    <p>Tell our AI about your production requirements, current challenges, and goals</p>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our AI analyzes your input and matches it with our extensive product database</p>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Customized Recommendations</h3>
+                    <p>Receive tailored equipment suggestions with specifications and pricing</p>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>Expert Review</h3>
+                    <p>Connect with our technical team for detailed planning and implementation support</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <script src="ai-consultant.js"></script>
+    <!-- Success Stories Section -->
+    <section class="success-stories">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Packaging Solutions Inc.</h3>
+                        <span class="industry-tag">Food Packaging</span>
+                    </div>
+                    <p class="story-content">"The AI consultant helped us identify the perfect die-cutting solution for our needs. Within 3 months, we increased production efficiency by 45% and reduced waste by 30%."</p>
+                    <div class="story-metrics">
+                        <div class="metric">
+                            <span class="metric-value">45%</span>
+                            <span class="metric-label">Efficiency Increase</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">30%</span>
+                            <span class="metric-label">Waste Reduction</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Global Print Co.</h3>
+                        <span class="industry-tag">Flexible Packaging</span>
+                    </div>
+                    <p class="story-content">"The AI-powered consultation process was incredibly efficient. We got detailed recommendations in minutes and were connected with experts who helped us implement a complete flexo printing solution."</p>
+                    <div class="story-metrics">
+                        <div class="metric">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">Faster Setup</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">$500K</span>
+                            <span class="metric-label">Annual Savings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Transform Your Production Line?</h2>
+            <p>Start your free AI consultation now and discover how we can help you achieve your production goals</p>
+            <button class="btn btn-primary btn-large" onclick="startChat()">
+                Start Free Consultation
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NEXUS GLOBAL HOLDINGS</h3>
+                    <p>Leading provider of corrugated packaging equipment solutions</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@nexusglobal.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function startChat() {
+            alert('AI Chat feature coming soon! Please contact us at info@nexusglobal.com for immediate assistance.');
+        }
+    </script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
+

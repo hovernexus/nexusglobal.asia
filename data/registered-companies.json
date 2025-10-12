@@ -6,80 +6,95 @@
       "companyNameZh": "科技包装解决方案有限公司",
       "country": "China",
       "city": "Shanghai",
-      "website": "www.techpack-solutions.com",
+      "address": "No. 888 Industrial Road, Shanghai 201100, China",
+      "website": "www.techpacksolutions.com",
+      "email": "david.chen@techpacksolutions.com",
+      "phone": "+86 21 5678 9012",
+      "contactPerson": "Mr. David Chen",
+      "contactTitle": "Sales Director",
       "logo": "images/supplier-techpack-logo.png",
       "registrationDate": "2024-10-01",
       "status": "approved",
+      "certifications": ["ISO 9001:2015", "CE", "SGS"],
+      "yearsInBusiness": 20,
+      "specialization": "Flexographic Printing Equipment",
       "products": [
         {
-          "id": "tp-dp-001",
-          "name": "TechPrint Pro 2500",
-          "category": "Digital Printing Machines",
-          "description": "High-precision digital inkjet printing machine for personalized corrugated packaging",
+          "id": "tp-flexo-850",
+          "name": "NEXUS-FLEXO 850",
+          "category": "Flexo Inline",
+          "description": "Medium Format Flexographic Printing Press - The perfect solution for modern flexible packaging production",
           "specifications": {
-            "printingSpeed": "200 m/min",
-            "maxWidth": "2500mm",
-            "resolution": "1200 x 1200 dpi",
-            "inkType": "Water-based UV ink"
+            "printingWidth": "850 mm",
+            "maxSpeed": "300 m/min",
+            "colors": "4-8 colors",
+            "repeatLength": "250-850 mm",
+            "registerAccuracy": "±0.10 mm"
           },
           "features": [
-            "Variable data printing capability",
-            "Quick job changeover (< 5 minutes)",
-            "Integrated quality inspection system",
-            "Energy-efficient LED UV curing"
+            "Maximum output with printing speeds of up to 300 m/min",
+            "Top price/performance ratio and maximum productivity",
+            "High substrate flexibility for various packaging materials",
+            "Short makeready times for fast job changes",
+            "Advanced automation and easy handling"
           ],
-          "image": "images/product-digital-printer.jpg"
-        },
-        {
-          "id": "tp-dc-001",
-          "name": "AutoCut Pro 1060",
-          "category": "Die-Cutting Machines",
-          "description": "Precision automatic die-cutting machine with laser positioning",
-          "specifications": {
-            "maxWidth": "1060mm",
-            "maxSpeed": "8000 sheets/hour",
-            "accuracy": "±0.1mm",
-            "automation": "Fully automatic"
-          },
-          "features": [
-            "Laser positioning system",
-            "Automatic waste removal",
-            "Touch screen control panel",
-            "Safety interlock system"
+          "applications": [
+            "Food Packaging",
+            "Beverage Labels",
+            "Pharmaceutical Packaging",
+            "Personal Care Products"
           ],
-          "image": "images/product-die-cutter.webp"
+          "image": "images/product-flexo-850.jpg",
+          "detailPage": "product-nexus-flexo-850.html"
         }
       ]
     },
     {
       "id": "sup002",
-      "companyName": "Global Corrugated Equipment Co.",
-      "companyNameZh": "环球瓦楞设备公司",
-      "country": "Germany",
-      "city": "Munich",
-      "website": "www.globalcorrugated.de",
-      "logo": "images/supplier-global-logo.png",
+      "companyName": "PrecisionCut Industries Co.",
+      "companyNameZh": "精密切割工业公司",
+      "country": "United States",
+      "city": "Chicago",
+      "address": "1500 Manufacturing Drive, Chicago, IL 60601, USA",
+      "website": "www.precisioncut-industries.com",
+      "email": "sarah.johnson@precisioncut-ind.com",
+      "phone": "+1 (312) 555-7890",
+      "contactPerson": "Ms. Sarah Johnson",
+      "contactTitle": "International Sales Manager",
+      "logo": "images/supplier-precisioncut-logo.png",
       "registrationDate": "2024-10-05",
       "status": "approved",
+      "certifications": ["ISO 9001:2015", "UL", "OSHA Compliant"],
+      "yearsInBusiness": 30,
+      "specialization": "Die-Cutting Equipment",
       "products": [
         {
-          "id": "gc-ffg-001",
-          "name": "FlexoMaster FFG-3000",
-          "category": "FFG Inline",
-          "description": "High-speed FFG inline production line for mass production",
+          "id": "pc-diecut-1200",
+          "name": "NEXUS-DIECUT 1200",
+          "category": "Die-Cutting Machine",
+          "description": "High-Speed Rotary Die-Cutting Machine - The pinnacle of die-cutting technology for corrugated packaging",
           "specifications": {
-            "productionSpeed": "300 m/min",
-            "maxWidth": "3000mm",
-            "printingUnits": "4 color",
-            "automation": "Industry 4.0 ready"
+            "maxSheetSize": "1200 × 2400 mm",
+            "maxSpeed": "12,000 sheets/hour",
+            "cuttingAccuracy": "±0.5 mm",
+            "boardThickness": "1-10 mm",
+            "maxPressure": "300 tons"
           },
           "features": [
-            "Servo-driven precision control",
-            "Automatic ink circulation system",
-            "Real-time production monitoring",
-            "Remote diagnostics capability"
+            "Ultra-high speed operation up to 12,000 sheets per hour",
+            "Precision cutting with ±0.5mm accuracy",
+            "Advanced servo-driven feeding system",
+            "Automatic waste stripping and collection",
+            "Quick die change system reduces downtime"
           ],
-          "image": "images/hero-production-line-1.jpg"
+          "applications": [
+            "Corrugated Boxes",
+            "Display Packaging",
+            "E-commerce Packaging",
+            "Food Service Packaging"
+          ],
+          "image": "images/product-die-cutter-1200.jpg",
+          "detailPage": "product-nexus-diecut-1200.html"
         }
       ]
     }
@@ -87,31 +102,94 @@
   "customers": [
     {
       "id": "cust001",
-      "companyName": "Premium Packaging Industries",
-      "companyNameZh": "优质包装工业公司",
-      "country": "United States",
-      "city": "Los Angeles",
-      "website": "www.premiumpack.com",
-      "logo": "images/customer-premium-logo.png",
+      "companyName": "GlobalPack Manufacturing Ltd.",
+      "companyNameZh": "环球包装制造有限公司",
+      "country": "United Kingdom",
+      "city": "London",
+      "address": "45 Industrial Park, London E14 9SH, United Kingdom",
+      "website": "www.globalpack-mfg.co.uk",
+      "email": "info@globalpack-mfg.co.uk",
+      "phone": "+44 20 7946 0958",
+      "contactPerson": "Mr. James Wilson",
+      "contactTitle": "Managing Director",
+      "logo": "images/customer-globalpack-logo.png",
       "registrationDate": "2024-10-03",
       "status": "approved",
-      "industry": "E-commerce Packaging",
-      "annualCapacity": "50 million boxes",
-      "employeeCount": "200-500"
+      "membershipLevel": "Gold",
+      "industry": "E-commerce & Retail Packaging",
+      "annualCapacity": "80 million boxes",
+      "employeeCount": "300-500",
+      "foundedYear": 1995,
+      "equipmentPurchased": [
+        "NEXUS-FLEXO 850 (2 units)",
+        "NEXUS-DIECUT 1200 (1 unit)",
+        "Folder Gluer Machine (3 units)"
+      ],
+      "testimonial": "The NEXUS-FLEXO 850 has transformed our production capabilities. We've seen a 45% increase in efficiency and the print quality is outstanding. Highly recommended!",
+      "certifications": ["ISO 9001:2015", "FSC", "BRC Packaging"]
     },
     {
       "id": "cust002",
-      "companyName": "Asia Pacific Corrugated Manufacturing",
-      "companyNameZh": "亚太瓦楞纸制造公司",
-      "country": "Singapore",
-      "city": "Singapore",
-      "website": "www.apcm.com.sg",
-      "logo": "images/customer-apcm-logo.png",
+      "companyName": "Asia Pacific Corrugated Solutions",
+      "companyNameZh": "亚太瓦楞纸解决方案公司",
+      "country": "Australia",
+      "city": "Sydney",
+      "address": "88 Manufacturing Avenue, Sydney NSW 2000, Australia",
+      "website": "www.apcs.com.au",
+      "email": "contact@apcs.com.au",
+      "phone": "+61 2 9876 5432",
+      "contactPerson": "Ms. Emily Zhang",
+      "contactTitle": "Operations Director",
+      "logo": "images/customer-apcs-logo.png",
       "registrationDate": "2024-10-06",
       "status": "approved",
+      "membershipLevel": "Platinum",
       "industry": "Food & Beverage Packaging",
-      "annualCapacity": "100 million boxes",
-      "employeeCount": "500+"
+      "annualCapacity": "120 million boxes",
+      "employeeCount": "500+",
+      "foundedYear": 1988,
+      "equipmentPurchased": [
+        "NEXUS-DIECUT 1200 (2 units)",
+        "FFG Inline Production Line (1 unit)",
+        "Digital Printing System (1 unit)"
+      ],
+      "testimonial": "Working with NEXUS GLOBAL has been a game-changer for our business. The NEXUS-DIECUT 1200 delivers exceptional precision and speed, helping us meet the demanding requirements of our food packaging clients.",
+      "certifications": ["ISO 9001:2015", "HACCP", "PEFC", "Australian Made"]
+    }
+  ],
+  "associations": [
+    {
+      "id": "assoc001",
+      "name": "AICC - Association of Independent Corrugated Converters",
+      "country": "United States",
+      "website": "https://www.aiccbox.org",
+      "memberPageUrl": "https://www.aiccbox.org/about-aicc",
+      "logo": "images/assoc-aicc-logo.png"
+    },
+    {
+      "id": "assoc002",
+      "name": "FEFCO - European Federation of Corrugated Board Manufacturers",
+      "country": "Belgium",
+      "website": "https://www.fefco.org",
+      "memberPageUrl": "https://www.fefco.org/about-us",
+      "logo": "images/assoc-fefco-logo.png"
+    },
+    {
+      "id": "assoc003",
+      "name": "ACCCSA - Asian Corrugated Case & Carton Suppliers Association",
+      "country": "Singapore",
+      "website": "https://www.acccsa.org",
+      "memberPageUrl": "https://www.acccsa.org/members",
+      "logo": "images/assoc-acccsa-logo.png"
+    },
+    {
+      "id": "assoc004",
+      "name": "TAPPI - Technical Association of the Pulp and Paper Industry",
+      "country": "United States",
+      "website": "https://www.tappi.org",
+      "memberPageUrl": "https://www.tappi.org/about-tappi",
+      "logo": "images/assoc-tappi-logo.png"
     }
   ]
 }
+
