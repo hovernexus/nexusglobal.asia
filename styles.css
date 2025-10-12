@@ -39,7 +39,6 @@
     --gradient-folder: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
     --gradient-laminator: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     --gradient-feeder: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-    --gradient-eco: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
     
     /* Spacing */
     --spacing-xs: 8px;
@@ -202,6 +201,89 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-2xl);
+}
+
+/* Dropdown Grid and Column Styles for V9.3 */
+.dropdown-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.dropdown-column {
+    padding: 0;
+}
+
+.category-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.category-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.category-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+}
+
+.product-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.product-links li {
+    margin-bottom: 4px;
+}
+
+.product-links a {
+    display: block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    border-radius: var(--radius-sm);
+}
+
+.product-links a:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    padding-left: calc(var(--spacing-sm) + 6px);
+}
+
+.view-all-link {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.view-all-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
 }
 
 .mega-column {
@@ -763,10 +845,6 @@ body {
 
 .product-feeder::before {
     background: var(--gradient-feeder);
-}   
-
-.product-eco::before {
-    background: var(--gradient-eco);
 }
 
 .product-icon {
