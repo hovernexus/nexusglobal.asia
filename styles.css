@@ -32,6 +32,7 @@
     --color-bg-white: #ffffff;
     
     /* Gradients */
+    --gradient-eco: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
     --gradient-hero: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     --gradient-digital: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-cutting: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
@@ -762,6 +763,9 @@ body {
 
 .product-feeder::before {
     background: var(--gradient-feeder);
+}   
+.product-eco::before {
+    background: var(--gradient-eco);
 }
 
 .product-icon {
