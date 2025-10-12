@@ -1,238 +1,357 @@
-# NEXUS GLOBAL HOLDINGS 企业网站
+# NEXUS Website V7.1 - Clean Final Version
 
-**版本**: V9.3  
-**发布日期**: 2025年10月12日  
-**状态**: 生产环境就绪
-
----
-
-## 项目概述
-
-这是 NEXUS GLOBAL HOLDINGS 的官方企业网站,专注于瓦楞纸包装生产线设备的全球供应和技术支持。网站采用现代化设计,提供多语言支持(英文/中文),并集成了 AI 生产线顾问功能。
-
-**官方域名**: nexusglobal.asia  
-**托管平台**: GitHub Pages  
-**技术栈**: HTML5, CSS3, JavaScript (原生)
+**Version**: 7.1 Clean Final  
+**Release Date**: October 9, 2025  
+**Base**: V6.6 Final Verified
 
 ---
 
-## V9.3 版本更新
+## ⚠️ IMPORTANT: How to Open the Website Correctly
 
-### 主要新功能
-
-**AI 顾问页面品牌标识**
-
-在 AI 顾问页面的客服代表头像上添加了 "NEXUS GLOBAL" 品牌标志,使用纯 CSS 实现。
-
-**特点**:
-- 位于头像右上角
-- 蓝色渐变背景,白色文字
-- 完整的响应式设计
-- 悬停动画效果
-
-### 新增文档
-
-- `V9.3-QUICK-UPDATE-GUIDE.md` - 快速更新指南
-- `V9.3-RELEASE-NOTES.md` - 详细发布说明
-- `GITHUB-SAFE-UPDATE-GUIDE.md` - GitHub 安全更新指南
-
-详细更新内容请查看 `V9.3-RELEASE-NOTES.md`。
-
----
-
-## 快速开始
-
-### 本地预览
-
-1. 解压 `NEXUS-V9.3-Release.zip` 文件
-2. 进入 `nexus-v9.3` 文件夹
-3. 使用任意 HTTP 服务器启动网站:
-
-**使用 Python** (推荐):
-```bash
-python -m http.server 8080
+### ❌ WRONG WAY (Will show old version or errors)
+```
+Double-click index.html to open in browser (file:// protocol)
 ```
 
-**使用 Node.js**:
+### ✅ CORRECT WAY (Required!)
 ```bash
+# Open terminal in this directory
+# Start HTTP server
+python3 -m http.server 8080
+
+# Then open browser and visit:
+http://localhost:8080/index.html
+```
+
+**Why?**
+- Product data loading requires HTTP server (CORS policy)
+- Some JavaScript features need HTTP protocol
+- File:// protocol has security restrictions
+
+---
+
+## 🚀 Quick Start
+
+### Step 1: Extract Files
+```bash
+# If you haven't extracted yet
+tar -xzf nexus-v7.1-clean-final.tar.gz
+cd nexus-v7.1-clean-final
+```
+
+### Step 2: Start HTTP Server
+```bash
+# Python 3 (recommended)
+python3 -m http.server 8080
+
+# Or Python 2
+python -m SimpleHTTPServer 8080
+
+# Or Node.js
 npx http-server -p 8080
 ```
 
-4. 在浏览器中访问 `http://localhost:8080`
+### Step 3: Open Browser
+```
+http://localhost:8080/index.html
+```
 
-### 部署到 GitHub Pages
-
-**方式一:仅更新 CSS 文件(推荐)**
-
-如果您已经部署了 V9.2 版本,只需更新一个文件:
-
-1. 登录 GitHub,进入您的仓库
-2. 找到并点击 `ai-consultant.css` 文件
-3. 点击右上角的铅笔图标 ✏️ (Edit this file)
-4. 用新版本的内容替换
-5. 点击 "Commit changes" 按钮
-
-**方式二:完整部署**
-
-详细步骤请参考 `GITHUB-SAFE-UPDATE-GUIDE.md`。
+### Step 4: Clear Browser Cache
+If you see old content:
+- **Windows/Linux**: Press `Ctrl + Shift + R`
+- **Mac**: Press `Cmd + Shift + R`
+- Or open browser in Incognito/Private mode
 
 ---
 
-## 主要功能
+## 📄 Key Pages to Test
 
-### 1. 多语言支持
-- 英文 (默认)
-- 简体中文
-- 实时切换,无需刷新页面
+1. **Homepage**: http://localhost:8080/index.html
+   - Check navigation menu (should be English only)
+   - Hover over "Products" to see dropdown menu
 
-### 2. 产品展示系统
-- 7 大产品分类
-- 动态产品列表
-- 详细产品信息页面
-- 智能分类导航
+2. **Product Categories**: http://localhost:8080/products.html
+   - Should show 8 colorful category cards
+   - Each card shows product count and list
 
-### 3. AI 生产线顾问 (V9.3 增强)
-- 智能对话系统
-- 快速主题选择
-- 专业技术支持
-- **新增**: 品牌标识叠加
+3. **Digital Printing Category**: http://localhost:8080/category-digital-printing.html
+   - Should show 6 products in this category
+   - Each product has "View Details" button
 
-### 4. 注册系统
-- 供应商注册
-- 客户注册
-- 已注册公司展示
-- 公司详情页面
+4. **Product Detail (Glory160X HD)**: http://localhost:8080/product-detail-dynamic.html?id=glory160x-hd
+   - Should load product details from JSON
+   - Shows featured badge ⭐
 
-### 5. 新闻中心
-- 新闻列表
-- 新闻详情
-- 分类筛选
+5. **Product Detail (MD-350 ODJ)**: http://localhost:8080/product-detail-dynamic.html?id=md-350
+   - Should show yellow highlight box
+   - Lists 6 ODJ technology advantages
 
-### 6. 响应式设计
-- 桌面优先
-- 平板适配
-- 移动端优化
+6. **Registered Companies**: http://localhost:8080/registered-companies.html
+   - Shows statistics dashboard
+   - Lists 2 suppliers and 2 customers
 
 ---
 
-## 浏览器兼容性
-
-| 浏览器 | 最低版本 | 状态 |
-| :--- | :--- | :--- |
-| Chrome | 88+ | ✅ 完全支持 |
-| Firefox | 85+ | ✅ 完全支持 |
-| Edge | 88+ | ✅ 完全支持 |
-| Safari | 14+ | ✅ 完全支持 |
-| Opera | 74+ | ✅ 完全支持 |
-
-**注意**: 不支持 IE 11 及更早版本。
-
----
-
-## 文件结构
+## 📁 File Structure
 
 ```
-nexus-v9.3/
-├── index.html                          # 首页
-├── about-us.html                       # 关于我们
-├── ai-consultant.html                  # AI 顾问 (本次更新重点)
-├── contact.html                        # 联系我们
-├── news.html                           # 新闻中心
-├── news-detail.html                    # 新闻详情
-├── supplier-registration.html          # 供应商注册
-├── customer-registration.html          # 客户注册
-├── registered-companies.html           # 已注册公司
-├── product-list.html                   # 产品列表
-├── product-detail-dynamic.html         # 产品详情
-├── company-detail.html                 # 公司详情
-├── category-*.html                     # 产品分类页面 (7个)
-├── styles.css                          # 主样式表
-├── ai-consultant.css                   # AI 顾问样式 (V9.3 更新)
-├── product-navigation.css              # 产品导航样式
-├── registration.css                    # 注册表单样式
-├── script.js                           # 主脚本
-├── ai-consultant.js                    # AI 顾问脚本
-├── language-switcher.js                # 语言切换
-├── category-mapper-v9.js               # 分类映射
-├── product-detail-loader-v3.js         # 产品详情加载器
-├── company-detail-loader.js            # 公司详情加载器
-├── load-registered-data.js             # 注册数据加载器
-├── data/                               # 数据文件夹
-│   ├── products-complete.json          # 完整产品数据
-│   ├── registered-companies.json       # 已注册公司数据
-│   ├── translations.json               # 翻译数据
-│   └── categories-v9.json              # 分类数据
-├── images/                             # 图片资源
-│   ├── customer-service-rep.jpg        # AI 顾问头像
-│   └── ... (其他图片)
-├── V9.3-QUICK-UPDATE-GUIDE.md          # 快速更新指南
-├── V9.3-RELEASE-NOTES.md               # 发布说明
-├── GITHUB-SAFE-UPDATE-GUIDE.md         # GitHub 安全指南
-├── VERSION.txt                         # 版本信息
-└── README.md                           # 本文件
+nexus-v7.1-clean-final/
+├── index.html                          # Homepage
+├── products.html                       # 8 category cards (NEW)
+├── category-digital-printing.html      # Digital Printing category (NEW)
+├── category-die-cutting.html           # Die-Cutting category (NEW)
+├── category-feeding-palletizing.html   # Feeding/Palletizing category (NEW)
+├── category-strapping-stitching.html   # Strapping/Stitching category (NEW)
+├── category-folder-gluer.html          # Folder Gluer category (NEW)
+├── category-laminator.html             # Laminator category (NEW)
+├── category-corrugator.html            # Corrugator category (NEW)
+├── category-flexo-printing.html        # Flexo Printing category (NEW)
+├── product-detail-dynamic.html         # Product details page
+├── registered-companies.html           # Registered companies page
+├── about-us.html                       # About Us page
+├── contact.html                        # Contact page
+├── news.html                           # News listing
+├── news-detail.html                    # News detail
+├── company-detail.html                 # Company detail
+├── supplier-registration.html          # Supplier registration form
+├── customer-registration.html          # Customer registration form
+├── product-upload-form.html            # Product upload form
+├── styles.css                          # Main stylesheet
+├── script.js                           # Main JavaScript
+├── product-navigation.css              # Product menu styles (NEW)
+├── product-detail-loader-v3.js         # Product data loader (NEW)
+├── product-list-loader-v2.js           # Product list loader
+├── supplier-product-handler.js         # Supplier/product handler
+├── data/
+│   ├── products-complete.json          # 30 products database (NEW)
+│   ├── registered-companies.json       # Companies database
+│   └── translations.json               # Language translations
+├── images/                             # Image assets
+└── README.md                           # This file
 ```
 
 ---
 
-## 常见问题
+## ✅ What's New in V7.1
 
-**Q: 如何更新网站?**
+### 1. Product Data Fixed ✅
+- 30 real products with complete specifications
+- Loads correctly via HTTP server
+- All categories populated with real data
 
-A: 请参考 `V9.3-QUICK-UPDATE-GUIDE.md` 获取详细步骤。
+### 2. English-Only Navigation ✅
+- Removed all Chinese text from Products dropdown
+- Standardized menu items to English
+- Clean, professional appearance
 
-**Q: 更新后看不到新样式?**
+### 3. 8-Category Product System ✅
+- `products.html` with 8 colorful category cards
+- Each category has unique color and icon
+- Shows product count and product list
+- Clickable cards navigate to category pages
 
-A: 请使用 `Ctrl + Shift + R` (Windows) 或 `Cmd + Shift + R` (Mac) 强制刷新浏览器。
+### 4. Individual Category Pages ✅
+- 8 separate category detail pages
+- Each page has unique hero section and content
+- Product grids with complete product information
+- No more "Flexible Printing Solutions" on all pages
 
-**Q: 如何安全地更新 GitHub 文件?**
-
-A: 请参考 `GITHUB-SAFE-UPDATE-GUIDE.md`,遵循"绝不删除,只做增量更新"的原则。
-
-**Q: 网站支持哪些浏览器?**
-
-A: 支持所有现代浏览器(Chrome, Firefox, Edge, Safari),不支持 IE 11。
-
----
-
-## 更新历史
-
-### V9.3 (2025-10-12)
-- ✨ 新增: AI 顾问头像品牌标识 (CSS 叠加)
-- 📝 新增: GitHub 安全更新指南
-- 🎨 优化: 响应式设计改进
-- 📚 新增: 详细的版本文档
-
-### V9.2 (2025-10-11)
-- 🖼️ 更新: AI 顾问头像图片
-- 🔧 修复: 导航菜单语言问题
-- 🎨 更新: 首页产品卡片 (7 个分类)
-
-### V9.1 (2025-10-10)
-- 🔧 修复: 导航菜单结构问题
-- 🎨 优化: 产品卡片布局
-
-### V9.0 (2025-10-11)
-- 完整的导航结构重构,7 个主要产品分类
-- 增强的产品分类系统
-- 改进的下拉菜单设计
-- 更好的响应式设计
+### 5. Registered Companies Link ✅
+- Added to Products dropdown Quick Links
+- Added "Companies" to main navigation
+- Easy access to supplier/customer directory
 
 ---
 
-## 许可证
+## 🎨 Category Colors
 
-© 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.
+Each category has a unique gradient color:
+
+- **Digital Printing**: Purple (#6366f1 → #8b5cf6)
+- **Die-Cutting**: Green (#10b981 → #059669)
+- **Feeding/Palletizing**: Orange (#f59e0b → #d97706)
+- **Strapping/Stitching**: Red (#ef4444 → #dc2626)
+- **Folder Gluer**: Pink (#ec4899 → #db2777)
+- **Laminator**: Cyan (#06b6d4 → #0891b2)
+- **Corrugator**: Purple (#8b5cf6 → #7c3aed)
+- **Flexo Printing**: Blue (#3b82f6 → #2563eb)
 
 ---
 
-## 联系方式
+## 📊 Product Database
 
-**公司**: NEXUS GLOBAL HOLDINGS  
-**网站**: https://nexusglobal.asia  
-**邮箱**: info@nexusglobal.asia
+### Total: 30 Products across 8 Categories
+
+| Category | Products | Featured |
+|----------|----------|----------|
+| Digital Printing | 6 | Glory160X HD ⭐ |
+| Die-Cutting | 6 | MK1060F ⭐ |
+| Feeding/Palletizing | 6 | MD-350 ⭐, JXB ⭐ |
+| Strapping/Stitching | 5 | - |
+| Folder Gluer | 3 | - |
+| Laminator | 3 | - |
+| Corrugator | 3 | - |
+| Flexo Printing | 6 | - |
+
+### Featured Products (4)
+1. **Glory160X HD** - Single Pass Digital Printer
+2. **MK1060F** - Laser Die-Cutting Machine
+3. **MD-350** - Intelligent Palletizer (ODJ Technology)
+4. **JXB** - Robotic Arm Feeder (ODJ Technology)
+
+### Suppliers (8)
+- Shenzhen Hanhua Industrial Digital Equipment Co., Ltd.
+- Guangzhou Kingtau Electromechanical Equipment Co., Ltd.
+- Shanghai Yawa Printing Machinery Co., Ltd.
+- Tianjin Changrong Co., Ltd.
+- Xinjun Machinery
+- Foshan ODJ Intelligent Technology Co., Ltd.
+- And 2 more...
 
 ---
 
-**文档版本**: 1.0  
-**最后更新**: 2025年10月12日
+## 🧪 Testing Checklist
+
+Before uploading to GitHub, test these:
+
+- [ ] Start HTTP server successfully
+- [ ] Homepage loads without errors
+- [ ] Navigation menu shows English only
+- [ ] Products dropdown menu displays on hover/click
+- [ ] products.html shows 8 category cards
+- [ ] Clicking a category card navigates to category page
+- [ ] Category pages show correct products
+- [ ] Product detail pages load data from JSON
+- [ ] Featured products show ⭐ badge
+- [ ] MD-350 shows yellow ODJ highlight box
+- [ ] Registered companies page displays statistics
+- [ ] All images load correctly
+- [ ] No console errors in browser
+
+---
+
+## 📤 GitHub Upload
+
+### Option 1: Replace All Files (Recommended)
+```bash
+# Clone your repository
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
+
+# Remove old files (keep .git)
+find . -maxdepth 1 ! -name '.git' ! -name '.' -exec rm -rf {} +
+
+# Copy new files
+cp -r /path/to/nexus-v7.1-clean-final/* .
+
+# Commit and push
+git add .
+git commit -m "Release V7.1: Clean version with category system"
+git push origin main
+```
+
+### Option 2: Update Specific Files
+```bash
+cd YOUR_REPO
+
+# Copy new pages
+cp /path/to/nexus-v7.1-clean-final/products.html .
+cp /path/to/nexus-v7.1-clean-final/category-*.html .
+
+# Copy updated files
+cp /path/to/nexus-v7.1-clean-final/index.html .
+cp /path/to/nexus-v7.1-clean-final/product-detail-loader-v3.js .
+
+# Copy data
+cp /path/to/nexus-v7.1-clean-final/data/products-complete.json data/
+
+# Commit and push
+git add .
+git commit -m "Add category system and update navigation"
+git push origin main
+```
+
+---
+
+## ⚠️ Troubleshooting
+
+### Problem: Navigation menu shows Chinese text
+**Solution**: 
+1. Clear browser cache (Ctrl+Shift+R)
+2. Open in Incognito/Private mode
+3. Check if you're using HTTP server (not file://)
+
+### Problem: Products show "0" or "Loading..."
+**Solution**:
+1. **MUST use HTTP server** (python3 -m http.server 8080)
+2. Check if `data/products-complete.json` exists
+3. Open browser console (F12) to check for errors
+
+### Problem: Products dropdown doesn't show
+**Solution**:
+1. Hover over "Products" menu item
+2. Click on "Products" if hover doesn't work
+3. Check browser console for JavaScript errors
+
+### Problem: Old content still showing
+**Solution**:
+1. Hard refresh: Ctrl+Shift+R (Windows/Linux) or Cmd+Shift+R (Mac)
+2. Clear browser cache completely
+3. Open in Incognito/Private mode
+4. Try different browser
+
+---
+
+## 📝 Notes
+
+### Browser Compatibility
+- Tested on: Chrome, Firefox, Safari, Edge
+- Requires: Modern browser with ES6 support
+- Mobile: Fully responsive design
+
+### Data Storage
+- Product data: `data/products-complete.json`
+- Company data: `data/registered-companies.json`
+- Translations: `data/translations.json`
+
+### ODJ Technology Highlights
+Products from Foshan ODJ Intelligent Technology Co., Ltd. automatically display a yellow highlight box with 6 technology advantages:
+1. Japanese Kawasaki high-performance robotic arm
+2. World's first 3D visual AI system
+3. Automatic box type recognition and stacking matching
+4. Automatic palletizing height adjustment
+5. Automatic error bundle recognition
+6. Ensures efficient and safe production
+
+---
+
+## 🎯 Summary
+
+This is a **clean, production-ready** version of NEXUS Website V7.1 with:
+
+✅ English-only navigation  
+✅ 8-category product system  
+✅ 30 real products with specifications  
+✅ Individual category pages  
+✅ Registered companies navigation  
+✅ No duplicate or old version files  
+✅ Comprehensive documentation
+
+**Status**: Ready for GitHub upload and production deployment
+
+---
+
+## 📞 Support
+
+If you encounter issues:
+1. Check this README for troubleshooting steps
+2. Ensure HTTP server is running
+3. Clear browser cache
+4. Check browser console for errors
+
+---
+
+**Version**: V7.1 Clean Final  
+**Date**: October 9, 2025  
+**Status**: Production Ready ✅
 
