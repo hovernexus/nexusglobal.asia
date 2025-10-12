@@ -2248,30 +2248,3 @@ body {
         min-height: auto;
     }
 }
-
-
-/* V10.0 UPDATE: Spare Parts Product Card */
-.product-spare {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-/* V10.0 UPDATE: Category Subtitle for Navigation */
-.category-subtitle {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--color-text-medium);
-    margin: 12px 0 8px 0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.view-all-link {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--color-accent) !important;
-}
-
-.view-all-link:hover {
-    text-decoration: underline !important;
-}
-
