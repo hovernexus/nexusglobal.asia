@@ -322,9 +322,9 @@
                     <h1 class="hero-title">Unleash Production Potential,<br>Win Market Competition</h1>
                     <p class="hero-description">NEXUS GLOBAL HOLDINGS — We specialize in providing comprehensive upgrade solutions for your existing production lines, maximizing the efficiency, quality, and automation of your core equipment with minimal investment.</p>
                     <div class="hero-actions">
-                        <button class="btn btn-primary">Explore Solutions</button>
-                        <button class="btn btn-secondary">
-                            <span class="btn-icon"></span>
+                        <button class="btn btn-primary" onclick="window.location.href='solutions.html'">Explore Solutions</button>
+                        <button class="btn btn-secondary" id="watchVideoBtn">
+                            <span class="btn-icon">▶</span>
                             Watch Introduction Video
                         </button>
                     </div>
@@ -891,5 +891,264 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Load and display suppliers and customers from JSON
+        async function loadRegisteredCompanies() {
+            try {
+                const response = await fetch('data/registered-companies.json');
+                const data = await response.json();
+                
+                // Display suppliers
+                displaySuppliers(data.suppliers);
+                
+                // Display customers
+                displayCustomers(data.customers);
+            } catch (error) {
+                console.error('Error loading registered companies:', error);
+            }
+        }
+
+        function displaySuppliers(suppliers) {
+            const suppliersGrid = document.querySelector('.partners-category:nth-of-type(1) .partners-logos-grid');
+            if (!suppliersGrid) return;
+            
+            // Keep existing suppliers and add new ones
+            const existingSuppliers = [
+                'Hanglory', 'Koenig & Bauer', 'BHS Corrugated', 'Fosber',
+                'EFI', 'Bobst', 'ODJ Machine', 'Shinko'
+            ];
+            
+            // Clear and rebuild
+            suppliersGrid.innerHTML = '';
+            
+            // Add existing suppliers
+            existingSuppliers.forEach(name => {
+                const item = document.createElement('div');
+                item.className = 'partner-logo-item';
+                item.innerHTML = `<div class="partner-placeholder">${name}</div>`;
+                suppliersGrid.appendChild(item);
+            });
+            
+            // Add new suppliers from JSON
+            suppliers.forEach(supplier => {
+                const item = document.createElement('div');
+                item.className = 'partner-logo-item partner-logo-highlight';
+                item.innerHTML = `
+                    <a href="${supplier.products[0].detailPage}" class="partner-link" title="${supplier.companyName}">
+                        <div class="partner-placeholder partner-new">
+                            <strong>${supplier.companyName}</strong>
+                            <small style="display:block; margin-top:5px; font-size:0.8em; color:#666;">${supplier.country}</small>
+                        </div>
+                    </a>
+                `;
+                suppliersGrid.appendChild(item);
+            });
+        }
+
+        function displayCustomers(customers) {
+            const customersGrid = document.querySelector('.partners-category:nth-of-type(2) .partners-logos-grid');
+            if (!customersGrid) return;
+            
+            // Keep existing customers and add new ones
+            const existingCustomers = [
+                'Customer 1', 'Customer 2', 'Customer 3', 'Customer 4',
+                'Customer 5', 'Customer 6', 'Customer 7', 'Customer 8'
+            ];
+            
+            // Clear and rebuild
+            customersGrid.innerHTML = '';
+            
+            // Add existing customers
+            existingCustomers.forEach(name => {
+                const item = document.createElement('div');
+                item.className = 'partner-logo-item';
+                item.innerHTML = `<div class="partner-placeholder">${name}</div>`;
+                customersGrid.appendChild(item);
+            });
+            
+            // Add new customers from JSON
+            customers.forEach(customer => {
+                const item = document.createElement('div');
+                item.className = 'partner-logo-item partner-logo-highlight';
+                
+                const membershipBadge = customer.membershipLevel === 'Platinum' ? '👑' : '⭐';
+                
+                item.innerHTML = `
+                    <div class="partner-placeholder partner-new" title="${customer.companyName} - ${customer.membershipLevel} Member">
+                        <strong>${customer.companyName}</strong>
+                        <small style="display:block; margin-top:5px; font-size:0.8em; color:#666;">
+                            ${membershipBadge} ${customer.membershipLevel} | ${customer.country}
+                        </small>
+                    </div>
+                `;
+                customersGrid.appendChild(item);
+            });
+        }
+
+        // Add CSS for highlighted partners
+        const style = document.createElement('style');
+        style.textContent = `
+            .partner-logo-highlight {
+                animation: fadeIn 0.5s ease-in;
+            }
+            
+            .partner-new {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+                color: white !important;
+                padding: 20px !important;
+                border: 2px solid #ffd700;
+                box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            }
+            
+            .partner-new strong {
+                font-size: 1.1em;
+                display: block;
+                margin-bottom: 5px;
+            }
+            
+            .partner-new small {
+                color: rgba(255,255,255,0.9) !important;
+            }
+            
+            .partner-link {
+                text-decoration: none;
+                display: block;
+                height: 100%;
+            }
+            
+            .partner-link:hover .partner-new {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            }
+            
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Load companies when page loads
+        document.addEventListener('DOMContentLoaded', loadRegisteredCompanies);
+    </script>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-modal-close">&times;</span>
+            <video id="introVideo" controls controlsList="nodownload">
+                <source src="videos/NexusGlobalVideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <style>
+        /* Video Modal Styles */
+        .video-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .video-modal-content {
+            position: relative;
+            margin: 5% auto;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .video-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .video-modal-close:hover,
+        .video-modal-close:focus {
+            color: #ff4444;
+        }
+
+        #introVideo {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .video-modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+
+            .video-modal-close {
+                font-size: 30px;
+                top: -35px;
+            }
+        }
+    </style>
+
+    <script>
+        // Video Modal Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const watchVideoBtn = document.getElementById('watchVideoBtn');
+            const videoModal = document.getElementById('videoModal');
+            const closeBtn = document.querySelector('.video-modal-close');
+            const introVideo = document.getElementById('introVideo');
+
+            // Open modal when button is clicked
+            if (watchVideoBtn) {
+                watchVideoBtn.addEventListener('click', function() {
+                    videoModal.style.display = 'block';
+                    introVideo.play();
+                });
+            }
+
+            // Close modal when X is clicked
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    videoModal.style.display = 'none';
+                    introVideo.pause();
+                    introVideo.currentTime = 0;
+                });
+            }
+
+            // Close modal when clicking outside the video
+            window.addEventListener('click', function(event) {
+                if (event.target === videoModal) {
+                    videoModal.style.display = 'none';
+                    introVideo.pause();
+                    introVideo.currentTime = 0;
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && videoModal.style.display === 'block') {
+                    videoModal.style.display = 'none';
+                    introVideo.pause();
+                    introVideo.currentTime = 0;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
