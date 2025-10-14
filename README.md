@@ -1,6 +1,6 @@
-# NEXUS GLOBAL HOLDINGS Website
+﻿# NEXUS GLOBAL HOLDINGS Website
 
-**Version**: 10.9-MVP  
+**Version**: 10.9.1  
 **Release Date**: October 14, 2025  
 **Status**: Production Ready
 
