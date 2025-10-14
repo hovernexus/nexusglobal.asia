@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome AutoTech - NEXUS Global Holdings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .news-detail-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 150px 0 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .news-detail-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .news-meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .news-detail-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .news-detail-content h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #1e3a5f;
+        }
+
+        .news-detail-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .news-detail-content ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .news-detail-content li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .product-showcase-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .product-showcase-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-showcase-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">NEXUS</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="news.html" class="active">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- News Detail Hero -->
+    <section class="news-detail-hero">
+        <div class="container">
+            <h1>Welcome AutoTech: Smart Automation Solutions Leader</h1>
+            <div class="news-meta-info">
+                <span>📅 October 14, 2025</span>
+                <span>📂 New Supplier</span>
+                <span>👤 NEXUS Team</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Detail Content -->
+    <section class="news-detail-content">
+        <p>NEXUS Global Holdings is thrilled to announce our strategic partnership with <strong>Guangdong AutoTech Intelligent Technology Co., Ltd.</strong>, a leading provider of intelligent automation solutions for the packaging industry.</p>
+
+        <h2>About AutoTech</h2>
+        <p>Founded in 2010 and headquartered in Dongguan, Guangdong Province, AutoTech has established itself as a national high-tech enterprise with over 500 employees. The company specializes in intelligent automation equipment and Industry 4.0 solutions, serving more than 500 customers worldwide.</p>
+
+        <div class="highlight-box">
+            <h3>🏆 AutoTech Key Achievements</h3>
+            <ul>
+                <li><strong>National High-Tech Enterprise</strong> with 50+ invention patents</li>
+                <li><strong>System Integration Expert</strong> in intelligent manufacturing</li>
+                <li><strong>Global Reach</strong> serving 500+ customers worldwide</li>
+                <li><strong>Quality Certified</strong> with ISO9001, CE, and SGS certifications</li>
+            </ul>
+        </div>
+
+        <h2>Featured Products</h2>
+        <p>AutoTech brings three cutting-edge products to the NEXUS portfolio:</p>
+
+        <div class="product-showcase">
+            <div class="product-showcase-card">
+                <h4>SmartFolder 3000</h4>
+                <p><strong>Intelligent High-Speed Folder Gluer</strong></p>
+                <p>AI vision detection system with speeds up to 300m/min. Features intelligent order management and Industry 4.0 connectivity.</p>
+            </div>
+
+            <div class="product-showcase-card">
+                <h4>AutoStrapper 500</h4>
+                <p><strong>Fully Automatic Strapping Machine</strong></p>
+                <p>Servo motor-driven system achieving 50 packages per minute with intelligent tension control for consistent quality.</p>
+            </div>
+
+            <div class="product-showcase-card">
+                <h4>SmartPalletizer 800</h4>
+                <p><strong>Intelligent Robotic Palletizing System</strong></p>
+                <p>Six-axis industrial robot with 3D vision recognition, capable of palletizing 800 packages per hour.</p>
+            </div>
+        </div>
+
+        <h2>Technology Innovation</h2>
+        <p>AutoTech's products are distinguished by their advanced technology features:</p>
+        <ul>
+            <li><strong>AI Vision Detection:</strong> Automatic defect recognition and quality control</li>
+            <li><strong>Industry 4.0 Ready:</strong> Remote monitoring and smart production management</li>
+            <li><strong>Intelligent Automation:</strong> Reduced changeover time by 50% with automatic adjustment systems</li>
+            <li><strong>3D Vision Recognition:</strong> Automatic box positioning and size detection</li>
+        </ul>
+
+        <h2>Why This Partnership Matters</h2>
+        <p>The addition of AutoTech to our supplier network significantly enhances NEXUS's ability to provide comprehensive automation solutions. Their expertise in intelligent manufacturing and Industry 4.0 technologies aligns perfectly with the evolving needs of modern packaging operations.</p>
+
+        <p>AutoTech's products complement our existing portfolio by offering:</p>
+        <ul>
+            <li>Advanced automation for folder gluing and strapping operations</li>
+            <li>Intelligent palletizing solutions with robotic technology</li>
+            <li>Seamless integration with existing production lines</li>
+            <li>Comprehensive support for digital transformation initiatives</li>
+        </ul>
+
+        <h2>Looking Forward</h2>
+        <p>This partnership represents NEXUS's commitment to bringing the most advanced packaging equipment solutions to our customers. AutoTech's proven track record in intelligent automation, combined with our extensive market knowledge and customer relationships, creates a powerful synergy that will benefit packaging manufacturers across the region.</p>
+
+        <p>We invite you to explore AutoTech's innovative products and discover how their intelligent automation solutions can transform your packaging operations. Contact our team today to learn more about SmartFolder 3000, AutoStrapper 500, and SmartPalletizer 800.</p>
+
+        <div style="text-align: center;">
+            <a href="news.html" class="back-button">← Back to News</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NEXUS Global Holdings</h3>
+                    <p>Your trusted partner in packaging equipment solutions across Asia.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@nexusglobal.asia</p>
+                    <p>Phone: +65 6123 4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NEXUS Global Holdings. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

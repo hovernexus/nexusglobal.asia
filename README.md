@@ -1,32 +1,43 @@
-# NEXUS Website V7.1 - Clean Final Version
+# NEXUS Website V10.7 - New Suppliers Edition
 
-**Version**: 7.1 Clean Final  
-**Release Date**: October 9, 2025  
-**Base**: V6.6 Final Verified
+**Version**: 10.7  
+**Release Date**: October 14, 2025  
+**Previous Version**: V10.6
 
 ---
 
-## ⚠️ IMPORTANT: How to Open the Website Correctly
+## 🎉 What's New in V10.7
 
-### ❌ WRONG WAY (Will show old version or errors)
-```
-Double-click index.html to open in browser (file:// protocol)
-```
+### ✨ New Suppliers Added (2)
 
-### ✅ CORRECT WAY (Required!)
-```bash
-# Open terminal in this directory
-# Start HTTP server
-python3 -m http.server 8080
+1. **Guangdong AutoTech Intelligent Technology Co., Ltd.**
+   - Smart automation solutions leader
+   - Products: SmartFolder 3000, AutoStrapper 500, SmartPalletizer 800
+   - Specializes in AI-powered automation and Industry 4.0 solutions
 
-# Then open browser and visit:
-http://localhost:8080/index.html
-```
+2. **Jiangsu EcoPrint Environmental Printing Equipment Co., Ltd.**
+   - Environmental printing technology pioneer
+   - Products: EcoFlexo 1200, GreenLaminator 1600, EcoDigital 2000
+   - Focuses on zero-VOC emissions and energy-saving technologies
 
-**Why?**
-- Product data loading requires HTTP server (CORS policy)
-- Some JavaScript features need HTTP protocol
-- File:// protocol has security restrictions
+### 📰 News Page Updates
+
+- Added 2 new supplier announcement cards on News page
+- Created detailed news articles:
+  - `news-detail-autotech.html` - AutoTech partnership announcement
+  - `news-detail-ecoprint.html` - EcoPrint partnership announcement
+
+### 📊 Database Expansion
+
+- **Total Suppliers**: 10 (increased from 8)
+- **Total Products**: 36 (increased from 30)
+- **New Product Categories**:
+  - Intelligent folder gluers with AI vision detection
+  - Automatic strapping machines with servo motors
+  - Robotic palletizing systems with 3D vision
+  - Eco-friendly flexo printers with water-based inks
+  - Solvent-free water-based laminators
+  - LED-UV digital printers with 50% energy savings
 
 ---
 
@@ -34,9 +45,8 @@ http://localhost:8080/index.html
 
 ### Step 1: Extract Files
 ```bash
-# If you haven't extracted yet
-tar -xzf nexus-v7.1-clean-final.tar.gz
-cd nexus-v7.1-clean-final
+unzip nexus-v10.7-final.zip
+cd nexus-v10.7
 ```
 
 ### Step 2: Start HTTP Server
@@ -66,292 +76,197 @@ If you see old content:
 
 ## 📄 Key Pages to Test
 
-1. **Homepage**: http://localhost:8080/index.html
-   - Check navigation menu (should be English only)
-   - Hover over "Products" to see dropdown menu
+1. **News Page**: http://localhost:8080/news.html
+   - Check for AutoTech and EcoPrint announcement cards at the top
+   - Both cards should have "New Supplier" category label
 
-2. **Product Categories**: http://localhost:8080/products.html
-   - Should show 8 colorful category cards
-   - Each card shows product count and list
+2. **AutoTech News Detail**: http://localhost:8080/news-detail-autotech.html
+   - Full article about AutoTech partnership
+   - Product showcase with 3 products
 
-3. **Digital Printing Category**: http://localhost:8080/category-digital-printing.html
-   - Should show 6 products in this category
-   - Each product has "View Details" button
+3. **EcoPrint News Detail**: http://localhost:8080/news-detail-ecoprint.html
+   - Full article about EcoPrint partnership
+   - Environmental technology highlights
 
-4. **Product Detail (Glory160X HD)**: http://localhost:8080/product-detail-dynamic.html?id=glory160x-hd
-   - Should load product details from JSON
-   - Shows featured badge ⭐
+4. **Products Page**: http://localhost:8080/products.html
+   - Should now show updated product counts
+   - New products should appear in relevant categories
 
-5. **Product Detail (MD-350 ODJ)**: http://localhost:8080/product-detail-dynamic.html?id=md-350
-   - Should show yellow highlight box
-   - Lists 6 ODJ technology advantages
+---
 
-6. **Registered Companies**: http://localhost:8080/registered-companies.html
-   - Shows statistics dashboard
-   - Lists 2 suppliers and 2 customers
+## 🔧 Technical Details
+
+### Modified Files
+- `data/products-complete.json` - Added 2 suppliers and 6 products
+- `news.html` - Added 2 new supplier announcement cards
+- `news-detail-autotech.html` - New file
+- `news-detail-ecoprint.html` - New file
+- `VERSION.txt` - Version information
+- `README.md` - This file
+
+### Data Integrity
+- Removed duplicate supplier entries
+- Removed duplicate product entries
+- Verified all supplier and product IDs are unique
+
+### Database Statistics
+```json
+{
+  "suppliers": 10,
+  "products": 36,
+  "categories": 8,
+  "featured_products": 4
+}
+```
+
+---
+
+## 📤 GitHub Upload Instructions
+
+### Option 1: Replace All Files (Recommended)
+```bash
+# Clone your repository
+git clone https://github.com/hovernexus/nexusglobal.asia.git
+cd nexusglobal.asia
+
+# Remove old files (keep .git and CNAME)
+find . -maxdepth 1 ! -name '.git' ! -name 'CNAME' ! -name '.' -exec rm -rf {} +
+
+# Copy new files
+cp -r /path/to/nexus-v10.7/* .
+
+# Commit and push
+git add .
+git commit -m "Release V10.7: Add AutoTech and EcoPrint suppliers"
+git push origin main
+```
+
+### Option 2: Update Specific Files
+```bash
+cd nexusglobal.asia
+
+# Copy updated files
+cp /path/to/nexus-v10.7/data/products-complete.json data/
+cp /path/to/nexus-v10.7/news.html .
+cp /path/to/nexus-v10.7/news-detail-autotech.html .
+cp /path/to/nexus-v10.7/news-detail-ecoprint.html .
+cp /path/to/nexus-v10.7/VERSION.txt .
+cp /path/to/nexus-v10.7/README.md .
+
+# Commit and push
+git add .
+git commit -m "Add AutoTech and EcoPrint suppliers with news articles"
+git push origin main
+```
+
+---
+
+## ⚠️ Important Notes
+
+### Why New Suppliers Weren't Showing Before
+
+**Problem**: After uploading V10.6 to GitHub, new suppliers (AutoTech and EcoPrint) were not visible on the website.
+
+**Root Cause**: The supplier and product data were not properly added to `data/products-complete.json` file.
+
+**Solution in V10.7**:
+1. Added AutoTech and EcoPrint to the `suppliers` array in `products-complete.json`
+2. Added 6 new products (3 from each supplier) to the `products` array
+3. Removed duplicate entries to ensure data integrity
+4. Created news articles to announce the new partnerships
+
+### After GitHub Upload
+
+1. **Wait for deployment**: GitHub Pages may take 1-5 minutes to deploy changes
+2. **Clear browser cache**: Use `Ctrl+Shift+R` (Windows) or `Cmd+Shift+R` (Mac)
+3. **Check data file**: Visit `https://nexusglobal.asia/data/products-complete.json` to verify it's updated
+4. **Use incognito mode**: To avoid cached versions
+
+---
+
+## 🧪 Testing Checklist
+
+Before uploading to GitHub, verify:
+
+- [x] New suppliers appear in `data/products-complete.json`
+- [x] New products appear in `data/products-complete.json`
+- [x] No duplicate supplier IDs
+- [x] No duplicate product IDs
+- [x] News page shows AutoTech announcement card
+- [x] News page shows EcoPrint announcement card
+- [x] AutoTech news detail page is accessible
+- [x] EcoPrint news detail page is accessible
+- [x] Local HTTP server test passed
+
+After uploading to GitHub, verify:
+
+- [ ] Website deploys successfully
+- [ ] New suppliers visible in products database
+- [ ] News page shows 2 new announcement cards
+- [ ] News detail pages are accessible
+- [ ] Product counts updated correctly
+- [ ] No console errors in browser
 
 ---
 
 ## 📁 File Structure
 
 ```
-nexus-v7.1-clean-final/
-├── index.html                          # Homepage
-├── products.html                       # 8 category cards (NEW)
-├── category-digital-printing.html      # Digital Printing category (NEW)
-├── category-die-cutting.html           # Die-Cutting category (NEW)
-├── category-feeding-palletizing.html   # Feeding/Palletizing category (NEW)
-├── category-strapping-stitching.html   # Strapping/Stitching category (NEW)
-├── category-folder-gluer.html          # Folder Gluer category (NEW)
-├── category-laminator.html             # Laminator category (NEW)
-├── category-corrugator.html            # Corrugator category (NEW)
-├── category-flexo-printing.html        # Flexo Printing category (NEW)
-├── product-detail-dynamic.html         # Product details page
-├── registered-companies.html           # Registered companies page
-├── about-us.html                       # About Us page
-├── contact.html                        # Contact page
-├── news.html                           # News listing
-├── news-detail.html                    # News detail
-├── company-detail.html                 # Company detail
-├── supplier-registration.html          # Supplier registration form
-├── customer-registration.html          # Customer registration form
-├── product-upload-form.html            # Product upload form
-├── styles.css                          # Main stylesheet
-├── script.js                           # Main JavaScript
-├── product-navigation.css              # Product menu styles (NEW)
-├── product-detail-loader-v3.js         # Product data loader (NEW)
-├── product-list-loader-v2.js           # Product list loader
-├── supplier-product-handler.js         # Supplier/product handler
+nexus-v10.7/
+├── index.html
+├── news.html (UPDATED)
+├── news-detail-autotech.html (NEW)
+├── news-detail-ecoprint.html (NEW)
+├── products.html
+├── category-*.html (8 files)
+├── product-detail-dynamic.html
+├── registered-companies.html
+├── about-us.html
+├── contact.html
+├── ai-consultant.html
+├── styles.css
+├── script.js
+├── product-navigation.css
+├── product-detail-loader-v3.js
+├── product-list-loader-v2.js
+├── supplier-product-handler.js
 ├── data/
-│   ├── products-complete.json          # 30 products database (NEW)
-│   ├── registered-companies.json       # Companies database
-│   └── translations.json               # Language translations
-├── images/                             # Image assets
-└── README.md                           # This file
+│   ├── products-complete.json (UPDATED - 10 suppliers, 36 products)
+│   ├── registered-companies.json
+│   └── translations.json
+├── images/
+├── VERSION.txt (NEW)
+└── README.md (UPDATED)
 ```
-
----
-
-## ✅ What's New in V7.1
-
-### 1. Product Data Fixed ✅
-- 30 real products with complete specifications
-- Loads correctly via HTTP server
-- All categories populated with real data
-
-### 2. English-Only Navigation ✅
-- Removed all Chinese text from Products dropdown
-- Standardized menu items to English
-- Clean, professional appearance
-
-### 3. 8-Category Product System ✅
-- `products.html` with 8 colorful category cards
-- Each category has unique color and icon
-- Shows product count and product list
-- Clickable cards navigate to category pages
-
-### 4. Individual Category Pages ✅
-- 8 separate category detail pages
-- Each page has unique hero section and content
-- Product grids with complete product information
-- No more "Flexible Printing Solutions" on all pages
-
-### 5. Registered Companies Link ✅
-- Added to Products dropdown Quick Links
-- Added "Companies" to main navigation
-- Easy access to supplier/customer directory
-
----
-
-## 🎨 Category Colors
-
-Each category has a unique gradient color:
-
-- **Digital Printing**: Purple (#6366f1 → #8b5cf6)
-- **Die-Cutting**: Green (#10b981 → #059669)
-- **Feeding/Palletizing**: Orange (#f59e0b → #d97706)
-- **Strapping/Stitching**: Red (#ef4444 → #dc2626)
-- **Folder Gluer**: Pink (#ec4899 → #db2777)
-- **Laminator**: Cyan (#06b6d4 → #0891b2)
-- **Corrugator**: Purple (#8b5cf6 → #7c3aed)
-- **Flexo Printing**: Blue (#3b82f6 → #2563eb)
-
----
-
-## 📊 Product Database
-
-### Total: 30 Products across 8 Categories
-
-| Category | Products | Featured |
-|----------|----------|----------|
-| Digital Printing | 6 | Glory160X HD ⭐ |
-| Die-Cutting | 6 | MK1060F ⭐ |
-| Feeding/Palletizing | 6 | MD-350 ⭐, JXB ⭐ |
-| Strapping/Stitching | 5 | - |
-| Folder Gluer | 3 | - |
-| Laminator | 3 | - |
-| Corrugator | 3 | - |
-| Flexo Printing | 6 | - |
-
-### Featured Products (4)
-1. **Glory160X HD** - Single Pass Digital Printer
-2. **MK1060F** - Laser Die-Cutting Machine
-3. **MD-350** - Intelligent Palletizer (ODJ Technology)
-4. **JXB** - Robotic Arm Feeder (ODJ Technology)
-
-### Suppliers (8)
-- Shenzhen Hanhua Industrial Digital Equipment Co., Ltd.
-- Guangzhou Kingtau Electromechanical Equipment Co., Ltd.
-- Shanghai Yawa Printing Machinery Co., Ltd.
-- Tianjin Changrong Co., Ltd.
-- Xinjun Machinery
-- Foshan ODJ Intelligent Technology Co., Ltd.
-- And 2 more...
-
----
-
-## 🧪 Testing Checklist
-
-Before uploading to GitHub, test these:
-
-- [ ] Start HTTP server successfully
-- [ ] Homepage loads without errors
-- [ ] Navigation menu shows English only
-- [ ] Products dropdown menu displays on hover/click
-- [ ] products.html shows 8 category cards
-- [ ] Clicking a category card navigates to category page
-- [ ] Category pages show correct products
-- [ ] Product detail pages load data from JSON
-- [ ] Featured products show ⭐ badge
-- [ ] MD-350 shows yellow ODJ highlight box
-- [ ] Registered companies page displays statistics
-- [ ] All images load correctly
-- [ ] No console errors in browser
-
----
-
-## 📤 GitHub Upload
-
-### Option 1: Replace All Files (Recommended)
-```bash
-# Clone your repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
-
-# Remove old files (keep .git)
-find . -maxdepth 1 ! -name '.git' ! -name '.' -exec rm -rf {} +
-
-# Copy new files
-cp -r /path/to/nexus-v7.1-clean-final/* .
-
-# Commit and push
-git add .
-git commit -m "Release V7.1: Clean version with category system"
-git push origin main
-```
-
-### Option 2: Update Specific Files
-```bash
-cd YOUR_REPO
-
-# Copy new pages
-cp /path/to/nexus-v7.1-clean-final/products.html .
-cp /path/to/nexus-v7.1-clean-final/category-*.html .
-
-# Copy updated files
-cp /path/to/nexus-v7.1-clean-final/index.html .
-cp /path/to/nexus-v7.1-clean-final/product-detail-loader-v3.js .
-
-# Copy data
-cp /path/to/nexus-v7.1-clean-final/data/products-complete.json data/
-
-# Commit and push
-git add .
-git commit -m "Add category system and update navigation"
-git push origin main
-```
-
----
-
-## ⚠️ Troubleshooting
-
-### Problem: Navigation menu shows Chinese text
-**Solution**: 
-1. Clear browser cache (Ctrl+Shift+R)
-2. Open in Incognito/Private mode
-3. Check if you're using HTTP server (not file://)
-
-### Problem: Products show "0" or "Loading..."
-**Solution**:
-1. **MUST use HTTP server** (python3 -m http.server 8080)
-2. Check if `data/products-complete.json` exists
-3. Open browser console (F12) to check for errors
-
-### Problem: Products dropdown doesn't show
-**Solution**:
-1. Hover over "Products" menu item
-2. Click on "Products" if hover doesn't work
-3. Check browser console for JavaScript errors
-
-### Problem: Old content still showing
-**Solution**:
-1. Hard refresh: Ctrl+Shift+R (Windows/Linux) or Cmd+Shift+R (Mac)
-2. Clear browser cache completely
-3. Open in Incognito/Private mode
-4. Try different browser
-
----
-
-## 📝 Notes
-
-### Browser Compatibility
-- Tested on: Chrome, Firefox, Safari, Edge
-- Requires: Modern browser with ES6 support
-- Mobile: Fully responsive design
-
-### Data Storage
-- Product data: `data/products-complete.json`
-- Company data: `data/registered-companies.json`
-- Translations: `data/translations.json`
-
-### ODJ Technology Highlights
-Products from Foshan ODJ Intelligent Technology Co., Ltd. automatically display a yellow highlight box with 6 technology advantages:
-1. Japanese Kawasaki high-performance robotic arm
-2. World's first 3D visual AI system
-3. Automatic box type recognition and stacking matching
-4. Automatic palletizing height adjustment
-5. Automatic error bundle recognition
-6. Ensures efficient and safe production
 
 ---
 
 ## 🎯 Summary
 
-This is a **clean, production-ready** version of NEXUS Website V7.1 with:
+This version **fixes the issue** where new suppliers were not showing after GitHub upload by:
 
-✅ English-only navigation  
-✅ 8-category product system  
-✅ 30 real products with specifications  
-✅ Individual category pages  
-✅ Registered companies navigation  
-✅ No duplicate or old version files  
-✅ Comprehensive documentation
+1. ✅ Properly adding supplier data to `products-complete.json`
+2. ✅ Adding product data for all new supplier products
+3. ✅ Creating news announcements for visibility
+4. ✅ Ensuring data integrity (no duplicates)
+5. ✅ Providing detailed documentation
 
-**Status**: Ready for GitHub upload and production deployment
+**Status**: ✅ Ready for GitHub deployment
 
 ---
 
 ## 📞 Support
 
-If you encounter issues:
-1. Check this README for troubleshooting steps
-2. Ensure HTTP server is running
-3. Clear browser cache
-4. Check browser console for errors
+If you encounter issues after deployment:
+
+1. **Check deployment status**: GitHub repo → Settings → Pages
+2. **Verify data file**: Visit `https://nexusglobal.asia/data/products-complete.json`
+3. **Clear cache**: Use `Ctrl+Shift+R` or incognito mode
+4. **Check console**: Press F12 in browser to see any errors
 
 ---
 
-**Version**: V7.1 Clean Final  
-**Date**: October 9, 2025  
+**Version**: V10.7  
+**Date**: October 14, 2025  
 **Status**: Production Ready ✅
 
