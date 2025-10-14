@@ -1,272 +1,134 @@
-# NEXUS Website V10.7 - New Suppliers Edition
+# NEXUS Global Packaging Platform V10.8
 
-**Version**: 10.7  
-**Release Date**: October 14, 2025  
-**Previous Version**: V10.6
+## 版本信息
+- **版本**: V10.8 Final
+- **发布日期**: 2025年10月14日
+- **构建状态**: ✅ Production Ready
 
----
+## 主要更新
 
-## 🎉 What's New in V10.7
+### 1. AI智能顾问系统升级
+- ✅ 替换旧版AI交互界面
+- ✅ 新增模块化AI服务系统
+- ✅ 包含产品选型咨询、技术支持、行业知识库等模块
 
-### ✨ New Suppliers Added (2)
+### 2. 新增供应商（2家）
 
-1. **Guangdong AutoTech Intelligent Technology Co., Ltd.**
-   - Smart automation solutions leader
-   - Products: SmartFolder 3000, AutoStrapper 500, SmartPalletizer 800
-   - Specializes in AI-powered automation and Industry 4.0 solutions
+#### ODJ - 佛山市欧德佳智能科技有限公司
+- **网站**: https://www.woodwellglobal.net
+- **专长**: 日本工程设计的自动上料机和AI驱动的机器人码垛系统
+- **产品数量**: 6个
+  - QSL2 斜坡式自动上料机
+  - QSL3 挡板式自动上料机（顶印）
+  - QXY3 挡板式自动上料机（底印）
+  - QSL4 提篮式自动上料机
+  - JXB 机械臂式自动上料机
+  - MD-350 3D视觉AI智能机器人码垛系统
 
-2. **Jiangsu EcoPrint Environmental Printing Equipment Co., Ltd.**
-   - Environmental printing technology pioneer
-   - Products: EcoFlexo 1200, GreenLaminator 1600, EcoDigital 2000
-   - Focuses on zero-VOC emissions and energy-saving technologies
+#### 精陶 - 广州精陶机电设备有限公司
+- **网站**: https://www.kingtau.com/
+- **专长**: 扫描式数字印刷机和单程喷墨系统
+- **产品数量**: 3个
+  - MCB2500 扫描式数字印刷机
+  - MCB2512 高速扫描式数码印刷机
+  - SCB1600 瓦楞纸板数字喷墨印刷机
 
-### 📰 News Page Updates
+### 3. 新增海外买家（10家）
+- 来自墨西哥的10家瓦楞包装企业
+- 涵盖农产品包装、工业包装、高端印刷等领域
+- 已添加到registered-companies.json数据库
 
-- Added 2 new supplier announcement cards on News page
-- Created detailed news articles:
-  - `news-detail-autotech.html` - AutoTech partnership announcement
-  - `news-detail-ecoprint.html` - EcoPrint partnership announcement
+## 技术统计
 
-### 📊 Database Expansion
+| 项目 | 数量 |
+|------|------|
+| 供应商总数 | 11 |
+| 产品总数 | 45 |
+| 买家总数 | 10 |
+| 产品类别 | 8 |
 
-- **Total Suppliers**: 10 (increased from 8)
-- **Total Products**: 36 (increased from 30)
-- **New Product Categories**:
-  - Intelligent folder gluers with AI vision detection
-  - Automatic strapping machines with servo motors
-  - Robotic palletizing systems with 3D vision
-  - Eco-friendly flexo printers with water-based inks
-  - Solvent-free water-based laminators
-  - LED-UV digital printers with 50% energy savings
-
----
-
-## 🚀 Quick Start
-
-### Step 1: Extract Files
-```bash
-unzip nexus-v10.7-final.zip
-cd nexus-v10.7
-```
-
-### Step 2: Start HTTP Server
-```bash
-# Python 3 (recommended)
-python3 -m http.server 8080
-
-# Or Python 2
-python -m SimpleHTTPServer 8080
-
-# Or Node.js
-npx http-server -p 8080
-```
-
-### Step 3: Open Browser
-```
-http://localhost:8080/index.html
-```
-
-### Step 4: Clear Browser Cache
-If you see old content:
-- **Windows/Linux**: Press `Ctrl + Shift + R`
-- **Mac**: Press `Cmd + Shift + R`
-- Or open browser in Incognito/Private mode
-
----
-
-## 📄 Key Pages to Test
-
-1. **News Page**: http://localhost:8080/news.html
-   - Check for AutoTech and EcoPrint announcement cards at the top
-   - Both cards should have "New Supplier" category label
-
-2. **AutoTech News Detail**: http://localhost:8080/news-detail-autotech.html
-   - Full article about AutoTech partnership
-   - Product showcase with 3 products
-
-3. **EcoPrint News Detail**: http://localhost:8080/news-detail-ecoprint.html
-   - Full article about EcoPrint partnership
-   - Environmental technology highlights
-
-4. **Products Page**: http://localhost:8080/products.html
-   - Should now show updated product counts
-   - New products should appear in relevant categories
-
----
-
-## 🔧 Technical Details
-
-### Modified Files
-- `data/products-complete.json` - Added 2 suppliers and 6 products
-- `news.html` - Added 2 new supplier announcement cards
-- `news-detail-autotech.html` - New file
-- `news-detail-ecoprint.html` - New file
-- `VERSION.txt` - Version information
-- `README.md` - This file
-
-### Data Integrity
-- Removed duplicate supplier entries
-- Removed duplicate product entries
-- Verified all supplier and product IDs are unique
-
-### Database Statistics
-```json
-{
-  "suppliers": 10,
-  "products": 36,
-  "categories": 8,
-  "featured_products": 4
-}
-```
-
----
-
-## 📤 GitHub Upload Instructions
-
-### Option 1: Replace All Files (Recommended)
-```bash
-# Clone your repository
-git clone https://github.com/hovernexus/nexusglobal.asia.git
-cd nexusglobal.asia
-
-# Remove old files (keep .git and CNAME)
-find . -maxdepth 1 ! -name '.git' ! -name 'CNAME' ! -name '.' -exec rm -rf {} +
-
-# Copy new files
-cp -r /path/to/nexus-v10.7/* .
-
-# Commit and push
-git add .
-git commit -m "Release V10.7: Add AutoTech and EcoPrint suppliers"
-git push origin main
-```
-
-### Option 2: Update Specific Files
-```bash
-cd nexusglobal.asia
-
-# Copy updated files
-cp /path/to/nexus-v10.7/data/products-complete.json data/
-cp /path/to/nexus-v10.7/news.html .
-cp /path/to/nexus-v10.7/news-detail-autotech.html .
-cp /path/to/nexus-v10.7/news-detail-ecoprint.html .
-cp /path/to/nexus-v10.7/VERSION.txt .
-cp /path/to/nexus-v10.7/README.md .
-
-# Commit and push
-git add .
-git commit -m "Add AutoTech and EcoPrint suppliers with news articles"
-git push origin main
-```
-
----
-
-## ⚠️ Important Notes
-
-### Why New Suppliers Weren't Showing Before
-
-**Problem**: After uploading V10.6 to GitHub, new suppliers (AutoTech and EcoPrint) were not visible on the website.
-
-**Root Cause**: The supplier and product data were not properly added to `data/products-complete.json` file.
-
-**Solution in V10.7**:
-1. Added AutoTech and EcoPrint to the `suppliers` array in `products-complete.json`
-2. Added 6 new products (3 from each supplier) to the `products` array
-3. Removed duplicate entries to ensure data integrity
-4. Created news articles to announce the new partnerships
-
-### After GitHub Upload
-
-1. **Wait for deployment**: GitHub Pages may take 1-5 minutes to deploy changes
-2. **Clear browser cache**: Use `Ctrl+Shift+R` (Windows) or `Cmd+Shift+R` (Mac)
-3. **Check data file**: Visit `https://nexusglobal.asia/data/products-complete.json` to verify it's updated
-4. **Use incognito mode**: To avoid cached versions
-
----
-
-## 🧪 Testing Checklist
-
-Before uploading to GitHub, verify:
-
-- [x] New suppliers appear in `data/products-complete.json`
-- [x] New products appear in `data/products-complete.json`
-- [x] No duplicate supplier IDs
-- [x] No duplicate product IDs
-- [x] News page shows AutoTech announcement card
-- [x] News page shows EcoPrint announcement card
-- [x] AutoTech news detail page is accessible
-- [x] EcoPrint news detail page is accessible
-- [x] Local HTTP server test passed
-
-After uploading to GitHub, verify:
-
-- [ ] Website deploys successfully
-- [ ] New suppliers visible in products database
-- [ ] News page shows 2 new announcement cards
-- [ ] News detail pages are accessible
-- [ ] Product counts updated correctly
-- [ ] No console errors in browser
-
----
-
-## 📁 File Structure
+## 文件结构
 
 ```
-nexus-v10.7/
-├── index.html
-├── news.html (UPDATED)
-├── news-detail-autotech.html (NEW)
-├── news-detail-ecoprint.html (NEW)
-├── products.html
-├── category-*.html (8 files)
-├── product-detail-dynamic.html
-├── registered-companies.html
-├── about-us.html
-├── contact.html
-├── ai-consultant.html
-├── styles.css
-├── script.js
-├── product-navigation.css
-├── product-detail-loader-v3.js
-├── product-list-loader-v2.js
-├── supplier-product-handler.js
+nexus-v10.8/
+├── index.html                          # 首页
+├── ai-consultant.html                  # AI智能顾问（新版）
+├── ai-consultation-system.html         # AI咨询系统
+├── products.html                       # 产品展示
+├── news.html                           # 最新动态
+├── about-us.html                       # 关于我们
 ├── data/
-│   ├── products-complete.json (UPDATED - 10 suppliers, 36 products)
-│   ├── registered-companies.json
-│   └── translations.json
-├── images/
-├── VERSION.txt (NEW)
-└── README.md (UPDATED)
+│   ├── products-complete.json          # 完整产品数据库
+│   └── registered-companies.json       # 注册公司数据库
+├── css/                                # 样式文件
+├── js/                                 # JavaScript文件
+├── images/                             # 图片资源
+└── VERSION.txt                         # 版本信息
 ```
 
+## 部署指南
+
+### GitHub Pages部署
+
+1. **上传文件**
+   ```bash
+   # 将nexus-v10.8文件夹内的所有文件上传到GitHub仓库根目录
+   ```
+
+2. **启用GitHub Pages**
+   - 进入仓库Settings → Pages
+   - Source选择"main"分支
+   - 点击Save
+
+3. **等待部署**
+   - 部署通常需要1-5分钟
+   - 在Actions标签页查看部署状态
+
+4. **访问网站**
+   - 使用提供的GitHub Pages URL访问
+   - 强制刷新浏览器：Ctrl+Shift+R (Windows) 或 Cmd+Shift+R (Mac)
+
+### 重要提示
+
+⚠️ **清除浏览器缓存**
+- 部署后必须强制刷新浏览器
+- 建议使用无痕模式测试
+
+⚠️ **数据文件验证**
+- 访问 `https://your-domain/data/products-complete.json`
+- 确认新供应商和产品数据已更新
+
+⚠️ **GitHub Pages CDN**
+- CDN缓存可能需要几分钟更新
+- 如果看不到更新，请等待5-10分钟
+
+## 数据验证
+
+### 验证供应商数据
+```bash
+# 检查ODJ供应商
+grep -A 5 '"id": "odj"' data/products-complete.json
+
+# 检查精陶供应商
+grep -A 5 '"id": "kingtau_new"' data/products-complete.json
+```
+
+### 验证买家数据
+```bash
+# 检查买家列表
+grep -A 3 '"buyers"' data/registered-companies.json
+```
+
+## 技术支持
+
+如有问题，请检查：
+1. ✅ GitHub Actions部署状态（绿色勾号）
+2. ✅ 浏览器缓存已清除
+3. ✅ JSON文件可直接访问
+4. ✅ 等待CDN缓存更新（5-10分钟）
+
 ---
 
-## 🎯 Summary
-
-This version **fixes the issue** where new suppliers were not showing after GitHub upload by:
-
-1. ✅ Properly adding supplier data to `products-complete.json`
-2. ✅ Adding product data for all new supplier products
-3. ✅ Creating news announcements for visibility
-4. ✅ Ensuring data integrity (no duplicates)
-5. ✅ Providing detailed documentation
-
-**Status**: ✅ Ready for GitHub deployment
-
----
-
-## 📞 Support
-
-If you encounter issues after deployment:
-
-1. **Check deployment status**: GitHub repo → Settings → Pages
-2. **Verify data file**: Visit `https://nexusglobal.asia/data/products-complete.json`
-3. **Clear cache**: Use `Ctrl+Shift+R` or incognito mode
-4. **Check console**: Press F12 in browser to see any errors
-
----
-
-**Version**: V10.7  
-**Date**: October 14, 2025  
-**Status**: Production Ready ✅
-
+**版本**: V10.8 Final  
+**状态**: ✅ Production Ready  
+**发布日期**: 2025年10月14日
