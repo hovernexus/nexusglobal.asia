@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Consultation System - NEXUS GLOBAL HOLDINGS</title>
+    <meta name="description" content="NEXUS AI Consultation System - Your intelligent packaging equipment advisor providing 24/7 support, smart recommendations, and expert guidance.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product-navigation.css">
+    <link rel="stylesheet" href="ai-consultation-system.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"></span>
+                    <div class="logo-text-wrapper">
+                        <span class="logo-text">NEXUS</span>
+                        <span class="logo-subtitle">GLOBAL HOLDINGS</span>
+                    </div>
+                </a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#solutions">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="ai-consultation-system.html" class="active">AI Consultant</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <button class="language-toggle" id="languageToggle">
+                        <span class="lang-icon">🌐</span>
+                        <span id="currentLang">EN</span>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="ai-hero">
+        <div class="ai-hero-content">
+            <div class="ai-hero-text">
+                <h1 class="ai-hero-title">NEXUS AI Consultant</h1>
+                <h2 class="ai-hero-title" style="font-size: 32px; margin-top: -10px;">NEXUS AI 智能顾问</h2>
+                <p class="ai-hero-subtitle">
+                    Your Intelligent Packaging Equipment Advisor<br>
+                    您的包装设备智能助手
+                </p>
+                <p class="ai-hero-subtitle" style="font-size: 18px; margin-bottom: 40px;">
+                    Get instant answers, smart recommendations, and expert guidance 24/7<br>
+                    获得即时解答、智能推荐和24/7专家指导
+                </p>
+                <button class="btn-hero" onclick="startConsultation()">
+                    <span>Start Consultation</span>
+                    <span>→</span>
+                </button>
+            </div>
+            <div class="ai-hero-image">
+                <img src="images/ai-consultant-expanded.png" alt="NEXUS AI Consultant">
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card blue">
+                <span class="stat-icon">⚙️</span>
+                <div class="stat-label">Service Modules / 服务模块</div>
+                <div class="stat-number" data-target="8">8</div>
+                <div class="stat-description">Comprehensive AI-powered tools</div>
+            </div>
+            
+            <div class="stat-card green">
+                <span class="stat-icon">⚡</span>
+                <div class="stat-label">Response Time / 响应时间</div>
+                <div class="stat-number">&lt;5s</div>
+                <div class="stat-description">Instant AI responses</div>
+            </div>
+            
+            <div class="stat-card purple">
+                <span class="stat-icon">📚</span>
+                <div class="stat-label">Knowledge Base / 知识库</div>
+                <div class="stat-number" data-target="200" data-suffix="+">200+</div>
+                <div class="stat-description">Articles and resources</div>
+            </div>
+            
+            <div class="stat-card orange">
+                <span class="stat-icon">⭐</span>
+                <div class="stat-label">Satisfaction / 满意度</div>
+                <div class="stat-number" data-target="98" data-suffix="%">98%</div>
+                <div class="stat-description">Customer satisfaction rate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="services-container">
+            <div class="section-header">
+                <h2 class="section-title">AI-Powered Service Modules</h2>
+                <p class="section-subtitle">Intelligent solutions for every aspect of your packaging equipment needs</p>
+            </div>
+            
+            <!-- Service cards will be dynamically generated here -->
+            <div id="servicesContainer"></div>
+        </div>
+    </section>
+
+    <!-- System Features Section -->
+    <section class="features-section">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">System Features / 系统特色</h2>
+                <p class="section-subtitle">Why choose NEXUS AI Consultation System</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">⚡</div>
+                    <h3 class="feature-title">AI-Powered Intelligence</h3>
+                    <h4 class="feature-title" style="font-size: 16px; color: var(--gray-600); margin-top: -5px;">AI智能化</h4>
+                    <p class="feature-description">
+                        Advanced AI algorithms provide intelligent analysis and decision support for optimal equipment selection and configuration.
+                    </p>
+                    <p class="feature-description" style="font-size: 14px;">
+                        先进的AI算法提供智能分析和决策支持，实现最优设备选型和配置。
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">🏆</div>
+                    <h3 class="feature-title">Industry Expertise</h3>
+                    <h4 class="feature-title" style="font-size: 16px; color: var(--gray-600); margin-top: -5px;">行业专业性</h4>
+                    <p class="feature-description">
+                        30+ years of corrugated packaging industry experience combined with cutting-edge AI technology.
+                    </p>
+                    <p class="feature-description" style="font-size: 14px;">
+                        30年以上瓦楞纸箱行业经验与前沿AI技术的完美结合。
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">🌐</div>
+                    <h3 class="feature-title">Global Service Network</h3>
+                    <h4 class="feature-title" style="font-size: 16px; color: var(--gray-600); margin-top: -5px;">全球服务网络</h4>
+                    <p class="feature-description">
+                        24/7 support with multilingual service across 50+ countries, ensuring you get help whenever you need it.
+                    </p>
+                    <p class="feature-description" style="font-size: 14px;">
+                        24/7支持，覆盖50多个国家的多语言服务，确保您随时获得帮助。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">Ready to Transform Your Production Line?</h2>
+            <p class="cta-title" style="font-size: 32px; margin-top: -15px;">准备好升级您的生产线了吗？</p>
+            <p class="cta-subtitle">
+                Start a conversation with our AI consultant now<br>
+                立即开始与我们的AI顾问对话
+            </p>
+            <button class="btn-cta" onclick="startConsultation()">
+                <span>Start Free Consultation</span>
+                <span>→</span>
+            </button>
+            <p class="cta-note">
+                No credit card required • Instant access • Expert guidance<br>
+                无需信用卡 • 即时访问 • 专家指导
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">NEXUS GLOBAL HOLDINGS</h3>
+                    <p class="footer-description">
+                        Integrating Asia's top corrugated packaging equipment resources to provide world-class solutions.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">WeChat</a>
+                        <a href="#" class="social-link">Email</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="ai-consultation-system.html">AI Consultant</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#product-selection">Product Selection</a></li>
+                        <li><a href="#technical-support">Technical Support</a></li>
+                        <li><a href="#industry-knowledge">Knowledge Base</a></li>
+                        <li><a href="#customer-service">Customer Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>Email: info@nexusglobal.asia</li>
+                        <li>Phone: +852 1234 5678</li>
+                        <li>Address: Hong Kong</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="ai-consultation-system.js"></script>
+</body>
+</html>
+
