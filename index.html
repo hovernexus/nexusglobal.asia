@@ -75,7 +75,7 @@
                                     <h4 class="mega-column-title">Support</h4>
                                     <ul class="mega-links">
                                         <li><a href="ai-consultation-system.html">AI Consultation System <span class="arrow">→</span></a></li>
-                                        <li><a href="ai-consultant.html">Solution Consulting <span class="arrow">→</span></a></li>
+                                        <li><a href="ai-consultation-system.html">Solution Consulting <span class="arrow">→</span></a></li>
                                         <li><a href="#cases">Case Studies <span class="arrow">→</span></a></li>
                                         <li><a href="#roi">ROI Calculator <span class="arrow">→</span></a></li>
                                     </ul>
@@ -164,7 +164,7 @@
                                 <div class="mega-column">
                                     <h4 class="mega-column-title">Pre-Sales Support</h4>
                                     <ul class="mega-links">
-                                        <li><a href="ai-consultant.html">AI Consultant <span class="arrow">→</span></a></li>
+                                        <li><a href="ai-consultation-system.html">AI Consultant <span class="arrow">→</span></a></li>
                                         <li><a href="#diagnosis">Production Line Diagnosis <span class="arrow">→</span></a></li>
                                         <li><a href="#quote">Get Quote <span class="arrow">→</span></a></li>
                                     </ul>
@@ -246,7 +246,7 @@
                                     <h4 class="mega-column-title">Get in Touch</h4>
                                     <ul class="mega-links">
                                         <li><a href="#contact-form">Contact Form <span class="arrow">→</span></a></li>
-                                        <li><a href="ai-consultant.html">Online Consultation <span class="arrow">→</span></a></li>
+                                        <li><a href="ai-consultation-system.html">Online Consultation <span class="arrow">→</span></a></li>
                                         <li><a href="#quote">Request Quote <span class="arrow">→</span></a></li>
                                     </ul>
                                 </div>
@@ -421,7 +421,7 @@
                 <h2 class="cta-title">Ready to Boost Your Production Line Efficiency?</h2>
                 <p class="cta-subtitle">Our AI-powered consultant and expert team will provide you with a complimentary production line diagnosis and customized solution recommendations</p>
                 <div class="cta-actions">
-                    <a href="ai-consultant.html" class="btn btn-primary btn-large ai-btn">
+                    <a href="ai-consultation-system.html" class="btn btn-primary btn-large ai-btn">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                         </svg>
@@ -716,60 +716,6 @@
         </div>
     </section>
 
-    <!-- AI Consultation System CTA Section -->
-    <section class="ai-consultation-cta-section">
-        <div class="container">
-            <div class="ai-cta-content">
-                <div class="ai-cta-text">
-                    <span class="ai-cta-badge">🤖 NEW FEATURE</span>
-                    <h2 class="ai-cta-title">Meet Your AI Packaging Equipment Advisor</h2>
-                    <h3 class="ai-cta-subtitle">遇见您的AI包装设备顾问</h3>
-                    <p class="ai-cta-description">
-                        Get instant answers, smart equipment recommendations, and expert guidance 24/7. 
-                        Our AI-powered consultation system combines 30+ years of industry expertise with 
-                        cutting-edge artificial intelligence to help you make the best decisions.
-                    </p>
-                    <p class="ai-cta-description-cn">
-                        获得即时解答、智能设备推荐和24/7专家指导。我们的AI咨询系统结合了30年以上的行业经验和前沿人工智能技术，帮助您做出最佳决策。
-                    </p>
-                    <div class="ai-cta-features">
-                        <div class="ai-feature-item">
-                            <span class="ai-feature-icon">⚡</span>
-                            <div>
-                                <strong>Instant Response</strong>
-                                <p>Get answers in &lt;5 seconds</p>
-                            </div>
-                        </div>
-                        <div class="ai-feature-item">
-                            <span class="ai-feature-icon">🎯</span>
-                            <div>
-                                <strong>Smart Recommendations</strong>
-                                <p>AI-powered equipment matching</p>
-                            </div>
-                        </div>
-                        <div class="ai-feature-item">
-                            <span class="ai-feature-icon">🌐</span>
-                            <div>
-                                <strong>24/7 Available</strong>
-                                <p>Always here to help you</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="ai-consultation-system.html" class="btn btn-ai-cta">
-                        <span>Explore AI Consultation System</span>
-                        <span>→</span>
-                    </a>
-                </div>
-                <div class="ai-cta-image">
-                    <img src="images/ai-consultant-expanded.png" alt="NEXUS AI Consultant" class="ai-consultant-img">
-                    <div class="ai-image-badge">
-                        <span class="ai-badge-icon">✨</span>
-                        <span>8 AI Service Modules</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Core Partners Section -->
     <section class="partners-section">
@@ -946,21 +892,26 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
     <script>
         // Load and display suppliers and customers from JSON
-        async function loadRegisteredCompanies() {
+        async function loadPartnersData() {
             try {
-                const response = await fetch('data/registered-companies.json');
-                const data = await response.json();
+                // Load products data for suppliers
+                const productsResponse = await fetch('data/products-complete.json');
+                const productsData = await productsResponse.json();
                 
-                // Display suppliers
-                displaySuppliers(data.suppliers);
+                // Load registered companies data for customers  
+                const companiesResponse = await fetch('data/registered-companies.json');
+                const companiesData = await companiesResponse.json();
                 
-                // Display customers
-                displayCustomers(data.customers);
+                // Display suppliers from products data
+                displaySuppliers(productsData.suppliers);
+                
+                // Display customers from registered companies data
+                displayCustomers(companiesData.buyers);
             } catch (error) {
-                console.error('Error loading registered companies:', error);
+                console.error('Error loading partners data:', error);
             }
         }
 
@@ -968,92 +919,89 @@
             const suppliersGrid = document.querySelector('.partners-category:nth-of-type(1) .partners-logos-grid');
             if (!suppliersGrid) return;
             
-            // Keep existing suppliers and add new ones
-            const existingSuppliers = [
-                'Hanglory', 'Koenig & Bauer', 'BHS Corrugated', 'Fosber',
-                'EFI', 'Bobst', 'ODJ Machine', 'Shinko'
-            ];
+            // Define new suppliers (to be displayed first)
+            const newSupplierIds = ['odj', 'kingtau', 'autotech', 'ecoprint'];
+            
+            // Separate new and existing suppliers
+            const newSuppliers = suppliers.filter(s => newSupplierIds.includes(s.id));
+            const existingSuppliers = suppliers.filter(s => !newSupplierIds.includes(s.id));
             
             // Clear and rebuild
             suppliersGrid.innerHTML = '';
             
-            // Add existing suppliers
-            existingSuppliers.forEach(name => {
-                const item = document.createElement('div');
-                item.className = 'partner-logo-item';
-                item.innerHTML = `<div class="partner-placeholder">${name}</div>`;
-                suppliersGrid.appendChild(item);
-            });
-            
-            // Add new suppliers from JSON
-            suppliers.forEach(supplier => {
+            // Add new suppliers first (highlighted)
+            newSuppliers.forEach(supplier => {
                 const item = document.createElement('div');
                 item.className = 'partner-logo-item partner-logo-highlight';
                 item.innerHTML = `
-                    <a href="${supplier.products[0].detailPage}" class="partner-link" title="${supplier.companyName}">
-                        <div class="partner-placeholder partner-new">
-                            <strong>${supplier.companyName}</strong>
-                            <small style="display:block; margin-top:5px; font-size:0.8em; color:#666;">${supplier.country}</small>
-                        </div>
-                    </a>
+                    <div class="partner-placeholder partner-new" title="${supplier.nameEn}">
+                        <strong>${supplier.nameEn}</strong>
+                        <small style="display:block; margin-top:5px; font-size:0.8em; color:#fff;">✨ New Partner</small>
+                    </div>
                 `;
+                suppliersGrid.appendChild(item);
+            });
+            
+            // Add existing suppliers
+            existingSuppliers.forEach(supplier => {
+                const item = document.createElement('div');
+                item.className = 'partner-logo-item';
+                item.innerHTML = `<div class="partner-placeholder">${supplier.nameEn || supplier.name}</div>`;
                 suppliersGrid.appendChild(item);
             });
         }
 
-        function displayCustomers(customers) {
+        function displayCustomers(buyers) {
             const customersGrid = document.querySelector('.partners-category:nth-of-type(2) .partners-logos-grid');
             if (!customersGrid) return;
             
-            // Keep existing customers and add new ones
-            const existingCustomers = [
-                'Customer 1', 'Customer 2', 'Customer 3', 'Customer 4',
-                'Customer 5', 'Customer 6', 'Customer 7', 'Customer 8'
-            ];
-            
-            // Clear and rebuild
+            // Clear existing placeholder customers
             customersGrid.innerHTML = '';
             
-            // Add existing customers
-            existingCustomers.forEach(name => {
-                const item = document.createElement('div');
-                item.className = 'partner-logo-item';
-                item.innerHTML = `<div class="partner-placeholder">${name}</div>`;
-                customersGrid.appendChild(item);
-            });
+            // Sort buyers: new ones (from Mexico) first, then others
+            const mexicoBuyers = buyers.filter(b => b.country === 'Mexico');
+            const otherBuyers = buyers.filter(b => b.country !== 'Mexico');
+            const sortedBuyers = [...mexicoBuyers, ...otherBuyers];
             
-            // Add new customers from JSON
-            customers.forEach(customer => {
+            // Display up to 12 customers (to show all Mexico buyers)
+            const displayCount = Math.min(sortedBuyers.length, 12);
+            for (let i = 0; i < displayCount; i++) {
+                const buyer = sortedBuyers[i];
+                const isNew = buyer.country === 'Mexico';
+                
                 const item = document.createElement('div');
-                item.className = 'partner-logo-item partner-logo-highlight';
+                item.className = isNew ? 'partner-logo-item partner-logo-highlight' : 'partner-logo-item';
                 
-                const membershipBadge = customer.membershipLevel === 'Platinum' ? '👑' : '⭐';
+                if (isNew) {
+                    item.innerHTML = `
+                        <div class="partner-placeholder partner-new" title="${buyer.companyName} - ${buyer.country}">
+                            <strong>${buyer.companyName}</strong>
+                            <small style="display:block; margin-top:5px; font-size:0.8em; color:#fff;">
+                                🌟 ${buyer.country}
+                            </small>
+                        </div>
+                    `;
+                } else {
+                    item.innerHTML = `<div class="partner-placeholder">${buyer.companyName}</div>`;
+                }
                 
-                item.innerHTML = `
-                    <div class="partner-placeholder partner-new" title="${customer.companyName} - ${customer.membershipLevel} Member">
-                        <strong>${customer.companyName}</strong>
-                        <small style="display:block; margin-top:5px; font-size:0.8em; color:#666;">
-                            ${membershipBadge} ${customer.membershipLevel} | ${customer.country}
-                        </small>
-                    </div>
-                `;
                 customersGrid.appendChild(item);
-            });
+            }
         }
 
         // Add CSS for highlighted partners
         const style = document.createElement('style');
         style.textContent = `
             .partner-logo-highlight {
-                animation: fadeIn 0.5s ease-in;
+                animation: fadeIn 0.8s ease-in;
             }
             
             .partner-new {
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
                 color: white !important;
                 padding: 20px !important;
-                border: 2px solid #ffd700;
-                box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+                border-radius: 8px !important;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
             }
             
             .partner-new strong {
@@ -1062,25 +1010,10 @@
                 margin-bottom: 5px;
             }
             
-            .partner-new small {
-                color: rgba(255,255,255,0.9) !important;
-            }
-            
-            .partner-link {
-                text-decoration: none;
-                display: block;
-                height: 100%;
-            }
-            
-            .partner-link:hover .partner-new {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-            }
-            
             @keyframes fadeIn {
                 from {
                     opacity: 0;
-                    transform: translateY(20px);
+                    transform: translateY(10px);
                 }
                 to {
                     opacity: 1;
@@ -1090,121 +1023,9 @@
         `;
         document.head.appendChild(style);
 
-        // Load companies when page loads
-        document.addEventListener('DOMContentLoaded', loadRegisteredCompanies);
-    </script>
-
-    <!-- Video Modal -->
-    <div id="videoModal" class="video-modal">
-        <div class="video-modal-content">
-            <span class="video-modal-close">&times;</span>
-            <video id="introVideo" controls controlsList="nodownload">
-                <source src="videos/NexusGlobalVideo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-
-    <style>
-        /* Video Modal Styles */
-        .video-modal {
-            display: none;
-            position: fixed;
-            z-index: 10000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            animation: fadeIn 0.3s ease-in;
-        }
-
-        .video-modal-content {
-            position: relative;
-            margin: 5% auto;
-            width: 90%;
-            max-width: 1200px;
-        }
-
-        .video-modal-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .video-modal-close:hover,
-        .video-modal-close:focus {
-            color: #ff4444;
-        }
-
-        #introVideo {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        @media (max-width: 768px) {
-            .video-modal-content {
-                width: 95%;
-                margin: 10% auto;
-            }
-
-            .video-modal-close {
-                font-size: 30px;
-                top: -35px;
-            }
-        }
-    </style>
-
-    <script>
-        // Video Modal Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const watchVideoBtn = document.getElementById('watchVideoBtn');
-            const videoModal = document.getElementById('videoModal');
-            const closeBtn = document.querySelector('.video-modal-close');
-            const introVideo = document.getElementById('introVideo');
-
-            // Open modal when button is clicked
-            if (watchVideoBtn) {
-                watchVideoBtn.addEventListener('click', function() {
-                    videoModal.style.display = 'block';
-                    introVideo.play();
-                });
-            }
-
-            // Close modal when X is clicked
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function() {
-                    videoModal.style.display = 'none';
-                    introVideo.pause();
-                    introVideo.currentTime = 0;
-                });
-            }
-
-            // Close modal when clicking outside the video
-            window.addEventListener('click', function(event) {
-                if (event.target === videoModal) {
-                    videoModal.style.display = 'none';
-                    introVideo.pause();
-                    introVideo.currentTime = 0;
-                }
-            });
-
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape' && videoModal.style.display === 'block') {
-                    videoModal.style.display = 'none';
-                    introVideo.pause();
-                    introVideo.currentTime = 0;
-                }
-            });
-        });
+        // Load data when page loads
+        document.addEventListener('DOMContentLoaded', loadPartnersData);
     </script>
 </body>
 </html>
+

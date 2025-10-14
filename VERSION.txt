@@ -1,17 +1,1 @@
-NEXUS Platform Version 10.8
-Release Date: October 14, 2025
-Build: V10.8-Final
-
-Major Updates:
-- Replaced AI Consultant interface with new AI-powered service modules
-- Added ODJ (Foshan ODJ Intelligent Technology) supplier with 6 products
-- Added Kingtau (Guangzhou Kingtau Electromechanical) supplier with 3 products
-- Added 10 international buyers from Mexico
-- Enhanced product database with real supplier data
-- Improved registered companies management system
-
-Technical Details:
-- Total Suppliers: 11
-- Total Products: 45
-- Total Buyers: 10
-- AI Consultation System: Enhanced with modular services
+V10.9.1

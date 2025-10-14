@@ -3,256 +3,534 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Consultation System - NEXUS GLOBAL HOLDINGS</title>
-    <meta name="description" content="NEXUS AI Consultation System - Your intelligent packaging equipment advisor providing 24/7 support, smart recommendations, and expert guidance.">
-    
-    <!-- Stylesheets -->
+    <title>AI Consultant - NEXUS GLOBAL HOLDINGS</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="product-navigation.css">
-    <link rel="stylesheet" href="ai-consultation-system.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* AI Consultant Page Styles */
+        .ai-consultant-hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .ai-consultant-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .ai-consultant-image-large {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .ai-consultant-image-large img {
+            width: 100%;
+            height: auto;
+            max-width: 260px;
+            border-radius: 15px;
+            display: block;
+            margin: 0 auto;
+            object-fit: contain;
+        }
+
+        .consultant-badge {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .ai-consultant-info h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .ai-consultant-info .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .ai-features {
+            display: grid;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .ai-feature-item {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .ai-feature-item h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .ai-feature-item p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .consultation-cta {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .consultation-cta h2 {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .consultation-cta ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 30px;
+        }
+
+        .consultation-cta ul li {
+            padding: 10px 0;
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 15px 30px;
+            font-size: 1rem;
+        }
+
+        .how-it-works,
+        .success-stories {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .step-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step-item h3 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .story-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .story-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .story-header h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .industry-tag {
+            padding: 5px 15px;
+            background: #e3f2fd;
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .story-content {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .story-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 20px;
+            background: #f5f7fa;
+            border-radius: 10px;
+        }
+
+        .metric-value {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .ai-consultant-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .ai-consultant-image-large {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ai-consultant-info h1 {
+                font-size: 2rem;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-feature-item {
+                grid-template-columns: 50px 1fr;
+            }
+
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Main Navigation -->
-    <nav class="main-nav" id="mainNav">
-        <div class="container">
-            <div class="nav-content">
-                <a href="index.html" class="logo">
-                    <span class="logo-icon"></span>
-                    <div class="logo-text-wrapper">
-                        <span class="logo-text">NEXUS</span>
-                        <span class="logo-subtitle">GLOBAL HOLDINGS</span>
-                    </div>
-                </a>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">NEXUS GLOBAL HOLDINGS</a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="service-support.html">Service & Support</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
 
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#solutions">Solutions</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="ai-consultation-system.html" class="active">AI Consultant</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-
-                <div class="nav-right">
-                    <button class="language-toggle" id="languageToggle">
-                        <span class="lang-icon">🌐</span>
-                        <span id="currentLang">EN</span>
-                    </button>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
+            <div class="nav-actions">
+                <select class="language-selector">
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                    <option value="pt">Português</option>
+                </select>
+                <a href="contact.html" class="btn btn-primary">Get Quote</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="ai-hero">
-        <div class="ai-hero-content">
-            <div class="ai-hero-text">
-                <h1 class="ai-hero-title">NEXUS AI Consultant</h1>
-                <h2 class="ai-hero-title" style="font-size: 32px; margin-top: -10px;">NEXUS AI 智能顾问</h2>
-                <p class="ai-hero-subtitle">
-                    Your Intelligent Packaging Equipment Advisor<br>
-                    您的包装设备智能助手
-                </p>
-                <p class="ai-hero-subtitle" style="font-size: 18px; margin-bottom: 40px;">
-                    Get instant answers, smart recommendations, and expert guidance 24/7<br>
-                    获得即时解答、智能推荐和24/7专家指导
-                </p>
-                <button class="btn-hero" onclick="startConsultation()">
-                    <span>Start Consultation</span>
-                    <span>→</span>
-                </button>
-            </div>
-            <div class="ai-hero-image">
-                <img src="images/ai-consultant-expanded.png" alt="NEXUS AI Consultant">
+    <!-- AI Consultant Hero Section -->
+    <section class="ai-consultant-hero">
+        <div class="container">
+            <div class="ai-consultant-content">
+                <div class="ai-consultant-image-large">
+                    <img src="images/ai-consultant-expanded.png" alt="NEXUS GLOBAL AI Consultant">
+                    <div class="consultant-badge">
+                        <span>AI-Powered Customer Service</span>
+                    </div>
+                </div>
+                <div class="ai-consultant-info">
+                    <h1>AI-Powered Solution Consulting</h1>
+                    <p class="subtitle">24/7 Intelligent Customer Service & Expert Consultation</p>
+                    
+                    <div class="ai-features">
+                        <div class="ai-feature-item">
+                            <div class="feature-icon">🤖</div>
+                            <h3>AI-Powered Analysis</h3>
+                            <p>Advanced AI algorithms analyze your production line requirements and provide customized recommendations</p>
+                        </div>
+                        
+                        <div class="ai-feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Instant Response</h3>
+                            <p>Get immediate answers to your questions 24/7 with our intelligent chatbot system</p>
+                        </div>
+                        
+                        <div class="ai-feature-item">
+                            <div class="feature-icon">👥</div>
+                            <h3>Expert Support</h3>
+                            <p>Connect with our technical experts for in-depth consultation and customized solutions</p>
+                        </div>
+                        
+                        <div class="ai-feature-item">
+                            <div class="feature-icon">📊</div>
+                            <h3>Data-Driven Insights</h3>
+                            <p>Receive detailed production line analysis and ROI projections based on your specific needs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="consultation-cta">
+                        <h2>Start Your Free Consultation</h2>
+                        <p>Our AI consultant will help you:</p>
+                        <ul>
+                            <li>✓ Analyze your current production line efficiency</li>
+                            <li>✓ Identify bottlenecks and optimization opportunities</li>
+                            <li>✓ Recommend suitable equipment and solutions</li>
+                            <li>✓ Provide cost-benefit analysis and ROI projections</li>
+                            <li>✓ Connect you with technical experts for detailed planning</li>
+                        </ul>
+                        
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary btn-large" onclick="startChat()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                                Start AI Chat
+                            </button>
+                            <a href="contact.html" class="btn btn-secondary btn-large">
+                                Request Human Expert
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-card blue">
-                <span class="stat-icon">⚙️</span>
-                <div class="stat-label">Service Modules / 服务模块</div>
-                <div class="stat-number" data-target="8">8</div>
-                <div class="stat-description">Comprehensive AI-powered tools</div>
-            </div>
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Our AI Consultation Works</h2>
             
-            <div class="stat-card green">
-                <span class="stat-icon">⚡</span>
-                <div class="stat-label">Response Time / 响应时间</div>
-                <div class="stat-number">&lt;5s</div>
-                <div class="stat-description">Instant AI responses</div>
-            </div>
-            
-            <div class="stat-card purple">
-                <span class="stat-icon">📚</span>
-                <div class="stat-label">Knowledge Base / 知识库</div>
-                <div class="stat-number" data-target="200" data-suffix="+">200+</div>
-                <div class="stat-description">Articles and resources</div>
-            </div>
-            
-            <div class="stat-card orange">
-                <span class="stat-icon">⭐</span>
-                <div class="stat-label">Satisfaction / 满意度</div>
-                <div class="stat-number" data-target="98" data-suffix="%">98%</div>
-                <div class="stat-description">Customer satisfaction rate</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section">
-        <div class="services-container">
-            <div class="section-header">
-                <h2 class="section-title">AI-Powered Service Modules</h2>
-                <p class="section-subtitle">Intelligent solutions for every aspect of your packaging equipment needs</p>
-            </div>
-            
-            <!-- Service cards will be dynamically generated here -->
-            <div id="servicesContainer"></div>
-        </div>
-    </section>
-
-    <!-- System Features Section -->
-    <section class="features-section">
-        <div class="features-container">
-            <div class="section-header">
-                <h2 class="section-title">System Features / 系统特色</h2>
-                <p class="section-subtitle">Why choose NEXUS AI Consultation System</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">⚡</div>
-                    <h3 class="feature-title">AI-Powered Intelligence</h3>
-                    <h4 class="feature-title" style="font-size: 16px; color: var(--gray-600); margin-top: -5px;">AI智能化</h4>
-                    <p class="feature-description">
-                        Advanced AI algorithms provide intelligent analysis and decision support for optimal equipment selection and configuration.
-                    </p>
-                    <p class="feature-description" style="font-size: 14px;">
-                        先进的AI算法提供智能分析和决策支持，实现最优设备选型和配置。
-                    </p>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Describe Your Needs</h3>
+                    <p>Tell our AI about your production requirements, current challenges, and goals</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">🏆</div>
-                    <h3 class="feature-title">Industry Expertise</h3>
-                    <h4 class="feature-title" style="font-size: 16px; color: var(--gray-600); margin-top: -5px;">行业专业性</h4>
-                    <p class="feature-description">
-                        30+ years of corrugated packaging industry experience combined with cutting-edge AI technology.
-                    </p>
-                    <p class="feature-description" style="font-size: 14px;">
-                        30年以上瓦楞纸箱行业经验与前沿AI技术的完美结合。
-                    </p>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our AI analyzes your input and matches it with our extensive product database</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">🌐</div>
-                    <h3 class="feature-title">Global Service Network</h3>
-                    <h4 class="feature-title" style="font-size: 16px; color: var(--gray-600); margin-top: -5px;">全球服务网络</h4>
-                    <p class="feature-description">
-                        24/7 support with multilingual service across 50+ countries, ensuring you get help whenever you need it.
-                    </p>
-                    <p class="feature-description" style="font-size: 14px;">
-                        24/7支持，覆盖50多个国家的多语言服务，确保您随时获得帮助。
-                    </p>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Customized Recommendations</h3>
+                    <p>Receive tailored equipment suggestions with specifications and pricing</p>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>Expert Review</h3>
+                    <p>Connect with our technical team for detailed planning and implementation support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="success-stories">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Packaging Solutions Inc.</h3>
+                        <span class="industry-tag">Food Packaging</span>
+                    </div>
+                    <p class="story-content">"The AI consultant helped us identify the perfect die-cutting solution for our needs. Within 3 months, we increased production efficiency by 45% and reduced waste by 30%."</p>
+                    <div class="story-metrics">
+                        <div class="metric">
+                            <span class="metric-value">45%</span>
+                            <span class="metric-label">Efficiency Increase</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">30%</span>
+                            <span class="metric-label">Waste Reduction</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Global Print Co.</h3>
+                        <span class="industry-tag">Flexible Packaging</span>
+                    </div>
+                    <p class="story-content">"The AI-powered consultation process was incredibly efficient. We got detailed recommendations in minutes and were connected with experts who helped us implement a complete flexo printing solution."</p>
+                    <div class="story-metrics">
+                        <div class="metric">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">Faster Setup</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">$500K</span>
+                            <span class="metric-label">Annual Savings</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-container">
-            <h2 class="cta-title">Ready to Transform Your Production Line?</h2>
-            <p class="cta-title" style="font-size: 32px; margin-top: -15px;">准备好升级您的生产线了吗？</p>
-            <p class="cta-subtitle">
-                Start a conversation with our AI consultant now<br>
-                立即开始与我们的AI顾问对话
-            </p>
-            <button class="btn-cta" onclick="startConsultation()">
-                <span>Start Free Consultation</span>
-                <span>→</span>
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Transform Your Production Line?</h2>
+            <p>Start your free AI consultation now and discover how we can help you achieve your production goals</p>
+            <button class="btn btn-primary btn-large" onclick="startChat()">
+                Start Free Consultation
             </button>
-            <p class="cta-note">
-                No credit card required • Instant access • Expert guidance<br>
-                无需信用卡 • 即时访问 • 专家指导
-            </p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 class="footer-title">NEXUS GLOBAL HOLDINGS</h3>
-                    <p class="footer-description">
-                        Integrating Asia's top corrugated packaging equipment resources to provide world-class solutions.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" class="social-link">LinkedIn</a>
-                        <a href="#" class="social-link">WeChat</a>
-                        <a href="#" class="social-link">Email</a>
-                    </div>
+                    <h3>NEXUS GLOBAL HOLDINGS</h3>
+                    <p>Leading provider of corrugated packaging equipment solutions</p>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-subtitle">Quick Links</h4>
-                    <ul class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="ai-consultation-system.html">AI Consultant</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-subtitle">Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#product-selection">Product Selection</a></li>
-                        <li><a href="#technical-support">Technical Support</a></li>
-                        <li><a href="#industry-knowledge">Knowledge Base</a></li>
-                        <li><a href="#customer-service">Customer Service</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">Contact Us</h4>
-                    <ul class="footer-links">
-                        <li>Email: info@nexusglobal.asia</li>
-                        <li>Phone: +852 1234 5678</li>
-                        <li>Address: Hong Kong</li>
-                    </ul>
+                    <h4>Contact Us</h4>
+                    <p>Email: info@nexusglobal.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Cookie Policy</a>
-                </div>
+                <p>&copy; 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <script>
+        function startChat() {
+            alert('AI Chat feature coming soon! Please contact us at info@nexusglobal.com for immediate assistance.');
+        }
+    </script>
+    
     <script src="script.js"></script>
-    <script src="ai-consultation-system.js"></script>
 </body>
 </html>
 
