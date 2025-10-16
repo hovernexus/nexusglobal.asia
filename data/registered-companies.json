@@ -1,82 +1,84 @@
-[
-  {
-    "id": "buyer_001",
-    "companyName": "MEX QUALITY BOX S.A DE C.V.",
-    "country": "Mexico",
-    "registrationDate": "2025-10-14",
-    "status": "verified",
-    "industry": "Corrugated Packaging Manufacturing"
-  },
-  {
-    "id": "buyer_002",
-    "companyName": "REPRESENTACIONES CYECSA S.A DE C.V.",
-    "country": "Mexico",
-    "registrationDate": "2025-10-14",
-    "status": "verified",
-    "industry": "Corrugated Packaging Manufacturing"
-  },
-  {
-    "id": "buyer_003",
-    "companyName": "MULTIEMPAQUES DEL NORTE S.A DE C.V.",
-    "country": "Mexico",
-    "registrationDate": "2025-10-14",
-    "status": "verified",
-    "industry": "Corrugated Packaging Manufacturing"
-  },
-  {
-    "id": "buyer_004",
-    "companyName": "CAJAS E IMPRESIONES COMETA S.A DE C.V.",
-    "country": "Mexico",
-    "registrationDate": "2025-10-14",
-    "status": "verified",
-    "industry": "Corrugated Packaging Manufacturing"
-  },
-  {
-    "id": "buyer_005",
-    "companyName": "SULTANA PACKAGING S.A DE C.V.",
-    "country": "Mexico",
-    "registrationDate": "2025-10-14",
-    "status": "verified",
-    "industry": "Corrugated Packaging Manufacturing"
-  },
-  {
-    "id": "buyer_006",
-    "companyName": "CELULOSA Y CORRUGADOS DE SONORA",
-    "country": "Mexico",
-    "registrationDate": "2025-10-14",
-    "status": "verified",
-    "industry": "Corrugated Packaging Manufacturing"
-  },
-  {
-    "id": "buyer_007",
-    "companyName": "RELVA S.A DE C.V.",
-    "country": "Mexico",
-    "registrationDate": "2025-10-14",
-    "status": "verified",
-    "industry": "Corrugated Packaging Manufacturing"
-  },
-  {
-    "id": "buyer_008",
-    "companyName": "EMPROPACK EMPAQUES PROFESIONALES S.A DE C.V.",
-    "country": "Mexico",
-    "registrationDate": "2025-10-14",
-    "status": "verified",
-    "industry": "Corrugated Packaging Manufacturing"
-  },
-  {
-    "id": "buyer_009",
-    "companyName": "VITTI EMPAQUES S. DE R.L DE C.V.",
-    "country": "Mexico",
-    "registrationDate": "2025-10-14",
-    "status": "verified",
-    "industry": "Corrugated Packaging Manufacturing"
-  },
-  {
-    "id": "buyer_010",
-    "companyName": "DURABOX DE CHIHUAHUA S.A DE C.V.",
-    "country": "Mexico",
-    "registrationDate": "2025-10-14",
-    "status": "verified",
-    "industry": "Corrugated Packaging Manufacturing"
-  }
-]
+{
+  "companies": [
+    {
+      "id": "buyer_001",
+      "companyName": "MEX QUALITY BOX S.A DE C.V.",
+      "country": "Mexico",
+      "registrationDate": "2025-10-14",
+      "status": "verified",
+      "industry": "Corrugated Packaging Manufacturing"
+    },
+    {
+      "id": "buyer_002",
+      "companyName": "REPRESENTACIONES CYECSA S.A DE C.V.",
+      "country": "Mexico",
+      "registrationDate": "2025-10-14",
+      "status": "verified",
+      "industry": "Corrugated Packaging Manufacturing"
+    },
+    {
+      "id": "buyer_003",
+      "companyName": "MULTIEMPAQUES DEL NORTE S.A DE C.V.",
+      "country": "Mexico",
+      "registrationDate": "2025-10-14",
+      "status": "verified",
+      "industry": "Corrugated Packaging Manufacturing"
+    },
+    {
+      "id": "buyer_004",
+      "companyName": "CAJAS E IMPRESIONES COMETA S.A DE C.V.",
+      "country": "Mexico",
+      "registrationDate": "2025-10-14",
+      "status": "verified",
+      "industry": "Corrugated Packaging Manufacturing"
+    },
+    {
+      "id": "buyer_005",
+      "companyName": "SULTANA PACKAGING S.A DE C.V.",
+      "country": "Mexico",
+      "registrationDate": "2025-10-14",
+      "status": "verified",
+      "industry": "Corrugated Packaging Manufacturing"
+    },
+    {
+      "id": "buyer_006",
+      "companyName": "CELULOSA Y CORRUGADOS DE SONORA",
+      "country": "Mexico",
+      "registrationDate": "2025-10-14",
+      "status": "verified",
+      "industry": "Corrugated Packaging Manufacturing"
+    },
+    {
+      "id": "buyer_007",
+      "companyName": "RELVA S.A DE C.V.",
+      "country": "Mexico",
+      "registrationDate": "2025-10-14",
+      "status": "verified",
+      "industry": "Corrugated Packaging Manufacturing"
+    },
+    {
+      "id": "buyer_008",
+      "companyName": "EMPROPACK EMPAQUES PROFESIONALES S.A DE C.V.",
+      "country": "Mexico",
+      "registrationDate": "2025-10-14",
+      "status": "verified",
+      "industry": "Corrugated Packaging Manufacturing"
+    },
+    {
+      "id": "buyer_009",
+      "companyName": "VITTI EMPAQUES S. DE R.L DE C.V.",
+      "country": "Mexico",
+      "registrationDate": "2025-10-14",
+      "status": "verified",
+      "industry": "Corrugated Packaging Manufacturing"
+    },
+    {
+      "id": "buyer_010",
+      "companyName": "DURABOX DE CHIHUAHUA S.A DE C.V.",
+      "country": "Mexico",
+      "registrationDate": "2025-10-14",
+      "status": "verified",
+      "industry": "Corrugated Packaging Manufacturing"
+    }
+  ]
+}

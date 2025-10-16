@@ -90,26 +90,28 @@ const exampleCustomers = [
 ];
 
 // 加载已注册公司数据
-function loadRegisteredCompanies() {
-    // 尝试从localStorage加载
-    const savedSuppliers = localStorage.getItem('nexus_suppliers');
-    const savedCustomers = localStorage.getItem('nexus_customers');
-    
-    if (savedSuppliers) {
+async function loadRegisteredCompanies() {
+    try {
+        // Load suppliers from products-complete.json
+        const suppliersResponse = await fetch('data/products-complete.json');
+        const suppliersData = await suppliersResponse.json();
+        
+        // Load customers from registered-companies.json
+        const customersResponse = await fetch('data/registered-companies.json');
+        const customersData = await customersResponse.json();
+        
         return {
-            suppliers: JSON.parse(savedSuppliers),
-            customers: JSON.parse(savedCustomers) || []
+            suppliers: suppliersData.suppliers || [],
+            customers: customersData.companies || []
+        };
+    } catch (error) {
+        console.error('Error loading registered companies:', error);
+        // Fallback to example data if loading fails
+        return {
+            suppliers: exampleSuppliers,
+            customers: exampleCustomers
         };
     }
-    
-    // 如果没有保存的数据,使用示例数据
-    localStorage.setItem('nexus_suppliers', JSON.stringify(exampleSuppliers));
-    localStorage.setItem('nexus_customers', JSON.stringify(exampleCustomers));
-    
-    return {
-        suppliers: exampleSuppliers,
-        customers: exampleCustomers
-    };
 }
 
 // 保存供应商数据
@@ -343,8 +345,8 @@ function showErrorMessage(title, content) {
 }
 
 // 初始化注册公司数据展示
-function initRegisteredCompaniesDisplay() {
-    const companies = loadRegisteredCompanies();
+async function initRegisteredCompaniesDisplay() {
+    const companies = await loadRegisteredCompanies();
     
     // 更新统计数字
     const supplierCountElem = document.querySelector('.supplier-count');
@@ -371,8 +373,8 @@ function initRegisteredCompaniesDisplay() {
                     <p class="company-categories">
                         产品类别: ${supplier.productCategories.join(', ')}
                     </p>
-                    <a href="company-detail.html?id=${supplier.id}" class="view-profile-btn">
-                        查看详情 View Profile
+                    <a href="company-detail.html?id=${supplier.id}&type=supplier" class="view-profile-btn">
+                        View Profile
                     </a>
                 </div>
             `).join('');
@@ -386,11 +388,13 @@ function initRegisteredCompaniesDisplay() {
             .map(customer => `
                 <div class="company-card">
                     <h4>${customer.companyName}</h4>
-                    <p class="company-name-en">${customer.companyNameEn}</p>
-                    <p class="company-location">${customer.city}, ${customer.province}</p>
-                    <p class="company-capacity">
-                        年产能: ${customer.annualCapacity}
+                    <p class="company-location">${customer.country || 'Mexico'}</p>
+                    <p class="company-industry">
+                        ${customer.industry || 'Corrugated Packaging Manufacturing'}
                     </p>
+                    <a href="company-detail.html?id=${customer.id}&type=customer" class="view-profile-btn">
+                        View Profile
+                    </a>
                 </div>
             `).join('');
     }

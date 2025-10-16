@@ -1,8 +1,15 @@
 NEXUS GLOBAL HOLDINGS Website
-Version: V11.2
+Version: V11.3
 Release Date: October 16, 2025
 
-Major Updates in V11.2:
+Major Updates in V11.3:
+- Fixed customer data loading error (registered-companies.json structure)
+- Fixed Registered Companies page to display all 10 suppliers and 10 customers
+- Fixed Supplier Registration page layout (created registration.css)
+- Created complete English information for ODJ company
+- Updated all 9 ODJ products with detailed English specifications and features
+
+Previous Version: V11.2
 - Fixed company detail page loading issue (created company-detail-loader.js)
 - Fixed product category page content (6 categories now show correct information)
 - Removed all emoji icons from all pages including JavaScript files
