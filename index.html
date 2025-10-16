@@ -909,14 +909,19 @@
                 displaySuppliers(productsData.suppliers);
                 
                 // Display customers from registered companies data
-                displayCustomers(companiesData.buyers);
+                displayCustomers(companiesData);
             } catch (error) {
                 console.error('Error loading partners data:', error);
             }
         }
 
         function displaySuppliers(suppliers) {
-            const suppliersGrid = document.querySelector('.partners-category:nth-of-type(1) .partners-logos-grid');
+            // Find the suppliers section by title text
+            const titles = Array.from(document.querySelectorAll('.partners-category-title'));
+            const suppliersTitle = titles.find(t => t.textContent.includes('Certified Equipment Suppliers'));
+            if (!suppliersTitle) return;
+            
+            const suppliersGrid = suppliersTitle.parentElement.querySelector('.partners-logos-grid');
             if (!suppliersGrid) return;
             
             // Define new suppliers (to be displayed first)
@@ -952,7 +957,12 @@
         }
 
         function displayCustomers(buyers) {
-            const customersGrid = document.querySelector('.partners-category:nth-of-type(2) .partners-logos-grid');
+            // Find the customers section by title text
+            const titles = Array.from(document.querySelectorAll('.partners-category-title'));
+            const customersTitle = titles.find(t => t.textContent.includes('Trusted by Leading Corrugated Manufacturers'));
+            if (!customersTitle) return;
+            
+            const customersGrid = customersTitle.parentElement.querySelector('.partners-logos-grid');
             if (!customersGrid) return;
             
             // Clear existing placeholder customers
