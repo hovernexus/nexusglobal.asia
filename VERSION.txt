@@ -1,19 +1,32 @@
 NEXUS GLOBAL HOLDINGS Website
-Version: V11.1
+Version: V11.2
 Release Date: October 16, 2025
 
-Major Updates in V11.1:
-- Fixed product category page navigation (all categories now link to correct pages)
-- Fixed product detail page navigation (all products now link to correct detail pages)
-- Added click functionality to supplier and customer cards (navigate to company detail page)
-- Removed all emoji icons from website pages for professional appearance
-- Maintained data fixes from V11.0 (cleaned company name formats)
+Major Updates in V11.2:
+- Fixed company detail page loading issue (created company-detail-loader.js)
+- Fixed product category page content (6 categories now show correct information)
+- Removed all emoji icons from all pages including JavaScript files
+- Unified page styles to match homepage design
+- Fixed supplier and customer card click functionality
 
 Technical Improvements:
-- Updated all "View All Products" links to point to correct category pages
-- Changed product detail links from product-detail.html to product-detail-dynamic.html
-- Added click event listeners to partner cards with proper URL parameters
-- Removed emoji characters from all HTML files while preserving text labels
+- Created company-detail-loader.js to dynamically load company information
+- Updated 6 category pages with correct titles and descriptions
+- Removed emoji icons from all category pages (category-hero-icon)
+- Removed emoji from company-detail-loader.js (location icons)
+- Fixed category page titles and intro paragraphs for:
+  * Laminator & Filming Machines
+  * Corrugator Production Lines
+  * Feeding & Palletizing Systems
+  * Flexographic Printing Machines
+  * Folder Gluer & Stitcher Machines
+  * Strapping & Stitching Machines
+
+Previous Version: V11.1
+- Fixed product category page navigation
+- Fixed product detail page navigation
+- Added click functionality to supplier and customer cards
+- Removed emoji icons from HTML files
 
 Previous Version: V11.0
 - Fixed data format issues in registered-companies.json
@@ -21,3 +34,4 @@ Previous Version: V11.0
 - Created comprehensive deployment documentation
 
 © 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.
+
