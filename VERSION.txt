@@ -1,1 +1,23 @@
-V11.0
+NEXUS GLOBAL HOLDINGS Website
+Version: V11.1
+Release Date: October 16, 2025
+
+Major Updates in V11.1:
+- Fixed product category page navigation (all categories now link to correct pages)
+- Fixed product detail page navigation (all products now link to correct detail pages)
+- Added click functionality to supplier and customer cards (navigate to company detail page)
+- Removed all emoji icons from website pages for professional appearance
+- Maintained data fixes from V11.0 (cleaned company name formats)
+
+Technical Improvements:
+- Updated all "View All Products" links to point to correct category pages
+- Changed product detail links from product-detail.html to product-detail-dynamic.html
+- Added click event listeners to partner cards with proper URL parameters
+- Removed emoji characters from all HTML files while preserving text labels
+
+Previous Version: V11.0
+- Fixed data format issues in registered-companies.json
+- Verified supplier and customer data integrity
+- Created comprehensive deployment documentation
+
+© 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.
