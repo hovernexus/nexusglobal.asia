@@ -209,7 +209,7 @@
                                         <li><a href="#partners">Our Partners <span class="arrow">→</span></a></li>
                                         <li><a href="registered-companies.html">Registered Companies <span class="arrow">→</span></a></li>
                                         <li><a href="supplier-registration.html">Become a Supplier <span class="arrow">→</span></a></li>
-                                        <li><a href="product-upload-form.html">Upload Products <span class="arrow">→</span></a></li>
+                                        <li><a href="product-upload.html">Upload Products <span class="arrow">→</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -960,8 +960,8 @@
                 item.className = 'partner-logo-item partner-logo-highlight';
                 item.style.cursor = 'pointer';
                 item.innerHTML = `
-                    <div class="partner-placeholder partner-new" title="${supplier.name || supplier.nameEn}">
-                        <strong>${supplier.name || supplier.nameEn}</strong>
+                    <div class="partner-placeholder partner-new" title="${supplier.nameEn || supplier.name}">
+                        <strong>${supplier.nameEn || supplier.name}</strong>
                         <small style="display:block; margin-top:5px; font-size:0.8em; color:#fff;">New Partner</small>
                     </div>
                 `;

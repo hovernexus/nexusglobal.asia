@@ -136,7 +136,14 @@
       "images": [
         "images/companies/odj-factory-1.jpg",
         "images/companies/odj-factory-2.jpg"
-      ]
+      ],
+      "stats": {
+        "productModels": "8+",
+        "yearsExperience": "15+",
+        "clientsServed": "500+",
+        "satisfactionRate": "98%"
+      },
+      "isNew": true
     },
     {
       "id": "shuanghuan",

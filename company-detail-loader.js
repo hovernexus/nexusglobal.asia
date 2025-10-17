@@ -22,8 +22,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Load supplier data from products-complete.json
+// Load supplier data from products-complete.json or localStorage
 function loadSupplierData(supplierId) {
+    // First check if this is a newly registered supplier in localStorage
+    const registrations = JSON.parse(localStorage.getItem('supplierRegistrations') || '[]');
+    const localSupplier = registrations.find(r => r.id === supplierId);
+    
+    if (localSupplier) {
+        // Display newly registered supplier from localStorage
+        displayNewSupplierInfo(localSupplier);
+        return;
+    }
+    
+    // If not in localStorage, load from JSON file
     fetch('data/products-complete.json')
         .then(response => response.json())
         .then(data => {
@@ -80,22 +91,23 @@ function displaySupplierInfo(supplier, allProducts) {
     // Filter products by supplier
     const supplierProducts = allProducts.filter(p => p.supplierId === supplier.id);
 
-    // Display company stats
+    // Display company stats (use supplier.stats if available, otherwise use defaults)
+    const stats = supplier.stats || {};
     const statsHTML = `
         <div class="stat-card">
-            <div class="stat-number">${supplierProducts.length}+</div>
+            <div class="stat-number">${stats.productModels || (supplierProducts.length + '+')}</div>
             <div class="stat-label">Product Models</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">15+</div>
+            <div class="stat-number">${stats.yearsExperience || '15+'}</div>
             <div class="stat-label">Years Experience</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">500+</div>
+            <div class="stat-number">${stats.clientsServed || '500+'}</div>
             <div class="stat-label">Clients Served</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">98%</div>
+            <div class="stat-number">${stats.satisfactionRate || '98%'}</div>
             <div class="stat-label">Satisfaction Rate</div>
         </div>
     `;
@@ -154,8 +166,14 @@ function displaySupplierInfo(supplier, allProducts) {
         </div>
         <div class="contact-item">
             <h3>Location</h3>
-            <p>${supplier.location || 'China'}</p>
+            <p>${supplier.location || supplier.city || 'China'}</p>
         </div>
+        ${supplier.website ? `
+        <div class="contact-item">
+            <h3>Website</h3>
+            <p><a href="${supplier.website}" target="_blank" style="color: #4A90E2; text-decoration: none;">${supplier.website}</a></p>
+        </div>
+        ` : ''}
     `;
     document.getElementById('contact-info').innerHTML = contactHTML;
     document.getElementById('contact-button').href = `contact.html?company=${supplier.id}`;
@@ -169,25 +187,25 @@ function displayCustomerInfo(customer) {
     
     // Update company hero section
     document.getElementById('company-name').textContent = customer.companyName;
-    document.getElementById('company-location').textContent = `${customer.country || 'Mexico'}`;
-    document.getElementById('company-description').textContent = customer.businessDescription || 'Leading corrugated packaging manufacturer committed to quality and innovation.';
+    document.getElementById('company-location').textContent = `${customer.city ? customer.city + ', ' : ''}${customer.country || 'Mexico'}`;
+    document.getElementById('company-description').textContent = customer.description || customer.businessDescription || 'Leading corrugated packaging manufacturer committed to quality and innovation.';
 
     // Display company stats
     const statsHTML = `
         <div class="stat-card">
-            <div class="stat-number">${customer.country || 'Mexico'}</div>
+            <div class="stat-number">${customer.foundedYear || 'N/A'}</div>
+            <div class="stat-label">Founded Year</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">${customer.industry || 'Packaging'}</div>
+            <div class="stat-label">Industry</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">${customer.city || customer.country}</div>
             <div class="stat-label">Location</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">${customer.companyType || 'Manufacturer'}</div>
-            <div class="stat-label">Business Type</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">NEXUS</div>
-            <div class="stat-label">Partner Since</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">Verified</div>
+            <div class="stat-number">${customer.status === 'verified' ? 'Verified' : 'Pending'}</div>
             <div class="stat-label">Status</div>
         </div>
     `;
@@ -211,20 +229,55 @@ function displayCustomerInfo(customer) {
     document.getElementById('certifications-grid').innerHTML = certificationsHTML;
 
     // Display contact info
-    const contactHTML = `
+    let contactHTML = '';
+    
+    if (customer.ceo) {
+        contactHTML += `
         <div class="contact-item">
-            <h3>Contact Person</h3>
-            <p>${customer.contactPerson || 'N/A'}</p>
-        </div>
+            <h3>CEO/Director</h3>
+            <p>${customer.ceo}</p>
+        </div>`;
+    }
+    
+    if (customer.email) {
+        contactHTML += `
         <div class="contact-item">
             <h3>Email</h3>
-            <p>${customer.email || 'info@nexusglobal.asia'}</p>
-        </div>
+            <p><a href="mailto:${customer.email}">${customer.email}</a></p>
+        </div>`;
+    }
+    
+    if (customer.phone) {
+        contactHTML += `
         <div class="contact-item">
-            <h3>Country</h3>
-            <p>${customer.country || 'Mexico'}</p>
-        </div>
-    `;
+            <h3>Phone</h3>
+            <p>${customer.phone}</p>
+        </div>`;
+    }
+    
+    if (customer.website) {
+        contactHTML += `
+        <div class="contact-item">
+            <h3>Website</h3>
+            <p><a href="${customer.website}" target="_blank" rel="noopener noreferrer">${customer.website}</a></p>
+        </div>`;
+    }
+    
+    if (customer.address) {
+        contactHTML += `
+        <div class="contact-item">
+            <h3>Address</h3>
+            <p>${customer.address}</p>
+        </div>`;
+    }
+    
+    if (customer.businessScope && customer.businessScope.length > 0) {
+        contactHTML += `
+        <div class="contact-item">
+            <h3>Business Scope</h3>
+            <p>${customer.businessScope.join(', ')}</p>
+        </div>`;
+    }
     document.getElementById('contact-info').innerHTML = contactHTML;
     document.getElementById('contact-button').href = `contact.html?company=${customer.id}`;
 }
@@ -238,5 +291,86 @@ function showError(message) {
     document.getElementById('products-section').style.display = 'none';
     document.getElementById('certifications-section').style.display = 'none';
     document.getElementById('contact-section').style.display = 'none';
+}
+
+
+
+
+// Display newly registered supplier information from localStorage
+function displayNewSupplierInfo(supplier) {
+    // Display company name and location
+    document.getElementById('company-name').textContent = supplier.companyName || 'New Supplier';
+    document.getElementById('company-location').textContent = supplier.country || 'Pending Review';
+    
+    // Display company description
+    document.getElementById('company-description').textContent = supplier.description || 'This supplier is pending review. More information will be available after verification.';
+    
+    // Display company stats (default values for new suppliers)
+    const statsHTML = `
+        <div class="stat-item">
+            <div class="stat-number">Pending</div>
+            <div class="stat-label">Product Models</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">New</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">-</div>
+            <div class="stat-label">Clients Served</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">-</div>
+            <div class="stat-label">Satisfaction Rate</div>
+        </div>
+    `;
+    document.getElementById('company-stats').innerHTML = statsHTML;
+    
+    // Hide products section for new suppliers
+    document.getElementById('products-section').style.display = 'none';
+    
+    // Display certifications (if any)
+    if (supplier.certifications && supplier.certifications.length > 0) {
+        const certificationsHTML = supplier.certifications.map(cert => `
+            <div class="certification-item">
+                <h3>${cert}</h3>
+            </div>
+        `).join('');
+        document.getElementById('certifications-list').innerHTML = certificationsHTML;
+    } else {
+        document.getElementById('certifications-section').style.display = 'none';
+    }
+    
+    // Display contact information
+    const contactHTML = `
+        <div class="contact-item">
+            <h3>Email</h3>
+            <p>${supplier.email || 'Pending verification'}</p>
+        </div>
+        <div class="contact-item">
+            <h3>Phone</h3>
+            <p>${supplier.phone || 'Pending verification'}</p>
+        </div>
+        <div class="contact-item">
+            <h3>Location</h3>
+            <p>${supplier.country || 'Pending verification'}</p>
+        </div>
+    `;
+    document.getElementById('contact-info').innerHTML = contactHTML;
+    document.getElementById('contact-button').href = `contact.html?company=${supplier.id}`;
+    
+    // Show pending review message
+    const productsSection = document.getElementById('products-section');
+    if (productsSection) {
+        productsSection.innerHTML = `
+            <h2>Products & Solutions</h2>
+            <div class="pending-message" style="text-align: center; padding: 40px; background: #f8f9fa; border-radius: 8px; margin: 20px 0;">
+                <p style="font-size: 18px; color: #666; margin-bottom: 10px;">This supplier is pending review.</p>
+                <p style="font-size: 14px; color: #999;">Registration ID: ${supplier.id}</p>
+                <p style="font-size: 14px; color: #999; margin-top: 10px;">Products will be displayed after verification.</p>
+            </div>
+        `;
+        productsSection.style.display = 'block';
+    }
 }
 
