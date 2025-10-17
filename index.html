@@ -924,6 +924,9 @@
             const suppliersGrid = suppliersTitle.parentElement.querySelector('.partners-logos-grid');
             if (!suppliersGrid) return;
             
+            // Load newly registered suppliers from localStorage
+            const registeredSuppliers = JSON.parse(localStorage.getItem('supplierRegistrations') || '[]');
+            
             // Define new suppliers (to be displayed first)
             const newSupplierIds = ['odj', 'kingtau', 'autotech', 'ecoprint'];
             
@@ -934,14 +937,31 @@
             // Clear and rebuild
             suppliersGrid.innerHTML = '';
             
-            // Add new suppliers first (highlighted)
+            // Add newly registered suppliers from localStorage first
+            registeredSuppliers.forEach(reg => {
+                const item = document.createElement('div');
+                item.className = 'partner-logo-item partner-logo-highlight';
+                item.style.cursor = 'pointer';
+                item.innerHTML = `
+                    <div class="partner-placeholder partner-new" title="${reg.companyName}">
+                        <strong>${reg.companyName}</strong>
+                        <small style="display:block; margin-top:5px; font-size:0.8em; color:#fff;">New Partner</small>
+                    </div>
+                `;
+                item.addEventListener('click', () => {
+                    alert('This supplier is pending review. Registration ID: ' + reg.registrationId);
+                });
+                suppliersGrid.appendChild(item);
+            });
+            
+            // Add new suppliers from JSON (highlighted)
             newSuppliers.forEach(supplier => {
                 const item = document.createElement('div');
                 item.className = 'partner-logo-item partner-logo-highlight';
                 item.style.cursor = 'pointer';
                 item.innerHTML = `
-                    <div class="partner-placeholder partner-new" title="${supplier.nameEn}">
-                        <strong>${supplier.nameEn}</strong>
+                    <div class="partner-placeholder partner-new" title="${supplier.name || supplier.nameEn}">
+                        <strong>${supplier.name || supplier.nameEn}</strong>
                         <small style="display:block; margin-top:5px; font-size:0.8em; color:#fff;">New Partner</small>
                     </div>
                 `;
@@ -1048,6 +1068,98 @@
 
         // Load data when page loads
         document.addEventListener('DOMContentLoaded', loadPartnersData);
+        
+        // Watch Introduction Video button
+        document.addEventListener('DOMContentLoaded', () => {
+            const watchVideoBtn = document.getElementById('watchVideoBtn');
+            if (watchVideoBtn) {
+                watchVideoBtn.addEventListener('click', () => {
+                    // Create video modal
+                    const modal = document.createElement('div');
+                    modal.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.9);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 10000;
+                        cursor: pointer;
+                    `;
+                    
+                    const videoContainer = document.createElement('div');
+                    videoContainer.style.cssText = `
+                        width: 90%;
+                        max-width: 1200px;
+                        aspect-ratio: 16/9;
+                        background: #000;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        position: relative;
+                    `;
+                    
+                    // Add close button
+                    const closeBtn = document.createElement('button');
+                    closeBtn.innerHTML = '✕';
+                    closeBtn.style.cssText = `
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        background: rgba(255, 255, 255, 0.2);
+                        border: none;
+                        color: white;
+                        font-size: 24px;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        z-index: 10001;
+                        transition: background 0.3s;
+                    `;
+                    closeBtn.onmouseover = () => closeBtn.style.background = 'rgba(255, 255, 255, 0.3)';
+                    closeBtn.onmouseout = () => closeBtn.style.background = 'rgba(255, 255, 255, 0.2)';
+                    
+                    // Add YouTube video iframe
+                    const iframe = document.createElement('iframe');
+                    iframe.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'; // Replace with actual video ID
+                    iframe.style.cssText = 'width: 100%; height: 100%; border: none;';
+                    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                    iframe.allowFullscreen = true;
+                    
+                    videoContainer.appendChild(iframe);
+                    videoContainer.appendChild(closeBtn);
+                    modal.appendChild(videoContainer);
+                    document.body.appendChild(modal);
+                    
+                    // Close modal on click
+                    const closeModal = () => {
+                        document.body.removeChild(modal);
+                    };
+                    
+                    closeBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        closeModal();
+                    });
+                    
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            closeModal();
+                        }
+                    });
+                    
+                    // Close on Escape key
+                    document.addEventListener('keydown', function escHandler(e) {
+                        if (e.key === 'Escape') {
+                            closeModal();
+                            document.removeEventListener('keydown', escHandler);
+                        }
+                    });
+                });
+            }
+        });
     </script>
 </body>
 </html>
