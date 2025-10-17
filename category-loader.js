@@ -126,20 +126,28 @@ async function loadCategoryProducts(categoryId) {
         // Display products
         const productsGrid = document.getElementById('products-grid');
         if (productsGrid && categoryProducts.length > 0) {
-            productsGrid.innerHTML = categoryProducts.map(product => `
+            productsGrid.innerHTML = categoryProducts.map(product => {
+                // Get product image - use first image from images array or placeholder
+                const productImage = (product.images && product.images.length > 0) ? product.images[0] : 'images/product-placeholder.jpg';
+                // Get product name - use English name if available
+                const productName = product.fullNameEn || product.fullName || product.name || 'High-Quality Packaging Equipment';
+                // Get product title - use title if available, otherwise use fullNameEn
+                const productTitle = product.title || productName;
+                
+                return `
                 <div class="product-card">
                     <div class="product-image-container">
-                        <img src="${product.image || 'images/product-placeholder.jpg'}" 
+                        <img src="${productImage}" 
                              alt="${product.model || product.id}" 
                              class="product-image"
                              onerror="this.src='images/product-placeholder.jpg'">
                     </div>
                     <div class="product-info">
                         <h3 class="product-model">${product.model || product.id.toUpperCase()}</h3>
-                        <p class="product-name">${product.title || 'High-Quality Packaging Equipment'}</p>
+                        <p class="product-name">${productTitle}</p>
                         <p class="product-description">${product.description || 'Professional packaging equipment with advanced technology and reliable performance.'}</p>
                         <ul class="product-features">
-                            ${(product.features || ['High precision', 'Reliable performance', 'Easy operation', 'Low maintenance', 'Energy efficient']).slice(0, 5).map(f => `<li>${f}</li>`).join('')}
+                            ${(product.keyFeatures || product.features || ['High precision', 'Reliable performance', 'Easy operation', 'Low maintenance', 'Energy efficient']).slice(0, 5).map(f => `<li>${f}</li>`).join('')}
                         </ul>
                         <div class="product-card-footer">
                             <a href="product-detail-dynamic.html?id=${product.id}" class="view-details-btn">View Details →</a>
@@ -147,7 +155,8 @@ async function loadCategoryProducts(categoryId) {
                         </div>
                     </div>
                 </div>
-            `).join('');
+                `;
+            }).join('');
         } else if (productsGrid) {
             productsGrid.innerHTML = '<p style="text-align: center; padding: 40px; color: #64748b;">No products available in this category yet.</p>';
         }

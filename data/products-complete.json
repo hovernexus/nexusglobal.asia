@@ -5,56 +5,56 @@
       "name": "数码印刷机",
       "nameEn": "Digital Printer",
       "description": "高精度数字喷墨印刷设备，适用于瓦楞纸板印刷",
-      "icon": "🖨️"
+      "icon": ""
     },
     {
       "id": "die_cutting",
       "name": "模切机",
       "nameEn": "Die-Cutting Machine",
       "description": "高精度模切设备，包括激光模切和传统模切",
-      "icon": "✂️"
+      "icon": ""
     },
     {
       "id": "ffg_inline",
       "name": "FFG Inline",
       "nameEn": "FFG Inline",
       "description": "柔印连线设备，集印刷、开槽、模切、粘合于一体",
-      "icon": "🏭"
+      "icon": ""
     },
     {
       "id": "folder_gluer",
       "name": "粘箱机/钉箱机/开槽机/打包机",
       "nameEn": "Folder Gluer/Stitcher/Slotter/Strapping",
       "description": "纸箱成型和打包设备",
-      "icon": "📦"
+      "icon": ""
     },
     {
       "id": "laminator",
       "name": "裱纸机/覆膜机",
       "nameEn": "Laminator/Filming Machine",
       "description": "表面处理设备，提升包装品质",
-      "icon": "✨"
+      "icon": ""
     },
     {
       "id": "inspection",
       "name": "翻转机/检品机",
       "nameEn": "Turning Machine/Inspection Machine",
       "description": "质量检测和翻转设备",
-      "icon": "🔍"
+      "icon": ""
     },
     {
       "id": "feeder_palletizer",
       "name": "上料机/码垛机/分片机",
       "nameEn": "Feeder/Palletizer/Breaking Unit",
       "description": "自动化物流设备，提升生产效率",
-      "icon": "🤖"
+      "icon": ""
     },
     {
       "id": "pulp_molding",
       "name": "纸浆模塑设备",
       "nameEn": "Pulp Molding Equipment",
       "description": "环保纸浆模塑成型设备",
-      "icon": "♻️"
+      "icon": ""
     }
   ],
   "suppliers": [

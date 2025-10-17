@@ -103,17 +103,26 @@ function displaySupplierInfo(supplier, allProducts) {
 
     // Display products
     if (supplierProducts.length > 0) {
-        const productsHTML = supplierProducts.map(product => `
+        const productsHTML = supplierProducts.map(product => {
+            // Get product image - use first image from images array or placeholder
+            const productImage = (product.images && product.images.length > 0) ? product.images[0] : 'images/product-placeholder.jpg';
+            // Get product name - use English name if available, otherwise fallback to Chinese name
+            const productName = product.fullNameEn || product.fullName || product.name || 'Product';
+            // Get product description
+            const productDesc = product.description || 'High-quality packaging equipment with advanced technology.';
+            
+            return `
             <div class="product-card" onclick="window.location.href='product-detail-dynamic.html?id=${product.id}'">
-                <img src="${product.image || 'images/product-placeholder.jpg'}" alt="${product.name}" class="product-card-image" onerror="this.src='images/product-placeholder.jpg'">
+                <img src="${productImage}" alt="${productName}" class="product-card-image" onerror="this.src='images/product-placeholder.jpg'">
                 <div class="product-card-content">
-                    <h3>${product.name}</h3>
-                    <p class="product-card-subtitle">${product.category || 'Packaging Equipment'}</p>
-                    <p class="product-card-description">${product.description || 'High-quality packaging equipment with advanced technology.'}</p>
+                    <h3>${productName}</h3>
+                    <p class="product-card-subtitle">${product.model || 'Model'}</p>
+                    <p class="product-card-description">${productDesc}</p>
                     <a href="product-detail-dynamic.html?id=${product.id}" class="product-card-cta">View Details →</a>
                 </div>
             </div>
-        `).join('');
+            `;
+        }).join('');
         document.getElementById('products-grid').innerHTML = productsHTML;
     } else {
         document.getElementById('products-section').style.display = 'none';
