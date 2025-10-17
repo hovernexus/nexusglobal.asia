@@ -109,34 +109,28 @@
     {
       "id": "odj",
       "name": "Foshan ODJ Intelligent Technology Co., Ltd.",
-      "shortName": "ODJ",
-      "country": "China",
-      "city": "Foshan",
-      "province": "Guangdong",
-      "description": "A globally leading provider of automation solutions for the corrugated packaging industry. With over 12 years of dedicated industry experience, ODJ is renowned for innovative capabilities that integrate Japan's top engineering technologies to solve real-world challenges of global customers.",
-      "mission": "To deliver comprehensive, end-to-end automation solutions, from front-end intelligent feeding to back-end robotic palletizing and AGV intelligent warehousing.",
-      "yearEstablished": "2012",
-      "specializations": [
-        "Intelligent Feeding Technology",
-        "Robotic & Back-end Automation",
-        "3D Vision AI Systems",
-        "Pre-press Equipment"
+      "nameEn": "Foshan ODJ Intelligent Technology Co., Ltd.",
+      "website": "https://www.woodwellglobal.net",
+      "description": "Global Leader in Corrugated Packaging Automation Solutions - With over 12 years of focused expertise in the corrugated industry, ODJ merges Japanese-engineered precision with cost-effective manufacturing. We deliver intelligent, reliable, and high-ROI solutions backed by a global service network.",
+      "logo": "images/suppliers/odj-logo.png",
+      "location": "Foshan, Guangdong, China",
+      "established": "2012",
+      "highlights": [
+        "Japanese-Engineered Precision - Core technology from Japan (Mochizuki Akihiro team)",
+        "AI Vision Palletizing - Kawasaki robotic arm with proprietary 3D vision system",
+        "Universal Compatibility - Works with TCY, BOBST, Eterna and other global brands",
+        "12+ Years Expertise - Focused on corrugated industry automation",
+        "Global Service Network - Committed to customer success worldwide"
       ],
       "certifications": [
         "ISO 9001",
-        "CE Certification"
+        "CE",
+        "China Package Federation Member"
       ],
-      "type": "supplier",
-      "productCategories": [
-        "Feeder/Palletizer",
-        "Automation & Robotics"
-      ],
-      "website": "https://www.odjtech.com",
-      "logo": "images/companies/odj-logo.png",
-      "images": [
-        "images/companies/odj-factory-1.jpg",
-        "images/companies/odj-factory-2.jpg"
-      ]
+      "contact": {
+        "email": "info@odjmachine.com",
+        "phone": "+86 757 8888 8888"
+      }
     },
     {
       "id": "shuanghuan",
@@ -733,6 +727,391 @@
       "supplierId": "mkm"
     },
     {
+      "id": "qsl2",
+      "model": "QSL2",
+      "fullName": "全自动上料机（斜坡式）",
+      "fullNameEn": "Full Auto Pre-feeder (Slope Type)",
+      "category": "feeder_palletizer",
+      "url": "https://odjmachine.com",
+      "description": "Advanced breaking unit designed for seamless integration with die-cutting machines. Ensures efficient separation and stacking of die-cut sheets with precision and reliability.",
+      "keyFeatures": [
+        "斜坡式设计",
+        "重力辅助",
+        "结构简单",
+        "可靠性高",
+        "日本原创设计"
+      ],
+      "specifications": {
+        "Max Sheet Size": "2500mm x 1800mm",
+        "Min Sheet Size": "600mm x 400mm",
+        "Processing Speed": "Up to 100 sheets/min",
+        "Stacking Height": "Up to 1500mm",
+        "Power": "12kW"
+      },
+      "applications": [
+        "Die-cutting lines",
+        "Post-press operations",
+        "Automated production lines"
+      ],
+      "images": [
+        "images/products/qsl2-1.jpg"
+      ],
+      "supplierId": "odj",
+      "title": "Die-Cutter Breaking Unit",
+      "features": [
+        "Precise sheet separation",
+        "Gentle handling to prevent damage",
+        "High-speed operation",
+        "Automatic stacking",
+        "Compatible with major die-cutter brands",
+        "Easy integration"
+      ]
+    },
+    {
+      "id": "qsl3",
+      "model": "QSL2",
+      "fullName": "全自动上料机（挡板式，面印）",
+      "fullNameEn": "Full Auto Pre-feeder for Top Print (Baffle Type)",
+      "category": "feeder_palletizer",
+      "url": "https://odjmachine.com",
+      "description": "Advanced breaking unit designed for seamless integration with die-cutting machines. Ensures efficient separation and stacking of die-cut sheets with precision and reliability.",
+      "keyFeatures": [
+        "挡板式设计",
+        "面印专用",
+        "精确定位",
+        "高兼容性",
+        "自动纠偏"
+      ],
+      "specifications": {
+        "Max Sheet Size": "2500mm x 1800mm",
+        "Min Sheet Size": "600mm x 400mm",
+        "Processing Speed": "Up to 100 sheets/min",
+        "Stacking Height": "Up to 1500mm",
+        "Power": "12kW"
+      },
+      "applications": [
+        "Die-cutting lines",
+        "Post-press operations",
+        "Automated production lines"
+      ],
+      "images": [
+        "images/products/qsl3-1.jpg"
+      ],
+      "supplierId": "odj",
+      "title": "Die-Cutter Breaking Unit",
+      "features": [
+        "Precise sheet separation",
+        "Gentle handling to prevent damage",
+        "High-speed operation",
+        "Automatic stacking",
+        "Compatible with major die-cutter brands",
+        "Easy integration"
+      ]
+    },
+    {
+      "id": "qxy3",
+      "model": "QXY3",
+      "fullName": "全自动上料机（挡板式，底印）",
+      "fullNameEn": "Full Auto Pre-feeder for Bottom Print (Baffle Type)",
+      "category": "feeder_palletizer",
+      "url": "https://odjmachine.com",
+      "description": "High-efficiency automatic stacker designed for seamless integration with die-cutting and printing lines. Ensures precise stacking and counting of finished sheets.",
+      "keyFeatures": [
+        "底印专用",
+        "特殊翻转机构",
+        "保护印刷面",
+        "精确送料",
+        "高效稳定"
+      ],
+      "specifications": {
+        "Max Sheet Size": "2500mm x 1800mm",
+        "Min Sheet Size": "600mm x 400mm",
+        "Stacking Speed": "Up to 100 sheets/min",
+        "Stacking Height": "Up to 1500mm",
+        "Power": "8kW"
+      },
+      "applications": [
+        "Die-cutting lines",
+        "Printing lines",
+        "Post-press operations"
+      ],
+      "images": [
+        "images/products/qxy3-1.jpg"
+      ],
+      "supplierId": "odj",
+      "title": "Automatic Stacker",
+      "features": [
+        "Automatic sheet counting",
+        "Precise stack alignment",
+        "Adjustable stacking height",
+        "Non-stop operation",
+        "Compatible with various board types",
+        "Easy operation and maintenance"
+      ]
+    },
+    {
+      "id": "qsl4",
+      "model": "QSL2",
+      "fullName": "全自动上料机（提篮式，面印）",
+      "fullNameEn": "Full Auto Pre-feeder for Top Print (Basket Type)",
+      "category": "feeder_palletizer",
+      "url": "https://odjmachine.com",
+      "description": "Advanced breaking unit designed for seamless integration with die-cutting machines. Ensures efficient separation and stacking of die-cut sheets with precision and reliability.",
+      "keyFeatures": [
+        "提篮式设计",
+        "连续不停机",
+        "高效率",
+        "适合长时间生产",
+        "自动化程度高"
+      ],
+      "specifications": {
+        "Max Sheet Size": "2500mm x 1800mm",
+        "Min Sheet Size": "600mm x 400mm",
+        "Processing Speed": "Up to 100 sheets/min",
+        "Stacking Height": "Up to 1500mm",
+        "Power": "12kW"
+      },
+      "applications": [
+        "Die-cutting lines",
+        "Post-press operations",
+        "Automated production lines"
+      ],
+      "images": [
+        "images/products/qsl4-1.jpg"
+      ],
+      "supplierId": "odj",
+      "title": "Die-Cutter Breaking Unit",
+      "features": [
+        "Precise sheet separation",
+        "Gentle handling to prevent damage",
+        "High-speed operation",
+        "Automatic stacking",
+        "Compatible with major die-cutter brands",
+        "Easy integration"
+      ]
+    },
+    {
+      "id": "jxb",
+      "model": "JXB Series",
+      "fullName": "全自动上料机（机械臂式）",
+      "fullNameEn": "Full Auto Pre-feeder (Robotics Arm Type)",
+      "category": "feeder_palletizer",
+      "url": "https://odjmachine.com",
+      "description": "Revolutionize your line's efficiency with our Intelligent Pre-feeder. Designed for non-stop, high-speed operation, it ensures a continuous and stable supply of cardboard to your printer or die-cutter, eliminating manual bottlenecks.",
+      "keyFeatures": [
+        "机械臂技术",
+        "极高灵活性",
+        "适应各种尺寸",
+        "智能控制",
+        "未来技术"
+      ],
+      "specifications": {
+        "Max Board Size": "2500mm x 1800mm",
+        "Min Board Size": "600mm x 400mm",
+        "Feeding Speed": "Up to 120 sheets/min",
+        "Board Thickness": "2-10mm",
+        "Power": "15kW",
+        "Air Pressure": "0.6-0.8 MPa"
+      },
+      "applications": [
+        "Digital printing lines",
+        "Flexo printing lines",
+        "Die-cutting machines",
+        "High-speed production operations"
+      ],
+      "images": [
+        "images/products/jxb-1.jpg"
+      ],
+      "supplierId": "odj",
+      "title": "Intelligent Pre-feeder",
+      "features": [
+        "Servo-driven non-crush feeding mechanism",
+        "Continuous high-speed operation",
+        "Protects board structural integrity",
+        "Reduces labor dependency",
+        "Boosts overall equipment effectiveness (OEE)",
+        "Universal compatibility with printers and die-cutters"
+      ]
+    },
+    {
+      "id": "bys-a",
+      "model": "BYS-A",
+      "fullName": "半自动上料机（挡板式）",
+      "fullNameEn": "Semi Auto Pre-feeder (Baffle Type)",
+      "category": "feeder_palletizer",
+      "url": "https://odjmachine.com",
+      "description": "Cost-effective semi-automatic feeding solution for small to medium production lines. Combines manual loading with automated feeding for improved efficiency.",
+      "keyFeatures": [
+        "经济型设备",
+        "半自动操作",
+        "投资成本低",
+        "操作简单",
+        "适合中小企业"
+      ],
+      "specifications": {
+        "Max Board Size": "2000mm x 1500mm",
+        "Min Board Size": "500mm x 350mm",
+        "Feeding Speed": "Up to 60 sheets/min",
+        "Board Thickness": "2-8mm",
+        "Power": "5kW"
+      },
+      "applications": [
+        "Small to medium production lines",
+        "Digital printing",
+        "Die-cutting operations"
+      ],
+      "images": [
+        "images/products/bys-a-1.jpg"
+      ],
+      "supplierId": "odj",
+      "title": "Semi-Automatic Feeder",
+      "features": [
+        "Manual stack loading",
+        "Automatic sheet feeding",
+        "Adjustable feeding speed",
+        "Compact design",
+        "Easy to operate",
+        "Low maintenance cost"
+      ]
+    },
+    {
+      "id": "bys-b",
+      "model": "BYS-B",
+      "fullName": "半自动上料机（斜坡式）",
+      "fullNameEn": "Semi Auto Pre-feeder (Slope Type)",
+      "category": "feeder_palletizer",
+      "url": "https://odjmachine.com",
+      "description": "Reliable automatic feeding solution for standard production requirements. Offers consistent performance and easy integration with existing equipment.",
+      "keyFeatures": [
+        "斜坡式设计",
+        "结构简单",
+        "维护方便",
+        "性价比高",
+        "入门级自动化"
+      ],
+      "specifications": {
+        "Max Board Size": "2200mm x 1600mm",
+        "Min Board Size": "550mm x 400mm",
+        "Feeding Speed": "Up to 80 sheets/min",
+        "Board Thickness": "2-9mm",
+        "Power": "10kW"
+      },
+      "applications": [
+        "Standard production lines",
+        "Printing machines",
+        "Die-cutting machines"
+      ],
+      "images": [
+        "images/products/bys-b-1.jpg"
+      ],
+      "supplierId": "odj",
+      "title": "Automatic Feeder (Standard)",
+      "features": [
+        "Fully automatic operation",
+        "Stable feeding performance",
+        "Universal compatibility",
+        "User-friendly interface",
+        "Reliable and durable",
+        "Cost-effective solution"
+      ]
+    },
+    {
+      "id": "md-350",
+      "model": "MD-350",
+      "fullName": "智能机器人码垛机（配备3D视觉AI系统）",
+      "fullNameEn": "Intelligent Robotic Palletizer (with 3D visual AI System)",
+      "category": "feeder_palletizer",
+      "url": "https://odjmachine.com",
+      "description": "Step into the future of logistics with our AI Vision Palletizing Robot. Powered by proprietary 3D vision system and Kawasaki high-performance robotic arm, it instantly recognizes various carton sizes and stack patterns without manual programming.",
+      "keyFeatures": [
+        "日本川崎机械臂",
+        "3D视觉AI系统",
+        "自动识别箱型",
+        "自动调整位置",
+        "全球首创技术"
+      ],
+      "specifications": {
+        "Max Payload": "350kg",
+        "Max Reach": "3500mm",
+        "Positioning Accuracy": "±0.5mm",
+        "Stacking Height": "Up to 2500mm",
+        "Cycle Time": "8-12 seconds/carton",
+        "Power": "25kW"
+      },
+      "applications": [
+        "End-of-line palletizing",
+        "Automated warehouse systems",
+        "High-volume packaging operations",
+        "Smart factory integration"
+      ],
+      "images": [
+        "images/products/md-350-1.jpg"
+      ],
+      "highlights": [
+        "使用日本川崎高性能机械臂",
+        "全球首创3D视觉人工智能系统",
+        "自动识别不同箱型进行堆码匹配",
+        "自动调整码垛高低位置",
+        "自动识别来自前道工序的错误捆包",
+        "保障生产高效安全，减少人工和差错率"
+      ],
+      "supplierId": "odj",
+      "title": "AI Vision Palletizing Robot",
+      "features": [
+        "Proprietary 3D vision system",
+        "Kawasaki high-performance robotic arm",
+        "Auto-recognition of carton sizes",
+        "Real-time optimal stacking path calculation",
+        "No manual programming required",
+        "Error detection from upstream processes",
+        "Unmanned operation capability"
+      ]
+    },
+    {
+      "id": "md-s2",
+      "model": "MD-350",
+      "fullName": "机器人码垛机（双工位）",
+      "fullNameEn": "Robotic Palletizer (Dual-Station)",
+      "category": "feeder_palletizer",
+      "url": "https://odjmachine.com",
+      "description": "Step into the future of logistics with our AI Vision Palletizing Robot. Powered by proprietary 3D vision system and Kawasaki high-performance robotic arm, it instantly recognizes various carton sizes and stack patterns without manual programming.",
+      "keyFeatures": [
+        "双工位设计",
+        "双倍效率",
+        "连续作业",
+        "灵活配置",
+        "高产能"
+      ],
+      "specifications": {
+        "Max Payload": "350kg",
+        "Max Reach": "3500mm",
+        "Positioning Accuracy": "±0.5mm",
+        "Stacking Height": "Up to 2500mm",
+        "Cycle Time": "8-12 seconds/carton",
+        "Power": "25kW"
+      },
+      "applications": [
+        "End-of-line palletizing",
+        "Automated warehouse systems",
+        "High-volume packaging operations",
+        "Smart factory integration"
+      ],
+      "images": [
+        "images/products/md-s2-1.jpg"
+      ],
+      "supplierId": "odj",
+      "title": "AI Vision Palletizing Robot",
+      "features": [
+        "Proprietary 3D vision system",
+        "Kawasaki high-performance robotic arm",
+        "Auto-recognition of carton sizes",
+        "Real-time optimal stacking path calculation",
+        "No manual programming required",
+        "Error detection from upstream processes",
+        "Unmanned operation capability"
+      ]
+    },
+    {
       "id": "xjhd-2600gs",
       "model": "XJHD-2600GS",
       "fullName": "高速全能型糊钉一体机",
@@ -1163,312 +1542,6 @@
         "images/products/ecoprint-ecodigital-2000-2.jpg"
       ],
       "supplierId": "ecoprint"
-    },
-    {
-      "id": "pfjxb001",
-      "model": "JXB",
-      "fullName": "JXB机械臂式自动送纸机",
-      "fullNameEn": "JXB Robotic Arm Type Automatic Pre-feeder",
-      "category": "feeding_palletizing",
-      "equipmentType": "Pre-press Equipment",
-      "sku": "PFJXB001",
-      "status": "available",
-      "description": "A revolutionary pre-feeder powered by a KAWASAKI robotic arm. As the world-first technology by ODJ, it delivers unparalleled speed (up to 500 sheets/min), precision, and 100% damage-free handling for all board types.",
-      "keyFeatures": [
-        "KAWASAKI BXP21L-A Robotic Arm Core",
-        "World-Class Speed (400-500 sheets/min)",
-        "Absolute Zero-Damage Handling",
-        "Ultimate Versatility (All-in-One)",
-        "Universal for Top/Bottom Print",
-        "Integrated Windmill Turnover Unit"
-      ],
-      "specifications": {
-        "maxSpeed": "400-500 sheets/min",
-        "boardSizeRange": "400×300mm to 1800×1400mm",
-        "thicknessRange": "1-7mm",
-        "powerConsumption": "15KW",
-        "robotModel": "KAWASAKI BXP21L-A",
-        "application": "Universal (Top/Bottom Print)"
-      },
-      "applications": [
-        "Top-tier packaging enterprises",
-        "High-speed production lines",
-        "Lights-out smart factories",
-        "Diverse product portfolio handling"
-      ],
-      "videoReferences": [
-        "https://youtu.be/jsOMv7YYn-w?si=vbSyHSzX0akRA9Bm",
-        "https://youtu.be/dcNphrMCWIg?si=g3I2xjvWV205AljA"
-      ],
-      "images": [
-        "images/products/odj-jxb-1.jpg",
-        "images/products/odj-jxb-2.jpg"
-      ],
-      "supplierId": "odj",
-      "priceRange": "over_500k"
-    },
-    {
-      "id": "pfqsl2",
-      "model": "QSL2",
-      "fullName": "QSL2斜面式自动送纸机",
-      "fullNameEn": "QSL2 Slope Type Automatic Pre-feeder",
-      "category": "feeding_palletizing",
-      "equipmentType": "Pre-press Equipment",
-      "sku": "PFQSL2",
-      "status": "available",
-      "description": "A high-performance slope-type automatic pre-feeder designed for top print applications. Features advanced breaking unit for seamless integration with die-cutting machines.",
-      "keyFeatures": [
-        "Slope Type Design",
-        "High-Speed Operation (350-450 sheets/min)",
-        "Top Print Specialist",
-        "Advanced Breaking Unit",
-        "Seamless Die-Cutting Integration",
-        "Precision Positioning System"
-      ],
-      "specifications": {
-        "maxSpeed": "350-450 sheets/min",
-        "boardSizeRange": "400×300mm to 1650×1200mm",
-        "thicknessRange": "1-6mm",
-        "powerConsumption": "12KW",
-        "application": "Top Print"
-      },
-      "applications": [
-        "Die-cutting production lines",
-        "Top print operations",
-        "Medium to high-speed production",
-        "Corrugated box manufacturing"
-      ],
-      "images": [
-        "images/products/odj-qsl2-1.jpg"
-      ],
-      "supplierId": "odj",
-      "priceRange": "200k_500k"
-    },
-    {
-      "id": "pfqsl3001",
-      "model": "QSL3",
-      "fullName": "QSL3挡板式自动送纸机",
-      "fullNameEn": "QSL3 Baffle Type Automatic Pre-feeder",
-      "category": "feeding_palletizing",
-      "equipmentType": "Pre-press Equipment",
-      "sku": "PFQSL3001",
-      "status": "available",
-      "description": "A reliable baffle-type automatic pre-feeder for top print applications. The workhorse of the production line with proven stability and efficiency.",
-      "keyFeatures": [
-        "Baffle Type Design",
-        "Reliable Operation (300-400 sheets/min)",
-        "Top Print Workhorse",
-        "Proven Stability",
-        "Cost-Effective Solution",
-        "Easy Maintenance"
-      ],
-      "specifications": {
-        "maxSpeed": "300-400 sheets/min",
-        "boardSizeRange": "400×300mm to 1650×1200mm",
-        "thicknessRange": "1-6mm",
-        "powerConsumption": "10KW",
-        "application": "Top Print"
-      },
-      "applications": [
-        "Standard die-cutting lines",
-        "Top print production",
-        "Medium-speed operations",
-        "Cost-conscious manufacturers"
-      ],
-      "images": [
-        "images/products/odj-qsl3-1.jpg"
-      ],
-      "supplierId": "odj",
-      "priceRange": "100k_200k"
-    },
-    {
-      "id": "pfqsl4001",
-      "model": "QSL4/QSM",
-      "fullName": "QSL4/QSM篮式（升降）自动送纸机",
-      "fullNameEn": "QSL4/QSM Basket (Lifting) Type Automatic Pre-feeder",
-      "category": "feeding_palletizing",
-      "equipmentType": "Pre-press Equipment",
-      "sku": "PFQSL4001",
-      "status": "available",
-      "description": "A versatile basket-type automatic pre-feeder with lifting mechanism. Universal solution for both top and bottom print applications.",
-      "keyFeatures": [
-        "Basket (Lifting) Type Design",
-        "Universal Application (Top/Bottom Print)",
-        "Stable Operation (300-350 sheets/min)",
-        "Automatic Lifting System",
-        "Flexible Configuration",
-        "High Precision Feeding"
-      ],
-      "specifications": {
-        "maxSpeed": "300-350 sheets/min",
-        "boardSizeRange": "400×300mm to 1650×1200mm",
-        "thicknessRange": "1-6mm",
-        "powerConsumption": "11KW",
-        "application": "Universal (Top/Bottom Print)"
-      },
-      "applications": [
-        "Flexible production lines",
-        "Top and bottom print operations",
-        "Multi-purpose manufacturing",
-        "Versatile die-cutting applications"
-      ],
-      "images": [
-        "images/products/odj-qsl4-1.jpg"
-      ],
-      "supplierId": "odj",
-      "priceRange": "100k_200k"
-    },
-    {
-      "id": "pfqxy300",
-      "model": "QXY3",
-      "fullName": "QXY3挡板式自动送纸机",
-      "fullNameEn": "QXY3 Baffle Type Automatic Pre-feeder",
-      "category": "feeding_palletizing",
-      "equipmentType": "Pre-press Equipment",
-      "sku": "PFQXY300",
-      "status": "available",
-      "description": "A specialized baffle-type automatic pre-feeder designed for bottom print applications. Optimized for efficient bottom print production.",
-      "keyFeatures": [
-        "Baffle Type Design",
-        "Bottom Print Specialist",
-        "Efficient Operation (300-350 sheets/min)",
-        "Optimized for Bottom Print",
-        "Stable Performance",
-        "Easy Operation"
-      ],
-      "specifications": {
-        "maxSpeed": "300-350 sheets/min",
-        "boardSizeRange": "400×300mm to 1650×1200mm",
-        "thicknessRange": "1-6mm",
-        "powerConsumption": "10KW",
-        "application": "Bottom Print"
-      },
-      "applications": [
-        "Bottom print production lines",
-        "Specialized die-cutting operations",
-        "Bottom print focused manufacturers",
-        "Standard corrugated production"
-      ],
-      "images": [
-        "images/products/odj-qxy3-1.jpg"
-      ],
-      "supplierId": "odj",
-      "priceRange": "100k_200k"
-    },
-    {
-      "id": "pfbys001",
-      "model": "BYS",
-      "fullName": "BYS半自动送纸机",
-      "fullNameEn": "BYS Semi-Automatic Pre-feeder",
-      "category": "feeding_palletizing",
-      "equipmentType": "Pre-press Equipment",
-      "sku": "PFBYS001",
-      "status": "available",
-      "description": "An entry-level semi-automatic pre-feeder solution. Cost-effective automation for small to medium manufacturers with single-person operation.",
-      "keyFeatures": [
-        "Semi-Automatic Operation",
-        "Single-Person Operation",
-        "Entry-Level Automation",
-        "Cost-Effective Solution",
-        "Easy to Learn",
-        "Compact Design"
-      ],
-      "specifications": {
-        "operation": "Semi-Automatic",
-        "boardSizeRange": "400×300mm to 1200×900mm",
-        "thicknessRange": "1-5mm",
-        "powerConsumption": "5KW",
-        "operators": "1 person"
-      },
-      "applications": [
-        "Small to medium manufacturers",
-        "Entry-level automation",
-        "Budget-conscious operations",
-        "Low to medium volume production"
-      ],
-      "images": [
-        "images/products/odj-bys-1.jpg"
-      ],
-      "supplierId": "odj",
-      "priceRange": "under_50k"
-    },
-    {
-      "id": "rpmd350-1",
-      "model": "MD-350",
-      "fullName": "MD-350 3D视觉AI智能机器人码垛系统",
-      "fullNameEn": "MD-350 3D Vision AI Intelligent Robotic Palletizing System",
-      "category": "feeding_palletizing",
-      "equipmentType": "Post-press Equipment",
-      "sku": "RPMD350-1",
-      "status": "available",
-      "description": "The world's first palletizing system powered by a 3D Vision AI algorithm. Achieves true unmanned operation by automatically recognizing carton sizes and planning optimal pallet patterns without any manual input.",
-      "keyFeatures": [
-        "Global First: 3D Vision AI Algorithm",
-        "Truly Unmanned Operation",
-        "Automatic Carton Recognition",
-        "Optimal Pallet Pattern Planning",
-        "Zero Human Intervention",
-        "8-Second Job Changeover"
-      ],
-      "specifications": {
-        "palletizingSpeed": "Up to 16 cycles/min",
-        "cartonSizeRange": "200×150×100mm to 600×400×300mm",
-        "maxWeight": "25kg per carton",
-        "powerConsumption": "20KW",
-        "robotModel": "KAWASAKI",
-        "visionSystem": "3D Vision AI"
-      },
-      "applications": [
-        "End-of-line automation",
-        "Intelligent warehousing",
-        "Unmanned production lines",
-        "Smart factory integration"
-      ],
-      "videoReferences": [
-        "https://youtu.be/RCWpGp6rbgM",
-        "https://youtu.be/d2vBV72-Qk0"
-      ],
-      "images": [
-        "images/products/odj-md350-1.jpg",
-        "images/products/odj-md350-2.jpg"
-      ],
-      "supplierId": "odj",
-      "priceRange": "over_500k"
-    },
-    {
-      "id": "fpfp1650",
-      "model": "FP-1650",
-      "fullName": "FP-1650自动破包系统",
-      "fullNameEn": "FP-1650 Automatic Bundle Breaker System",
-      "category": "feeding_palletizing",
-      "equipmentType": "Post-press Equipment",
-      "sku": "FPFP1650",
-      "status": "available",
-      "description": "An automated bundle breaking and separation system for post die-cutting operations. Eliminates manual bundle breaking and improves production efficiency.",
-      "keyFeatures": [
-        "Automated Bundle Breaking",
-        "Automatic Separation",
-        "Post Die-Cutting Automation",
-        "Labor Reduction",
-        "Improved Efficiency",
-        "Safe Operation"
-      ],
-      "specifications": {
-        "maxBundleSize": "1650×1200mm",
-        "processingSpeed": "Up to 12 bundles/min",
-        "powerConsumption": "8KW"
-      },
-      "applications": [
-        "Post die-cutting operations",
-        "Bundle processing automation",
-        "Labor-saving solutions",
-        "High-volume production lines"
-      ],
-      "images": [
-        "images/products/odj-fp1650-1.jpg"
-      ],
-      "supplierId": "odj",
-      "priceRange": "100k_200k"
     }
   ]
 }

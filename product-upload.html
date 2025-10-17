@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Products - NEXUS GLOBAL HOLDINGS</title>
+    <meta name="description" content="Upload your products to NEXUS GLOBAL HOLDINGS platform">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="registration.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon"></span>
+                    <div class="logo-text-wrapper">
+                        <span class="logo-text">NEXUS</span>
+                        <span class="logo-subtitle">GLOBAL HOLDINGS</span>
+                    </div>
+                </a>
+
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="index.html#solutions">Solutions</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <select class="language-selector" aria-label="Language selector">
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                        <option value="pt">Português</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Upload Hero -->
+    <section class="registration-hero">
+        <div class="container">
+            <div class="registration-hero-content">
+                <h1 class="registration-hero-title">Upload Products</h1>
+                <p class="registration-hero-subtitle">Showcase your equipment to thousands of corrugated packaging manufacturers worldwide</p>
+                <div class="registration-benefits">
+                    <div class="benefit-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Global Visibility</span>
+                    </div>
+                    <div class="benefit-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Lead Generation</span>
+                    </div>
+                    <div class="benefit-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Professional Showcase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Form -->
+    <section class="registration-form-section">
+        <div class="container">
+            <form id="productUploadForm" class="registration-form">
+                <!-- Basic Information -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <span class="section-number">1</span>
+                        Basic Information
+                    </h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="productModel" class="form-label">Product Model/SKU *</label>
+                            <input type="text" id="productModel" name="productModel" class="form-input" placeholder="e.g., PFJXB001" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productName" class="form-label">Product Name *</label>
+                            <input type="text" id="productName" name="productName" class="form-input" placeholder="e.g., JXB Robotic Arm Pre-feeder" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productCategory" class="form-label">Product Category *</label>
+                            <select id="productCategory" name="productCategory" class="form-select" required>
+                                <option value="">Select Category</option>
+                                <option value="digital_printing">Digital Printing Machines</option>
+                                <option value="die_cutting">Die-Cutting Machines</option>
+                                <option value="ffg_inline">FFG Inline</option>
+                                <option value="folder_gluer">Folder Gluer/Stitcher</option>
+                                <option value="laminator">Laminator/Filming Machine</option>
+                                <option value="feeding_palletizing">Feeder/Palletizer</option>
+                                <option value="corrugator">Corrugator Line</option>
+                                <option value="flexo_printing">Flexo Printing Machines</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="equipmentType" class="form-label">Equipment Type *</label>
+                            <select id="equipmentType" name="equipmentType" class="form-select" required>
+                                <option value="">Select Type</option>
+                                <option value="pre_press">Pre-press Equipment</option>
+                                <option value="printing">Printing Equipment</option>
+                                <option value="post_press">Post-press Equipment</option>
+                                <option value="converting">Converting Equipment</option>
+                                <option value="automation">Automation & Robotics</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productStatus" class="form-label">Status *</label>
+                            <select id="productStatus" name="productStatus" class="form-select" required>
+                                <option value="">Select Status</option>
+                                <option value="available">Available</option>
+                                <option value="pre_order">Pre-order</option>
+                                <option value="discontinued">Discontinued</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="priceRange" class="form-label">Price Range (USD)</label>
+                            <select id="priceRange" name="priceRange" class="form-select">
+                                <option value="">Select Range</option>
+                                <option value="under_50k">Under $50,000</option>
+                                <option value="50k_100k">$50,000 - $100,000</option>
+                                <option value="100k_200k">$100,000 - $200,000</option>
+                                <option value="200k_500k">$200,000 - $500,000</option>
+                                <option value="over_500k">Over $500,000</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Description -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <span class="section-number">2</span>
+                        Product Description
+                    </h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="productDescription" class="form-label">Product Description *</label>
+                            <textarea id="productDescription" name="productDescription" class="form-textarea" rows="5" placeholder="Provide a detailed description of the product, its main features, and benefits..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="keyFeatures" class="form-label">Key Features *</label>
+                            <textarea id="keyFeatures" name="keyFeatures" class="form-textarea" rows="5" placeholder="List the main features and unique selling points (one per line)..." required></textarea>
+                            <small style="color: #64748b; font-size: 14px;">Enter each feature on a new line</small>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="applications" class="form-label">Applications & Use Cases</label>
+                            <textarea id="applications" name="applications" class="form-textarea" rows="4" placeholder="Describe typical applications, industries served, and use cases (one per line)..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Specifications -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <span class="section-number">3</span>
+                        Technical Specifications
+                    </h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="maxSpeed" class="form-label">Maximum Speed</label>
+                            <input type="text" id="maxSpeed" name="maxSpeed" class="form-input" placeholder="e.g., 400-500 sheets/min">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="maxSize" class="form-label">Maximum Size</label>
+                            <input type="text" id="maxSize" name="maxSize" class="form-input" placeholder="e.g., 1800×1400mm">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="powerConsumption" class="form-label">Power Consumption</label>
+                            <input type="text" id="powerConsumption" name="powerConsumption" class="form-input" placeholder="e.g., 15KW">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dimensions" class="form-label">Dimensions (L×W×H)</label>
+                            <input type="text" id="dimensions" name="dimensions" class="form-input" placeholder="e.g., 7000×2800×2200mm">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="additionalSpecs" class="form-label">Additional Specifications</label>
+                            <textarea id="additionalSpecs" name="additionalSpecs" class="form-textarea" rows="4" placeholder="Enter any additional technical specifications (format: Spec Name: Value, one per line)..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Media & Resources -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <span class="section-number">4</span>
+                        Media & Resources
+                    </h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="productImages" class="form-label">Product Images *</label>
+                            <div class="file-upload-area" id="imageUploadArea">
+                                <input type="file" id="productImages" name="productImages" accept="image/*" multiple class="file-input">
+                                <div class="file-upload-label">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="17 8 12 3 7 8"></polyline>
+                                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                                    </svg>
+                                    <p>Click to upload or drag and drop</p>
+                                    <span>PNG, JPG up to 10MB (Maximum 5 images)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="videoUrl1" class="form-label">Video URL 1</label>
+                            <input type="url" id="videoUrl1" name="videoUrl1" class="form-input" placeholder="https://youtu.be/...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="videoUrl2" class="form-label">Video URL 2</label>
+                            <input type="url" id="videoUrl2" name="videoUrl2" class="form-input" placeholder="https://youtu.be/...">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="productUrl" class="form-label">Product Website URL</label>
+                            <input type="url" id="productUrl" name="productUrl" class="form-input" placeholder="https://...">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">
+                        <span>Upload Product</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                    <p class="form-note">Your product will be reviewed and published within 24 hours</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">NEXUS GLOBAL HOLDINGS</h3>
+                    <p class="footer-description">Your trusted partner in corrugated packaging equipment solutions</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#solutions">Solutions</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">For Suppliers</h4>
+                    <ul class="footer-links">
+                        <li><a href="supplier-registration.html">Supplier Registration</a></li>
+                        <li><a href="product-upload.html">Upload Products</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="product-upload.js"></script>
+</body>
+</html>
+
