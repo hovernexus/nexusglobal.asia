@@ -196,6 +196,39 @@
         "CE",
         "中国环境标志认证"
       ]
+    },
+    {
+      "id": "wood-well",
+      "name": "WOOD WELL LIMITED",
+      "nameEn": "WOOD WELL LIMITED",
+      "website": "",
+      "description": "Professional corrugated packaging equipment supplier",
+      "logo": "images/suppliers/wood-well-logo.png",
+      "type": "supplier",
+      "isNew": true,
+      "status": "pending"
+    },
+    {
+      "id": "abc",
+      "name": "ABC",
+      "nameEn": "ABC",
+      "website": "",
+      "description": "Packaging solutions provider",
+      "logo": "images/suppliers/abc-logo.png",
+      "type": "supplier",
+      "isNew": true,
+      "status": "pending"
+    },
+    {
+      "id": "autotech",
+      "name": "广东奥拓智能科技有限公司",
+      "nameEn": "Guangdong AutoTech Intelligent Technology Co., Ltd.",
+      "website": "",
+      "description": "Intelligent automation equipment manufacturer",
+      "logo": "images/suppliers/autotech-logo.png",
+      "type": "supplier",
+      "isNew": true,
+      "status": "pending"
     }
   ],
   "products": [

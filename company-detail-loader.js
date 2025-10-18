@@ -35,7 +35,7 @@ function loadSupplierData(supplierId) {
     }
     
     // If not in localStorage, load from JSON file
-    fetch('data/products-complete.json')
+    fetch('data/products-complete.json?_=' + Date.now())
         .then(response => response.json())
         .then(data => {
             // Find supplier in the data
@@ -292,13 +292,21 @@ function displayCustomerInfo(customer) {
 
 // Show error message
 function showError(message) {
-    document.getElementById('company-name').textContent = 'Error';
-    document.getElementById('company-location').textContent = '';
-    document.getElementById('company-description').textContent = message;
-    document.getElementById('company-stats').style.display = 'none';
-    document.getElementById('products-section').style.display = 'none';
-    document.getElementById('certifications-section').style.display = 'none';
-    document.getElementById('contact-section').style.display = 'none';
+    const companyName = document.getElementById('company-name');
+    const companyLocation = document.getElementById('company-location');
+    const companyDescription = document.getElementById('company-description');
+    const companyStats = document.getElementById('company-stats');
+    const productsSection = document.getElementById('products-section');
+    const certificationsSection = document.getElementById('certifications-section');
+    const contactSection = document.getElementById('contact-section');
+    
+    if (companyName) companyName.textContent = 'Error';
+    if (companyLocation) companyLocation.textContent = '';
+    if (companyDescription) companyDescription.textContent = message;
+    if (companyStats) companyStats.style.display = 'none';
+    if (productsSection) productsSection.style.display = 'none';
+    if (certificationsSection) certificationsSection.style.display = 'none';
+    if (contactSection) contactSection.style.display = 'none';
 }
 
 
