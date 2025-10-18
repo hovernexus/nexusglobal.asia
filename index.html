@@ -750,8 +750,12 @@
 
             <!-- Suppliers Section -->
             <div class="partners-category">
-                <h3 class="partners-category-title">Certified Equipment Suppliers</h3>
-                <p class="partners-category-subtitle">Association-verified manufacturers providing quality equipment</p>
+                <h3 class="partners-category-title">
+                    <a href="registered-companies.html#suppliers" style="color: inherit; text-decoration: none; cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='inherit'">
+                        Certified Equipment Suppliers
+                    </a>
+                </h3>
+                <p class="partners-category-subtitle">Association-verified manufacturers providing quality equipment <a href="registered-companies.html#suppliers" style="color: #667eea; text-decoration: none; font-weight: 600;">View All →</a></p>
                 <div class="partners-logos-grid">
                     <div class="partner-logo-item">
                         <div class="partner-placeholder">Hanglory</div>
@@ -782,8 +786,12 @@
 
             <!-- Customers Section -->
             <div class="partners-category">
-                <h3 class="partners-category-title">Trusted by Leading Corrugated Manufacturers</h3>
-                <p class="partners-category-subtitle">Registered members and association partners</p>
+                <h3 class="partners-category-title">
+                    <a href="registered-companies.html#customers" style="color: inherit; text-decoration: none; cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='inherit'">
+                        Trusted by Leading Corrugated Manufacturers
+                    </a>
+                </h3>
+                <p class="partners-category-subtitle">Registered members and association partners <a href="registered-companies.html#customers" style="color: #667eea; text-decoration: none; font-weight: 600;">View All →</a></p>
                 <div class="partners-logos-grid">
                     <div class="partner-logo-item">
                         <div class="partner-placeholder">Customer 1</div>
@@ -928,7 +936,7 @@
             const registeredSuppliers = JSON.parse(localStorage.getItem('supplierRegistrations') || '[]');
             
             // Define new suppliers (to be displayed first)
-            const newSupplierIds = ['odj', 'kingtau', 'autotech', 'ecoprint'];
+            const newSupplierIds = ['wood-well', 'abc', 'odj', 'kingtau', 'autotech', 'ecoprint'];
             
             // Separate new and existing suppliers
             const newSuppliers = suppliers.filter(s => newSupplierIds.includes(s.id));
