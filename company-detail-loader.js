@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load company data based on type
     if (companyType === 'supplier') {
         loadSupplierData(companyId);
-    } else if (companyType === 'customer') {
+    } else if (companyType === 'customer' || companyType === 'buyer') {
         loadCustomerData(companyId);
     } else {
         showError('Invalid company type');
@@ -124,13 +124,13 @@ function displaySupplierInfo(supplier, allProducts) {
             const productDesc = product.description || 'High-quality packaging equipment with advanced technology.';
             
             return `
-            <div class="product-card" onclick="window.location.href='product-detail-dynamic.html?id=${product.id}'">
+            <div class="product-card" onclick="window.location.href='product-detail.html?id=${product.id}'">
                 <img src="${productImage}" alt="${productName}" class="product-card-image" onerror="this.src='images/product-placeholder.jpg'">
                 <div class="product-card-content">
                     <h3>${productName}</h3>
                     <p class="product-card-subtitle">${product.model || 'Model'}</p>
                     <p class="product-card-description">${productDesc}</p>
-                    <a href="product-detail-dynamic.html?id=${product.id}" class="product-card-cta">View Details →</a>
+                    <a href="product-detail.html?id=${product.id}" class="product-card-cta">View Details →</a>
                 </div>
             </div>
             `;
@@ -185,10 +185,18 @@ function displayCustomerInfo(customer) {
     document.getElementById('page-title').textContent = `${customer.companyName} | NEXUS GLOBAL HOLDINGS`;
     document.getElementById('breadcrumb-company').textContent = customer.companyName;
     
+    // Display company logo if available
+    if (customer.logo) {
+        const logoContainer = document.getElementById('company-logo-container');
+        const logoImg = document.getElementById('company-logo');
+        logoImg.src = customer.logo;
+        logoContainer.style.display = 'block';
+    }
+    
     // Update company hero section
     document.getElementById('company-name').textContent = customer.companyName;
     document.getElementById('company-location').textContent = `${customer.city ? customer.city + ', ' : ''}${customer.country || 'Mexico'}`;
-    document.getElementById('company-description').textContent = customer.description || customer.businessDescription || 'Leading corrugated packaging manufacturer committed to quality and innovation.';
+    document.getElementById('company-description').textContent = customer.aboutUs || customer.description || customer.businessDescription || 'Leading corrugated packaging manufacturer committed to quality and innovation.';
 
     // Display company stats
     const statsHTML = `

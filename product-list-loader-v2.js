@@ -121,7 +121,7 @@ function renderProductList(products) {
                         `).join('')}
                     </div>
                     <div class="product-actions">
-                        <a href="product-detail-dynamic.html?id=${product.id}" class="btn btn-primary">
+                        <a href="product-detail.html?id=${product.id}" class="btn btn-primary">
                             查看详情 View Details
                         </a>
                         <a href="contact.html?product=${product.id}" class="btn btn-secondary">

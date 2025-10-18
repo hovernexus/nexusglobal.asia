@@ -27,7 +27,7 @@ async function loadDieCuttingProducts() {
                 const features = product.keyFeatures || product.features || ['High precision', 'Reliable performance', 'Easy operation', 'Low maintenance', 'Energy efficient'];
                 
                 return `
-                <div class="product-card" onclick="window.location.href='product-detail-dynamic.html?id=${product.id}'">
+                <div class="product-card" onclick="window.location.href='product-detail.html?id=${product.id}'">
                     <div class="product-card-image">
                         <img src="${productImage}" alt="${product.model || product.id}" onerror="this.src='images/product-placeholder.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -41,7 +41,7 @@ async function loadDieCuttingProducts() {
                             ${features.slice(0, 5).map(f => `<li>${f}</li>`).join('')}
                         </ul>
                         <div class="product-card-footer">
-                            <a href="product-detail-dynamic.html?id=${product.id}" class="view-details-btn">View Details →</a>
+                            <a href="product-detail.html?id=${product.id}" class="view-details-btn">View Details →</a>
                             <a href="contact.html" class="get-quote-btn">Quote</a>
                         </div>
                     </div>

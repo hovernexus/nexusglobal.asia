@@ -1,4 +1,4 @@
-// Product Detail Loader V3 - 兼容product-detail-dynamic.html的HTML结构
+// Product Detail Loader V3 - 兼容product-detail.html的HTML结构
 // 从products-complete.json加载数据
 
 let productsCompleteData = null;

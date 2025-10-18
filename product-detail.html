@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - NEXUS GLOBAL HOLDINGS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product-detail.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>NEXUS</h1>
+                <p>GLOBAL HOLDINGS</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#solutions">Solutions</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <select class="language-selector">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="zh">中文</option>
+            </select>
+            <a href="get-quote.html" class="cta-button">Get Quote</a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">NEXUS GLOBAL</a> &gt; 
+            <a href="products.html">Products</a> &gt; 
+            <span id="breadcrumb-product">Product Name</span>
+        </div>
+    </div>
+
+    <!-- Product Detail Content -->
+    <div class="product-detail-container">
+        <div class="container">
+            <!-- Loading State -->
+            <div id="loading-state" class="loading-state">
+                <h2>Loading...</h2>
+                <p>Loading product information...</p>
+            </div>
+
+            <!-- Product Content -->
+            <div id="product-content" class="product-content" style="display: none;">
+                <!-- Product Header -->
+                <div class="product-header">
+                    <div class="product-images">
+                        <div class="main-image">
+                            <img id="main-product-image" src="" alt="Product Image">
+                        </div>
+                        <div class="image-thumbnails" id="image-thumbnails">
+                            <!-- Thumbnails will be dynamically inserted -->
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h1 id="product-name">Product Name</h1>
+                        <p class="product-model">Model: <span id="product-model"></span></p>
+                        <p class="product-category">Category: <span id="product-category"></span></p>
+                        <div class="product-description" id="product-description"></div>
+                        
+                        <div class="product-actions">
+                            <a href="get-quote.html" class="btn-primary">Request Quote</a>
+                            <a href="#contact" class="btn-secondary">Contact Supplier</a>
+                        </div>
+
+                        <div class="supplier-info">
+                            <h3>Supplier Information</h3>
+                            <p class="supplier-name" id="supplier-name"></p>
+                            <a href="#" id="supplier-link" class="view-supplier">View Supplier Profile →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Tabs -->
+                <div class="product-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="features">Main Features</button>
+                        <button class="tab-button" data-tab="applications">Applications</button>
+                        <button class="tab-button" data-tab="specifications">Technical Data</button>
+                        <button class="tab-button" data-tab="downloads">Downloads</button>
+                        <button class="tab-button" data-tab="contact">Contact</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <!-- Main Features Tab -->
+                        <div id="features-tab" class="tab-pane active">
+                            <h2>Core Functional Modules</h2>
+                            <div id="features-content" class="features-grid">
+                                <!-- Features will be dynamically inserted -->
+                            </div>
+                        </div>
+
+                        <!-- Applications Tab -->
+                        <div id="applications-tab" class="tab-pane">
+                            <h2>Applications</h2>
+                            <div id="applications-content" class="applications-list">
+                                <!-- Applications will be dynamically inserted -->
+                            </div>
+                        </div>
+
+                        <!-- Technical Data Tab -->
+                        <div id="specifications-tab" class="tab-pane">
+                            <h2>Technical Specifications</h2>
+                            <div id="specifications-content" class="specifications-table">
+                                <!-- Specifications will be dynamically inserted -->
+                            </div>
+                        </div>
+
+                        <!-- Downloads Tab -->
+                        <div id="downloads-tab" class="tab-pane">
+                            <h2>Downloads</h2>
+                            <div id="downloads-content" class="downloads-list">
+                                <!-- Downloads will be dynamically inserted -->
+                            </div>
+                        </div>
+
+                        <!-- Contact Tab -->
+                        <div id="contact-tab" class="tab-pane">
+                            <h2>Contact</h2>
+                            <div class="contact-info">
+                                <p>For more information about this product, please contact the supplier directly:</p>
+                                <div id="contact-content">
+                                    <!-- Contact info will be dynamically inserted -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Products -->
+                <div class="related-products">
+                    <h2>Related Products</h2>
+                    <div id="related-products-grid" class="products-grid">
+                        <!-- Related products will be dynamically inserted -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NEXUS GLOBAL HOLDINGS</h3>
+                    <p>Connecting corrugated packaging manufacturers with certified equipment suppliers worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@nexusglobal.asia</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="product-detail-loader.js"></script>
+</body>
+</html>
+

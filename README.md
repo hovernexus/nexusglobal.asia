@@ -1,153 +1,206 @@
-# NEXUS V11.3.3 缺失文件包
+# NEXUS GLOBAL HOLDINGS Website
 
-## 问题说明
+**Version**: V11.0  
+**Release Date**: October 16, 2025  
+**Status**: Production Ready - Data Fixed
 
-您的网站显示ODJ产品仍然是虚拟数据，新注册供应商详情页打不开，这是因为以下关键文件**没有上传到GitHub Pages**：
+## 🎯 Overview
 
-1. `company-detail-loader.js` - 供应商/客户详情页加载逻辑（包含displayNewSupplierInfo函数）
-2. `index.html` - 首页（修复了供应商名称显示逻辑）
-3. `data/products-complete.json` - 产品数据（包含ODJ公司stats统计信息）
-4. `data/registered-companies.json` - 客户数据（包含丰富的联系信息）
+NEXUS GLOBAL HOLDINGS is a comprehensive corrugated packaging equipment solutions platform, connecting Asian manufacturers with global buyers.
+
+## ✨ What's New in V11.0
+
+### 🔧 Critical Data Fixes
+- ✅ **Fixed data format issues** in `registered-companies.json`
+- ✅ **Removed newline characters** from company names
+- ✅ **Cleaned trailing spaces** in company names
+- ✅ **Verified all supplier data** (ODJ 9 products, Kingtau 3 products)
+- ✅ **Verified all buyer data** (10 Mexico companies)
+
+### 📊 Data Integrity
+- All supplier information displays correctly
+- All customer information displays correctly
+- No special characters interfering with display
+- Consistent data formatting across all JSON files
+
+## 📊 Statistics
+
+| Category | Count |
+|----------|-------|
+| Suppliers | 10 |
+| Products | 36 |
+| Buyers (Mexico) | 10 |
+| HTML Pages | 22 |
+| Total Files | 64 |
+
+## 📁 File Structure
+
+```
+nexus-v11/
+├── data/
+│   ├── products-complete.json (10 suppliers, 36 products)
+│   └── registered-companies.json (10 Mexico buyers) ✅ FIXED
+├── images/ (29 images)
+├── videos/ (1 video)
+├── *.html (22 pages)
+├── *.css (3 stylesheets)
+├── *.js (5 scripts)
+├── VERSION.txt (V11.0)
+└── README.md
+```
+
+## 🚀 Quick Deployment Guide
+
+### Method 1: GitHub Desktop (Recommended)
+
+**See detailed guide in `GITHUB-DEPLOYMENT-GUIDE-V11.md`**
+
+Quick steps:
+1. Delete all files from your GitHub repository
+2. Copy all files from `nexus-v11` folder
+3. Commit with message "Deploy V11.0 - Data fixes"
+4. Push to GitHub
+5. Wait 2-5 minutes for deployment
+
+### Method 2: GitHub Web Upload
+
+**See detailed guide in `GITHUB-DEPLOYMENT-GUIDE-V11.md`**
+
+Quick steps:
+1. Go to your repository on GitHub
+2. Delete all old files
+3. Upload all files from `nexus-v11` folder
+4. Wait 2-5 minutes for deployment
+
+### Method 3: Git Command Line
+
+**See detailed guide in `GITHUB-DEPLOYMENT-GUIDE-V11.md`**
+
+```bash
+cd /path/to/your/repo
+git rm -r *
+cp -r /path/to/nexus-v11/* .
+git add .
+git commit -m "Deploy V11.0 - Data fixes"
+git push origin main
+```
+
+## ✅ Deployment Verification
+
+After deployment, verify on your live website:
+
+- [ ] README shows "Version: V11.0"
+- [ ] Homepage displays 10 suppliers
+- [ ] New suppliers (ODJ, Kingtau, AutoTech, EcoPrint) have purple background
+- [ ] Homepage displays 10 customers
+- [ ] Mexico buyers have purple background and correct names
+- [ ] No "\n" or extra spaces in company names
+- [ ] AI consultant link opens 8-module page
+- [ ] No 404 errors in browser console
+
+## 📋 Verified Data
+
+### Suppliers (10)
+1. 深圳汉华工业数码设备有限公司 (hanhua)
+2. 广州精陶机电设备有限公司 (kingtau) ⭐ NEW
+3. 上海亚华印刷机械有限公司 (yawa)
+4. 天津长荣股份有限公司 (mkm)
+5. 新军机械 (xinjun)
+6. 唐山佳捷包装机械制造有限公司 (jiajie)
+7. 佛山欧德佳智能科技有限公司 (odj) ⭐ NEW
+8. 湖南双环科技集团有限公司 (shuanghuan)
+9. 广东奥特智能科技有限公司 (autotech) ⭐ NEW
+10. 江苏绿印环保印刷设备有限公司 (ecoprint) ⭐ NEW
+
+### Products (36)
+- **ODJ**: 9 products (feeders, palletizers, breaking units)
+- **Kingtau**: 3 products (digital printers)
+- **Others**: 24 products across all categories
+- All products have correct `supplierId` field ✅
+
+### Buyers (10 - Mexico) ✅ FIXED
+1. MEX QUALITY BOX S.A DE C.V.
+2. REPRESENTACIONES CYECSA S.A DE C.V. ✅ Fixed
+3. MULTIEMPAQUES DEL NORTE S.A DE C.V. ✅ Fixed
+4. CAJAS E IMPRESIONES COMETA S.A DE C.V.
+5. SULTANA PACKAGING S.A DE C.V.
+6. CELULOSA Y CORRUGADOS DE SONORA
+7. RELVA S.A DE C.V. ✅ Fixed
+8. EMPROPACK EMPAQUES PROFESIONALES S.A DE C.V.
+9. VITTI EMPAQUES S. DE R.L DE C.V.
+10. DURABOX DE CHIHUAHUA S.A DE C.V. ✅ Fixed
+
+## 🔧 Technical Details
+
+### Dynamic Data Loading
+
+Homepage JavaScript automatically:
+- Loads suppliers from `data/products-complete.json`
+- Loads buyers from `data/registered-companies.json`
+- Sorts new partners first (ODJ, Kingtau, AutoTech, EcoPrint)
+- Applies purple gradient background to new partners
+- Displays up to 12 customers (to show all Mexico buyers)
+
+### Data Format Fixes
+
+**Before (V10.9.2)**:
+```json
+{
+  "companyName": "\nREPRESENTACIONES CYECSA S.A DE C.V.",
+}
+```
+
+**After (V11.0)**:
+```json
+{
+  "companyName": "REPRESENTACIONES CYECSA S.A DE C.V.",
+}
+```
+
+## 🧪 Local Testing
+
+### Using Python HTTP Server
+```bash
+cd nexus-v11
+python -m http.server 8000
+```
+Then visit: http://localhost:8000
+
+### Using Node.js HTTP Server
+```bash
+cd nexus-v11
+npx http-server -p 8000
+```
+Then visit: http://localhost:8000
+
+## 🔮 Next Steps (V11.1+)
+
+- [ ] Expand AI consultation system to 8 full modules
+- [ ] Implement AI Chat dialogue functionality
+- [ ] SEO optimization (structured data, sitemap)
+- [ ] Backend analytics dashboard
+- [ ] Visitor tracking and Excel export
+- [ ] Multi-language support
+
+## 📞 Support
+
+If you encounter any issues:
+- Email: info@nexusglobal.asia
+- Website: https://nexusglobal.asia
+
+## 📜 Version History
+
+- **V11.0** (2025-10-16): Fixed data format issues, cleaned company names
+- **V10.9.2** (2025-10-14): Fixed JavaScript display bugs
+- **V10.9.1** (2025-10-14): Added new suppliers and customers
+- **V10.9** (2025-10-14): MVP release
+- **V10.8** (2025-10-13): Added ODJ and Kingtau products
+- **V10.7** (2025-10-13): Optimized AI consultation system
+- **V10.6** (2025-10-12): Basic features completed
 
 ---
 
-## 快速修复步骤
+**NEXUS GLOBAL HOLDINGS** - Asia's Packaging Equipment Integration Expert
 
-### 第一步：下载缺失文件
-从交付包中下载以下文件：
-- `company-detail-loader.js`
-- `index.html`
-- `data/products-complete.json`
-- `data/registered-companies.json`
-
-### 第二步：上传到GitHub仓库
-将这些文件上传到GitHub Pages仓库，**覆盖**同名的旧文件：
-
-1. 访问您的GitHub仓库
-2. 点击对应的文件（如company-detail-loader.js）
-3. 点击"Edit this file"（铅笔图标）
-4. 删除旧内容，粘贴新文件的完整内容
-5. 点击"Commit changes"保存
-
-**或者使用GitHub Desktop：**
-1. 打开GitHub Desktop
-2. 将下载的文件拖拽到仓库文件夹，覆盖旧文件
-3. 在GitHub Desktop中提交更改（Commit）
-4. 点击"Push origin"推送到GitHub
-
-### 第三步：等待部署完成
-GitHub Pages需要1-3分钟部署新文件。访问仓库的Settings → Pages查看部署状态。
-
-### 第四步：强制刷新浏览器
-部署完成后，务必清除浏览器缓存：
-- 按 `Ctrl+Shift+R` (Windows/Linux) 或 `Cmd+Shift+R` (Mac)
-- 或使用无痕模式访问
-
----
-
-## 验证修复效果
-
-### 验证1：检查company-detail-loader.js
-访问 `https://nexusglobal.asia/company-detail-loader.js`，按 `Ctrl+F` 搜索 "displayNewSupplierInfo"，应该能找到这个函数。
-
-### 验证2：检查ODJ产品
-访问 `https://nexusglobal.asia/company-detail.html?id=odj&type=supplier`，应该看到：
-- 统计信息：8+ Product Models, 15+ Years Experience, 500+ Clients Served, 98% Satisfaction Rate
-- 8个真实产品（JXB, QSL2, QSL3, QSL4/QSM, QXY3, BYS, MD-350, FP-1650）
-
-### 验证3：检查新注册供应商
-点击首页的WOOD WELL LIMITED或ABC卡片，应该看到：
-- 公司名称和位置
-- 待审核状态提示
-- 注册ID（不是"undefined"）
-- 联系信息
-
----
-
-## 文件内容说明
-
-### company-detail-loader.js
-- **大小**: 约15KB
-- **关键函数**: 
-  - `displayNewSupplierInfo()` - 处理新注册供应商详情显示
-  - `displaySupplierInfo()` - 显示供应商统计信息和网站链接
-  - `displayCustomerInfo()` - 显示客户详细联系信息
-- **修改内容**: 
-  - 新增localStorage支持
-  - 使用supplier.stats数据
-  - 添加公司网站显示
-  - 丰富客户联系信息显示
-
-### index.html
-- **大小**: 约50KB
-- **关键修改**: 
-  - displaySuppliers()函数：从 `supplier.name || supplier.nameEn` 改为 `supplier.nameEn || supplier.name`
-  - 修复UPLOAD PRODUCTS链接：从 `product-upload-form.html` 改为 `product-upload.html`
-  - 添加Watch Introduction Video视频播放器
-
-### data/products-complete.json
-- **大小**: 约150KB
-- **关键修改**: 
-  - ODJ公司新增stats字段：
-    ```json
-    "stats": {
-      "productModels": "8+",
-      "yearsExperience": "15+",
-      "clientsServed": "500+",
-      "satisfactionRate": "98%"
-    }
-    ```
-  - ODJ公司8个真实产品数据
-
-### data/registered-companies.json
-- **大小**: 约20KB
-- **关键修改**: 
-  - 所有10个墨西哥客户新增详细信息：
-    - city（城市）
-    - foundedYear（成立年份）
-    - description（公司简介）
-    - businessScope（业务范围）
-    - contact.email（邮箱）
-    - contact.phone（电话）
-    - contact.address（地址）
-    - contact.website（网站）
-    - ceo（CEO/Director）
-
----
-
-## 常见问题
-
-### Q1: 上传后仍显示旧数据？
-**A**: 这是浏览器缓存问题。请使用以下方法之一：
-1. 按 `Ctrl+Shift+R` 强制刷新
-2. 使用无痕模式访问
-3. 清除浏览器缓存和Cookie
-
-### Q2: 如何确认文件已正确上传？
-**A**: 访问文件的直接URL，例如：
-- `https://nexusglobal.asia/company-detail-loader.js`
-- `https://nexusglobal.asia/data/products-complete.json`
-
-按 `Ctrl+U` 查看源代码，搜索关键内容（如"displayNewSupplierInfo"或"stats"）。
-
-### Q3: GitHub Pages部署需要多长时间？
-**A**: 通常1-3分钟。访问仓库的Settings → Pages查看部署状态。如果超过5分钟仍未部署，检查是否有错误提示。
-
-### Q4: 可以只上传部分文件吗？
-**A**: 不建议。这4个文件是相互关联的，必须全部上传才能保证功能正常。
-
----
-
-## 技术支持
-
-如果按照上述步骤操作后问题仍然存在，请提供：
-1. GitHub仓库URL
-2. 网站URL
-3. 浏览器开发者工具截图（Console + Network标签）
-4. 访问 `https://nexusglobal.asia/company-detail-loader.js` 的截图
-
----
-
-**创建日期**: 2025-10-16  
-**版本**: V11.3.3
+© 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.
 

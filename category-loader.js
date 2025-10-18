@@ -150,7 +150,7 @@ async function loadCategoryProducts(categoryId) {
                             ${(product.keyFeatures || product.features || ['High precision', 'Reliable performance', 'Easy operation', 'Low maintenance', 'Energy efficient']).slice(0, 5).map(f => `<li>${f}</li>`).join('')}
                         </ul>
                         <div class="product-card-footer">
-                            <a href="product-detail-dynamic.html?id=${product.id}" class="view-details-btn">View Details →</a>
+                            <a href="product-detail.html?id=${product.id}" class="view-details-btn">View Details →</a>
                             <a href="contact.html" class="get-quote-btn">Quote</a>
                         </div>
                     </div>

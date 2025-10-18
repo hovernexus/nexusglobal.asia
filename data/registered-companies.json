@@ -19,7 +19,9 @@
       "email": "clientes@mexqualitybox.com",
       "phone": "+52 33 1797 8000",
       "address": "Av. Vicente Guerrero 145, Agua Blanca Industrial, 45235 Zapopan, Jal., Mexico",
-      "ceo": "Francisco Javier Albarrán Camarena"
+      "ceo": "Francisco Javier Albarrán Camarena",
+      "logo": "images/customers/mex-quality-box-logo.png",
+      "aboutUs": "We are a Mexican company based in Guadalajara, Jalisco, dedicated to the commercialization of paper and cardboard packaging. Our origin dates back to 1995 when it was established as Cartón y Servicios. We are an organization committed to meeting customer needs in the food market, both nationally and internationally, as well as the industrial sector, through innovation in materials, supplies, and packaging designs that result in improvements for product packaging."
     },
     {
       "id": "buyer_002",
@@ -29,7 +31,7 @@
       "registrationDate": "2025-10-14",
       "status": "verified",
       "industry": "Corrugated Packaging Manufacturing",
-      "foundedYear": 2005,
+      "foundedYear": 1980,
       "description": "A trusted manufacturer and distributor of corrugated packaging solutions in Mexico. Committed to providing high-quality packaging products and services to businesses across various industries.",
       "businessScope": [
         "Corrugated Box Manufacturing",
@@ -37,7 +39,10 @@
         "Industrial Packaging Solutions"
       ],
       "email": "info@cyecsa.com.mx",
-      "phone": "+52 55 xxxx xxxx"
+      "phone": "+52 33 xxxx xxxx",
+      "website": "https://cyecsa.com/",
+      "logo": "images/customers/cyecsa-logo.jpeg",
+      "aboutUs": "We are an institutional company of Mexican family origin with 32 years of experience in the development of packaging solutions of the highest quality, socially responsible and ecologically sustainable. At Cyecsa, we are passionate to serve our customers with speed decisions making, special attention to details and excellent delivery service."
     },
     {
       "id": "buyer_003",
@@ -55,7 +60,11 @@
         "Packaging Consulting"
       ],
       "email": "ventas@multiempaques.com.mx",
-      "phone": "+52 81 xxxx xxxx"
+      "phone": "(81) 1803-7400, (81) 2474-4966",
+      "website": "https://www.multiempaques.com.mx/",
+      "logo": "images/customers/multiempaques-logo.webp",
+      "aboutUs": "Multiempaques del Norte S.A. de C.V. is a company with 20 years of experience in the market, with coverage throughout the Mexican Republic. They offer packaging products, packaging and market leading brands nationwide. They hold ISO 9001:2015 certification, ensuring quality management and continuous improvement. They have significant storage capacity and a transport network for timely deliveries. Their philosophy emphasizes commitment and selfless support to internal and external clients, promoting employee growth and teamwork.",
+      "address": "Av Milimex 321, Parque Industrial Milimex, Apodaca, Nuevo León, México."
     },
     {
       "id": "buyer_004",
@@ -65,15 +74,19 @@
       "registrationDate": "2025-10-14",
       "status": "verified",
       "industry": "Corrugated Packaging Manufacturing",
-      "foundedYear": 1998,
+      "foundedYear": 1993,
       "description": "A specialized manufacturer of corrugated boxes and printed packaging solutions, combining quality manufacturing with advanced printing capabilities.",
       "businessScope": [
         "Corrugated Box Manufacturing",
         "Flexographic Printing",
         "Custom Packaging Design"
       ],
-      "email": "contacto@cajascometa.com.mx",
-      "phone": "+52 33 xxxx xxxx"
+      "email": "ventas@icometa.com",
+      "phone": "+ 52 477 710 6040",
+      "website": "https://www.icometa.com/",
+      "logo": "images/customers/icometa-logo.webp",
+      "aboutUs": "We help you develop the best packaging for the protection of your product, working on the details of image, quality, sustainability and cost reduction. We have an expert team dedicated to design and development, as well as a quality laboratory equipped with advanced technology, to offer you the highest quality packaging.",
+      "address": "Sauzalito 195 Int.1, Col. San Carlos la Roncha CP. 37544 León, Gto"
     },
     {
       "id": "buyer_005",
@@ -90,8 +103,12 @@
         "Food-Grade Corrugated Boxes",
         "Sustainable Packaging Solutions"
       ],
-      "email": "info@sultanapackaging.com.mx",
-      "phone": "+52 667 xxxx xxxx"
+      "email": "ventas@sultanapkg.com",
+      "phone": "(664) 622 8862",
+      "website": "https://sultanapkg.com/english/",
+      "logo": "images/customers/sultana-packaging-logo.webp",
+      "aboutUs": "Sultana Packaging is a 100% Mexican company, a leader in packaging solutions since 2008. They design and manufacture corrugated boxes and packaging for national and export industries, with a focus on quality and commitment. Their experience spans key industries such as medical, industrial, technological, automotive, food and beverage, and agricultural. They are ISO 9001:2015 certified, committed to continuous improvement and customer satisfaction. Their vision emphasizes a culture of quality and processes, and a strong work team to guarantee client satisfaction. They are proud of making corrugated boxes and packaging the Mexican way. They offer resilient, durable, and practical solutions with guaranteed quality through their own control laboratory, tailored solutions from their structural and graphic design department, and a commitment to sustainability by working with FSC-certified providers and having a wastewater treatment system. They also offer competitive pricing without compromising quality.",
+      "address": "Av. Palmera #12341, Parque Industrial El Encanto, Tijuana, B.C., México"
     },
     {
       "id": "buyer_006",
@@ -101,15 +118,19 @@
       "registrationDate": "2025-10-14",
       "status": "verified",
       "industry": "Corrugated Packaging Manufacturing",
-      "foundedYear": 1992,
+      "foundedYear": 1981,
       "description": "An established manufacturer of cellulose-based corrugated packaging products in Sonora, with decades of experience in providing reliable packaging solutions.",
       "businessScope": [
         "Corrugated Board Manufacturing",
         "Cellulose Products",
         "Industrial Packaging"
       ],
-      "email": "ventas@celulosasonora.com.mx",
-      "phone": "+52 662 xxxx xxxx"
+      "email": "cecso@cecso.com.mx",
+      "phone": "Navojoa: (642) 425-8011 to 14, Tijuana: (664) 633 6600 to 09, Hermosillo: (662) 251-0544",
+      "website": "https://www.cecso.mx/",
+      "logo": "images/customers/celulosa-corrugados-sonora-logo.webp",
+      "aboutUs": "We are a 100% Mexican company. We work with efficient processes and a committed and competent human team.",
+      "address": "Not explicitly found on the website, but the company operates in Hermosillo, Sonora, and has offices in Navojoa and Tijuana."
     },
     {
       "id": "buyer_007",
@@ -119,15 +140,19 @@
       "registrationDate": "2025-10-14",
       "status": "verified",
       "industry": "Corrugated Packaging Manufacturing",
-      "foundedYear": 2003,
+      "foundedYear": 2012,
       "description": "A versatile packaging manufacturer serving the footwear and leather goods industries, offering customized corrugated packaging solutions.",
       "businessScope": [
         "Corrugated Packaging",
         "Shoe Box Manufacturing",
         "Custom Packaging Solutions"
       ],
-      "email": "contacto@relva.com.mx",
-      "phone": "+52 477 xxxx xxxx"
+      "email": "gvillanueva@cajasrelva.com.mx",
+      "phone": "(477) 7-11-22-49 y 7-11-15-58",
+      "website": "https://cajasrelva.com.mx/",
+      "logo": "images/customers/relva-logo.webp",
+      "aboutUs": "Here's the English translation of the provided Spanish text:\n\n**Quality Policy:**\nAt Relva, we know that customer satisfaction is the best source of profitability, which is why we work to meet the requirements of our quality management system and continuously improve it.\n\n**Quality Assurance System:**\nGiven that globalizing trends in the world economy have forced Mexican companies to enter a market of international competition, competitiveness takes on significant importance. Relva has held ISO 9001-2015 certification since 2012, continuously maintaining and improving its processes. Furthermore, it is in the process of certification as a \"Clean Company,\" with the aim of continuing its continuous improvement.\n\n**Mission:**\nWe are cardboard packaging manufacturers committed to customer satisfaction.\n\n**Vision:**\nTo be known by our customers as the best option for cardboard packaging.\n\n**Values:**\nResponsibility, Teamwork, Honesty, and Respect.\n\nRelva is a company specializing in manufacturing packaging solutions for the industry, in accordance with the requirements of its clients and stakeholders.",
+      "address": "Potrero 108 Col. Industrial Brisas del Campo - León, Guanajuato, México - C.P. 37297"
     },
     {
       "id": "buyer_008",
@@ -137,15 +162,19 @@
       "registrationDate": "2025-10-14",
       "status": "verified",
       "industry": "Corrugated Packaging Manufacturing",
-      "foundedYear": 2010,
+      "foundedYear": 2005,
       "description": "A professional packaging solutions provider offering comprehensive corrugated packaging services with a focus on quality and customer satisfaction.",
       "businessScope": [
         "Professional Packaging Solutions",
         "Corrugated Box Manufacturing",
         "Packaging Consulting Services"
       ],
-      "email": "ventas@empropack.com.mx",
-      "phone": "+52 442 xxxx xxxx"
+      "email": "ventas@empropack.com.mx; informacion@empropack.com",
+      "phone": "+52 (33) 3743 0378",
+      "website": "https://empropack.com",
+      "logo": "images/customers/empropack-logo.webp",
+      "aboutUs": "We are a 100% Mexican company with over 20 years of experience, always committed to service and quality for our customers and suppliers, striving for constant growth by offering comprehensive solutions in packaging design, manufacturing, and management.\n\nEMPROPACK is a company where our values, passion for work, and service are reflected in our employees and customers.",
+      "address": "Querétaro, Querétaro, Mexico (Additional locations: Guadalajara, Irapuato, San Antonio TX)"
     },
     {
       "id": "buyer_009",
@@ -162,8 +191,12 @@
         "Industrial Corrugated Boxes",
         "Custom Packaging Design"
       ],
-      "email": "info@vittiempaques.com.mx",
-      "phone": "+52 222 xxxx xxxx"
+      "email": "administracion@vittipac.com",
+      "phone": "+52 (844) 413 8766",
+      "website": "https://www.vittipac.com/",
+      "logo": "images/customers/vitti-empaques-logo.webp",
+      "aboutUs": "We are a 100% Mexican company, dedicated to manufacturing corrugated cardboard packaging and accessories. We are committed to preserving our clients' products by offering them the best packaging solutions. Our culture fosters continuous improvement, providing consultation on storage and packaging optimization. We also meet market demands by developing new products and designs.",
+      "address": "Blvd. Fundadores # 7150, Col. Ex Hacienda San Jose de los Cerritos 25010 Saltillo, México"
     },
     {
       "id": "buyer_010",
@@ -173,16 +206,19 @@
       "registrationDate": "2025-10-14",
       "status": "verified",
       "industry": "Corrugated Packaging Manufacturing",
-      "foundedYear": 1997,
+      "foundedYear": 1975,
       "description": "A durable packaging solutions provider in Northern Mexico, known for producing high-strength corrugated boxes for heavy-duty industrial applications.",
       "businessScope": [
         "Heavy-Duty Corrugated Boxes",
         "Industrial Packaging",
         "Export Packaging Solutions"
       ],
-      "email": "ventas@durabox.com.mx",
-      "phone": "+52 614 xxxx xxxx"
+      "email": "contacto@durabox.com.mx",
+      "phone": "+52 [614] 442 8909",
+      "website": "https://www.durabox.com.mx/",
+      "logo": "images/customers/durabox-logo.webp",
+      "aboutUs": "Our primary emphasis is the manufacturing of corrugated packaging and containers. We offer a wide range of fiberboard grades from single wall to triple wall combinations to meet the specific needs of different type of industries. Since 1975 Durabox® has been committed to provide quality products and services. Our organization strives on building strong and long term relationships with our customers by providing them with a vast variety of packaging solutions. Our Mission is to provide products and services in an on time basis and functional manner in order to totally comply with our customer´s packaging needs and requirements. We direct our efforts to create value added solutions. Our Vision is far reaching with five major concepts in mind: To be an industry leader. To meet our customers, suppliers and employee´s desires. To be an innovated, competitve and action-oriented company while ensuring a trouble-free enviroment. To provide our customers with service, quality, innovation, price and continouos improvement. To learn, to grow and expand along with our customers. Quality Policy: To satisfy the packaging needs of our customers, through the continuous improvement of our processes and fulfilling the quality objectives.",
+      "address": "340 Alfonso Reyes, Chihuahua Industrial Complex, Chihuahua, Chih, MX. 31136"
     }
   ]
 }
-
