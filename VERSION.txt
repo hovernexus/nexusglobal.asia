@@ -1,3 +1,7 @@
-Version: V11.3.8
+Version: V11.3.9
 Date: 2025-10-18
-Description: Fixed category-feeding-palletizing.html content errors (hero description and breadcrumb)
+Description: Fixed product image mismatches in category-feeding-palletizing.html
+Changes:
+- Fixed JXB product image (changed from team photo to actual equipment)
+- Fixed FP-1650 product image (changed from catalog page to actual product)
+- Updated category-feeding-palletizing.html with correct image references

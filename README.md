@@ -1,163 +1,89 @@
-# NEXUS V11.3.8 增量更新包
+# NEXUS V11.3.9 增量更新包
 
-## 版本信息
-- **版本号:** V11.3.8
-- **发布日期:** 2025-10-18
-- **更新类型:** 紧急修复 (Bug Fix)
+## 更新日期
+2025年10月18日
 
-## 问题说明
+## 更新内容
 
-**问题根源:**
-V11.3.7增量更新包中的category-feeding-palletizing.html文件虽然创建正确,但GitHub仓库中该文件从未存在,导致访问该页面时显示404错误或显示错误内容。
+本次更新修复了 **category-feeding-palletizing.html** 页面中的产品图片不匹配问题。
 
-经过诊断发现,nexus-v11.3.1主目录中的category-feeding-palletizing.html文件存在以下错误:
-1. Hero section的描述文字显示的是数字印刷设备的描述,而不是送料码垛系统的描述
-2. 面包屑导航显示"Digital Printing"而不是"Feeding & Palletizing Systems"
-3. 产品列表显示的是数字印刷产品,而不是ODJ的送料码垛产品
+### 修复的问题
 
-## 修复内容
+1. **JXB Robotic Arm Type Automatic Pre-feeder**
+   - **问题**: 显示的是ODJ团队合影照片,而不是JXB机械臂设备
+   - **修复**: 更换为正确的JXB机械臂设备照片 (`odj-jxb-2.jpg`)
 
-### 1. category-feeding-palletizing.html
-**修复前 (第200行):**
-```html
-<p>High-precision digital output printing solutions for personalized customization needs with exceptional color accuracy and production efficiency</p>
+2. **FP-1650 Automatic Bundle Breaker System**
+   - **问题**: 显示的是产品目录页面截图,包含所有9款产品的缩略图
+   - **修复**: 更换为单独的FP-1650产品照片 (`odj-fp1650-2.jpg`)
+
+### 更新的文件
+
+```
+category-feeding-palletizing.html       (16KB) - 更新了JXB和FP-1650的图片引用
+images/products/odj-jxb-2.jpg          (228KB) - JXB机械臂设备照片
+images/products/odj-fp1650-2.jpg        (91KB) - FP-1650解捆系统照片
+VERSION.txt                             (346B) - 版本信息
 ```
 
-**修复后:**
-```html
-<p>Complete automation solutions for material handling in packaging production, from intelligent pre-feeders to AI-powered palletizing robots</p>
-```
+## 部署说明
 
-**修复前 (第271行):**
-```html
-<span>Digital Printing</span>
-```
+### 方法一:通过GitHub网页界面上传(推荐)
 
-**修复后:**
-```html
-<span>Feeding & Palletizing Systems</span>
-```
+1. 访问您的GitHub仓库: https://github.com/nexusglobal/nexusglobal.asia
 
-**完整修复:**
-- ✅ Hero section描述文字已修正为送料码垛系统的正确描述
-- ✅ 面包屑导航已修正为"Feeding & Palletizing Systems"
-- ✅ Category介绍标题和内容已修正为"About Feeding & Palletizing Technology"
-- ✅ 产品列表已更新为ODJ的9款送料码垛产品(JXB, QSL2, QSL3, QXY3, QSL4, BYS, MD-350, FP-1650, BYS1650)
+2. 上传HTML文件:
+   - 点击仓库根目录的 **"Add file"** → **"Upload files"**
+   - 上传 `category-feeding-palletizing.html`
+   - 上传 `VERSION.txt`
+   - 提交信息: `Update V11.3.9: Fix product image mismatches`
 
-### 2. VERSION.txt
-更新版本号为V11.3.8,记录本次修复内容。
+3. 上传图片文件:
+   - 进入 `images/products/` 目录
+   - 点击 **"Add file"** → **"Upload files"**
+   - 上传 `odj-jxb-2.jpg`
+   - 上传 `odj-fp1650-2.jpg`
+   - 提交信息: `Add correct product images for JXB and FP-1650`
 
-## 文件清单
+4. 等待部署完成(1-3分钟)
 
-本增量更新包包含以下文件:
-```
-NEXUS-V11.3.8-INCREMENTAL-UPDATE/
-├── README.md (本文件)
-├── VERSION.txt (版本信息)
-└── category-feeding-palletizing.html (修复后的送料码垛分类页面)
-```
+5. 访问页面并强制刷新:
+   - 访问: https://nexusglobal.asia/category-feeding-palletizing.html
+   - 按 **Ctrl+Shift+R** (Windows) 或 **Cmd+Shift+R** (Mac) 强制刷新
 
-## 部署指南
-
-### 方式一: GitHub网页上传 (推荐)
-
-1. **访问GitHub仓库**
-   - 打开 https://github.com/nexusglobal/nexusglobal.asia
-
-2. **上传文件**
-   - 点击"Add file" → "Upload files"
-   - 将以下文件拖拽到上传区域:
-     * `category-feeding-palletizing.html`
-     * `VERSION.txt`
-
-3. **提交更改**
-   - 在"Commit changes"框中输入: `Fix category-feeding-palletizing.html content errors (V11.3.8)`
-   - 点击"Commit changes"按钮
-
-4. **等待部署**
-   - 等待1-3分钟,让GitHub Actions完成自动部署
-   - 访问 https://nexusglobal.asia/category-feeding-palletizing.html
-   - 使用 **Ctrl+Shift+R** (Windows) 或 **Cmd+Shift+R** (Mac) 强制刷新页面
-
-### 方式二: Git命令行上传
+### 方法二:通过Git命令行
 
 ```bash
-# 1. 进入本地仓库目录
-cd /path/to/nexusglobal.asia
+# 克隆仓库
+git clone https://github.com/nexusglobal/nexusglobal.asia.git
+cd nexusglobal.asia
 
-# 2. 复制更新文件
-cp /path/to/NEXUS-V11.3.8-INCREMENTAL-UPDATE/category-feeding-palletizing.html .
-cp /path/to/NEXUS-V11.3.8-INCREMENTAL-UPDATE/VERSION.txt .
+# 复制更新文件
+cp /path/to/category-feeding-palletizing.html ./
+cp /path/to/VERSION.txt ./
+cp /path/to/odj-jxb-2.jpg ./images/products/
+cp /path/to/odj-fp1650-2.jpg ./images/products/
 
-# 3. 提交并推送
-git add category-feeding-palletizing.html VERSION.txt
-git commit -m "Fix category-feeding-palletizing.html content errors (V11.3.8)"
+# 提交并推送
+git add .
+git commit -m "Update V11.3.9: Fix product image mismatches"
 git push origin main
 ```
 
-## 验证步骤
+## 验证方法
 
-部署完成后,请按以下步骤验证:
+部署完成后,访问 https://nexusglobal.asia/category-feeding-palletizing.html 并检查:
 
-1. **访问页面**
-   - 打开 https://nexusglobal.asia/category-feeding-palletizing.html
-   - 使用 **Ctrl+Shift+R** 强制刷新
-
-2. **检查Hero Section**
-   - 标题应显示: "Feeding & Palletizing Systems"
-   - 描述应显示: "Complete automation solutions for material handling in packaging production, from intelligent pre-feeders to AI-powered palletizing robots"
-   - 面包屑导航应显示: Home › Products › Feeding & Palletizing Systems
-
-3. **检查产品列表**
-   应显示以下ODJ产品:
-   - JXB Robotic Arm Type Automatic Pre-feeder
-   - QSL2 Slope Type Automatic Pre-feeder
-   - QSL3 Baffle Type Automatic Pre-feeder
-   - QXY3 Baffle Type Automatic Pre-feeder for Bottom Print
-   - QSL4/QSM Basket (Lifting) Type Universal Pre-feeder
-   - BYS Semi-Automatic Pre-feeder
-   - MD-350 3D Vision AI Palletizing System
-   - FP-1650 Automatic Bundle Breaker
-   - BYS1650 Semi-auto Prefeeder
-
-4. **检查产品图片**
-   - 所有产品图片应正确显示
-   - 图片应与产品型号匹配
+1. **JXB产品卡片** - 应显示黄色框架的机械臂送料系统,而不是团队合影
+2. **FP-1650产品卡片** - 应显示白色双模块解捆系统,而不是产品目录页面
 
 ## 技术说明
 
-**为什么之前的V11.3.7更新没有生效?**
+- 所有图片文件均为JPG格式,已优化压缩
+- HTML文件保持原有结构,仅更新图片路径
+- 图片命名遵循现有规范: `odj-{model}-{number}.jpg`
 
-1. V11.3.7增量更新包中的category-feeding-palletizing.html文件是正确的
-2. 但是nexus-v11.3.1主目录中的同名文件内容是错误的(显示数字印刷产品)
-3. 用户上传V11.3.7时,可能只上传了README和文档,而没有上传category-feeding-palletizing.html文件本身
-4. 或者GitHub仓库中该文件从未存在,导致访问时显示404或旧内容
+## 支持
 
-**V11.3.8的改进:**
-
-1. 直接修复了nexus-v11.3.1主目录中的错误文件
-2. 确保增量更新包中的文件内容完全正确
-3. 提供了清晰的部署指南,避免遗漏文件上传
-
-## 注意事项
-
-⚠️ **重要提醒:**
-
-1. **必须上传category-feeding-palletizing.html文件本身**,而不仅仅是README文档
-2. 上传后必须使用 **Ctrl+Shift+R** 强制刷新浏览器,清除缓存
-3. 如果仍然看到错误内容,请使用无痕模式访问网站
-4. GitHub Pages部署通常需要1-3分钟,请耐心等待
-
-## 技术支持
-
-如果部署后仍然存在问题,请提供以下信息:
-1. 访问页面时看到的截图
-2. 浏览器开发者工具(F12)的Console和Network面板截图
-3. 确认是否已经强制刷新浏览器
-
----
-
-**NEXUS Global Holdings**  
-Version: V11.3.8  
-Date: 2025-10-18
+如有问题,请联系技术支持。
 
