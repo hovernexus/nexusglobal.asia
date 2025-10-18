@@ -1,7 +1,10 @@
-Version: V11.3.9
+Version: V11.4.0
 Date: 2025-10-18
-Description: Fixed product image mismatches in category-feeding-palletizing.html
+Description: Complete fix for ODJ product image mismatches across all pages
 Changes:
-- Fixed JXB product image (changed from team photo to actual equipment)
-- Fixed FP-1650 product image (changed from catalog page to actual product)
-- Updated category-feeding-palletizing.html with correct image references
+- Fixed JXB product image in category-feeding-palletizing.html (odj-jxb-1.jpg → odj-jxb-2.jpg)
+- Fixed FP-1650 product image in category-feeding-palletizing.html (odj-fp1650-1.jpg → odj-fp1650-2.jpg)
+- Fixed JXB product image in company-detail.html via products-complete.json
+- Fixed FP-1650 product image in company-detail.html via products-complete.json
+- Added new product images: odj-jxb-2.jpg, odj-fp1650-2.jpg
+- All ODJ products now display correct images on both category and company pages
