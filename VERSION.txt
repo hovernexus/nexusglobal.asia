@@ -1,9 +1,9 @@
-Version: V11.5.0
+Version: V11.5.1
 Date: 2025-10-18
-Description: Complete ODJ product images update - All 8 products now display correct images from reference
+Description: Fix ODJ product image paths - Add images/products/ prefix
 
 Changes:
-- Updated all 8 ODJ product images to match reference standard
-- Fixed JXB, QSL2, QSL3, QSL4, QXY3, BYS, MD-350, FP-1650
-- Updated both category-feeding-palletizing.html and products-complete.json
-- All product images now correctly match their specifications
+- Fixed all ODJ product image paths in products-complete.json
+- Added images/products/ prefix to all image references
+- This fixes the issue where ODJ company page shows incorrect images
+- This also fixes the issue where product detail pages cannot display images

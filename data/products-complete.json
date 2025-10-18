@@ -1242,7 +1242,7 @@
         "https://youtu.be/dcNphrMCWIg?si=g3I2xjvWV205AljA"
       ],
       "images": [
-        "odj-jxb-2.jpg",
+        "images/products/odj-jxb-2.jpg",
         "images/products/odj-jxb-1.jpg"
       ],
       "supplierId": "odj",
@@ -1280,7 +1280,7 @@
         "Corrugated box manufacturing"
       ],
       "images": [
-        "odj-qsl2-2.jpg"
+        "images/products/odj-qsl2-2.jpg"
       ],
       "supplierId": "odj",
       "priceRange": "200k_500k"
@@ -1317,7 +1317,7 @@
         "Cost-conscious manufacturers"
       ],
       "images": [
-        "odj-qsl3-2.jpg"
+        "images/products/odj-qsl3-2.jpg"
       ],
       "supplierId": "odj",
       "priceRange": "100k_200k"
@@ -1354,7 +1354,7 @@
         "Versatile die-cutting applications"
       ],
       "images": [
-        "odj-qsl4-2.jpg"
+        "images/products/odj-qsl4-2.jpg"
       ],
       "supplierId": "odj",
       "priceRange": "100k_200k"
@@ -1391,7 +1391,7 @@
         "Standard corrugated production"
       ],
       "images": [
-        "odj-qxy3-2.jpg"
+        "images/products/odj-qxy3-2.jpg"
       ],
       "supplierId": "odj",
       "priceRange": "100k_200k"
@@ -1428,7 +1428,7 @@
         "Low to medium volume production"
       ],
       "images": [
-        "odj-bys-2.jpg"
+        "images/products/odj-bys-2.jpg"
       ],
       "supplierId": "odj",
       "priceRange": "under_50k"
@@ -1470,7 +1470,7 @@
         "https://youtu.be/d2vBV72-Qk0"
       ],
       "images": [
-        "odj-md350-2.jpg",
+        "images/products/odj-md350-2.jpg",
         "images/products/odj-md350-2.jpg"
       ],
       "supplierId": "odj",
@@ -1506,7 +1506,7 @@
         "High-volume production lines"
       ],
       "images": [
-        "odj-fp1650-2.jpg",
+        "images/products/odj-fp1650-2.jpg",
         "images/products/odj-fp1650-1.jpg"
       ],
       "supplierId": "odj",
