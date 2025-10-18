@@ -1,206 +1,194 @@
-# NEXUS GLOBAL HOLDINGS Website
+# NEXUS V11.3.7 增量更新包
 
-**Version**: V11.0  
-**Release Date**: October 16, 2025  
-**Status**: Production Ready - Data Fixed
+## 📦 更新说明
 
-## 🎯 Overview
-
-NEXUS GLOBAL HOLDINGS is a comprehensive corrugated packaging equipment solutions platform, connecting Asian manufacturers with global buyers.
-
-## ✨ What's New in V11.0
-
-### 🔧 Critical Data Fixes
-- ✅ **Fixed data format issues** in `registered-companies.json`
-- ✅ **Removed newline characters** from company names
-- ✅ **Cleaned trailing spaces** in company names
-- ✅ **Verified all supplier data** (ODJ 9 products, Kingtau 3 products)
-- ✅ **Verified all buyer data** (10 Mexico companies)
-
-### 📊 Data Integrity
-- All supplier information displays correctly
-- All customer information displays correctly
-- No special characters interfering with display
-- Consistent data formatting across all JSON files
-
-## 📊 Statistics
-
-| Category | Count |
-|----------|-------|
-| Suppliers | 10 |
-| Products | 36 |
-| Buyers (Mexico) | 10 |
-| HTML Pages | 22 |
-| Total Files | 64 |
-
-## 📁 File Structure
-
-```
-nexus-v11/
-├── data/
-│   ├── products-complete.json (10 suppliers, 36 products)
-│   └── registered-companies.json (10 Mexico buyers) ✅ FIXED
-├── images/ (29 images)
-├── videos/ (1 video)
-├── *.html (22 pages)
-├── *.css (3 stylesheets)
-├── *.js (5 scripts)
-├── VERSION.txt (V11.0)
-└── README.md
-```
-
-## 🚀 Quick Deployment Guide
-
-### Method 1: GitHub Desktop (Recommended)
-
-**See detailed guide in `GITHUB-DEPLOYMENT-GUIDE-V11.md`**
-
-Quick steps:
-1. Delete all files from your GitHub repository
-2. Copy all files from `nexus-v11` folder
-3. Commit with message "Deploy V11.0 - Data fixes"
-4. Push to GitHub
-5. Wait 2-5 minutes for deployment
-
-### Method 2: GitHub Web Upload
-
-**See detailed guide in `GITHUB-DEPLOYMENT-GUIDE-V11.md`**
-
-Quick steps:
-1. Go to your repository on GitHub
-2. Delete all old files
-3. Upload all files from `nexus-v11` folder
-4. Wait 2-5 minutes for deployment
-
-### Method 3: Git Command Line
-
-**See detailed guide in `GITHUB-DEPLOYMENT-GUIDE-V11.md`**
-
-```bash
-cd /path/to/your/repo
-git rm -r *
-cp -r /path/to/nexus-v11/* .
-git add .
-git commit -m "Deploy V11.0 - Data fixes"
-git push origin main
-```
-
-## ✅ Deployment Verification
-
-After deployment, verify on your live website:
-
-- [ ] README shows "Version: V11.0"
-- [ ] Homepage displays 10 suppliers
-- [ ] New suppliers (ODJ, Kingtau, AutoTech, EcoPrint) have purple background
-- [ ] Homepage displays 10 customers
-- [ ] Mexico buyers have purple background and correct names
-- [ ] No "\n" or extra spaces in company names
-- [ ] AI consultant link opens 8-module page
-- [ ] No 404 errors in browser console
-
-## 📋 Verified Data
-
-### Suppliers (10)
-1. 深圳汉华工业数码设备有限公司 (hanhua)
-2. 广州精陶机电设备有限公司 (kingtau) ⭐ NEW
-3. 上海亚华印刷机械有限公司 (yawa)
-4. 天津长荣股份有限公司 (mkm)
-5. 新军机械 (xinjun)
-6. 唐山佳捷包装机械制造有限公司 (jiajie)
-7. 佛山欧德佳智能科技有限公司 (odj) ⭐ NEW
-8. 湖南双环科技集团有限公司 (shuanghuan)
-9. 广东奥特智能科技有限公司 (autotech) ⭐ NEW
-10. 江苏绿印环保印刷设备有限公司 (ecoprint) ⭐ NEW
-
-### Products (36)
-- **ODJ**: 9 products (feeders, palletizers, breaking units)
-- **Kingtau**: 3 products (digital printers)
-- **Others**: 24 products across all categories
-- All products have correct `supplierId` field ✅
-
-### Buyers (10 - Mexico) ✅ FIXED
-1. MEX QUALITY BOX S.A DE C.V.
-2. REPRESENTACIONES CYECSA S.A DE C.V. ✅ Fixed
-3. MULTIEMPAQUES DEL NORTE S.A DE C.V. ✅ Fixed
-4. CAJAS E IMPRESIONES COMETA S.A DE C.V.
-5. SULTANA PACKAGING S.A DE C.V.
-6. CELULOSA Y CORRUGADOS DE SONORA
-7. RELVA S.A DE C.V. ✅ Fixed
-8. EMPROPACK EMPAQUES PROFESIONALES S.A DE C.V.
-9. VITTI EMPAQUES S. DE R.L DE C.V.
-10. DURABOX DE CHIHUAHUA S.A DE C.V. ✅ Fixed
-
-## 🔧 Technical Details
-
-### Dynamic Data Loading
-
-Homepage JavaScript automatically:
-- Loads suppliers from `data/products-complete.json`
-- Loads buyers from `data/registered-companies.json`
-- Sorts new partners first (ODJ, Kingtau, AutoTech, EcoPrint)
-- Applies purple gradient background to new partners
-- Displays up to 12 customers (to show all Mexico buyers)
-
-### Data Format Fixes
-
-**Before (V10.9.2)**:
-```json
-{
-  "companyName": "\nREPRESENTACIONES CYECSA S.A DE C.V.",
-}
-```
-
-**After (V11.0)**:
-```json
-{
-  "companyName": "REPRESENTACIONES CYECSA S.A DE C.V.",
-}
-```
-
-## 🧪 Local Testing
-
-### Using Python HTTP Server
-```bash
-cd nexus-v11
-python -m http.server 8000
-```
-Then visit: http://localhost:8000
-
-### Using Node.js HTTP Server
-```bash
-cd nexus-v11
-npx http-server -p 8000
-```
-Then visit: http://localhost:8000
-
-## 🔮 Next Steps (V11.1+)
-
-- [ ] Expand AI consultation system to 8 full modules
-- [ ] Implement AI Chat dialogue functionality
-- [ ] SEO optimization (structured data, sitemap)
-- [ ] Backend analytics dashboard
-- [ ] Visitor tracking and Excel export
-- [ ] Multi-language support
-
-## 📞 Support
-
-If you encounter any issues:
-- Email: info@nexusglobal.asia
-- Website: https://nexusglobal.asia
-
-## 📜 Version History
-
-- **V11.0** (2025-10-16): Fixed data format issues, cleaned company names
-- **V10.9.2** (2025-10-14): Fixed JavaScript display bugs
-- **V10.9.1** (2025-10-14): Added new suppliers and customers
-- **V10.9** (2025-10-14): MVP release
-- **V10.8** (2025-10-13): Added ODJ and Kingtau products
-- **V10.7** (2025-10-13): Optimized AI consultation system
-- **V10.6** (2025-10-12): Basic features completed
+**版本**: V11.3.7  
+**更新日期**: 2025年10月18日  
+**更新类型**: 增量更新(仅包含需要修改或新增的文件)
 
 ---
 
-**NEXUS GLOBAL HOLDINGS** - Asia's Packaging Equipment Integration Expert
+## ✅ 本次更新内容
 
-© 2025 NEXUS GLOBAL HOLDINGS. All rights reserved.
+### 1. 修复category-feeding-palletizing.html ✅
+- **问题**: 页面显示错误的产品(数字印刷机而不是ODJ上料和码垛产品)
+- **解决方案**: 创建新的页面,显示正确的8个ODJ产品
+- **文件**: `category-feeding-palletizing.html` (15.9KB)
+- **包含产品**:
+  1. JXB - Robotic Arm Type Automatic Pre-feeder
+  2. QSL2 - Slope Type Automatic Pre-feeder
+  3. QSL3 - Baffle Type Automatic Pre-feeder
+  4. QSL4/QSM - Basket (Lifting) Type Universal Pre-feeder
+  5. QXY3 - Baffle Type Automatic Pre-feeder for Bottom Print
+  6. BYS - Semi-Automatic Pre-feeder
+  7. FP-1650 - Automatic Bundle Breaker System
+  8. MD-350 - 3D Vision AI Intelligent Robotic Palletizing System
+
+### 2. 新增平台介绍文档 ✅
+- **文件**: `NEXUS-PLATFORM-COMPREHENSIVE-INTRODUCTION.md` (37KB)
+- **内容**: 基于PRD的完整平台介绍,包含:
+  - 公司概述、产品定位、目标用户
+  - 网站核心功能详解
+  - AI智能咨询系统8大功能(含示例对话)
+  - 导航栏功能说明
+  - 会员价值主张
+  - 技术优势与保障
+  - 业务目标与KPI
+
+---
+
+## 📋 文件清单
+
+### 需要替换的文件:
+
+1. **category-feeding-palletizing.html** (15.9KB)
+   - 位置: 网站根目录
+   - 操作: 替换现有文件
+   - 说明: 修复Feeding & Palletizing分类页面,显示正确的ODJ产品
+
+### 新增文件:
+
+2. **NEXUS-PLATFORM-COMPREHENSIVE-INTRODUCTION.md** (37KB)
+   - 位置: 文档目录或网站根目录
+   - 操作: 新增文件
+   - 说明: 平台介绍文档,用于市场推广和会员招募
+
+---
+
+## 🔧 安装步骤
+
+### 步骤1: 备份现有文件
+
+```bash
+# 备份category-feeding-palletizing.html
+cp category-feeding-palletizing.html category-feeding-palletizing.html.backup.$(date +%Y%m%d)
+```
+
+### 步骤2: 上传新文件
+
+#### 方法A: 使用FTP/SFTP
+1. 连接到您的网站服务器
+2. 上传 `category-feeding-palletizing.html` 到网站根目录
+3. 确认文件权限正确(644或755)
+
+#### 方法B: 使用GitHub Pages
+1. 将 `category-feeding-palletizing.html` 复制到您的GitHub仓库根目录
+2. 提交并推送更改:
+   ```bash
+   git add category-feeding-palletizing.html
+   git commit -m "Fix: Update Feeding/Palletizing category page with correct ODJ products"
+   git push origin main
+   ```
+3. 等待GitHub Pages自动部署(通常1-2分钟)
+
+### 步骤3: 清除缓存
+
+#### 浏览器缓存:
+- Windows: `Ctrl+Shift+R`
+- Mac: `Cmd+Shift+R`
+
+#### CDN缓存(如使用):
+```bash
+# 清除特定文件的CDN缓存
+# 具体命令取决于您使用的CDN服务商
+```
+
+### 步骤4: 验证更新
+
+1. 访问 `https://yourdomain.com/products.html`
+2. 点击 "Feeding & Palletizing Systems" 分类卡片
+3. 确认页面显示8个ODJ产品:
+   - ✅ JXB Robotic Arm Type
+   - ✅ QSL2 Slope Type
+   - ✅ QSL3 Baffle Type
+   - ✅ QSL4/QSM Basket Type
+   - ✅ QXY3 Bottom Print
+   - ✅ BYS Semi-Automatic
+   - ✅ FP-1650 Bundle Breaker
+   - ✅ MD-350 Palletizing System
+4. 点击每个产品的"View Details"按钮
+5. 确认产品详情页正确加载
+
+---
+
+## ⚠️ 注意事项
+
+1. **备份**: 更新前务必备份现有文件
+2. **测试**: 建议先在测试环境验证,再部署到生产环境
+3. **缓存**: 更新后清除浏览器和CDN缓存
+4. **版本**: 确认当前版本是V11.3.6,再应用V11.3.7更新
+5. **图片**: 确保 `images/products/` 目录下有所有ODJ产品图片:
+   - odj-jxb-1.jpg
+   - odj-qsl2-1.jpg
+   - odj-qsl3-1.jpg
+   - odj-qsl4-1.jpg
+   - odj-qxy3-1.jpg
+   - odj-bys-1.jpg
+   - odj-fp1650-1.jpg
+   - odj-md350-1.jpg
+
+---
+
+## 📊 问题解决状态
+
+| 问题 | V11.3.6状态 | V11.3.7状态 |
+|------|------------|------------|
+| WOOD WELL/ABC详情页 | ✅ 已修复 | ✅ 保持 |
+| ODJ供应商描述 | ✅ 已丰富 | ✅ 保持 |
+| Certified链接 | ✅ 已添加 | ✅ 保持 |
+| Feeding/Palletizing分类页 | ❌ 显示错误产品 | ✅ 已修复 |
+| 平台介绍文档 | ⚠️ 基础版 | ✅ 完整版 |
+
+---
+
+## 🎯 已知问题
+
+### ODJ产品图片匹配验证
+- **状态**: 需要人工验证
+- **说明**: 产品图片路径正确,但需要确认实际图片内容是否与产品型号匹配
+- **验证方法**:
+  1. 打开每个ODJ产品详情页
+  2. 对照ODJ产品手册(ODJProductCatalog.pdf)
+  3. 确认图片是否正确
+  4. 如发现错误,替换 `images/products/` 目录下的对应图片文件
+
+---
+
+## 🎉 更新后的功能
+
+### 用户可以:
+1. ✅ 从Products页面点击"Feeding & Palletizing Systems"卡片
+2. ✅ 查看8个ODJ产品的列表
+3. ✅ 点击任意产品查看详情页
+4. ✅ 从导航栏的Products下拉菜单访问该分类
+5. ✅ 查看每个产品的型号、名称、描述、供应商信息
+6. ✅ 使用"View Details"按钮跳转到产品详情页
+
+---
+
+## 📞 技术支持
+
+如有问题,请检查:
+1. 文件是否正确上传到网站根目录
+2. 文件权限是否正确(644或755)
+3. 浏览器缓存是否已清除
+4. CDN缓存是否已清除(如使用)
+5. images/products/目录下是否有所有ODJ产品图片
+
+---
+
+## 📈 下一版本计划 (V11.3.8)
+
+1. 验证并更新ODJ产品图片(如需要)
+2. 实现产品对比功能
+3. 添加产品搜索功能
+4. 优化移动端体验
+5. 添加产品视频展示
+
+---
+
+**版本**: V11.3.7  
+**更新日期**: 2025年10月18日  
+**文件数量**: 2个  
+**总大小**: ~53KB
 

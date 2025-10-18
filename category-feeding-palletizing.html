@@ -8,7 +8,7 @@
     <style>
         /* Category Page Styles */
         .category-hero {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
             color: white;
             padding: 100px 20px 60px;
             text-align: center;
@@ -102,355 +102,265 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .product-card-image {
+        .product-image {
             width: 100%;
             height: 250px;
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #9ca3af;
+            object-fit: cover;
+            background: #f8fafc;
         }
 
-        .product-card-content {
-            padding: 30px;
-        }
-
-        .product-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 15px;
+        .product-info {
+            padding: 25px;
         }
 
         .product-model {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1e293b;
-        }
-
-        .featured-badge {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            color: #f97316;
             font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .product-name {
-            color: #64748b;
-            font-size: 1rem;
-            margin-bottom: 15px;
-            line-height: 1.5;
+            color: #1e293b;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
         }
 
         .product-description {
             color: #64748b;
-            font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: 20px;
+            font-size: 0.95rem;
         }
 
-        .product-features {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-
-        .product-features li {
-            padding: 8px 0;
-            color: #475569;
-            font-size: 0.9rem;
+        .product-supplier {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        .product-features li::before {
-            content: "✓";
-            color: #f59e0b;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .product-card-footer {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 6px;
         }
 
         .view-details-btn {
-            flex: 1;
-            padding: 12px;
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            display: inline-block;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
             color: white;
-            text-align: center;
+            padding: 12px 28px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .view-details-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-        }
-
-        .get-quote-btn {
-            padding: 12px 20px;
-            background: white;
-            color: #f59e0b;
-            border: 2px solid #f59e0b;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .get-quote-btn:hover {
-            background: #f59e0b;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .category-hero h1 {
-                font-size: 2rem;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="main-nav" id="mainNav">
-        <div class="container">
-            <div class="nav-content">
-                <a href="index.html" class="logo">
-                    <span class="logo-icon"></span>
-                    <div class="logo-text-wrapper">
-                        <span class="logo-text">NEXUS</span>
-                        <span class="logo-subtitle">GLOBAL HOLDINGS</span>
-                    </div>
-                </a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="NEXUS GLOBAL HOLDINGS" style="height: 50px;">
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="service-support.html">Service & Support</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
 
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#solutions">Solutions</a></li>
-                    <li><a href="products.html" class="active">Products</a></li>
-                    <li><a href="registered-companies.html">Companies</a></li>
-                    <li><a href="supplier-registration.html">Supplier</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-
-                <div class="nav-actions">
-                    <select class="language-selector">
-                        <option value="en">English</option>
-                        <option value="zh">中文</option>
-                    </select>
-                    <a href="contact.html" class="cta-button">Get Quote</a>
-                </div>
+            <div class="nav-right">
+                <select class="language-selector">
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                </select>
+                <a href="contact.html" class="cta-button">Get Quote</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Category Hero -->
     <section class="category-hero">
-        
+        <div class="category-hero-icon">🤖</div>
         <h1>Feeding & Palletizing Systems</h1>
-        <p>High-precision digital inkjet printing solutions for personalized customization needs with exceptional color accuracy and production efficiency</p>
+        <p>High-precision digital output printing solutions for personalized customization needs with exceptional color accuracy and production efficiency</p>
+        
         <div class="breadcrumb">
             <a href="index.html">Home</a>
             <span>›</span>
             <a href="products.html">Products</a>
             <span>›</span>
-            <span>Digital Printing</span>
+            <span>Feeding & Palletizing Systems</span>
         </div>
     </section>
 
     <!-- Category Content -->
     <section class="category-content">
-        <!-- Category Introduction -->
         <div class="category-intro">
-            <h2>About Digital Printing Technology</h2>
-            <p>Our feeding and palletizing systems provide complete automation for material handling in packaging production. These intelligent systems feature advanced sensors, precision positioning, and robust construction to ensure reliable, high-speed operation. From automatic feeders to sophisticated palletizing robots, our equipment streamlines your production workflow and maximizes efficiency.</p>
+            <h2>About Feeding & Palletizing Technology</h2>
+            <p>Our feeding and palletizing systems provide complete automation for material handling in packaging production. These intelligent systems feature advanced robotic precision positioning, seamless integration with die-cutting machines, and robust construction for high-speed operation. From automatic pre-feeders to AI-powered palletizing robots, our equipment streamlines your production workflow and maximizes efficiency.</p>
         </div>
 
-        <!-- Products Grid -->
         <div class="products-grid">
-            <!-- Product 1: Glory160X HD -->
-            <div class="product-card" onclick="window.location.href='product-detail.html?id=glory160x-hd'">
-                <div class="product-card-image">🤖</div>
-                <div class="product-card-content">
-                    <div class="product-card-header">
-                        <h3 class="product-model">Glory160X HD</h3>
-                        <span class="featured-badge"> Featured</span>
+            <div class="product-card" onclick="window.location.href='product-detail.html?id=pfjxb'">
+                <img src="images/products/odj-jxb-1.jpg" alt="JXB Robotic Arm Type Automatic Pre-feeder" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">JXB</div>
+                    <h3 class="product-name">JXB Robotic Arm Type Automatic Pre-feeder</h3>
+                    <p class="product-description">A revolutionary pre-feeder powered by a KAWASAKI robotic arm. As the world-first technology by ODJ, it delivers unparalleled speed (up to 500 sheets/min), precision, and 100% damage-free handling for all board types.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
                     </div>
-                    <p class="product-name">Single Pass High-Definition Digital Inkjet Printer for Corrugated Board</p>
-                    <p class="product-description">Glory160X HD adopts Single Pass technology for real-time high-speed printing with exceptional color accuracy and image quality.</p>
-                    <ul class="product-features">
-                        <li>Single Pass high-speed printing</li>
-                        <li>HD print quality (1200 DPI)</li>
-                        <li>Variable data printing support</li>
-                        <li>Low maintenance costs</li>
-                        <li>Eco-friendly water-based inks</li>
-                    </ul>
-                    <div class="product-card-footer">
-                        <a href="product-detail.html?id=glory160x-hd" class="view-details-btn">View Details →</a>
-                        <a href="contact.html" class="get-quote-btn">Quote</a>
-                    </div>
+                    <a href="product-detail.html?id=pfjxb" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
                 </div>
             </div>
 
-            <!-- Product 2: Ultra2500W -->
-            <div class="product-card" onclick="window.location.href='product-detail.html?id=ultra2500w'">
-                <div class="product-card-image">🤖</div>
-                <div class="product-card-content">
-                    <div class="product-card-header">
-                        <h3 class="product-model">Ultra2500W</h3>
+            <div class="product-card" onclick="window.location.href='product-detail.html?id=pfqsl2'">
+                <img src="images/products/odj-qsl2-1.jpg" alt="QSL2 Slope Type Automatic Pre-feeder" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">QSL2</div>
+                    <h3 class="product-name">QSL2 Slope Type Automatic Pre-feeder</h3>
+                    <p class="product-description">A high-performance slope-type automatic pre-feeder designed for top print applications. Features advanced breaking unit for seamless integration with die-cutting machines.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
                     </div>
-                    <p class="product-name">High-Speed Scanning Digital Printing Machine</p>
-                    <p class="product-description">Ultra2500W is a high-speed scanning digital printer for corrugated board, offering excellent print quality and production efficiency.</p>
-                    <ul class="product-features">
-                        <li>High-speed scanning technology</li>
-                        <li>Wide format printing (2500mm)</li>
-                        <li>Excellent color reproduction</li>
-                        <li>Automated feeding system</li>
-                        <li>User-friendly interface</li>
-                    </ul>
-                    <div class="product-card-footer">
-                        <a href="product-detail.html?id=ultra2500w" class="view-details-btn">View Details →</a>
-                        <a href="contact.html" class="get-quote-btn">Quote</a>
-                    </div>
+                    <a href="product-detail.html?id=pfqsl2" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
                 </div>
             </div>
 
-            <!-- Product 3: Ultra2500W Pro -->
-            <div class="product-card" onclick="window.location.href='product-detail.html?id=ultra2500w-pro'">
-                <div class="product-card-image">🤖</div>
-                <div class="product-card-content">
-                    <div class="product-card-header">
-                        <h3 class="product-model">Ultra2500W Pro</h3>
+            <div class="product-card" onclick="window.location.href='product-detail.html?id=pfqsl3'">
+                <img src="images/products/odj-qsl3-1.jpg" alt="QSL3 Baffle Type Automatic Pre-feeder" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">QSL3</div>
+                    <h3 class="product-name">QSL3 Baffle Type Automatic Pre-feeder</h3>
+                    <p class="product-description">A reliable baffle-type automatic pre-feeder for top print applications. The workhorse of the production line with proven stability and efficiency.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
                     </div>
-                    <p class="product-name">Industrial-Grade Multi-Function Combined Digital Printer</p>
-                    <p class="product-description">Ultra2500W Pro is an upgraded version of Ultra2500W with enhanced features and higher production capacity.</p>
-                    <ul class="product-features">
-                        <li>Enhanced printing speed</li>
-                        <li>Multi-color printing capability</li>
-                        <li>Advanced color management</li>
-                        <li>Integrated quality control</li>
-                        <li>Remote monitoring system</li>
-                    </ul>
-                    <div class="product-card-footer">
-                        <a href="product-detail.html?id=ultra2500w-pro" class="view-details-btn">View Details →</a>
-                        <a href="contact.html" class="get-quote-btn">Quote</a>
-                    </div>
+                    <a href="product-detail.html?id=pfqsl3" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
                 </div>
             </div>
 
-            <!-- Product 4: MCB2500 -->
-            <div class="product-card" onclick="window.location.href='product-detail.html?id=mcb2500'">
-                <div class="product-card-image">🤖</div>
-                <div class="product-card-content">
-                    <div class="product-card-header">
-                        <h3 class="product-model">MCB2500</h3>
+            <div class="product-card" onclick="window.location.href='product-detail.html?id=pfqsl4'">
+                <img src="images/products/odj-qsl4-1.jpg" alt="QSL4/QSM Basket (Lifting) Type Universal Pre-feeder" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">QSL4/QSM</div>
+                    <h3 class="product-name">QSL4/QSM Basket (Lifting) Type Universal Pre-feeder</h3>
+                    <p class="product-description">A versatile basket (lifting) type universal pre-feeder suitable for various board types and production requirements. Offers excellent flexibility and reliability.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
                     </div>
-                    <p class="product-name">Multi-Color Corrugated Board Digital Printer</p>
-                    <p class="product-description">MCB2500 offers versatile multi-color printing capabilities for various corrugated board applications.</p>
-                    <ul class="product-features">
-                        <li>Multi-color printing system</li>
-                        <li>Flexible production capacity</li>
-                        <li>Cost-effective operation</li>
-                        <li>Easy maintenance</li>
-                        <li>Compact footprint</li>
-                    </ul>
-                    <div class="product-card-footer">
-                        <a href="product-detail.html?id=mcb2500" class="view-details-btn">View Details →</a>
-                        <a href="contact.html" class="get-quote-btn">Quote</a>
-                    </div>
+                    <a href="product-detail.html?id=pfqsl4" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
                 </div>
             </div>
 
-            <!-- Product 5: MCB2512 -->
-            <div class="product-card" onclick="window.location.href='product-detail.html?id=mcb2512'">
-                <div class="product-card-image">🤖</div>
-                <div class="product-card-content">
-                    <div class="product-card-header">
-                        <h3 class="product-model">MCB2512</h3>
+            <div class="product-card" onclick="window.location.href='product-detail.html?id=pfqxy3'">
+                <img src="images/products/odj-qxy3-1.jpg" alt="QXY3 Baffle Type Automatic Pre-feeder for Bottom Print" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">QXY3</div>
+                    <h3 class="product-name">QXY3 Baffle Type Automatic Pre-feeder for Bottom Print</h3>
+                    <p class="product-description">A specialized baffle-type automatic pre-feeder designed for bottom print applications. Ensures precise handling and positioning for high-quality printing.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
                     </div>
-                    <p class="product-name">Enhanced Multi-Color Board Printer</p>
-                    <p class="product-description">MCB2512 is an enhanced version with improved printing resolution and faster production speed.</p>
-                    <ul class="product-features">
-                        <li>Higher resolution printing</li>
-                        <li>Faster production speed</li>
-                        <li>Advanced ink management</li>
-                        <li>Automated calibration</li>
-                        <li>Energy-efficient design</li>
-                    </ul>
-                    <div class="product-card-footer">
-                        <a href="product-detail.html?id=mcb2512" class="view-details-btn">View Details →</a>
-                        <a href="contact.html" class="get-quote-btn">Quote</a>
-                    </div>
+                    <a href="product-detail.html?id=pfqxy3" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
                 </div>
             </div>
 
-            <!-- Product 6: SCB1600 -->
-            <div class="product-card" onclick="window.location.href='product-detail.html?id=scb1600'">
-                <div class="product-card-image">🤖</div>
-                <div class="product-card-content">
-                    <div class="product-card-header">
-                        <h3 class="product-model">SCB1600</h3>
+            <div class="product-card" onclick="window.location.href='product-detail.html?id=pfbys'">
+                <img src="images/products/odj-bys-1.jpg" alt="BYS Semi-Automatic Pre-feeder" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">BYS</div>
+                    <h3 class="product-name">BYS Semi-Automatic Pre-feeder</h3>
+                    <p class="product-description">A cost-effective semi-automatic pre-feeder ideal for small to medium production volumes. Combines manual flexibility with automated efficiency.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
                     </div>
-                    <p class="product-name">Compact Single-Color Board Printer</p>
-                    <p class="product-description">SCB1600 is a compact digital printer ideal for small to medium-sized production operations.</p>
-                    <ul class="product-features">
-                        <li>Compact design</li>
-                        <li>Single-color printing</li>
-                        <li>Easy operation</li>
-                        <li>Low initial investment</li>
-                        <li>Reliable performance</li>
-                    </ul>
-                    <div class="product-card-footer">
-                        <a href="product-detail.html?id=scb1600" class="view-details-btn">View Details →</a>
-                        <a href="contact.html" class="get-quote-btn">Quote</a>
-                    </div>
+                    <a href="product-detail.html?id=pfbys" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
                 </div>
             </div>
+
+            <div class="product-card" onclick="window.location.href='product-detail.html?id=fpfp1650'">
+                <img src="images/products/odj-fp1650-1.jpg" alt="FP-1650 Automatic Bundle Breaker System" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">FP-1650</div>
+                    <h3 class="product-name">FP-1650 Automatic Bundle Breaker System</h3>
+                    <p class="product-description">An advanced automatic bundle breaker system that efficiently separates corrugated board bundles, streamlining the feeding process and improving production efficiency.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
+                    </div>
+                    <a href="product-detail.html?id=fpfp1650" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
+                </div>
+            </div>
+
+            <div class="product-card" onclick="window.location.href='product-detail.html?id=rpmd350'">
+                <img src="images/products/odj-md350-1.jpg" alt="MD-350 3D Vision AI Intelligent Robotic Palletizing System" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">MD-350</div>
+                    <h3 class="product-name">MD-350 3D Vision AI Intelligent Robotic Palletizing System</h3>
+                    <p class="product-description">A state-of-the-art 3D vision AI-powered robotic palletizing system. Features intelligent stacking algorithms, real-time quality inspection, and seamless integration with production lines.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
+                    </div>
+                    <a href="product-detail.html?id=rpmd350" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>NEXUS GLOBAL HOLDINGS</h4>
-                    <p>Your trusted partner in corrugated packaging equipment solutions</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="registered-companies.html">Companies</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contact</h4>
-                    <p>Email: info@nexusglobal.com</p>
-                    <p>Phone: +86 123 4567 8900</p>
-                </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>NEXUS GLOBAL HOLDINGS</h3>
+                <p>Leading provider of corrugated packaging equipment and solutions.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 NEXUS GLOBAL HOLDINGS. All rights reserved.</p>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: info@nexusglobal.asia</p>
+                <p>Phone: +86-xxx-xxxx-xxxx</p>
             </div>
         </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 NEXUS Global Holdings. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
-
