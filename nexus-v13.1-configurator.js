@@ -1158,11 +1158,29 @@ function displayRecommendations(recommendations) {
     
     // Scroll to results
     elements.recommendationsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    // V13.1: Update recommendation buttons to use quote modal and view details
+    setTimeout(() => {
+        if (typeof updateRecommendationButtons === 'function') {
+            updateRecommendationButtons();
+            console.log('Recommendation buttons updated for V13.1 quote functionality');
+        }
+    }, 100);
 }
 
 function createEquipmentCard(equipment, rank) {
     const card = document.createElement('div');
     card.className = 'equipment-card';
+    
+    // V13.1: Store equipment data for quote modal access
+    card.dataset.equipmentData = JSON.stringify({
+        name: equipment.name,
+        supplier: equipment.supplier,
+        priceRange: equipment.price.range,
+        leadTime: equipment.leadTime,
+        tier: equipment.tier,
+        matchScore: equipment.matchScore
+    });
     
     card.innerHTML = `
         <div class="card-header">
@@ -1211,10 +1229,10 @@ function createEquipmentCard(equipment, rank) {
         </div>
         
         <div class="card-actions">
-            <button class="card-btn primary" onclick="requestQuote('${equipment.id}')">
+            <button class="card-btn primary recommendation-btn-primary" data-equipment-name="${equipment.name}">
                 Request Quote
             </button>
-            <button class="card-btn" onclick="viewDetails('${equipment.id}')">
+            <button class="card-btn recommendation-btn-secondary" data-equipment-name="${equipment.name}">
                 View Details
             </button>
         </div>
@@ -1238,17 +1256,19 @@ function handleNextStep(action) {
     }
 }
 
+// V13.1: requestQuote and viewDetails are now handled by nexus-v13.1-quote-functions.js
+// These functions are kept for backward compatibility but are no longer used
 function requestQuote(equipmentId) {
     const equipment = currentRecommendations.find(e => e.id === equipmentId);
-    if (equipment) {
-        alert(`Quote Request for: ${equipment.name}\n\nThis feature will be implemented in the next phase.\n\nFor now, please contact: sales@nexusglobal.asia`);
+    if (equipment && typeof openQuoteModal === 'function') {
+        openQuoteModal(equipment);
     }
 }
 
 function viewDetails(equipmentId) {
     const equipment = currentRecommendations.find(e => e.id === equipmentId);
-    if (equipment) {
-        alert(`Equipment Details: ${equipment.name}\n\nDetailed product page will be implemented in the next phase.`);
+    if (equipment && typeof viewEquipmentDetails === 'function') {
+        viewEquipmentDetails(equipment);
     }
 }
 
@@ -1257,8 +1277,13 @@ function viewDetails(equipmentId) {
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('NEXUS V13.0 Equipment Configurator - Initialized');
+    console.log('NEXUS V13.1 Equipment Configurator - Initialized');
     console.log('Equipment types available:', Object.keys(EQUIPMENT_FORM_FIELDS).length);
     console.log('Total equipment in database:', Object.values(EQUIPMENT_DATABASE).flat().length);
+    
+    // V13.1: Initialize quote functions if available
+    if (typeof initializeQuoteFunctions === 'function') {
+        console.log('Quote functions initialized');
+    }
 });
 

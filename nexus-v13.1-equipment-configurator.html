@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS Equipment Configurator - Smart Equipment Recommendation</title>
+    <link rel="stylesheet" href="nexus-v13.1-configurator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">NEXUS</span>
+                    <span class="logo-subtitle">GLOBAL HOLDINGS</span>
+                </a>
+            </div>
+            <div class="header-nav">
+                <a href="nexus-v13.1-ai-modules.html" class="back-link">
+                    <span class="back-icon">←</span>
+                    <span class="back-text">Back to AI Modules</span>
+                </a>
+            </div>
+            <h1 class="page-title">Equipment Configuration System</h1>
+            <p class="page-subtitle">AI-Powered Smart Equipment Recommendation & Compatibility Analysis</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="configurator-container">
+        <!-- Left Panel: Configuration Form -->
+        <aside class="config-panel">
+            <div class="panel-header">
+                <div class="header-icon">⚙️</div>
+                <h2>Requirements Configuration</h2>
+                <p class="header-description">
+                    Enter your production requirements, and AI will recommend the most suitable equipment configuration
+                </p>
+            </div>
+
+            <form id="equipmentConfigForm" class="config-form">
+                <!-- Equipment Type -->
+                <div class="form-group">
+                    <label for="equipmentType" class="form-label">
+                        <span class="label-icon">📦</span>
+                        <span class="label-text">Equipment Type</span>
+                        <span class="label-required">*</span>
+                    </label>
+                    <select id="equipmentType" name="equipmentType" class="form-select" required>
+                        <option value="">Select equipment type</option>
+                        <option value="digital-printing">Digital Printing Machines</option>
+                        <option value="die-cutting">Die-Cutting Machines</option>
+                        <option value="feeding-palletizing">Feeding/Palletizing Machines</option>
+                        <option value="folder-gluer">Folder Gluer/Stitcher</option>
+                        <option value="laminator">Laminator/Filming Machine</option>
+                        <option value="corrugator">Corrugator Line</option>
+                        <option value="flexo-printing">Flexo Printing Machines</option>
+                        <option value="strapping">Strapping/Stitching Machines</option>
+                    </select>
+                </div>
+
+                <!-- Dynamic Fields Container -->
+                <div id="dynamicFieldsContainer">
+                    <!-- Fields will be dynamically inserted here based on equipment type -->
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" id="submitBtn" disabled>
+                    <span class="btn-icon">🚀</span>
+                    <span class="btn-text">Get Recommendation</span>
+                </button>
+
+                <!-- Reset Button -->
+                <button type="button" class="reset-btn" id="resetBtn">
+                    <span class="btn-icon">🔄</span>
+                    <span class="btn-text">Reset Form</span>
+                </button>
+            </form>
+        </aside>
+
+        <!-- Right Panel: Results Display -->
+        <section class="results-panel">
+            <div id="resultsContainer" class="results-container">
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">⚡</div>
+                    <h3 class="empty-title">Ready to Find Your Perfect Equipment</h3>
+                    <p class="empty-description">
+                        Fill in your requirements on the left and click "Get Recommendation" to receive personalized equipment suggestions
+                    </p>
+                    <div class="empty-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">🎯</span>
+                            <span class="feature-text">AI-Powered Matching</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">⭐</span>
+                            <span class="feature-text">Top 3 Recommendations</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">💰</span>
+                            <span class="feature-text">Budget-Friendly Options</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📊</span>
+                            <span class="feature-text">Detailed Comparison</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div class="loading-state" id="loadingState" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <h3 class="loading-title">Analyzing Your Requirements...</h3>
+                    <p class="loading-description">Our AI is finding the perfect equipment match for you</p>
+                </div>
+
+                <!-- Recommendations Container -->
+                <div class="recommendations-container" id="recommendationsContainer" style="display: none;">
+                    <div class="recommendations-header">
+                        <h2 class="recommendations-title">✨ Top Equipment Recommendations</h2>
+                        <p class="recommendations-subtitle">Based on your specific requirements, here are our AI-powered recommendations</p>
+                    </div>
+                    <div class="recommendations-list" id="recommendationsList">
+                        <!-- Equipment cards will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Quote Request Modal -->
+    <div id="quoteModal" class="quote-modal">
+        <div class="quote-modal-content">
+            <button class="quote-modal-close" onclick="closeQuoteModal()">&times;</button>
+            
+            <div class="quote-modal-header">
+                <div class="quote-modal-icon">📝</div>
+                <h2 class="quote-modal-title">Request Quote</h2>
+                <p class="quote-modal-subtitle">Get a personalized quote for your selected equipment</p>
+            </div>
+            
+            <div class="quote-modal-body">
+                <!-- Equipment Information (Read-only) -->
+                <div class="quote-equipment-info">
+                    <h3 class="quote-section-title">Selected Equipment</h3>
+                    <div class="quote-equipment-card">
+                        <div class="quote-equipment-name" id="quoteEquipmentName">-</div>
+                        <div class="quote-equipment-details">
+                            <span class="quote-detail-item">
+                                <strong>Supplier:</strong> <span id="quoteSupplier">-</span>
+                            </span>
+                            <span class="quote-detail-item">
+                                <strong>Price Range:</strong> <span id="quotePriceRange">-</span>
+                            </span>
+                            <span class="quote-detail-item">
+                                <strong>Lead Time:</strong> <span id="quoteLeadTime">-</span>
+                            </span>
+                            <span class="quote-detail-item">
+                                <strong>Match Score:</strong> <span id="quoteMatchScore">-</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quote Request Form -->
+                <form id="quoteRequestForm" class="quote-form">
+                    <h3 class="quote-section-title">Your Information</h3>
+                    
+                    <div class="quote-form-row">
+                        <div class="quote-form-group">
+                            <label for="quoteName" class="quote-label">
+                                <span class="quote-label-icon">👤</span>
+                                <span class="quote-label-text">Full Name</span>
+                                <span class="quote-required">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="quoteName" 
+                                class="quote-input" 
+                                placeholder="John Doe" 
+                                required
+                            />
+                        </div>
+                        
+                        <div class="quote-form-group">
+                            <label for="quoteCompany" class="quote-label">
+                                <span class="quote-label-icon">🏢</span>
+                                <span class="quote-label-text">Company Name</span>
+                                <span class="quote-required">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="quoteCompany" 
+                                class="quote-input" 
+                                placeholder="ABC Packaging Ltd." 
+                                required
+                            />
+                        </div>
+                    </div>
+                    
+                    <div class="quote-form-row">
+                        <div class="quote-form-group">
+                            <label for="quoteJobTitle" class="quote-label">
+                                <span class="quote-label-icon">💼</span>
+                                <span class="quote-label-text">Job Title</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="quoteJobTitle" 
+                                class="quote-input" 
+                                placeholder="Procurement Manager" 
+                            />
+                        </div>
+                        
+                        <div class="quote-form-group">
+                            <label for="quoteEmail" class="quote-label">
+                                <span class="quote-label-icon">📧</span>
+                                <span class="quote-label-text">Email Address</span>
+                                <span class="quote-required">*</span>
+                            </label>
+                            <input 
+                                type="email" 
+                                id="quoteEmail" 
+                                class="quote-input" 
+                                placeholder="john@abcpackaging.com" 
+                                required
+                            />
+                        </div>
+                    </div>
+                    
+                    <div class="quote-form-row">
+                        <div class="quote-form-group">
+                            <label for="quotePhone" class="quote-label">
+                                <span class="quote-label-icon">📱</span>
+                                <span class="quote-label-text">Phone Number</span>
+                                <span class="quote-required">*</span>
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="quotePhone" 
+                                class="quote-input" 
+                                placeholder="+1 (555) 123-4567" 
+                                required
+                            />
+                        </div>
+                        
+                        <div class="quote-form-group">
+                            <label for="quoteCountry" class="quote-label">
+                                <span class="quote-label-icon">🌍</span>
+                                <span class="quote-label-text">Country/Region</span>
+                                <span class="quote-required">*</span>
+                            </label>
+                            <select id="quoteCountry" class="quote-input" required>
+                                <option value="">Select country...</option>
+                                <option value="United States">United States</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Germany">Germany</option>
+                                <option value="France">France</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Spain">Spain</option>
+                                <option value="China">China</option>
+                                <option value="Japan">Japan</option>
+                                <option value="South Korea">South Korea</option>
+                                <option value="India">India</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-form-group quote-form-group-full">
+                        <label for="quoteMessage" class="quote-label">
+                            <span class="quote-label-icon">💬</span>
+                            <span class="quote-label-text">Additional Message</span>
+                            <span class="quote-optional">(Optional)</span>
+                        </label>
+                        <textarea 
+                            id="quoteMessage" 
+                            class="quote-textarea" 
+                            rows="4" 
+                            placeholder="Please provide any additional information about your requirements..."
+                        ></textarea>
+                    </div>
+                    
+                    <div class="quote-form-footer">
+                        <button type="button" class="quote-btn quote-btn-cancel" onclick="closeQuoteModal()">
+                            Cancel
+                        </button>
+                        <button type="submit" class="quote-btn quote-btn-submit">
+                            <span class="quote-btn-icon">📤</span>
+                            Submit Quote Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Success Modal -->
+    <div id="quoteSuccessModal" class="quote-modal">
+        <div class="quote-modal-content quote-success-content">
+            <button class="quote-modal-close" onclick="closeQuoteSuccessModal()">&times;</button>
+            
+            <div class="quote-success-body">
+                <div class="quote-success-icon">✅</div>
+                <h2 class="quote-success-title">Quote Request Submitted Successfully!</h2>
+                <p class="quote-success-message">
+                    Thank you for your interest in <strong id="successEquipmentName">-</strong>.
+                </p>
+                <p class="quote-success-message">
+                    Our sales team will contact you within <strong>24 hours</strong>.
+                </p>
+                <div class="quote-success-reference">
+                    <span class="quote-reference-label">Reference Number:</span>
+                    <span class="quote-reference-number" id="quoteReferenceNumber">-</span>
+                </div>
+                <button class="quote-btn quote-btn-primary" onclick="closeQuoteSuccessModal()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2025 NEXUS Global Holdings. All rights reserved. | Version 13.1</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="nexus-v13.1-configurator.js"></script>
+    <script src="nexus-v13.1-quote-functions.js"></script>
+</body>
+</html>
+

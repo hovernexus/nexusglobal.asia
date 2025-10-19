@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Consultation System - NEXUS Global</title>
+    <link rel="stylesheet" href="nexus-v13.1-ai-modules.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="ai-header">
+        <div class="ai-header-content">
+            <div class="ai-header-icon">🤖</div>
+            <h1 class="ai-header-title">NEXUS AI Consultation System</h1>
+            <p class="ai-header-subtitle">Intelligent Solutions for Corrugated Packaging Industry</p>
+            <div class="ai-header-divider"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ai-container">
+        <!-- Introduction Section -->
+        <div class="ai-intro">
+            <h2 class="ai-intro-title">Select AI Service Module</h2>
+            <p class="ai-intro-text">
+                Choose from our comprehensive suite of AI-powered services designed to optimize your corrugated packaging operations.
+            </p>
+        </div>
+
+        <!-- AI Modules Grid -->
+        <div class="ai-modules-grid">
+            <!-- Module 1: Smart Equipment Recommendation -->
+            <div class="ai-module-card active" data-module="equipment-recommendation">
+                <div class="ai-module-status">
+                    <span class="status-badge active">Active</span>
+                </div>
+                <div class="ai-module-icon">🎯</div>
+                <h3 class="ai-module-title">Smart Equipment Recommendation</h3>
+                <p class="ai-module-description">
+                    AI-powered equipment selection system with intelligent matching algorithm. Get TOP 3 recommendations based on your specific requirements.
+                </p>
+                <div class="ai-module-features">
+                    <span class="feature-tag">✓ 8 Equipment Types</span>
+                    <span class="feature-tag">✓ 100-Point Scoring</span>
+                    <span class="feature-tag">✓ Instant Results</span>
+                </div>
+                <button class="ai-module-btn" onclick="navigateToModule('equipment-recommendation')">
+                    <span class="btn-icon">→</span>
+                    <span class="btn-text">Start Now</span>
+                </button>
+            </div>
+
+            <!-- Module 2: ROI Calculator -->
+            <div class="ai-module-card coming-soon" data-module="roi-calculator">
+                <div class="ai-module-status">
+                    <span class="status-badge coming-soon">Coming Soon</span>
+                </div>
+                <div class="ai-module-icon">💰</div>
+                <h3 class="ai-module-title">ROI Calculator & Cost Analysis</h3>
+                <p class="ai-module-description">
+                    Calculate return on investment and perform comprehensive cost analysis for equipment purchases and operational improvements.
+                </p>
+                <div class="ai-module-features">
+                    <span class="feature-tag">✓ ROI Calculation</span>
+                    <span class="feature-tag">✓ Cost Breakdown</span>
+                    <span class="feature-tag">✓ Payback Period</span>
+                </div>
+                <button class="ai-module-btn disabled" disabled>
+                    <span class="btn-icon">🔒</span>
+                    <span class="btn-text">Coming Soon</span>
+                </button>
+            </div>
+
+            <!-- Module 3: AI Technical Consultation -->
+            <div class="ai-module-card active" data-module="ai-consultation">
+                <div class="ai-module-status">
+                    <span class="status-badge active">Active</span>
+                </div>
+                <div class="ai-module-icon">💬</div>
+                <h3 class="ai-module-title">24/7 AI Technical Consultation</h3>
+                <p class="ai-module-description">
+                    Get instant answers to your technical questions from our AI-powered consultation system, available 24/7 in multiple languages.
+                </p>
+                <div class="ai-module-features">
+                    <span class="feature-tag">✓ 24/7 Available</span>
+                    <span class="feature-tag">✓ Multi-language</span>
+                    <span class="feature-tag">✓ Expert Knowledge</span>
+                </div>
+                <button class="ai-module-btn" onclick="navigateToModule('ai-consultation')">
+                    <span class="btn-icon">→</span>
+                    <span class="btn-text">Start Chat</span>
+                </button>
+            </div>
+
+            <!-- Module 4: Equipment Troubleshooting -->
+            <div class="ai-module-card coming-soon" data-module="troubleshooting">
+                <div class="ai-module-status">
+                    <span class="status-badge coming-soon">Coming Soon</span>
+                </div>
+                <div class="ai-module-icon">🔧</div>
+                <h3 class="ai-module-title">Equipment Troubleshooting Assistant</h3>
+                <p class="ai-module-description">
+                    AI-powered diagnostic tool to identify and resolve equipment issues quickly. Get step-by-step troubleshooting guidance.
+                </p>
+                <div class="ai-module-features">
+                    <span class="feature-tag">✓ Quick Diagnosis</span>
+                    <span class="feature-tag">✓ Step-by-Step Guide</span>
+                    <span class="feature-tag">✓ Video Tutorials</span>
+                </div>
+                <button class="ai-module-btn disabled" disabled>
+                    <span class="btn-icon">🔒</span>
+                    <span class="btn-text">Coming Soon</span>
+                </button>
+            </div>
+
+            <!-- Module 5: Industry Encyclopedia -->
+            <div class="ai-module-card coming-soon" data-module="industry-encyclopedia">
+                <div class="ai-module-status">
+                    <span class="status-badge coming-soon">Coming Soon</span>
+                </div>
+                <div class="ai-module-icon">📖</div>
+                <h3 class="ai-module-title">Corrugated Industry Encyclopedia</h3>
+                <p class="ai-module-description">
+                    Comprehensive knowledge base covering all aspects of corrugated packaging industry, from materials to manufacturing processes.
+                </p>
+                <div class="ai-module-features">
+                    <span class="feature-tag">✓ 1000+ Articles</span>
+                    <span class="feature-tag">✓ Industry Standards</span>
+                    <span class="feature-tag">✓ Best Practices</span>
+                </div>
+                <button class="ai-module-btn disabled" disabled>
+                    <span class="btn-icon">🔒</span>
+                    <span class="btn-text">Coming Soon</span>
+                </button>
+            </div>
+
+            <!-- Module 6: Technical Documentation -->
+            <div class="ai-module-card coming-soon" data-module="technical-docs">
+                <div class="ai-module-status">
+                    <span class="status-badge coming-soon">Coming Soon</span>
+                </div>
+                <div class="ai-module-icon">📄</div>
+                <h3 class="ai-module-title">Technical Documentation Center</h3>
+                <p class="ai-module-description">
+                    Access detailed technical documentation, manuals, and specifications for all equipment. Download PDFs and CAD files.
+                </p>
+                <div class="ai-module-features">
+                    <span class="feature-tag">✓ User Manuals</span>
+                    <span class="feature-tag">✓ CAD Files</span>
+                    <span class="feature-tag">✓ Specifications</span>
+                </div>
+                <button class="ai-module-btn disabled" disabled>
+                    <span class="btn-icon">🔒</span>
+                    <span class="btn-text">Coming Soon</span>
+                </button>
+            </div>
+
+            <!-- Module 7: Online Ticketing System -->
+            <div class="ai-module-card coming-soon" data-module="ticketing-system">
+                <div class="ai-module-status">
+                    <span class="status-badge coming-soon">Coming Soon</span>
+                </div>
+                <div class="ai-module-icon">🎫</div>
+                <h3 class="ai-module-title">Online Ticketing System</h3>
+                <p class="ai-module-description">
+                    Submit and track support tickets for technical issues, maintenance requests, and service inquiries with real-time updates.
+                </p>
+                <div class="ai-module-features">
+                    <span class="feature-tag">✓ Real-time Tracking</span>
+                    <span class="feature-tag">✓ Priority Support</span>
+                    <span class="feature-tag">✓ Email Notifications</span>
+                </div>
+                <button class="ai-module-btn disabled" disabled>
+                    <span class="btn-icon">🔒</span>
+                    <span class="btn-text">Coming Soon</span>
+                </button>
+            </div>
+
+            <!-- Module 8: Customer Service Portal -->
+            <div class="ai-module-card coming-soon" data-module="customer-portal">
+                <div class="ai-module-status">
+                    <span class="status-badge coming-soon">Coming Soon</span>
+                </div>
+                <div class="ai-module-icon">🏢</div>
+                <h3 class="ai-module-title">Customer Service Portal</h3>
+                <p class="ai-module-description">
+                    Unified customer service platform for order management, warranty registration, and service history tracking.
+                </p>
+                <div class="ai-module-features">
+                    <span class="feature-tag">✓ Order Tracking</span>
+                    <span class="feature-tag">✓ Warranty Management</span>
+                    <span class="feature-tag">✓ Service History</span>
+                </div>
+                <button class="ai-module-btn disabled" disabled>
+                    <span class="btn-icon">🔒</span>
+                    <span class="btn-text">Coming Soon</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="ai-footer">
+            <p class="ai-footer-text">
+                Need help? Contact our support team at <a href="mailto:support@nexusglobal.asia">support@nexusglobal.asia</a>
+            </p>
+            <p class="ai-footer-version">NEXUS AI Consultation System V13.1</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="nexus-v13.1-ai-modules.js"></script>
+</body>
+</html>
+
