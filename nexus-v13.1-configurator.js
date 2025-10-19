@@ -485,7 +485,8 @@ const EQUIPMENT_DATABASE = {
             ],
             applications: ['Small production lines', 'Budget-conscious operations'],
             leadTime: 8,
-            image: '/images/odj/rys-semi-auto-prefeeder.jpg'
+            image: '/images/odj/rys-semi-auto-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=ryf'
         },
         {
             id: 'odj-byf-001',
@@ -516,7 +517,8 @@ const EQUIPMENT_DATABASE = {
             ],
             applications: ['Small to medium production', 'Entry-level automation'],
             leadTime: 8,
-            image: '/images/odj/byf-semi-auto-prefeeder.jpg'
+            image: '/images/odj/byf-semi-auto-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=byf'
         },
         {
             id: 'odj-qb3-001',
@@ -547,7 +549,8 @@ const EQUIPMENT_DATABASE = {
             ],
             applications: ['Medium production lines', 'Automated feeding systems'],
             leadTime: 10,
-            image: '/images/odj/qb3-raffle-prefeeder.jpg'
+            image: '/images/odj/qb3-raffle-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=qb3'
         },
         {
             id: 'odj-qy3-001',
@@ -578,7 +581,8 @@ const EQUIPMENT_DATABASE = {
             ],
             applications: ['Medium production lines', 'Inline feeding systems'],
             leadTime: 10,
-            image: '/images/odj/qy3-baffle-prefeeder.jpg'
+            image: '/images/odj/qy3-baffle-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=qy3'
         },
         {
             id: 'odj-qb2-001',
@@ -609,7 +613,8 @@ const EQUIPMENT_DATABASE = {
             ],
             applications: ['Medium to high volume production', 'Automated production lines'],
             leadTime: 10,
-            image: '/images/odj/qb2-slope-prefeeder.jpg'
+            image: '/images/odj/qb2-slope-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=qb2'
         },
         {
             id: 'odj-qvy3-001',
@@ -640,7 +645,8 @@ const EQUIPMENT_DATABASE = {
             ],
             applications: ['High-efficiency production', 'Advanced feeding systems'],
             leadTime: 11,
-            image: '/images/odj/qvy3-baffle-advanced-prefeeder.jpg'
+            image: '/images/odj/qvy3-baffle-advanced-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=qvy3'
         },
         {
             id: 'odj-qsl4-001',
@@ -671,7 +677,8 @@ const EQUIPMENT_DATABASE = {
             ],
             applications: ['High-volume production', 'Versatile feeding applications'],
             leadTime: 11,
-            image: '/images/odj/qsl4-qsm-basket-prefeeder.jpg'
+            image: '/images/odj/qsl4-qsm-basket-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=qsl4'
         },
         {
             id: 'odj-jxb-001',
@@ -702,7 +709,8 @@ const EQUIPMENT_DATABASE = {
             ],
             applications: ['High-volume production', 'Smart factory integration', 'Advanced automation'],
             leadTime: 12,
-            image: '/images/odj/jxb-robotic-arm-prefeeder.jpg'
+            image: '/images/odj/jxb-robotic-arm-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=jxb'
         }
     ],
     
@@ -1361,13 +1369,15 @@ function createEquipmentCard(equipment, rank) {
     card.className = 'equipment-card';
     
     // V13.1: Store equipment data for quote modal access
+    // V13.2: Added detailUrl for product detail page navigation
     card.dataset.equipmentData = JSON.stringify({
         name: equipment.name,
         supplier: equipment.supplier,
         priceRange: equipment.price.range,
         leadTime: equipment.leadTime,
         tier: equipment.tier,
-        matchScore: equipment.matchScore
+        matchScore: equipment.matchScore,
+        detailUrl: equipment.detailUrl || null  // V13.2: Product detail page URL
     });
     
     card.innerHTML = `

@@ -262,7 +262,13 @@ function showQuoteSuccessModal(formData) {
 function viewEquipmentDetails(equipment) {
     console.log('Viewing details for:', equipment);
     
-    // V13.1: Show equipment details in a modal instead of navigating to a new page
+    // V13.2: Navigate to the product detail page if detailUrl is available
+    if (equipment.detailUrl) {
+        window.location.href = equipment.detailUrl;
+        return;
+    }
+    
+    // Fallback: Show equipment details in a modal if no detailUrl is provided
     // This provides better UX and avoids creating separate detail pages
     
     // Create detail modal HTML

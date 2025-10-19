@@ -33,7 +33,8 @@ const ODJ_PRODUCTS = [
             'Flexible integration'
         ],
         leadTime: 12,
-        image: '/images/odj/jxb-robotic-arm-prefeeder.jpg'
+        image: '/images/odj/jxb-robotic-arm-prefeeder.jpg',
+        detailUrl: 'product-detail.html?model=jxb'
     },
     {
         id: 'odj-qb2-001',
@@ -66,7 +67,8 @@ const ODJ_PRODUCTS = [
             'Cost-effective solution'
         ],
         leadTime: 10,
-        image: '/images/odj/qb2-slope-prefeeder.jpg'
+        image: '/images/odj/qb2-slope-prefeeder.jpg',
+        detailUrl: 'product-detail.html?model=qb2'
     },
     {
         id: 'odj-qb3-001',
@@ -99,7 +101,8 @@ const ODJ_PRODUCTS = [
             'Easy to operate'
         ],
         leadTime: 10,
-        image: '/images/odj/qb3-raffle-prefeeder.jpg'
+        image: '/images/odj/qb3-raffle-prefeeder.jpg',
+        detailUrl: 'product-detail.html?model=qb3'
     },
     {
         id: 'odj-qsl4-001',
@@ -132,7 +135,8 @@ const ODJ_PRODUCTS = [
             'Versatile application'
         ],
         leadTime: 11,
-        image: '/images/odj/qsl4-qsm-basket-prefeeder.jpg'
+        image: '/images/odj/qsl4-qsm-basket-prefeeder.jpg',
+        detailUrl: 'product-detail.html?model=qsl4'
     },
     {
         id: 'odj-rys-001',
@@ -165,7 +169,8 @@ const ODJ_PRODUCTS = [
             'Easy maintenance'
         ],
         leadTime: 8,
-        image: '/images/odj/rys-semi-auto-prefeeder.jpg'
+        image: '/images/odj/rys-semi-auto-prefeeder.jpg',
+        detailUrl: 'product-detail.html?model=ryf'
     },
     {
         id: 'odj-qy3-001',
@@ -198,7 +203,8 @@ const ODJ_PRODUCTS = [
             'Good value'
         ],
         leadTime: 10,
-        image: '/images/odj/qy3-baffle-prefeeder.jpg'
+        image: '/images/odj/qy3-baffle-prefeeder.jpg',
+        detailUrl: 'product-detail.html?model=qy3'
     },
     {
         id: 'odj-qvy3-001',
@@ -231,7 +237,8 @@ const ODJ_PRODUCTS = [
             'Improved efficiency'
         ],
         leadTime: 11,
-        image: '/images/odj/qvy3-baffle-advanced-prefeeder.jpg'
+        image: '/images/odj/qvy3-baffle-advanced-prefeeder.jpg',
+        detailUrl: 'product-detail.html?model=qvy3'
     },
     {
         id: 'odj-byf-001',
@@ -264,7 +271,8 @@ const ODJ_PRODUCTS = [
             'Low maintenance'
         ],
         leadTime: 8,
-        image: '/images/odj/byf-semi-auto-prefeeder.jpg'
+        image: '/images/odj/byf-semi-auto-prefeeder.jpg',
+        detailUrl: 'product-detail.html?model=byf'
     }
 ];
 

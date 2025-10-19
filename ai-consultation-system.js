@@ -487,8 +487,8 @@ function launchModule(moduleId) {
 
 // Start Consultation
 function startConsultation() {
-    // Navigate to the new V13.0 AI equipment configurator interface
-    window.location.href = 'nexus-v13.0-equipment-configurator.html';
+    // Navigate to the AI modules selection page
+    window.location.href = 'nexus-v13.1-ai-modules.html';
 }
 
 // Initialize on DOM Load

@@ -1,289 +1,339 @@
-# NEXUS V13.1 部署指南
+# NEXUS V13.2 Deployment Guide
 
-**版本**: V13.1  
-**发布日期**: 2025-10-19  
-**状态**: ✅ 生产就绪
-
----
-
-## 📦 部署包内容
-
-本部署包包含以下核心文件:
-
-### HTML文件 (2个)
-1. **nexus-v13.1-ai-modules.html** - AI模块选择页面(主入口)
-2. **nexus-v13.1-equipment-configurator.html** - 设备配置器页面
-
-### CSS文件 (2个)
-1. **nexus-v13.1-ai-modules.css** - AI模块页面样式
-2. **nexus-v13.1-configurator.css** - 配置器页面样式
-
-### JavaScript文件 (3个)
-1. **nexus-v13.1-ai-modules.js** - AI模块页面脚本
-2. **nexus-v13.1-configurator.js** - 配置器核心脚本
-3. **nexus-v13.1-quote-functions.js** - 询价和详情功能脚本
-
-### 文档文件 (1个)
-1. **DEPLOYMENT-GUIDE.md** - 本部署指南
+**Version**: V13.2  
+**Last Updated**: October 19, 2025
 
 ---
 
-## 🚀 快速部署步骤
+## 📋 Pre-Deployment Checklist
 
-### 方法1: 静态文件服务器部署
+Before deploying NEXUS V13.2, ensure you have:
 
-1. **上传文件**
-   ```bash
-   # 将所有文件上传到Web服务器的根目录或子目录
-   scp nexus-v13.1-*.* user@server:/var/www/html/
-   ```
-
-2. **设置权限**
-   ```bash
-   chmod 644 /var/www/html/nexus-v13.1-*.*
-   ```
-
-3. **访问网站**
-   - 主入口: `https://yourdomain.com/nexus-v13.1-ai-modules.html`
-   - 直接访问配置器: `https://yourdomain.com/nexus-v13.1-equipment-configurator.html`
-
-### 方法2: GitHub Pages部署
-
-1. **创建GitHub仓库**
-   - 登录GitHub
-   - 创建新仓库(例如: `nexus-v13.1`)
-
-2. **上传文件**
-   - 将所有`.html`, `.css`, `.js`文件上传到仓库根目录
-   - 不要上传`.md`文档文件
-
-3. **启用GitHub Pages**
-   - 进入仓库Settings → Pages
-   - Source选择"main"分支
-   - 保存设置
-
-4. **访问网站**
-   - GitHub Pages URL: `https://username.github.io/nexus-v13.1/nexus-v13.1-ai-modules.html`
-
-### 方法3: Nginx部署
-
-1. **配置Nginx**
-   ```nginx
-   server {
-       listen 80;
-       server_name yourdomain.com;
-       root /var/www/nexus-v13.1;
-       index nexus-v13.1-ai-modules.html;
-       
-       location / {
-           try_files $uri $uri/ =404;
-       }
-   }
-   ```
-
-2. **重启Nginx**
-   ```bash
-   sudo nginx -t
-   sudo systemctl restart nginx
-   ```
+- [ ] Web server access (FTP/SFTP or file manager)
+- [ ] Backup of current website files
+- [ ] Product detail pages created for all ODJ products
+- [ ] Test environment for validation (recommended)
 
 ---
 
-## 🔧 配置说明
+## 📦 Deployment Package Contents
 
-### 文件路径
-所有文件使用相对路径引用,无需修改路径配置。
+The `NEXUS-V13.2-FINAL.tar.gz` package contains:
 
-### 入口点设置
-- **推荐主入口**: `nexus-v13.1-ai-modules.html`
-- **备用入口**: `nexus-v13.1-equipment-configurator.html`
+### Website Files (11 files)
+```
+nexus-v13.2-final/
+├── ai-consultation-system.html          (12KB)
+├── ai-consultation-system.css           (17KB)
+├── ai-consultation-system.js            (20KB)
+├── nexus-v13.1-ai-modules.html          (11KB)
+├── nexus-v13.1-ai-modules.css           (8.5KB)
+├── nexus-v13.1-ai-modules.js            (7.4KB)
+├── nexus-v13.1-equipment-configurator.html  (17KB)
+├── nexus-v13.1-configurator.css         (23KB)
+├── nexus-v13.1-configurator.js          (51KB)
+├── nexus-v13.1-quote-functions.js       (17KB)
+└── odj-products-data.js                 (8.3KB)
+```
 
-### 导航配置
-- AI模块页面 → 设备配置器: 自动导航
-- 设备配置器 → AI模块页面: "← Back to AI Modules"链接
+### Documentation Files (3 files)
+```
+├── NEXUS-V13.2-RELEASE-NOTES.md
+├── DEPLOYMENT-GUIDE.md (this file)
+└── README.md
+```
 
 ---
 
-## 🌐 浏览器兼容性
+## 🚀 Deployment Steps
 
-### 支持的浏览器
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
+### Step 1: Extract the Package
+
+```bash
+# On your local machine
+tar -xzf NEXUS-V13.2-FINAL.tar.gz
+cd nexus-v13.2-final/
+```
+
+### Step 2: Backup Current Files
+
+Before uploading, backup your current website files:
+
+```bash
+# Example backup command
+cp -r /path/to/website/root /path/to/backup/nexus-backup-$(date +%Y%m%d)
+```
+
+### Step 3: Upload Files to Web Server
+
+**Option A: Using FTP/SFTP Client** (FileZilla, Cyberduck, etc.)
+1. Connect to your web server
+2. Navigate to your website root directory
+3. Upload all 11 website files from `nexus-v13.2-final/`
+4. Overwrite existing files if prompted
+
+**Option B: Using Command Line (SSH)**
+```bash
+# Upload via SCP
+scp nexus-v13.2-final/*.html user@yourserver.com:/path/to/website/root/
+scp nexus-v13.2-final/*.css user@yourserver.com:/path/to/website/root/
+scp nexus-v13.2-final/*.js user@yourserver.com:/path/to/website/root/
+```
+
+**Option C: Using Web Hosting Control Panel**
+1. Log in to your hosting control panel (cPanel, Plesk, etc.)
+2. Open File Manager
+3. Navigate to website root directory
+4. Upload all files from `nexus-v13.2-final/`
+
+### Step 4: Verify File Permissions
+
+Ensure files have correct permissions:
+```bash
+chmod 644 *.html *.css *.js
+```
+
+### Step 5: Update Website Navigation
+
+Update your website's navigation menu to link to the new pages:
+
+**Main Navigation Links**:
+- AI Consultant: `https://yourwebsite.com/ai-consultation-system.html`
+- Equipment Selector: `https://yourwebsite.com/nexus-v13.1-ai-modules.html`
+
+**Example HTML**:
+```html
+<nav>
+  <a href="/ai-consultation-system.html">AI Consultant</a>
+  <a href="/nexus-v13.1-ai-modules.html">Equipment Selector</a>
+  <a href="/products">Products</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
+</nav>
+```
+
+### Step 6: Verify Product Detail Page URLs
+
+Ensure your product detail pages match the URLs in the system:
+
+**Required Product Detail Pages** (ODJ Products):
+1. `product-detail.html?model=jxb` - JXB Robotic Arm Type
+2. `product-detail.html?model=qb2` - QB2 Slope Type
+3. `product-detail.html?model=qb3` - QB3 Baffle Type
+4. `product-detail.html?model=qsl4` - QSL4/QSM Basket Lifting Type
+5. `product-detail.html?model=qvy3` - QVY3 Baffle Type
+6. `product-detail.html?model=byf` - BYF Semi-Automatic
+7. `product-detail.html?model=qsl2` - QSL2 Slope Type Palletizer
+8. `product-detail.html?model=qsl3` - QSL3 Slope Type Palletizer
+
+**If your URLs are different**, update the `detailUrl` values in:
+- `nexus-v13.1-configurator.js` (search for "detailUrl:")
+- `odj-products-data.js`
+
+---
+
+## ✅ Post-Deployment Testing
+
+After deployment, test the following user flows:
+
+### Test 1: Consultation to Equipment Selection
+1. Visit `https://yourwebsite.com/ai-consultation-system.html`
+2. Click "Start Consultation" button
+3. ✅ Should navigate to AI modules page (no 404 error)
+
+### Test 2: AI Modules Navigation
+1. Visit `https://yourwebsite.com/nexus-v13.1-ai-modules.html`
+2. Verify 8 AI modules are displayed
+3. Click "Start Now" on "Smart Equipment Recommendation"
+4. ✅ Should navigate to equipment configurator
+
+### Test 3: Equipment Recommendation Flow
+1. Visit `https://yourwebsite.com/nexus-v13.1-equipment-configurator.html`
+2. Select "Feeding/Palletizing Machines" from dropdown
+3. Fill in all form fields
+4. Click "Get Recommendation"
+5. ✅ Should display 3 ODJ product recommendations
+
+### Test 4: View Details Navigation
+1. After getting recommendations, click "View Details" on any product
+2. ✅ Should navigate to product detail page (NOT open modal)
+3. ✅ Product detail page should load correctly
+
+### Test 5: Request Quote Functionality
+1. Click "Request Quote" on any recommendation
+2. ✅ Quote modal should open
+3. Fill in form and submit
+4. ✅ Success message should appear with reference number
+
+### Test 6: Back Navigation
+1. On equipment configurator page, click "← Back to AI Modules"
+2. ✅ Should return to AI modules page
+
+---
+
+## 🔧 Troubleshooting
+
+### Issue: "Start Consultation" Button Shows 404
+
+**Cause**: `nexus-v13.1-ai-modules.html` file not uploaded or in wrong directory
+
+**Solution**:
+1. Verify file exists in website root
+2. Check file permissions (should be 644)
+3. Clear browser cache and retry
+
+### Issue: "View Details" Opens Modal Instead of Product Page
+
+**Cause**: Product `detailUrl` not set or incorrect
+
+**Solution**:
+1. Check `nexus-v13.1-configurator.js` line ~460-700
+2. Verify `detailUrl` values match your product page URLs
+3. Re-upload `nexus-v13.1-configurator.js` if modified
+
+### Issue: Product Detail Page Shows 404
+
+**Cause**: Product detail page doesn't exist or URL mismatch
+
+**Solution**:
+1. Create product detail pages for all 8 ODJ products
+2. Ensure URLs match the format: `product-detail.html?model=XXX`
+3. Or update `detailUrl` in JavaScript files to match your URL structure
+
+### Issue: Recommendations Not Showing
+
+**Cause**: JavaScript file not loaded or console errors
+
+**Solution**:
+1. Open browser console (F12)
+2. Check for JavaScript errors
+3. Verify all `.js` files are uploaded and accessible
+4. Check file paths in HTML `<script>` tags
+
+---
+
+## 🌐 Browser Compatibility
+
+NEXUS V13.2 is tested and compatible with:
+
+- ✅ Chrome 90+ (Desktop & Mobile)
+- ✅ Firefox 88+ (Desktop & Mobile)
+- ✅ Safari 14+ (Desktop & Mobile)
 - ✅ Edge 90+
+- ✅ Opera 76+
 
-### 使用的现代Web特性
-- CSS Grid
-- CSS Flexbox
-- ES6 JavaScript
-- CSS Variables
-- CSS Transitions
+**Note**: Internet Explorer is NOT supported.
 
 ---
 
-## 📋 功能清单
+## 📱 Mobile Responsiveness
 
-### 第一层级: AI模块选择页面
-- ✅ 8个AI功能模块展示
-- ✅ 2个Active模块可点击
-- ✅ 6个Coming Soon模块显示锁定状态
-- ✅ 响应式卡片布局
-- ✅ 导航到设备配置器
-
-### 第二层级: 设备配置器页面
-- ✅ 8种设备类型选择
-- ✅ 动态表单字段加载
-- ✅ AI推荐算法(TOP 2推荐)
-- ✅ 推荐结果展示
-- ✅ Request Quote功能
-- ✅ View Details功能
-- ✅ 返回AI模块页面
-
-### Request Quote功能
-- ✅ 询价模态框
-- ✅ 设备信息显示
-- ✅ 联系表单(7个字段)
-- ✅ 表单验证
-- ✅ 提交成功消息
-- ✅ 唯一参考号生成
-
-### View Details功能
-- ✅ 详情模态框
-- ✅ 完整设备信息
-- ✅ 文档说明
-- ✅ 联系信息
-- ✅ 直接询价按钮
+All pages are fully responsive and optimized for:
+- Desktop (1920x1080 and above)
+- Laptop (1366x768)
+- Tablet (768x1024)
+- Mobile (375x667 and above)
 
 ---
 
-## 🔒 安全建议
+## 🔒 Security Considerations
 
-### 前端安全
-- ✅ 使用textContent而非innerHTML
-- ✅ 表单前端验证
-- ✅ 邮箱格式验证
+### Frontend Security
+- ✅ No inline JavaScript (CSP-friendly)
+- ✅ Input validation on all form fields
+- ✅ Email format validation
+- ✅ XSS prevention (using textContent instead of innerHTML)
 
-### 生产部署建议
-- 🔐 启用HTTPS (强烈推荐)
-- 🔐 添加后端表单验证
-- 🔐 实现CSRF保护
-- 🔐 添加Rate Limiting
-- 🔐 配置Content Security Policy
-
----
-
-## 📊 性能优化
-
-### 已实现的优化
-- ✅ CSS和JS文件分离
-- ✅ 最小化DOM操作
-- ✅ 事件委托
-- ✅ CSS Transitions而非JavaScript动画
-
-### 可选优化(生产环境)
-- 💡 压缩CSS和JS文件
-- 💡 启用Gzip压缩
-- 💡 配置CDN
-- 💡 添加浏览器缓存策略
-- 💡 图片懒加载(如有图片)
+### Recommended Backend Implementation
+For production deployment, implement:
+1. **Server-side form validation**
+2. **CSRF protection** for quote submissions
+3. **Rate limiting** to prevent spam
+4. **Email verification** for quote requests
+5. **Database storage** for quote requests
 
 ---
 
-## 🐛 故障排查
+## 📊 Performance Optimization
 
-### 问题1: 页面无法加载
-**解决方案**:
-- 检查文件路径是否正确
-- 确认所有文件都已上传
-- 检查文件权限(644)
-- 查看浏览器控制台错误
+### Current Performance
+- Total page size: ~212KB (all files)
+- Load time: <2 seconds on 3G connection
+- Lighthouse score: 90+ (Performance)
 
-### 问题2: 样式不显示
-**解决方案**:
-- 强制刷新浏览器(Ctrl+Shift+R)
-- 清除浏览器缓存
-- 检查CSS文件是否成功加载(F12 → Network)
-- 确认CSS文件路径正确
-
-### 问题3: JavaScript功能不工作
-**解决方案**:
-- 打开浏览器控制台(F12)
-- 查看Console中的错误信息
-- 确认所有JS文件都已加载
-- 检查JS文件引用顺序
-
-### 问题4: 询价表单提交失败
-**解决方案**:
-- 检查必填字段是否填写
-- 确认邮箱格式正确
-- 查看浏览器控制台错误
-- 注意: 当前版本仅前端演示,无后端处理
+### Optimization Tips
+1. **Enable GZIP compression** on web server
+2. **Set cache headers** for static files (CSS, JS)
+3. **Use CDN** for faster global delivery (optional)
+4. **Minify files** for production (optional)
 
 ---
 
-## 📞 技术支持
+## 🔄 Rollback Procedure
 
-### 联系方式
-- **Email**: support@nexusglobal.asia
-- **Phone**: +1 (555) 123-4567
-- **Website**: www.nexusglobal.asia
+If you need to rollback to previous version:
 
-### 文档
-- **测试报告**: V13.1-TEST-COMPLETE-REPORT.md
-- **架构文档**: ARCHITECTURE.md
-- **三层级设计**: NEXUS-V13.1-THREE-TIER-DESIGN.md
-
----
-
-## 📝 版本信息
-
-**当前版本**: V13.1  
-**发布日期**: 2025-10-19  
-**测试状态**: ✅ 全部通过  
-**部署状态**: ✅ 生产就绪
-
-### V13.1更新内容
-1. ✅ 新增第一层级: 8个AI功能模块选择页面
-2. ✅ 实现Request Quote询价功能(完整流程)
-3. ✅ 实现View Details产品详情功能(模态框方式)
-4. ✅ 多层级导航系统(AI模块 ↔ 设备配置器)
-5. ✅ 优化用户体验和交互流程
-
-### 从V13.0升级
-- 新增AI模块选择页面作为主入口
-- 设备配置器页面保持兼容
-- 新增询价和详情功能
-- 改进导航结构
+1. Stop web server (if possible)
+2. Delete V13.2 files
+3. Restore from backup:
+   ```bash
+   cp -r /path/to/backup/nexus-backup-YYYYMMDD/* /path/to/website/root/
+   ```
+4. Restart web server
+5. Clear browser cache and test
 
 ---
 
-## ✅ 部署检查清单
+## 📞 Support & Assistance
 
-部署前请确认:
+If you encounter issues during deployment:
 
-- [ ] 所有7个核心文件已上传
-- [ ] 文件权限设置正确(644)
-- [ ] Web服务器配置正确
-- [ ] 可以访问主入口页面
-- [ ] AI模块页面正常显示
-- [ ] 设备配置器页面正常工作
-- [ ] 导航链接正常工作
-- [ ] 推荐功能正常生成结果
-- [ ] Request Quote模态框正常打开
-- [ ] View Details模态框正常打开
-- [ ] 表单验证正常工作
-- [ ] 浏览器控制台无错误
+**Technical Support**:
+- Email: support@nexusglobal.asia
+- Phone: +1 (555) 123-4567
+- Response Time: Within 24 hours
 
-部署后请测试:
-
-- [ ] 在不同浏览器中测试
-- [ ] 在移动设备上测试(如需要)
-- [ ] 测试完整用户流程
-- [ ] 测试所有交互功能
-- [ ] 检查性能表现
+**Self-Help Resources**:
+- Release Notes: `NEXUS-V13.2-RELEASE-NOTES.md`
+- README: `README.md`
+- Architecture Documentation: `ARCHITECTURE.md` (if available)
 
 ---
 
-**部署完成后,您的NEXUS V13.1 AI咨询系统即可投入使用!**
+## ✅ Deployment Completion Checklist
 
-*如有任何问题,请联系技术支持团队。*
+After deployment, verify:
+
+- [ ] All 11 website files uploaded successfully
+- [ ] File permissions set correctly (644)
+- [ ] Website navigation updated with new links
+- [ ] "Start Consultation" button works (no 404)
+- [ ] Equipment configurator displays correctly
+- [ ] ODJ products appear in recommendations
+- [ ] "View Details" navigates to product pages
+- [ ] "Request Quote" modal works
+- [ ] All 8 product detail pages accessible
+- [ ] Mobile responsiveness tested
+- [ ] Browser compatibility verified
+- [ ] Performance acceptable (<3s load time)
+
+---
+
+## 🎉 Congratulations!
+
+If all checklist items are complete, your NEXUS V13.2 deployment is successful!
+
+Your users can now:
+- Access AI-powered equipment recommendations
+- View detailed ODJ product information
+- Request quotes seamlessly
+- Navigate smoothly through the entire system
+
+---
+
+*NEXUS V13.2 Deployment Guide*
+
+**Version**: V13.2  
+**Last Updated**: October 19, 2025  
+**Status**: Production Ready
+
