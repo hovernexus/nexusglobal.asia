@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS Equipment Configurator - Smart Equipment Recommendation</title>
+    <link rel="stylesheet" href="nexus-v13.0-configurator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <a href="/index.html" class="logo">
+                    <span class="logo-text">NEXUS</span>
+                    <span class="logo-subtitle">GLOBAL HOLDINGS</span>
+                </a>
+            </div>
+            <h1 class="page-title">Equipment Configuration System</h1>
+            <p class="page-subtitle">AI-Powered Smart Equipment Recommendation & Compatibility Analysis</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="configurator-container">
+        <!-- Left Panel: Configuration Form -->
+        <aside class="config-panel">
+            <div class="panel-header">
+                <div class="header-icon">⚙️</div>
+                <h2>Requirements Configuration</h2>
+                <p class="header-description">
+                    Enter your production requirements, and AI will recommend the most suitable equipment configuration
+                </p>
+            </div>
+
+            <form id="equipmentConfigForm" class="config-form">
+                <!-- Equipment Type -->
+                <div class="form-group">
+                    <label for="equipmentType" class="form-label">
+                        <span class="label-icon">📦</span>
+                        <span class="label-text">Equipment Type</span>
+                        <span class="label-required">*</span>
+                    </label>
+                    <select id="equipmentType" name="equipmentType" class="form-select" required>
+                        <option value="">Select equipment type</option>
+                        <option value="digital-printing">Digital Printing Machines</option>
+                        <option value="die-cutting">Die-Cutting Machines</option>
+                        <option value="feeding-palletizing">Feeding/Palletizing Machines</option>
+                        <option value="folder-gluer">Folder Gluer/Stitcher</option>
+                        <option value="laminator">Laminator/Filming Machine</option>
+                        <option value="corrugator">Corrugator Line</option>
+                        <option value="flexo-printing">Flexo Printing Machines</option>
+                        <option value="strapping">Strapping/Stitching Machines</option>
+                    </select>
+                </div>
+
+                <!-- Dynamic Fields Container -->
+                <div id="dynamicFieldsContainer">
+                    <!-- Fields will be dynamically inserted here based on equipment type -->
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" id="submitBtn" disabled>
+                    <span class="btn-icon">🚀</span>
+                    <span class="btn-text">Get Recommendation</span>
+                </button>
+
+                <!-- Reset Button -->
+                <button type="button" class="reset-btn" id="resetBtn">
+                    <span class="btn-icon">🔄</span>
+                    <span class="btn-text">Reset Form</span>
+                </button>
+            </form>
+        </aside>
+
+        <!-- Right Panel: Results Display -->
+        <section class="results-panel">
+            <div id="resultsContainer" class="results-container">
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">⚡</div>
+                    <h3 class="empty-title">Ready to Find Your Perfect Equipment</h3>
+                    <p class="empty-description">
+                        Fill in your requirements on the left and click "Get Recommendation" to receive personalized equipment suggestions
+                    </p>
+                    <div class="empty-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">🎯</span>
+                            <span class="feature-text">AI-Powered Matching</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">⭐</span>
+                            <span class="feature-text">Top 3 Recommendations</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">💰</span>
+                            <span class="feature-text">Budget-Friendly Options</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div class="loading-state" id="loadingState" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <h3 class="loading-title">Analyzing Your Requirements...</h3>
+                    <p class="loading-description">Our AI is finding the best equipment matches for you</p>
+                </div>
+
+                <!-- Results will be dynamically inserted here -->
+                <div id="recommendationsContainer" style="display: none;">
+                    <!-- Recommendations Header -->
+                    <div class="results-header">
+                        <h2 class="results-title">🎯 Equipment Recommendations</h2>
+                        <p class="results-subtitle">Based on your requirements, here are the top matches:</p>
+                    </div>
+
+                    <!-- Recommendations List -->
+                    <div id="recommendationsList" class="recommendations-list">
+                        <!-- Equipment cards will be inserted here -->
+                    </div>
+
+                    <!-- Next Steps -->
+                    <div class="next-steps">
+                        <h3 class="next-steps-title">💡 Next Steps</h3>
+                        <p class="next-steps-description">What would you like to do?</p>
+                        <div class="action-buttons">
+                            <button class="action-btn primary" id="requestQuoteBtn">
+                                <span class="btn-icon">📧</span>
+                                <span class="btn-text">Request Detailed Quotation</span>
+                            </button>
+                            <button class="action-btn secondary" id="scheduleConsultBtn">
+                                <span class="btn-icon">📞</span>
+                                <span class="btn-text">Schedule Consultation</span>
+                            </button>
+                            <button class="action-btn secondary" id="compareBtn">
+                                <span class="btn-icon">🔄</span>
+                                <span class="btn-text">Compare All Options</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>© 2025 NEXUS Global Holdings - AI-Powered Equipment Recommendation Platform</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="nexus-v13.0-configurator.js"></script>
+</body>
+</html>
+
