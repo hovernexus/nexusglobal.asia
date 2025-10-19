@@ -272,7 +272,7 @@ function viewEquipmentDetails(equipment) {
                 <button class="quote-modal-close" onclick="closeEquipmentDetailModal()">&times;</button>
                 
                 <div class="quote-modal-header">
-                    <div class="quote-modal-icon">📋</div>
+                    <div class="quote-modal-icon"></div>
                     <h2 class="quote-modal-title">Equipment Details</h2>
                     <p class="quote-modal-subtitle">Complete specifications and information</p>
                 </div>
@@ -302,7 +302,7 @@ function viewEquipmentDetails(equipment) {
                     </div>
                     
                     <div style="margin-top: 20px;">
-                        <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">📄 Full Equipment Information</h4>
+                        <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Full Equipment Information</h4>
                         <p style="color: #666; line-height: 1.6;">
                             For complete technical specifications, CAD drawings, user manuals, and detailed product information, 
                             please contact our sales team or submit a quote request.
@@ -320,7 +320,7 @@ function viewEquipmentDetails(equipment) {
                     </div>
                     
                     <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
-                        <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">📞 Contact Information</h4>
+                        <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Contact Information</h4>
                         <p style="color: #666; line-height: 1.6;">
                             <strong>Email:</strong> sales@nexusglobal.asia<br>
                             <strong>Phone:</strong> +1 (555) 123-4567<br>

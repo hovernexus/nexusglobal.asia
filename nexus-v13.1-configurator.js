@@ -12,7 +12,7 @@ const EQUIPMENT_FORM_FIELDS = {
         {
             id: 'productType',
             label: 'Product Type',
-            icon: '📦',
+            icon: '',
             type: 'select',
             required: true,
             options: [
@@ -75,7 +75,7 @@ const EQUIPMENT_FORM_FIELDS = {
         {
             id: 'budget',
             label: 'Budget Range (USD)',
-            icon: '💰',
+            icon: '',
             type: 'select',
             required: true,
             options: [
@@ -130,7 +130,7 @@ const EQUIPMENT_FORM_FIELDS = {
         {
             id: 'processComplexity',
             label: 'Process Complexity',
-            icon: '🔧',
+            icon: '',
             type: 'select',
             required: true,
             options: [
@@ -143,7 +143,7 @@ const EQUIPMENT_FORM_FIELDS = {
         {
             id: 'automation',
             label: 'Automation Level',
-            icon: '🤖',
+            icon: '',
             type: 'select',
             required: true,
             options: [
@@ -156,7 +156,7 @@ const EQUIPMENT_FORM_FIELDS = {
         {
             id: 'budget',
             label: 'Budget Range (USD)',
-            icon: '💰',
+            icon: '',
             type: 'select',
             required: true,
             options: [
@@ -172,7 +172,7 @@ const EQUIPMENT_FORM_FIELDS = {
         {
             id: 'automationLevel',
             label: 'Automation Level',
-            icon: '🤖',
+            icon: '',
             type: 'select',
             required: true,
             options: [
@@ -185,7 +185,7 @@ const EQUIPMENT_FORM_FIELDS = {
         {
             id: 'maxLoad',
             label: 'Maximum Load Requirement',
-            icon: '⚖️',
+            icon: '',
             type: 'select',
             required: true,
             options: [
@@ -198,7 +198,7 @@ const EQUIPMENT_FORM_FIELDS = {
         {
             id: 'integration',
             label: 'Production Line Integration',
-            icon: '🔗',
+            icon: '',
             type: 'select',
             required: true,
             options: [
@@ -211,7 +211,7 @@ const EQUIPMENT_FORM_FIELDS = {
         {
             id: 'budget',
             label: 'Budget Range (USD)',
-            icon: '💰',
+            icon: '',
             type: 'select',
             required: true,
             options: [
@@ -228,7 +228,7 @@ const EQUIPMENT_FORM_FIELDS = {
         {
             id: 'boxType',
             label: 'Box Type',
-            icon: '📦',
+            icon: '',
             type: 'select',
             required: true,
             options: [
@@ -267,7 +267,7 @@ const EQUIPMENT_FORM_FIELDS = {
         {
             id: 'budget',
             label: 'Budget Range (USD)',
-            icon: '💰',
+            icon: '',
             type: 'select',
             required: true,
             options: [
@@ -455,66 +455,254 @@ const EQUIPMENT_DATABASE = {
     ],
     
     'feeding-palletizing': [
+        // ODJ Products - Foshan ODJ Intelligent Technology Co., Ltd.
         {
-            id: 'fp-001',
-            name: 'NEXUS AutoStack 200',
-            supplier: 'NEXUS Partners - Automation Division',
+            id: 'odj-rys-001',
+            name: 'RYS Semi-Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
             category: 'Feeding/Palletizing Machines',
             tier: 'entry',
             specs: {
-                maxLoad: 200,
-                automation: 'semi-automatic',
+                automation: 'semi',
+                maxLoad: 150,
                 integration: 'standalone'
             },
             capacity: {
-                stacksPerHour: 30,
-                suitableFor: 'small-operations'
+                stacksPerHour: 25,
+                suitableFor: 'small-medium-volume'
             },
             price: {
-                range: '$45,000 - $70,000',
-                min: 45000,
-                max: 70000
+                range: '$30,000 - $50,000',
+                min: 30000,
+                max: 50000
             },
             features: [
-                'Semi-automatic palletizing',
-                'Easy operation',
-                'Compact footprint',
-                'Reliable performance'
+                'Semi-automatic operation',
+                'Manual assistance',
+                'Cost-effective',
+                'Simple structure',
+                'Easy maintenance'
             ],
-            applications: ['Light-duty palletizing', 'Small production lines'],
+            applications: ['Small production lines', 'Budget-conscious operations'],
             leadTime: 8,
-            image: '/images/equipment/autostack-200.jpg'
+            image: '/images/odj/rys-semi-auto-prefeeder.jpg'
         },
         {
-            id: 'fp-002',
-            name: 'NEXUS RoboPal 350',
-            supplier: 'NEXUS Partners - Automation Division',
+            id: 'odj-byf-001',
+            name: 'BYF Semi-Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'entry',
+            specs: {
+                automation: 'semi',
+                maxLoad: 180,
+                integration: 'standalone'
+            },
+            capacity: {
+                stacksPerHour: 28,
+                suitableFor: 'small-medium-volume'
+            },
+            price: {
+                range: '$35,000 - $55,000',
+                min: 35000,
+                max: 55000
+            },
+            features: [
+                'Semi-automatic feeding',
+                'Manual assistance required',
+                'Budget-friendly',
+                'Compact footprint',
+                'Low maintenance'
+            ],
+            applications: ['Small to medium production', 'Entry-level automation'],
+            leadTime: 8,
+            image: '/images/odj/byf-semi-auto-prefeeder.jpg'
+        },
+        {
+            id: 'odj-qb3-001',
+            name: 'QB3 Raffle Type Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'professional',
+            specs: {
+                automation: 'full',
+                maxLoad: 200,
+                integration: 'standalone'
+            },
+            capacity: {
+                stacksPerHour: 35,
+                suitableFor: 'medium-volume'
+            },
+            price: {
+                range: '$70,000 - $100,000',
+                min: 70000,
+                max: 100000
+            },
+            features: [
+                'Raffle-type feeding mechanism',
+                'Automatic operation',
+                'Compact design',
+                'Stable performance',
+                'Easy to operate'
+            ],
+            applications: ['Medium production lines', 'Automated feeding systems'],
+            leadTime: 10,
+            image: '/images/odj/qb3-raffle-prefeeder.jpg'
+        },
+        {
+            id: 'odj-qy3-001',
+            name: 'QY3 Baffle Type Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'professional',
+            specs: {
+                automation: 'full',
+                maxLoad: 220,
+                integration: 'inline'
+            },
+            capacity: {
+                stacksPerHour: 38,
+                suitableFor: 'medium-volume'
+            },
+            price: {
+                range: '$75,000 - $110,000',
+                min: 75000,
+                max: 110000
+            },
+            features: [
+                'Baffle-type mechanism',
+                'Automatic feeding',
+                'Precise positioning',
+                'Reliable operation',
+                'Good value'
+            ],
+            applications: ['Medium production lines', 'Inline feeding systems'],
+            leadTime: 10,
+            image: '/images/odj/qy3-baffle-prefeeder.jpg'
+        },
+        {
+            id: 'odj-qb2-001',
+            name: 'QB2 Slope Type Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'professional',
+            specs: {
+                automation: 'full',
+                maxLoad: 250,
+                integration: 'inline'
+            },
+            capacity: {
+                stacksPerHour: 40,
+                suitableFor: 'medium-high-volume'
+            },
+            price: {
+                range: '$80,000 - $120,000',
+                min: 80000,
+                max: 120000
+            },
+            features: [
+                'Slope-type feeding mechanism',
+                'Automatic pre-feeding',
+                'Reliable performance',
+                'Easy maintenance',
+                'Cost-effective solution'
+            ],
+            applications: ['Medium to high volume production', 'Automated production lines'],
+            leadTime: 10,
+            image: '/images/odj/qb2-slope-prefeeder.jpg'
+        },
+        {
+            id: 'odj-qvy3-001',
+            name: 'QVY3 Baffle Type Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'professional',
+            specs: {
+                automation: 'full',
+                maxLoad: 240,
+                integration: 'inline'
+            },
+            capacity: {
+                stacksPerHour: 42,
+                suitableFor: 'medium-high-volume'
+            },
+            price: {
+                range: '$85,000 - $125,000',
+                min: 85000,
+                max: 125000
+            },
+            features: [
+                'Advanced baffle mechanism',
+                'Automatic operation',
+                'High precision',
+                'Enhanced stability',
+                'Improved efficiency'
+            ],
+            applications: ['High-efficiency production', 'Advanced feeding systems'],
+            leadTime: 11,
+            image: '/images/odj/qvy3-baffle-advanced-prefeeder.jpg'
+        },
+        {
+            id: 'odj-qsl4-001',
+            name: 'QSL4/QSM Basket (Lifting) Type Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'professional',
+            specs: {
+                automation: 'full',
+                maxLoad: 280,
+                integration: 'inline'
+            },
+            capacity: {
+                stacksPerHour: 45,
+                suitableFor: 'medium-high-volume'
+            },
+            price: {
+                range: '$90,000 - $130,000',
+                min: 90000,
+                max: 130000
+            },
+            features: [
+                'Basket lifting mechanism',
+                'Automatic feeding',
+                'High efficiency',
+                'Smooth operation',
+                'Versatile application'
+            ],
+            applications: ['High-volume production', 'Versatile feeding applications'],
+            leadTime: 11,
+            image: '/images/odj/qsl4-qsm-basket-prefeeder.jpg'
+        },
+        {
+            id: 'odj-jxb-001',
+            name: 'JXB Robotic Arm Type Automatic Pre-Feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
             category: 'Feeding/Palletizing Machines',
             tier: 'flagship',
             specs: {
-                maxLoad: 350,
                 automation: 'robotic',
+                maxLoad: 300,
                 integration: 'end-of-line'
             },
             capacity: {
-                stacksPerHour: 60,
+                stacksPerHour: 50,
                 suitableFor: 'high-volume-operations'
             },
             price: {
-                range: '$180,000 - $250,000',
-                min: 180000,
-                max: 250000
+                range: '$150,000 - $200,000',
+                min: 150000,
+                max: 200000
             },
             features: [
-                'AI-powered robotic system',
-                '3D vision technology',
-                'Flexible pallet patterns',
-                'End-of-line integration',
-                'Remote monitoring and diagnostics'
+                'Robotic arm technology',
+                '3D vision system',
+                'Automatic pre-feeding',
+                'High precision positioning',
+                'Flexible integration'
             ],
-            applications: ['Heavy-duty palletizing', 'High-volume production', 'Smart factory integration'],
-            leadTime: 16,
-            image: '/images/equipment/robopal-350.jpg'
+            applications: ['High-volume production', 'Smart factory integration', 'Advanced automation'],
+            leadTime: 12,
+            image: '/images/odj/jxb-robotic-arm-prefeeder.jpg'
         }
     ],
     
@@ -1074,11 +1262,11 @@ function calculateWidthMatchScore(required, available) {
 }
 
 function getStarRating(score) {
-    if (score >= 90) return '⭐⭐⭐⭐⭐';
-    if (score >= 75) return '⭐⭐⭐⭐';
-    if (score >= 60) return '⭐⭐⭐';
-    if (score >= 45) return '⭐⭐';
-    return '⭐';
+    if (score >= 90) return '';
+    if (score >= 75) return '';
+    if (score >= 60) return '';
+    if (score >= 45) return '';
+    return '';
 }
 
 function getMatchLevel(score) {
@@ -1212,11 +1400,11 @@ function createEquipmentCard(equipment, rank) {
         </div>
         
         <div class="card-features">
-            <div class="features-title">✨ Key Features</div>
+            <div class="features-title">Key Features</div>
             <div class="features-list">
                 ${equipment.features.map(feature => `
                     <div class="feature-item-card">
-                        <span class="feature-check">✓</span>
+                        <span class="feature-check"></span>
                         <span>${feature}</span>
                     </div>
                 `).join('')}
@@ -1224,7 +1412,7 @@ function createEquipmentCard(equipment, rank) {
         </div>
         
         <div class="card-reason">
-            <div class="reason-title">💡 Why We Recommend This</div>
+            <div class="reason-title">Why We Recommend This</div>
             <div class="reason-text">${equipment.recommendationReason}</div>
         </div>
         

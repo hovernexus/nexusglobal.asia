@@ -11,7 +11,7 @@ function navigateToModule(moduleId) {
     const moduleRoutes = {
         'equipment-recommendation': 'nexus-v13.1-equipment-configurator.html',
         'roi-calculator': null,  // Coming soon
-        'ai-consultation': 'consultation-chat.html',
+        'ai-consultation': null,  // Coming soon
         'troubleshooting': null,  // Coming soon
         'industry-encyclopedia': null,  // Coming soon
         'technical-docs': null,  // Coming soon
@@ -58,7 +58,7 @@ function showLoadingAnimation() {
     
     loadingOverlay.innerHTML = `
         <div style="text-align: center;">
-            <div style="font-size: 80px; margin-bottom: 20px; animation: spin 1s linear infinite;">⚙️</div>
+            <div style="font-size: 80px; margin-bottom: 20px; animation: spin 1s linear infinite;"></div>
             <div style="font-size: 24px; color: white; font-weight: 600;">Loading AI Module...</div>
         </div>
     `;
@@ -125,7 +125,7 @@ function showComingSoonMessage(moduleId) {
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             animation: slideUp 0.3s ease-out;
         ">
-            <div style="font-size: 80px; margin-bottom: 20px;">🚀</div>
+            <div style="font-size: 80px; margin-bottom: 20px;"></div>
             <h2 style="font-size: 28px; color: #1a1a2e; margin-bottom: 15px; font-weight: 600;">Coming Soon!</h2>
             <p style="font-size: 16px; color: #666; margin-bottom: 30px; line-height: 1.6;">
                 <strong>${moduleName}</strong> is currently under development. 
@@ -133,7 +133,7 @@ function showComingSoonMessage(moduleId) {
             </p>
             <div style="background: linear-gradient(135deg, #f5f7fa, #c3cfe2); padding: 20px; border-radius: 12px; margin-bottom: 30px;">
                 <p style="font-size: 14px; color: #444; margin: 0;">
-                    📧 Want to be notified when it's ready?<br>
+                     Want to be notified when it's ready?<br>
                     Contact us at <strong>support@nexusglobal.asia</strong>
                 </p>
             </div>
