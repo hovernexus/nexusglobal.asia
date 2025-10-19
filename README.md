@@ -1,96 +1,134 @@
-# NEXUS V11.5.1 紧急修复包
+# NEXUS V12.0 部署包
 
-## 🚨 问题说明
+## 📦 包含内容
 
-V11.5.0版本中,`products-complete.json`文件的图片路径缺少了`images/products/`前缀,导致:
+本部署包包含NEXUS网站V12.0版本的所有更新文件和文档。
 
-1. ❌ ODJ公司页面所有产品显示相同的图片
-2. ❌ 产品详情页面无法显示图片(显示破损图标)
-
-## ✅ 修复内容
-
-本次修复将所有ODJ产品的图片路径从:
-- `odj-jxb-2.jpg` → `images/products/odj-jxb-2.jpg`
-- `odj-qsl2-2.jpg` → `images/products/odj-qsl2-2.jpg`
-- `odj-qsl3-2.jpg` → `images/products/odj-qsl3-2.jpg`
-- `odj-qsl4-2.jpg` → `images/products/odj-qsl4-2.jpg`
-- `odj-qxy3-2.jpg` → `images/products/odj-qxy3-2.jpg`
-- `odj-bys-2.jpg` → `images/products/odj-bys-2.jpg`
-- `odj-md350-2.jpg` → `images/products/odj-md350-2.jpg`
-- `odj-fp1650-2.jpg` → `images/products/odj-fp1650-2.jpg`
-
-## 📦 包含文件
-
+### 目录结构
 ```
-NEXUS-V11.5.1-HOTFIX/
-├── README.md (本文件)
-├── VERSION.txt
-└── data/
-    └── products-complete.json (修复后的产品数据库)
+nexus-v12.0-delivery/
+├── README.md                           (本文件)
+├── new-files/                          (新增文件)
+│   ├── consultation-chat.html          (AI对话界面)
+│   ├── consultation-chat.css           (样式文件)
+│   ├── consultation-chat.js            (基础版JS)
+│   ├── consultation-chat-multilang.js  (⭐ 推荐:多语言版JS)
+│   └── consultation-chat-enhanced.js   (增强版JS)
+├── modified-files/                     (修改的文件)
+│   └── ai-consultation-system.js       (修改后的文件)
+└── documentation/                      (文档)
+    ├── NEXUS-V12.0-UPDATE-NOTES.md     (详细更新说明)
+    ├── NEXUS-V12.0-FILES-LIST.md       (文件清单和部署指南)
+    └── nexus-ai-chat-design.md         (设计文档)
 ```
 
-## 🚀 部署步骤(1分钟)
+---
 
-### 方法1: 通过GitHub网页界面上传(推荐)
+## 🚀 快速部署指南
 
-1. **访问GitHub仓库**
-   - https://github.com/nexusglobal/nexusglobal.asia
+### 方案A: 多语言版本 (⭐ 推荐)
 
-2. **上传VERSION.txt(根目录)**
-   - 点击 **"Add file"** → **"Upload files"**
-   - 拖入 `VERSION.txt`
-   - 提交信息: `V11.5.1: Fix image paths`
-   - 点击 **"Commit changes"**
-
-3. **上传products-complete.json(data目录)**
-   - 进入 **`data`** 目录
-   - 点击 **"Add file"** → **"Upload files"**
-   - 拖入 `products-complete.json`
-   - 提交信息: `Fix ODJ product image paths`
-   - 点击 **"Commit changes"**
-
-### 方法2: 通过Git命令行
-
+**步骤1**: 上传新文件
 ```bash
-# 1. 克隆仓库
-git clone https://github.com/nexusglobal/nexusglobal.asia.git
-cd nexusglobal.asia
-
-# 2. 复制文件
-cp /path/to/VERSION.txt .
-cp /path/to/products-complete.json data/
-
-# 3. 提交并推送
-git add .
-git commit -m "V11.5.1: Fix ODJ product image paths"
-git push origin main
+# 上传到网站根目录
+- consultation-chat.html
+- consultation-chat.css
+- consultation-chat-multilang.js
 ```
 
-## ✅ 验证步骤
+**步骤2**: 替换修改的文件
+```bash
+# 替换现有文件
+- ai-consultation-system.js
+```
 
-部署完成后(等待1-3分钟):
+**步骤3**: 更新HTML引用
+在 `consultation-chat.html` 中使用:
+```html
+<script src="consultation-chat-multilang.js"></script>
+```
 
-1. **验证ODJ公司页面**
-   - 访问: https://nexusglobal.asia/company-detail.html?id=odj&type=supplier
-   - 强制刷新: **Ctrl+Shift+R** (Windows) 或 **Cmd+Shift+R** (Mac)
-   - 检查: 每款产品是否显示正确的图片(不再是相同的图片)
+**步骤4**: 测试
+访问 AI Consultant 页面,点击 "Start Consultation"
 
-2. **验证产品详情页面**
-   - 点击任意产品的 **"View Details"** 按钮
-   - 检查: 产品图片是否正常显示(不再是破损图标)
+---
 
-## 🎉 预期结果
+### 方案B: 基础版本
 
-- ✅ ODJ公司页面每款产品显示各自正确的图片
-- ✅ 产品详情页面图片正常显示
-- ✅ 所有产品图片与参考标准匹配
+**步骤1-2**: 同上
 
-## 📞 需要帮助?
+**步骤3**: 更新HTML引用
+```html
+<script src="consultation-chat.js"></script>
+```
 
-如果部署后仍有问题,请提供:
-1. 浏览器控制台的错误信息(F12 → Console)
-2. 具体哪个产品的图片仍然不正确
-3. 截图
+---
 
-我会立即协助您解决!
+## ✨ 核心功能
+
+### 多语言自动匹配 (推荐版本)
+- ✅ 自动检测用户输入语言
+- ✅ AI用相同语言回复
+- ✅ 支持14+主流语言
+- ✅ 预设多语言模板
+
+### 支持的语言
+🇬🇧 English | 🇨🇳 中文 | 🇪🇸 Español | 🇵🇹 Português | 🇯🇵 日本語 | 🇰🇷 한국어 | 🇩🇪 Deutsch | 🇫🇷 Français | 🇮🇹 Italiano | 🇷🇺 Русский | 🇸🇦 العربية | 🇮🇳 हिन्दी | 🇹🇭 ไทย | 🇻🇳 Tiếng Việt
+
+---
+
+## 📋 部署检查清单
+
+- [ ] 备份现有网站
+- [ ] 上传新文件到服务器
+- [ ] 替换 ai-consultation-system.js
+- [ ] 选择JS版本(推荐多语言版)
+- [ ] 测试"Start Consultation"按钮
+- [ ] 测试多语言输入
+- [ ] 测试完整对话流程
+- [ ] 验证移动端显示
+- [ ] 检查HTTPS部署
+
+---
+
+## 📖 详细文档
+
+请查看 `documentation/` 目录中的文档:
+
+1. **NEXUS-V12.0-UPDATE-NOTES.md**
+   - 完整的版本更新说明
+   - 功能详解
+   - 技术实现细节
+
+2. **NEXUS-V12.0-FILES-LIST.md**
+   - 文件清单
+   - 详细部署步骤
+   - 配置选项
+   - 故障排除
+
+3. **nexus-ai-chat-design.md**
+   - 设计规范
+   - 对话流程
+   - 技术架构
+
+---
+
+## 🔧 技术支持
+
+如有问题,请联系:
+- **邮箱**: tech@nexusglobal.asia
+- **文档**: 查看 documentation/ 目录
+
+---
+
+## 📊 版本信息
+
+- **版本**: V12.0
+- **发布日期**: 2025-10-19
+- **基础版本**: V11.3.5
+- **更新类型**: 核心功能开发
+
+---
+
+**准备部署? 请先阅读 `documentation/NEXUS-V12.0-FILES-LIST.md` 获取详细指南!**
 

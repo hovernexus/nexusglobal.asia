@@ -487,10 +487,8 @@ function launchModule(moduleId) {
 
 // Start Consultation
 function startConsultation() {
-    alert('Starting AI Consultation...\n\nThis is a demo. In production, this would:\n- Open an AI chat interface\n- Connect you with our AI consultant\n- Begin guided conversation\n\nThank you for your interest!');
-    
-    // In production, you would open a chat widget or navigate to consultation page
-    // window.location.href = 'consultation.html';
+    // Navigate to the AI consultation chat interface
+    window.location.href = 'consultation-chat.html';
 }
 
 // Initialize on DOM Load

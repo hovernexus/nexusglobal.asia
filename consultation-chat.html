@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Consultation - NEXUS GLOBAL HOLDINGS</title>
+    <meta name="description" content="Start a conversation with NEXUS AI Consultant for intelligent packaging equipment recommendations and expert guidance.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="consultation-chat.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="chat-header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="ai-consultation-system.html" class="back-button" title="Back to AI Consultant">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                </a>
+                <div class="header-info">
+                    <div class="ai-avatar">
+                        <img src="images/ai-consultant-icon.png" alt="NEXUS AI" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="ai-avatar-fallback" style="display:none;">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+                                <path d="M16 4C9.4 4 4 9.4 4 16s5.4 12 12 12 12-5.4 12-12S22.6 4 16 4zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10S6 21.5 6 16 10.5 6 16 6zm-2 4v8l6 3.5-1 1.7-7-4V10h2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="header-text">
+                        <h1 class="header-title">NEXUS AI Consultant</h1>
+                        <p class="header-status">
+                            <span class="status-dot"></span>
+                            <span>Online • Ready to help</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="header-action" id="newChatBtn" title="Start new conversation">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 4v12M4 10h12"/>
+                    </svg>
+                    <span>New Chat</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Chat Container -->
+    <main class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be dynamically inserted here -->
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+                <textarea 
+                    class="chat-input" 
+                    id="chatInput" 
+                    placeholder="Type your message here..."
+                    rows="1"
+                    maxlength="2000"
+                ></textarea>
+                <button class="send-button" id="sendButton" disabled>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 10l16-8-8 16-2-8-6-0z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="input-footer">
+                <span class="char-count" id="charCount">0 / 2000</span>
+                <span class="input-hint">Press Enter to send, Shift+Enter for new line</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>Processing your request...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="consultation-chat.js"></script>
+</body>
+</html>
+
