@@ -487,8 +487,8 @@ function launchModule(moduleId) {
 
 // Start Consultation
 function startConsultation() {
-    // Navigate to the AI consultation chat interface
-    window.location.href = 'consultation-chat.html';
+    // Navigate to the new V13.0 AI equipment configurator interface
+    window.location.href = 'nexus-v13.0-equipment-configurator.html';
 }
 
 // Initialize on DOM Load
