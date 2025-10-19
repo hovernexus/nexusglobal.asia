@@ -53,10 +53,15 @@
         </div>
     </header>
 
-    <!-- Main Chat Container -->
-    <main class="chat-container">
+     <!-- Chat Messages Container -->
+    <main class="chat-main">
         <div class="chat-messages" id="chatMessages">
-            <!-- Messages will be dynamically inserted here -->
+            <!-- Messages will be dynamically added here -->
+        </div>
+        
+        <!-- Quick Replies Container -->
+        <div class="quick-replies-container" id="quickReplies" style="display: none;">
+            <!-- Quick reply buttons will be dynamically added here -->
         </div>
 
         <!-- Input Area -->
@@ -89,7 +94,14 @@
     </div>
 
     <!-- Scripts -->
-    <script src="consultation-chat.js"></script>
+    <!-- AI Consultation Script - V12.1 Intelligent Equipment Selection -->
+    <script src="consultation-chat-v12.1.js"></script>
+    
+    <!-- Previous versions (uncomment to use):
+    <script src="consultation-chat.js"></script>  V12.0 Basic version
+    <script src="consultation-chat-multilang.js"></script>  V12.0 Multi-language version
+    <script src="consultation-chat-enhanced.js"></script>  V12.0 Enhanced version
+    -->
 </body>
 </html>
 
