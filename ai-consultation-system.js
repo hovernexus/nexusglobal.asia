@@ -488,7 +488,7 @@ function launchModule(moduleId) {
 // Start Consultation
 function startConsultation() {
     // Navigate to the AI modules selection page
-    window.location.href = 'nexus-v13.3-ai-modules.html';
+    window.location.href = 'nexus-v13.1-ai-modules.html';
 }
 
 // Initialize on DOM Load

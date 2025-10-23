@@ -1,4 +1,4 @@
-// NEXUS V13.3 - Request Quote and View Details Functions
+// NEXUS V13.1 - Request Quote and View Details Functions
 
 // Global variable to store current equipment data for quote
 let currentEquipmentForQuote = null;
@@ -111,7 +111,7 @@ async function submitQuoteRequest(event) {
         // Metadata
         referenceNumber: generateQuoteReference(),
         timestamp: new Date().toISOString(),
-        source: 'NEXUS AI Equipment Configurator V13.3'
+        source: 'NEXUS AI Equipment Configurator V13.1'
     };
     
     // Show loading state
@@ -262,7 +262,7 @@ function showQuoteSuccessModal(formData) {
 function viewEquipmentDetails(equipment) {
     console.log('Viewing details for:', equipment);
     
-    // V13.3: Navigate to the product detail page if detailUrl is available
+    // V13.2: Navigate to the product detail page if detailUrl is available
     if (equipment.detailUrl) {
         window.location.href = equipment.detailUrl;
         return;
@@ -364,7 +364,7 @@ function viewEquipmentDetails(equipment) {
  * This function should be called after recommendations are displayed
  */
 function updateRecommendationButtons() {
-    // Find all equipment cards (V13.3 uses .equipment-card instead of .recommendation-card)
+    // Find all equipment cards (V13.1 uses .equipment-card instead of .recommendation-card)
     const equipmentCards = document.querySelectorAll('.equipment-card');
     
     console.log('Updating buttons for', equipmentCards.length, 'equipment cards');

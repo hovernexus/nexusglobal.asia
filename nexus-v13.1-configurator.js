@@ -455,236 +455,265 @@ const EQUIPMENT_DATABASE = {
     ],
     
     'feeding-palletizing': [
+        // ODJ Products - Foshan ODJ Intelligent Technology Co., Ltd.
         {
-      id: "jxb",
-      name: "JXB Robotic Arm Type Automatic Pre-feeder",
-      supplier: "Foshan ODJ Intelligent Technology Co., Ltd.",
-      priceRange: "$150,000 - $200,000",
-      price: {
-        range: "$150,000 - $200,000",
-        min: 150000,
-        max: 200000
-      },
-      leadTime: "12 weeks",
-      tier: "flagship",
-      category: "上料机 (Pre-feeder)",
-      detailUrl: "product-detail.html?id=pfjxb",
-      features: [
-        "Robotic arm technology",
-        "3D vision system",
-        "Automatic pre-feeding",
-        "High precision positioning",
-        "Flexible integration",
-        "Up to 500 sheets/min",
-        "100% damage-free handling"
-      ],
-      specs: {
-        automation: "robotic",
-        maxLoad: 350,
-        integration: "end-of-line"
-      }
-    },
-    {
-      id: "qsl2",
-      name: "QSL2 Slope Type Automatic Pre-feeder",
-      supplier: "Foshan ODJ Intelligent Technology Co., Ltd.",
-      priceRange: "$80,000 - $120,000",
-      price: {
-        range: "$80,000 - $120,000",
-        min: 80000,
-        max: 120000
-      },
-      leadTime: "10 weeks",
-      tier: "professional",
-      category: "上料机 (Pre-feeder)",
-      detailUrl: "product-detail.html?id=pfqsl2",
-      features: [
-        "Slope-type feeding mechanism",
-        "Automatic pre-feeding",
-        "Reliable performance",
-        "Easy maintenance",
-        "Cost-effective solution",
-        "Advanced breaking unit",
-        "Seamless integration with die-cutting machines"
-      ],
-      specs: {
-        automation: "full",
-        maxLoad: 280,
-        integration: "inline"
-      }
-    },
-    {
-      id: "qsl3",
-      name: "QSL3 Baffle Type Automatic Pre-feeder",
-      supplier: "Foshan ODJ Intelligent Technology Co., Ltd.",
-      priceRange: "$85,000 - $125,000",
-      price: {
-        range: "$85,000 - $125,000",
-        min: 85000,
-        max: 125000
-      },
-      leadTime: "11 weeks",
-      tier: "professional",
-      category: "上料机 (Pre-feeder)",
-      detailUrl: "product-detail.html?id=pfqsl3",
-      features: [
-        "Baffle-type mechanism",
-        "Automatic operation",
-        "High precision",
-        "Enhanced stability",
-        "Improved efficiency",
-        "Proven reliability",
-        "Workhorse of production line"
-      ],
-      specs: {
-        automation: "full",
-        maxLoad: 280,
-        integration: "inline"
-      }
-    },
-    {
-      id: "qsl4",
-      name: "QSL4/QSM Basket (Lifting) Type Universal Pre-feeder",
-      supplier: "Foshan ODJ Intelligent Technology Co., Ltd.",
-      priceRange: "$90,000 - $130,000",
-      price: {
-        range: "$90,000 - $130,000",
-        min: 90000,
-        max: 130000
-      },
-      leadTime: "11 weeks",
-      tier: "professional",
-      category: "上料机 (Pre-feeder)",
-      detailUrl: "product-detail.html?id=pfqsl4",
-      features: [
-        "Basket (lifting) type mechanism",
-        "Universal compatibility",
-        "Versatile operation",
-        "Excellent flexibility",
-        "Reliable performance",
-        "Suitable for various board types"
-      ],
-      specs: {
-        automation: "full",
-        maxLoad: 280,
-        integration: "inline"
-      }
-    },
-    {
-      id: "qxy3",
-      name: "QXY3 Baffle Type Automatic Pre-feeder for Bottom Print",
-      supplier: "Foshan ODJ Intelligent Technology Co., Ltd.",
-      priceRange: "$85,000 - $125,000",
-      price: {
-        range: "$85,000 - $125,000",
-        min: 85000,
-        max: 125000
-      },
-      leadTime: "11 weeks",
-      tier: "professional",
-      category: "上料机 (Pre-feeder)",
-      detailUrl: "product-detail.html?id=pfqxy3",
-      features: [
-        "Baffle-type mechanism",
-        "Automatic operation",
-        "Bottom print specialized",
-        "Precise handling",
-        "High-quality printing support",
-        "Enhanced positioning"
-      ],
-      specs: {
-        automation: "full",
-        maxLoad: 280,
-        integration: "inline"
-      }
-    },
-    {
-      id: "bys",
-      name: "BYS Semi-Automatic Pre-feeder",
-      supplier: "Foshan ODJ Intelligent Technology Co., Ltd.",
-      priceRange: "$40,000 - $60,000",
-      price: {
-        range: "$40,000 - $60,000",
-        min: 40000,
-        max: 60000
-      },
-      leadTime: "8 weeks",
-      tier: "entry",
-      category: "上料机 (Pre-feeder)",
-      detailUrl: "product-detail.html?id=pfbys",
-      features: [
-        "Semi-automatic operation",
-        "Cost-effective solution",
-        "Manual flexibility",
-        "Automated efficiency",
-        "Easy operation",
-        "Low initial investment",
-        "Ideal for small to medium production"
-      ],
-      specs: {
-        automation: "semi",
-        maxLoad: 180,
-        integration: "standalone"
-      }
-    },
-    {
-      id: "fp1650",
-      name: "FP-1650 Automatic Bundle Breaker System",
-      supplier: "Foshan ODJ Intelligent Technology Co., Ltd.",
-      priceRange: "$70,000 - $100,000",
-      price: {
-        range: "$70,000 - $100,000",
-        min: 70000,
-        max: 100000
-      },
-      leadTime: "10 weeks",
-      tier: "professional",
-      category: "分片机 (Bundle Breaker)",
-      detailUrl: "product-detail.html?id=pffp1650",
-      features: [
-        "Automatic bundle breaking",
-        "Efficient separation",
-        "Streamlined feeding process",
-        "Improved production efficiency",
-        "Reliable operation",
-        "Easy integration"
-      ],
-      specs: {
-        automation: "full",
-        maxLoad: 280,
-        integration: "inline"
-      }
-    },
-    {
-      id: "md350",
-      name: "MD-350 3D Vision AI Intelligent Robotic Palletizing System",
-      supplier: "Foshan ODJ Intelligent Technology Co., Ltd.",
-      priceRange: "$180,000 - $250,000",
-      price: {
-        range: "$180,000 - $250,000",
-        min: 180000,
-        max: 250000
-      },
-      leadTime: "14 weeks",
-      tier: "flagship",
-      category: "码垛机 (Palletizer)",
-      detailUrl: "product-detail.html?id=pfmd350",
-      features: [
-        "3D vision AI technology",
-        "Intelligent robotic system",
-        "Smart stacking algorithms",
-        "Real-time quality inspection",
-        "Seamless production line integration",
-        "Advanced automation"
-      ],
-      specs: {
-        automation: "robotic",
-        maxLoad: 350,
-        integration: "end-of-line"
-      }
-    }
+            id: 'odj-rys-001',
+            name: 'RYS Semi-Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'entry',
+            specs: {
+                automation: 'semi',
+                maxLoad: 150,
+                integration: 'standalone'
+            },
+            capacity: {
+                stacksPerHour: 25,
+                suitableFor: 'small-medium-volume'
+            },
+            price: {
+                range: '$30,000 - $50,000',
+                min: 30000,
+                max: 50000
+            },
+            features: [
+                'Semi-automatic operation',
+                'Manual assistance',
+                'Cost-effective',
+                'Simple structure',
+                'Easy maintenance'
+            ],
+            applications: ['Small production lines', 'Budget-conscious operations'],
+            leadTime: 8,
+            image: '/images/odj/rys-semi-auto-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=ryf'
+        },
+        {
+            id: 'odj-byf-001',
+            name: 'BYF Semi-Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'entry',
+            specs: {
+                automation: 'semi',
+                maxLoad: 180,
+                integration: 'standalone'
+            },
+            capacity: {
+                stacksPerHour: 28,
+                suitableFor: 'small-medium-volume'
+            },
+            price: {
+                range: '$35,000 - $55,000',
+                min: 35000,
+                max: 55000
+            },
+            features: [
+                'Semi-automatic feeding',
+                'Manual assistance required',
+                'Budget-friendly',
+                'Compact footprint',
+                'Low maintenance'
+            ],
+            applications: ['Small to medium production', 'Entry-level automation'],
+            leadTime: 8,
+            image: '/images/odj/byf-semi-auto-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=byf'
+        },
+        {
+            id: 'odj-qb3-001',
+            name: 'QB3 Raffle Type Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'professional',
+            specs: {
+                automation: 'full',
+                maxLoad: 200,
+                integration: 'standalone'
+            },
+            capacity: {
+                stacksPerHour: 35,
+                suitableFor: 'medium-volume'
+            },
+            price: {
+                range: '$70,000 - $100,000',
+                min: 70000,
+                max: 100000
+            },
+            features: [
+                'Raffle-type feeding mechanism',
+                'Automatic operation',
+                'Compact design',
+                'Stable performance',
+                'Easy to operate'
+            ],
+            applications: ['Medium production lines', 'Automated feeding systems'],
+            leadTime: 10,
+            image: '/images/odj/qb3-raffle-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=qb3'
+        },
+        {
+            id: 'odj-qy3-001',
+            name: 'QY3 Baffle Type Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'professional',
+            specs: {
+                automation: 'full',
+                maxLoad: 220,
+                integration: 'inline'
+            },
+            capacity: {
+                stacksPerHour: 38,
+                suitableFor: 'medium-volume'
+            },
+            price: {
+                range: '$75,000 - $110,000',
+                min: 75000,
+                max: 110000
+            },
+            features: [
+                'Baffle-type mechanism',
+                'Automatic feeding',
+                'Precise positioning',
+                'Reliable operation',
+                'Good value'
+            ],
+            applications: ['Medium production lines', 'Inline feeding systems'],
+            leadTime: 10,
+            image: '/images/odj/qy3-baffle-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=qy3'
+        },
+        {
+            id: 'odj-qb2-001',
+            name: 'QB2 Slope Type Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'professional',
+            specs: {
+                automation: 'full',
+                maxLoad: 250,
+                integration: 'inline'
+            },
+            capacity: {
+                stacksPerHour: 40,
+                suitableFor: 'medium-high-volume'
+            },
+            price: {
+                range: '$80,000 - $120,000',
+                min: 80000,
+                max: 120000
+            },
+            features: [
+                'Slope-type feeding mechanism',
+                'Automatic pre-feeding',
+                'Reliable performance',
+                'Easy maintenance',
+                'Cost-effective solution'
+            ],
+            applications: ['Medium to high volume production', 'Automated production lines'],
+            leadTime: 10,
+            image: '/images/odj/qb2-slope-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=qb2'
+        },
+        {
+            id: 'odj-qvy3-001',
+            name: 'QVY3 Baffle Type Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'professional',
+            specs: {
+                automation: 'full',
+                maxLoad: 240,
+                integration: 'inline'
+            },
+            capacity: {
+                stacksPerHour: 42,
+                suitableFor: 'medium-high-volume'
+            },
+            price: {
+                range: '$85,000 - $125,000',
+                min: 85000,
+                max: 125000
+            },
+            features: [
+                'Advanced baffle mechanism',
+                'Automatic operation',
+                'High precision',
+                'Enhanced stability',
+                'Improved efficiency'
+            ],
+            applications: ['High-efficiency production', 'Advanced feeding systems'],
+            leadTime: 11,
+            image: '/images/odj/qvy3-baffle-advanced-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=qvy3'
+        },
+        {
+            id: 'odj-qsl4-001',
+            name: 'QSL4/QSM Basket (Lifting) Type Automatic Pre-feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'professional',
+            specs: {
+                automation: 'full',
+                maxLoad: 280,
+                integration: 'inline'
+            },
+            capacity: {
+                stacksPerHour: 45,
+                suitableFor: 'medium-high-volume'
+            },
+            price: {
+                range: '$90,000 - $130,000',
+                min: 90000,
+                max: 130000
+            },
+            features: [
+                'Basket lifting mechanism',
+                'Automatic feeding',
+                'High efficiency',
+                'Smooth operation',
+                'Versatile application'
+            ],
+            applications: ['High-volume production', 'Versatile feeding applications'],
+            leadTime: 11,
+            image: '/images/odj/qsl4-qsm-basket-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=qsl4'
+        },
+        {
+            id: 'odj-jxb-001',
+            name: 'JXB Robotic Arm Type Automatic Pre-Feeder',
+            supplier: 'Foshan ODJ Intelligent Technology Co., Ltd.',
+            category: 'Feeding/Palletizing Machines',
+            tier: 'flagship',
+            specs: {
+                automation: 'robotic',
+                maxLoad: 300,
+                integration: 'end-of-line'
+            },
+            capacity: {
+                stacksPerHour: 50,
+                suitableFor: 'high-volume-operations'
+            },
+            price: {
+                range: '$150,000 - $200,000',
+                min: 150000,
+                max: 200000
+            },
+            features: [
+                'Robotic arm technology',
+                '3D vision system',
+                'Automatic pre-feeding',
+                'High precision positioning',
+                'Flexible integration'
+            ],
+            applications: ['High-volume production', 'Smart factory integration', 'Advanced automation'],
+            leadTime: 12,
+            image: '/images/odj/jxb-robotic-arm-prefeeder.jpg',
+            detailUrl: 'product-detail.html?model=jxb'
+        }
     ],
-
+    
     'folder-gluer': [
         {
             id: 'fg-001',
