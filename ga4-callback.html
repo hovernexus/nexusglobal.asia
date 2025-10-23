@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Analytics 授权 - NEXUS Global</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .status-icon {
+            font-size: 60px;
+            margin: 20px 0;
+            animation: spin 1s linear infinite;
+        }
+
+        .status-icon.success {
+            animation: none;
+            color: #4CAF50;
+        }
+
+        .status-icon.error {
+            animation: none;
+            color: #f44336;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .status-message {
+            color: #666;
+            margin: 20px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .error-details {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: left;
+            color: #c62828;
+            font-size: 14px;
+            font-family: 'Courier New', monospace;
+            word-break: break-all;
+        }
+
+        .success-details {
+            background: #e8f5e9;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: left;
+            color: #2e7d32;
+            font-size: 14px;
+        }
+
+        .button-group {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .countdown {
+            color: #999;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .info-box {
+            background: #f0f7ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: left;
+            font-size: 14px;
+            color: #1565c0;
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🔐</div>
+        <h1>Google Analytics 授权</h1>
+        <div class="subtitle">NEXUS Global 平台</div>
+
+        <div id="loading-state">
+            <div class="status-icon">⏳</div>
+            <div class="status-message">正在处理授权信息...</div>
+        </div>
+
+        <div id="success-state" style="display: none;">
+            <div class="status-icon success">✓</div>
+            <div class="status-message">授权成功！</div>
+            <div class="success-details">
+                <strong>您已成功授权NEXUS平台访问您的Google Analytics数据。</strong>
+                <p style="margin-top: 10px;">系统将在 <span id="countdown">3</span> 秒后自动跳转到供应商数据看板。</p>
+            </div>
+            <div class="info-box">
+                <strong>下一步：</strong>
+                <p>您现在可以在NEXUS平台的供应商数据看板中查看您的访客信息、站点数据统计和其他分析指标。</p>
+            </div>
+        </div>
+
+        <div id="error-state" style="display: none;">
+            <div class="status-icon error">✗</div>
+            <div class="status-message">授权失败</div>
+            <div class="error-details" id="error-message"></div>
+            <div class="info-box">
+                <strong>可能的原因：</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>您拒绝了授权请求</li>
+                    <li>Google账号验证失败</li>
+                    <li>网络连接问题</li>
+                    <li>授权请求已过期</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="button-group" id="button-group" style="display: none;">
+            <button class="btn btn-primary" onclick="retryAuthorization()">重新授权</button>
+            <button class="btn btn-secondary" onclick="goToDashboard()">返回首页</button>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 NEXUS Global. 保护您的隐私是我们的首要任务。</p>
+            <p><a href="#" style="color: #999; text-decoration: none;">隐私政策</a> | <a href="#" style="color: #999; text-decoration: none;">服务条款</a></p>
+        </div>
+    </div>
+
+    <!-- 引入GA4 OAuth脚本 -->
+    <script src="nexus-ga4-oauth.js"></script>
+
+    <script>
+        /**
+         * 处理OAuth回调
+         */
+        function processCallback() {
+            try {
+                // 调用OAuth处理函数
+                const success = handleOAuthCallback();
+                
+                if (success) {
+                    // 授权成功
+                    showSuccessState();
+                    
+                    // 3秒后自动跳转到供应商数据看板
+                    let countdown = 3;
+                    const countdownElement = document.getElementById('countdown');
+                    
+                    const interval = setInterval(() => {
+                        countdown--;
+                        countdownElement.textContent = countdown;
+                        
+                        if (countdown === 0) {
+                            clearInterval(interval);
+                            goToDashboard();
+                        }
+                    }, 1000);
+                } else {
+                    // 授权失败
+                    showErrorState('授权过程中出现错误，请检查浏览器控制台获取更多信息。');
+                }
+            } catch (error) {
+                console.error('Callback processing error:', error);
+                showErrorState(error.message || '处理授权回调时出现未知错误。');
+            }
+        }
+
+        /**
+         * 显示成功状态
+         */
+        function showSuccessState() {
+            document.getElementById('loading-state').style.display = 'none';
+            document.getElementById('error-state').style.display = 'none';
+            document.getElementById('success-state').style.display = 'block';
+        }
+
+        /**
+         * 显示错误状态
+         */
+        function showErrorState(errorMessage) {
+            document.getElementById('loading-state').style.display = 'none';
+            document.getElementById('success-state').style.display = 'none';
+            document.getElementById('error-state').style.display = 'block';
+            document.getElementById('button-group').style.display = 'flex';
+            
+            const errorElement = document.getElementById('error-message');
+            errorElement.textContent = errorMessage || '授权失败，请重试。';
+        }
+
+        /**
+         * 重新授权
+         */
+        function retryAuthorization() {
+            // 清除之前的授权数据
+            clearAuthData();
+            // 重新启动授权流程
+            initializeOAuthFlow();
+        }
+
+        /**
+         * 跳转到供应商数据看板或首页
+         */
+        function goToDashboard() {
+            // 检查是否有保存的重定向URL
+            const redirectUrl = sessionStorage.getItem('ga4_redirect_url');
+            
+            if (redirectUrl) {
+                window.location.href = redirectUrl;
+                sessionStorage.removeItem('ga4_redirect_url');
+            } else {
+                // 默认跳转到供应商数据看板
+                window.location.href = '/supplier-dashboard.html';
+            }
+        }
+
+        /**
+         * 自定义通知函数（与nexus-ga4-oauth.js集成）
+         */
+        window.showNotification = function(message, type) {
+            console.log(`[${type.toUpperCase()}] ${message}`);
+        };
+
+        // 页面加载时处理回调
+        window.addEventListener('load', () => {
+            // 检查URL中是否有授权代码
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('code') || urlParams.has('error')) {
+                processCallback();
+            } else {
+                // 没有授权代码，显示错误
+                showErrorState('无效的回调请求：缺少授权代码。');
+                document.getElementById('button-group').style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
+

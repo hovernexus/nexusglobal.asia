@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>供应商数据看板 - NEXUS Global</title>
+    <link rel="stylesheet" href="supplier-dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <h1>📊 NEXUS 供应商数据看板</h1>
+            </div>
+            <div class="navbar-menu">
+                <button class="btn-icon" id="export-btn" title="导出数据">
+                    <span class="icon">📥</span>
+                    <span class="text">导出</span>
+                </button>
+                <button class="btn-icon" id="sync-btn" title="同步数据">
+                    <span class="icon">🔄</span>
+                    <span class="text">同步</span>
+                </button>
+                <button class="btn-icon" id="settings-btn" title="设置">
+                    <span class="icon">⚙️</span>
+                    <span class="text">设置</span>
+                </button>
+                <button class="btn-icon" id="logout-btn" title="登出">
+                    <span class="icon">🚪</span>
+                    <span class="text">登出</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>导航</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="menu-item active" data-tab="overview">📈 数据概览</a></li>
+                    <li><a href="#" class="menu-item" data-tab="visitors">👥 访客识别</a></li>
+                    <li><a href="#" class="menu-item" data-tab="analytics">📊 数据统计</a></li>
+                    <li><a href="#" class="menu-item" data-tab="trends">📉 趋势分析</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>数据范围</h3>
+                <div class="date-range-picker">
+                    <label>开始日期</label>
+                    <input type="date" id="start-date" class="date-input">
+                    <label>结束日期</label>
+                    <input type="date" id="end-date" class="date-input">
+                    <button class="btn-primary" id="apply-filter-btn">应用</button>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>快速筛选</h3>
+                <div class="quick-filters">
+                    <button class="filter-btn active" data-range="7">最近7天</button>
+                    <button class="filter-btn" data-range="30">最近30天</button>
+                    <button class="filter-btn" data-range="90">最近90天</button>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>同步状态</h3>
+                <div class="sync-status">
+                    <p id="sync-status-text">准备就绪</p>
+                    <p id="last-sync-time" class="text-muted">未同步</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 数据概览标签页 -->
+            <div class="tab-content active" id="overview-tab">
+                <h2>数据概览</h2>
+                
+                <!-- 关键指标卡片 -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">👥</div>
+                        <div class="metric-content">
+                            <p class="metric-label">总访客数</p>
+                            <p class="metric-value" id="total-visitors">0</p>
+                            <p class="metric-change" id="visitors-change">+0%</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">📍</div>
+                        <div class="metric-content">
+                            <p class="metric-label">唯一访客数</p>
+                            <p class="metric-value" id="unique-visitors">0</p>
+                            <p class="metric-change" id="unique-change">+0%</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">🔍</div>
+                        <div class="metric-content">
+                            <p class="metric-label">搜索次数</p>
+                            <p class="metric-value" id="search-count">0</p>
+                            <p class="metric-change" id="search-change">+0%</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">🖱️</div>
+                        <div class="metric-content">
+                            <p class="metric-label">点击次数</p>
+                            <p class="metric-value" id="click-count">0</p>
+                            <p class="metric-change" id="click-change">+0%</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">💡</div>
+                        <div class="metric-content">
+                            <p class="metric-label">曝光率</p>
+                            <p class="metric-value" id="exposure-rate">0%</p>
+                            <p class="metric-change" id="exposure-change">+0%</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-content">
+                            <p class="metric-label">转化率</p>
+                            <p class="metric-value" id="conversion-rate">0%</p>
+                            <p class="metric-change" id="conversion-change">+0%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 访客趋势图 -->
+                <div class="chart-container">
+                    <h3>访客趋势</h3>
+                    <canvas id="visitor-trend-chart"></canvas>
+                </div>
+
+                <!-- 访客来源分布 -->
+                <div class="chart-container">
+                    <h3>访客来源分布</h3>
+                    <canvas id="source-distribution-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- 访客识别标签页 -->
+            <div class="tab-content" id="visitors-tab">
+                <h2>访客识别</h2>
+                <p class="tab-description">查看访问过您网站的用户详细信息，包括地理位置、访问时间和行为记录。</p>
+
+                <!-- 筛选器 -->
+                <div class="filters-bar">
+                    <input type="text" id="visitor-search" class="search-input" placeholder="搜索国家或地区...">
+                    <select id="country-filter" class="filter-select">
+                        <option value="">所有国家</option>
+                    </select>
+                </div>
+
+                <!-- 访客列表表格 -->
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>访问日期</th>
+                                <th>国家/地区</th>
+                                <th>活跃用户</th>
+                                <th>会话数</th>
+                                <th>页面浏览</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="visitors-table-body">
+                            <tr class="empty-state">
+                                <td colspan="6">暂无数据。请先同步GA4数据。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 分页 -->
+                <div class="pagination">
+                    <button class="btn-pagination" id="prev-page">上一页</button>
+                    <span id="page-info">第 1 页</span>
+                    <button class="btn-pagination" id="next-page">下一页</button>
+                </div>
+            </div>
+
+            <!-- 数据统计标签页 -->
+            <div class="tab-content" id="analytics-tab">
+                <h2>数据统计</h2>
+                <p class="tab-description">查看搜索关键词、产品点击和供应商互动的详细统计。</p>
+
+                <!-- 搜索关键词统计 -->
+                <div class="stats-section">
+                    <h3>热门搜索关键词</h3>
+                    <div class="stats-list" id="search-keywords-list">
+                        <div class="empty-state">暂无搜索数据</div>
+                    </div>
+                </div>
+
+                <!-- 产品点击统计 -->
+                <div class="stats-section">
+                    <h3>热门产品</h3>
+                    <div class="stats-list" id="product-clicks-list">
+                        <div class="empty-state">暂无产品点击数据</div>
+                    </div>
+                </div>
+
+                <!-- 供应商互动统计 -->
+                <div class="stats-section">
+                    <h3>供应商互动</h3>
+                    <div class="stats-list" id="supplier-clicks-list">
+                        <div class="empty-state">暂无供应商互动数据</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 趋势分析标签页 -->
+            <div class="tab-content" id="trends-tab">
+                <h2>趋势分析</h2>
+                <p class="tab-description">查看访客数、事件数和其他关键指标随时间的变化趋势。</p>
+
+                <!-- 访客趋势详细图表 -->
+                <div class="chart-container">
+                    <h3>访客趋势（详细）</h3>
+                    <canvas id="detailed-visitor-trend-chart"></canvas>
+                </div>
+
+                <!-- 事件趋势图表 -->
+                <div class="chart-container">
+                    <h3>事件趋势</h3>
+                    <canvas id="event-trend-chart"></canvas>
+                </div>
+
+                <!-- 事件类型分布 -->
+                <div class="chart-container">
+                    <h3>事件类型分布</h3>
+                    <canvas id="event-type-distribution-chart"></canvas>
+                </div>
+
+                <!-- 国家分布 -->
+                <div class="chart-container">
+                    <h3>访客国家分布</h3>
+                    <canvas id="country-distribution-chart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 加载指示器 -->
+    <div class="loading-indicator" id="loading-indicator">
+        <div class="spinner"></div>
+        <p>正在加载数据...</p>
+    </div>
+
+    <!-- 导出菜单 -->
+    <div class="export-menu" id="export-menu">
+        <button class="export-menu-item" id="export-visitors-btn">
+            <span class="icon">👥</span>
+            <span>导出访客数据</span>
+        </button>
+        <button class="export-menu-item" id="export-events-btn">
+            <span class="icon">📊</span>
+            <span>导出事件数据</span>
+        </button>
+        <button class="export-menu-item" id="export-report-btn">
+            <span class="icon">📋</span>
+            <span>导出综合报告</span>
+        </button>
+        <button class="export-menu-item" id="export-keywords-btn">
+            <span class="icon">🔍</span>
+            <span>导出搜索关键词</span>
+        </button>
+        <button class="export-menu-item" id="export-products-btn">
+            <span class="icon">📦</span>
+            <span>导出产品点击</span>
+        </button>
+        <button class="export-menu-item" id="export-suppliers-btn">
+            <span class="icon">🏢</span>
+            <span>导出供应商互动</span>
+        </button>
+    </div>
+
+    <!-- 通知消息 -->
+    <div class="notification" id="notification">
+        <span id="notification-text"></span>
+        <button class="notification-close" onclick="closeNotification()">×</button>
+    </div>
+
+    <!-- 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="nexus-ga4-tracker.js"></script>
+    <script src="nexus-ga4-oauth.js"></script>
+    <script src="nexus-ga4-data-manager.js"></script>
+    <script src="nexus-ga4-sync.js"></script>
+    <script src="nexus-ga4-export.js"></script>
+    <script src="supplier-dashboard.js"></script>
+</body>
+</html>
+
