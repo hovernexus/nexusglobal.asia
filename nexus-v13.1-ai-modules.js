@@ -9,7 +9,7 @@ function navigateToModule(moduleId) {
     
     // Module routing configuration
     const moduleRoutes = {
-        'equipment-recommendation': 'nexus-v13.3-equipment-configurator.html',
+        'equipment-recommendation': 'nexus-v13.1-equipment-configurator.html',
         'roi-calculator': null,  // Coming soon
         'ai-consultation': null,  // Coming soon
         'troubleshooting': null,  // Coming soon
