@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feeding & Palletizing Systems | NEXUS GLOBAL HOLDINGS</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Category Page Styles */
+        .category-hero {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            color: white;
+            padding: 100px 20px 60px;
+            text-align: center;
+        }
+
+        .category-hero-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        .category-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .category-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            margin-top: 20px;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            opacity: 0.6;
+        }
+
+        .category-content {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .category-intro {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 60px;
+        }
+
+        .category-intro h2 {
+            color: #1e293b;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .category-intro p {
+            color: #64748b;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: #f8fafc;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-model {
+            color: #f97316;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-name {
+            color: #1e293b;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .product-description {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .product-supplier {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .view-details-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .view-details-btn:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="NEXUS GLOBAL HOLDINGS" style="height: 50px;">
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="service-support.html">Service & Support</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <select class="language-selector">
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                </select>
+                <a href="contact.html" class="cta-button">Get Quote</a>
+                </div>
+            </div>
+    </nav>
+
+    <!-- Category Hero -->
+    <section class="category-hero">
+        <div class="category-hero-icon">🤖</div>
+        <h1>Feeding & Palletizing Systems</h1>
+        <p>Complete automation solutions for material handling in packaging production, from intelligent pre-feeders to AI-powered palletizing robots</p>
+        
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>›</span>
+            <a href="products.html">Products</a>
+            <span>›</span>
+            <span>Feeding & Palletizing Systems</span>
+        </div>
+    </section>
+
+    <!-- Category Content -->
+    <section class="category-content">
+        <div class="category-intro">
+            <h2>About Feeding & Palletizing Technology</h2>
+            <p>Our feeding and palletizing systems provide complete automation for material handling in packaging production. These intelligent systems feature advanced robotic precision positioning, seamless integration with die-cutting machines, and robust construction for high-speed operation. From automatic pre-feeders to AI-powered palletizing robots, our equipment streamlines your production workflow and maximizes efficiency.</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card" onclick="window.location.href='${product.detailUrl}'">
+                <img src="images/products/odj-jxb-2.jpg" alt="JXB Robotic Arm Type Automatic Pre-feeder" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">JXB</div>
+                    <h3 class="product-name">JXB Robotic Arm Type Automatic Pre-feeder</h3>
+                    <p class="product-description">A revolutionary pre-feeder powered by a KAWASAKI robotic arm. As the world-first technology by ODJ, it delivers unparalleled speed (up to 500 sheets/min), precision, and 100% damage-free handling for all board types.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
+                    </div>
+                    <a href="${product.detailUrl}" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
+                </div>
+            </div>
+                        <div class="product-card" onclick="window.location.href='${product.detailUrl}'">
+                <img src="images/products/odj-qsl2-2.jpg" alt="QSL2 Slope Type Automatic Pre-feeder" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">QSL2</div>
+                    <h3 class="product-name">QSL2 Slope Type Automatic Pre-feeder</h3>
+                    <p class="product-description">A high-performance slope-type automatic pre-feeder designed for top print applications. Features advanced breaking unit for seamless integration with die-cutting machines.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
+                    </div>
+                    <a href="${product.detailUrl}" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
+                </div>
+            </div>
+            <div class="product-card" onclick="window.location.href='${product.detailUrl}'">
+                <img src="images/products/odj-qsl3-2.jpg" alt="QSL3 Baffle Type Automatic Pre-feeder" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">QSL3</div>
+                    <h3 class="product-name">QSL3 Baffle Type Automatic Pre-feeder</h3>
+                    <p class="product-description">A reliable baffle-type automatic pre-feeder for top print applications. The workhorse of the production line with proven stability and efficiency.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
+                    </div>
+                    <a href="${product.detailUrl}" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
+                </div>
+            </div>
+           <div class="product-card" onclick="window.location.href='${product.detailUrl}'">
+                <img src="images/products/odj-qsl4-2.jpg" alt="QSL4/QSM Basket (Lifting) Type Universal Pre-feeder" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">QSL4/QSM</div>
+                    <h3 class="product-name">QSL4/QSM Basket (Lifting) Type Universal Pre-feeder</h3>
+                    <p class="product-description">A versatile basket (lifting) type universal pre-feeder suitable for various board types and production requirements. Offers excellent flexibility and reliability.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
+                    </div>
+                    <a href="${product.detailUrl}" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
+                </div>
+            </div>
+                       <div class="product-card" onclick="window.location.href='${product.detailUrl}'">
+                <img src="images/products/odj-qxy3-2.jpg" alt="QXY3 Baffle Type Automatic Pre-feeder for Bottom Print" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">QXY3</div>
+                    <h3 class="product-name">QXY3 Baffle Type Automatic Pre-feeder for Bottom Print</h3>
+                    <p class="product-description">A specialized baffle-type automatic pre-feeder designed for bottom print applications. Ensures precise handling and positioning for high-quality printing.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
+                    </div>
+                    <a href="${product.detailUrl}" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
+                </div>
+            </div>
+                        <div class="product-card" onclick="window.location.href='${product.detailUrl}'">
+                <img src="images/products/odj-bys-2.jpg" alt="BYS Semi-Automatic Pre-feeder" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">BYS</div>
+                    <h3 class="product-name">BYS Semi-Automatic Pre-feeder</h3>
+                    <p class="product-description">A cost-effective semi-automatic pre-feeder ideal for small to medium production volumes. Combines manual flexibility with automated efficiency.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
+                    </div>
+                    <a href="${product.detailUrl}" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
+                </div>
+            </div>
+            <div class="product-card" onclick="window.location.href='${product.detailUrl}'">
+                <img src="images/products/odj-fp1650-2.jpg" alt="FP-1650 Automatic Bundle Breaker System" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">FP-1650</div>
+                    <h3 class="product-name">FP-1650 Automatic Bundle Breaker System</h3>
+                    <p class="product-description">An advanced automatic bundle breaker system that efficiently separates corrugated board bundles, streamlining the feeding process and improving production efficiency.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
+                    </div>
+                    <a href="${product.detailUrl}" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
+                </div>
+            </div>
+            <div class="product-card" onclick="window.location.href='${product.detailUrl}'">
+                <img src="images/products/odj-md350-2.jpg" alt="MD-350 3D Vision AI Intelligent Robotic Palletizing System" class="product-image">
+                <div class="product-info">
+                    <div class="product-model">MD-350</div>
+                    <h3 class="product-name">MD-350 3D Vision AI Intelligent Robotic Palletizing System</h3>
+                    <p class="product-description">A state-of-the-art 3D vision AI-powered robotic palletizing system. Features intelligent stacking algorithms, real-time quality inspection, and seamless integration with production lines.</p>
+                    <div class="product-supplier">
+                        <span>🏭</span>
+                        <span>Foshan ODJ Intelligent Technology Co., Ltd.</span>
+                    </div>
+                    <a href="${product.detailUrl}" class="view-details-btn" onclick="event.stopPropagation()">View Details →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="NEXUS GLOBAL HOLDINGS">
+                    <p>Connecting corrugated packaging manufacturers with certified equipment suppliers worldwide.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Email: <a href="mailto:info@nexusglobal.asia">info@nexusglobal.asia</a></p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NEXUS GLOBAL HOLDINGS. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
