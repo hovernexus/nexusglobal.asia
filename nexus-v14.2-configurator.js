@@ -468,7 +468,7 @@ const EQUIPMENT_DATABASE = {
       leadTime: "12 weeks",
       tier: "flagship",
       category: "上料机 (Pre-feeder)",
-      detailUrl: "product-detail.html?id=pfjxb",
+      detailUrl: "product-detail.html?id=jxb",
       features: [
         "Robotic arm technology",
         "3D vision system",
@@ -497,7 +497,7 @@ const EQUIPMENT_DATABASE = {
       leadTime: "10 weeks",
       tier: "professional",
       category: "上料机 (Pre-feeder)",
-      detailUrl: "product-detail.html?id=pfqsl2",
+      detailUrl: "product-detail.html?id=qsl2",
       features: [
         "Slope-type feeding mechanism",
         "Automatic pre-feeding",
@@ -526,7 +526,7 @@ const EQUIPMENT_DATABASE = {
       leadTime: "11 weeks",
       tier: "professional",
       category: "上料机 (Pre-feeder)",
-      detailUrl: "product-detail.html?id=pfqsl3",
+      detailUrl: "product-detail.html?id=qsl3",
       features: [
         "Baffle-type mechanism",
         "Automatic operation",
@@ -555,7 +555,7 @@ const EQUIPMENT_DATABASE = {
       leadTime: "11 weeks",
       tier: "professional",
       category: "上料机 (Pre-feeder)",
-      detailUrl: "product-detail.html?id=pfqsl4",
+      detailUrl: "product-detail.html?id=qsl4",
       features: [
         "Basket (lifting) type mechanism",
         "Universal compatibility",
@@ -583,7 +583,7 @@ const EQUIPMENT_DATABASE = {
       leadTime: "11 weeks",
       tier: "professional",
       category: "上料机 (Pre-feeder)",
-      detailUrl: "product-detail.html?id=pfqxy3",
+      detailUrl: "product-detail.html?id=qxy3",
       features: [
         "Baffle-type mechanism",
         "Automatic operation",
@@ -611,7 +611,7 @@ const EQUIPMENT_DATABASE = {
       leadTime: "8 weeks",
       tier: "entry",
       category: "上料机 (Pre-feeder)",
-      detailUrl: "product-detail.html?id=pfbys",
+      detailUrl: "product-detail.html?id=bys",
       features: [
         "Semi-automatic operation",
         "Cost-effective solution",
@@ -640,7 +640,7 @@ const EQUIPMENT_DATABASE = {
       leadTime: "10 weeks",
       tier: "professional",
       category: "分片机 (Bundle Breaker)",
-      detailUrl: "product-detail.html?id=pffp1650",
+      detailUrl: "product-detail.html?id=fp1650",
       features: [
         "Automatic bundle breaking",
         "Efficient separation",
@@ -668,7 +668,7 @@ const EQUIPMENT_DATABASE = {
       leadTime: "14 weeks",
       tier: "flagship",
       category: "码垛机 (Palletizer)",
-      detailUrl: "product-detail.html?id=pfmd350",
+      detailUrl: "product-detail.html?id=md350",
       features: [
         "3D vision AI technology",
         "Intelligent robotic system",
