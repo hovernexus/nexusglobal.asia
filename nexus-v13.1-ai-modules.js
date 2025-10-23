@@ -1,4 +1,4 @@
-// NEXUS V13.1 - AI Modules Selection Page JavaScript
+// NEXUS V13.3 - AI Modules Selection Page JavaScript
 
 /**
  * Navigate to selected AI module
@@ -9,7 +9,7 @@ function navigateToModule(moduleId) {
     
     // Module routing configuration
     const moduleRoutes = {
-        'equipment-recommendation': 'nexus-v13.1-equipment-configurator.html',
+        'equipment-recommendation': 'nexus-v13.3-equipment-configurator.html',
         'roi-calculator': null,  // Coming soon
         'ai-consultation': null,  // Coming soon
         'troubleshooting': null,  // Coming soon
@@ -198,7 +198,7 @@ function closeComingSoonModal() {
  * Initialize page
  */
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('NEXUS V13.1 AI Modules Page Loaded');
+    console.log('NEXUS V13.3 AI Modules Page Loaded');
     
     // Add keyboard navigation
     document.addEventListener('keydown', function(e) {
