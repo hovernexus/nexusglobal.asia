@@ -324,10 +324,10 @@
                     <p class="hero-description">NEXUS GLOBAL HOLDINGS — We specialize in providing comprehensive upgrade solutions for your existing production lines, maximizing the efficiency, quality, and automation of your core equipment with minimal investment.</p>
                     <div class="hero-actions">
                         <button class="btn btn-primary" onclick="window.location.href='solutions.html'">Explore Solutions</button>
-                        <button class="btn btn-secondary" id="watchVideoBtn">
+                        <a href="https://youtu.be/Nzu9ba2m2os" target="_blank" class="btn btn-secondary" id="watchVideoBtn">
                             <span class="btn-icon">▶</span>
                             Watch Introduction Video
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -1078,96 +1078,7 @@
         document.addEventListener('DOMContentLoaded', loadPartnersData);
         
         // Watch Introduction Video button
-        document.addEventListener('DOMContentLoaded', () => {
-            const watchVideoBtn = document.getElementById('watchVideoBtn');
-            if (watchVideoBtn) {
-                watchVideoBtn.addEventListener('click', () => {
-                    // Create video modal
-                    const modal = document.createElement('div');
-                    modal.style.cssText = `
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: rgba(0, 0, 0, 0.9);
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        z-index: 10000;
-                        cursor: pointer;
-                    `;
-                    
-                    const videoContainer = document.createElement('div');
-                    videoContainer.style.cssText = `
-                        width: 90%;
-                        max-width: 1200px;
-                        aspect-ratio: 16/9;
-                        background: #000;
-                        border-radius: 8px;
-                        overflow: hidden;
-                        position: relative;
-                    `;
-                    
-                    // Add close button
-                    const closeBtn = document.createElement('button');
-                    closeBtn.innerHTML = '✕';
-                    closeBtn.style.cssText = `
-                        position: absolute;
-                        top: 10px;
-                        right: 10px;
-                        background: rgba(255, 255, 255, 0.2);
-                        border: none;
-                        color: white;
-                        font-size: 24px;
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                        cursor: pointer;
-                        z-index: 10001;
-                        transition: background 0.3s;
-                    `;
-                    closeBtn.onmouseover = () => closeBtn.style.background = 'rgba(255, 255, 255, 0.3)';
-                    closeBtn.onmouseout = () => closeBtn.style.background = 'rgba(255, 255, 255, 0.2)';
-                    
-                    // Add YouTube video iframe
-                    const iframe = document.createElement('iframe');
-                    iframe.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'; // Replace with actual video ID
-                    iframe.style.cssText = 'width: 100%; height: 100%; border: none;';
-                    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-                    iframe.allowFullscreen = true;
-                    
-                    videoContainer.appendChild(iframe);
-                    videoContainer.appendChild(closeBtn);
-                    modal.appendChild(videoContainer);
-                    document.body.appendChild(modal);
-                    
-                    // Close modal on click
-                    const closeModal = () => {
-                        document.body.removeChild(modal);
-                    };
-                    
-                    closeBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        closeModal();
-                    });
-                    
-                    modal.addEventListener('click', (e) => {
-                        if (e.target === modal) {
-                            closeModal();
-                        }
-                    });
-                    
-                    // Close on Escape key
-                    document.addEventListener('keydown', function escHandler(e) {
-                        if (e.key === 'Escape') {
-                            closeModal();
-                            document.removeEventListener('keydown', escHandler);
-                        }
-                    });
-                });
-            }
-        });
+
     </script>
 </body>
 </html>
