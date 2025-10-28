@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 检查授权状态
     if (!isAuthorized()) {
-        console.warn('[Dashboard] User not authorized. Redirecting to authorization page.');
-        window.location.href = '/ga4-auth.html';
+        console.warn('[Dashboard] User not authorized. Initiating OAuth flow...');
+        initiateOAuthFlow();
         return;
     }
     
