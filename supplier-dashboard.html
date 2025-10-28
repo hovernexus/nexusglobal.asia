@@ -46,6 +46,8 @@
                     <li><a href="#" class="menu-item" data-tab="visitors">👥 访客识别</a></li>
                     <li><a href="#" class="menu-item" data-tab="analytics">📊 数据统计</a></li>
                     <li><a href="#" class="menu-item" data-tab="trends">📉 趋势分析</a></li>
+                    <li><a href="#" class="menu-item" data-tab="retention">🔄 留存分析</a></li>
+                    <li><a href="#" class="menu-item" data-tab="funnel">🔻 转化漏斗</a></li>
                 </ul>
             </div>
 
@@ -254,7 +256,141 @@
                     <h3>访客国家分布</h3>
                     <canvas id="country-distribution-chart"></canvas>
                 </div>
+
+            <!-- 留存分析标签页 -->
+            <div class="tab-content" id="retention-tab">
+                <h2>留存分析</h2>
+                <p class="tab-description">分析新用户的回访率、流失率和留存趋势。</p>
+
+                <!-- 留存指标卡片 -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">👥</div>
+                        <div class="metric-content">
+                            <p class="metric-label">新用户数</p>
+                            <p class="metric-value" id="retention-new-users">0</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-content">
+                            <p class="metric-label">Day 1 留存率</p>
+                            <p class="metric-value" id="retention-day1">0%</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-content">
+                            <p class="metric-label">Day 7 留存率</p>
+                            <p class="metric-value" id="retention-day7">0%</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-content">
+                            <p class="metric-label">Day 30 留存率</p>
+                            <p class="metric-value" id="retention-day30">0%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 留存曲线图 -->
+                <div class="chart-container">
+                    <h3>留存曲线</h3>
+                    <canvas id="retention-curve-chart"></canvas>
+                </div>
+
+                <!-- 留存队列表 -->
+                <div class="stats-section">
+                    <h3>留存队列详情</h3>
+                    <div class="retention-table-container">
+                        <table class="retention-table" id="retention-cohorts-table">
+                            <thead>
+                                <tr>
+                                    <th>队列日期</th>
+                                    <th>Day 0</th>
+                                    <th>Day 1</th>
+                                    <th>Day 7</th>
+                                    <th>Day 14</th>
+                                    <th>Day 30</th>
+                                </tr>
+                            </thead>
+                            <tbody id="retention-cohorts-body">
+                                <tr><td colspan="6" class="empty-state">暂无数据</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
+
+            <!-- 转化漏斗标签页 -->
+            <div class="tab-content" id="funnel-tab">
+                <h2>转化漏斗分析</h2>
+                <p class="tab-description">跟踪用户从产品曝光到报价请求的转化路径。</p>
+
+                <!-- 转化漏斗指标卡片 -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">👥</div>
+                        <div class="metric-content">
+                            <p class="metric-label">总访客数</p>
+                            <p class="metric-value" id="funnel-total-visitors">0</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-content">
+                            <p class="metric-label">总转化率</p>
+                            <p class="metric-value" id="funnel-overall-rate">0%</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">⚠️</div>
+                        <div class="metric-content">
+                            <p class="metric-label">主要流失点</p>
+                            <p class="metric-value" id="funnel-top-dropoff">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 转化漏斗可视化 -->
+                <div class="chart-container">
+                    <h3>转化漏斗</h3>
+                    <canvas id="conversion-funnel-chart"></canvas>
+                </div>
+
+                <!-- 转化漏斗详情 -->
+                <div class="stats-section">
+                    <h3>转化漏斗详情</h3>
+                    <div class="funnel-details" id="funnel-details">
+                        <div class="empty-state">暂无数据</div>
+                    </div>
+                </div>
+
+                <!-- 按产品分类的转化率 -->
+                <div class="stats-section">
+                    <h3>按产品分类的转化率</h3>
+                    <div class="product-funnel-table-container">
+                        <table class="product-funnel-table" id="product-funnel-table">
+                            <thead>
+                                <tr>
+                                    <th>产品名称</th>
+                                    <th>曝光数</th>
+                                    <th>点击数</th>
+                                    <th>报价请求</th>
+                                    <th>点击率</th>
+                                    <th>转化率</th>
+                                </tr>
+                            </thead>
+                            <tbody id="product-funnel-body">
+                                <tr><td colspan="6" class="empty-state">暂无数据</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
         </main>
     </div>
 
@@ -305,6 +441,7 @@
     <script src="nexus-ga4-data-manager.js"></script>
     <script src="nexus-ga4-sync.js"></script>
     <script src="nexus-ga4-export.js"></script>
+    <script src="nexus-ga4-retention-funnel.js"></script>
     <script src="supplier-dashboard.js"></script>
 </body>
 </html>

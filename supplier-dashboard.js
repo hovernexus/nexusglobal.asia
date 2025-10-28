@@ -1252,3 +1252,290 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 100);
 });
 
+
+
+
+// ============================================================================
+// 留存分析和转化漏斗分析函数
+// ============================================================================
+
+/**
+ * 初始化留存分析
+ */
+function initializeRetentionAnalysis() {
+    console.log('[Dashboard] Initializing retention analysis...');
+    
+    // 创建留存分析器实例
+    if (typeof GA4RetentionFunnelAnalyzer !== 'undefined') {
+        const analyzer = new GA4RetentionFunnelAnalyzer(dataManager);
+        
+        // 计算留存指标
+        const retentionMetrics = analyzer.calculateRetentionAnalysis(currentDateRange.startDate, currentDateRange.endDate);
+        
+        // 更新留存指标卡片
+        document.getElementById('retention-new-users').textContent = retentionMetrics.totalNewUsers;
+        document.getElementById('retention-day1').textContent = retentionMetrics.day1Retention + '%';
+        document.getElementById('retention-day7').textContent = retentionMetrics.day7Retention + '%';
+        document.getElementById('retention-day30').textContent = retentionMetrics.day30Retention + '%';
+        
+        // 渲染留存曲线图
+        renderRetentionCurveChart(retentionMetrics);
+        
+        // 显示留存队列表
+        displayRetentionCohorts(retentionMetrics.retentionCohorts);
+    }
+}
+
+/**
+ * 渲染留存曲线图
+ */
+function renderRetentionCurveChart(retentionMetrics) {
+    const ctx = document.getElementById('retention-curve-chart');
+    if (!ctx) return;
+    
+    // 销毁旧图表
+    if (chartInstances['retention-curve']) {
+        chartInstances['retention-curve'].destroy();
+    }
+    
+    const labels = ['Day 0', 'Day 1', 'Day 7', 'Day 30'];
+    const data = [
+        100,
+        parseFloat(retentionMetrics.day1Retention),
+        parseFloat(retentionMetrics.day7Retention),
+        parseFloat(retentionMetrics.day30Retention)
+    ];
+    
+    chartInstances['retention-curve'] = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '用户留存率 (%)',
+                data: data,
+                borderColor: '#667eea',
+                backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4,
+                pointRadius: 5,
+                pointBackgroundColor: '#667eea',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+/**
+ * 显示留存队列表
+ */
+function displayRetentionCohorts(cohorts) {
+    const tbody = document.getElementById('retention-cohorts-body');
+    if (!tbody) return;
+    
+    if (cohorts.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="empty-state">暂无数据</td></tr>';
+        return;
+    }
+    
+    tbody.innerHTML = cohorts.map(cohort => `
+        <tr>
+            <td>${cohort.date}</td>
+            <td>${cohort.day0}</td>
+            <td>${cohort.day1} (${cohort.day1Rate}%)</td>
+            <td>${cohort.day7} (${cohort.day7Rate}%)</td>
+            <td>${cohort.day14} (${cohort.day14Rate}%)</td>
+            <td>${cohort.day30} (${cohort.day30Rate}%)</td>
+        </tr>
+    `).join('');
+}
+
+/**
+ * 初始化转化漏斗分析
+ */
+function initializeConversionFunnelAnalysis() {
+    console.log('[Dashboard] Initializing conversion funnel analysis...');
+    
+    // 创建漏斗分析器实例
+    if (typeof GA4RetentionFunnelAnalyzer !== 'undefined') {
+        const analyzer = new GA4RetentionFunnelAnalyzer(dataManager);
+        
+        // 计算转化漏斗
+        const funnelData = analyzer.calculateConversionFunnel(currentDateRange.startDate, currentDateRange.endDate);
+        const funnelSummary = analyzer.getFunnelSummary();
+        
+        // 更新漏斗指标卡片
+        document.getElementById('funnel-total-visitors').textContent = funnelSummary.totalVisitors;
+        document.getElementById('funnel-overall-rate').textContent = funnelSummary.overallConversionRate + '%';
+        
+        if (funnelSummary.topDropoffPoint) {
+            document.getElementById('funnel-top-dropoff').textContent = funnelSummary.topDropoffPoint.step;
+        }
+        
+        // 渲染转化漏斗图
+        renderConversionFunnelChart(funnelData);
+        
+        // 显示漏斗详情
+        displayFunnelDetails(funnelData);
+        
+        // 显示按产品分类的转化率
+        displayProductFunnelData(analyzer.calculateFunnelByProduct(currentDateRange.startDate, currentDateRange.endDate));
+    }
+}
+
+/**
+ * 渲染转化漏斗图
+ */
+function renderConversionFunnelChart(funnelData) {
+    const ctx = document.getElementById('conversion-funnel-chart');
+    if (!ctx) return;
+    
+    // 销毁旧图表
+    if (chartInstances['conversion-funnel']) {
+        chartInstances['conversion-funnel'].destroy();
+    }
+    
+    const labels = funnelData.steps.map(step => step.name);
+    const data = funnelData.steps.map(step => step.users);
+    const colors = ['#667eea', '#764ba2', '#f44336'];
+    
+    chartInstances['conversion-funnel'] = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '用户数',
+                data: data,
+                backgroundColor: colors,
+                borderColor: colors,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+/**
+ * 显示漏斗详情
+ */
+function displayFunnelDetails(funnelData) {
+    const container = document.getElementById('funnel-details');
+    if (!container) return;
+    
+    if (funnelData.steps.length === 0) {
+        container.innerHTML = '<div class="empty-state">暂无数据</div>';
+        return;
+    }
+    
+    container.innerHTML = funnelData.steps.map((step, index) => `
+        <div class="funnel-step">
+            <div class="funnel-step-name">${step.name}</div>
+            <div class="funnel-step-value">${step.users}</div>
+            <div class="funnel-step-rate">
+                ${index === 0 ? '100%' : step.percentage + '%'} 转化率
+            </div>
+        </div>
+    `).join('');
+}
+
+/**
+ * 显示按产品分类的转化率
+ */
+function displayProductFunnelData(productFunnelData) {
+    const tbody = document.getElementById('product-funnel-body');
+    if (!tbody) return;
+    
+    if (productFunnelData.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="empty-state">暂无数据</td></tr>';
+        return;
+    }
+    
+    tbody.innerHTML = productFunnelData.slice(0, 20).map(product => `
+        <tr>
+            <td>${product.productName}</td>
+            <td>${product.exposures}</td>
+            <td>${product.clicks}</td>
+            <td>${product.quoteRequests}</td>
+            <td>${product.clickThroughRate}%</td>
+            <td>${product.conversionRate}%</td>
+        </tr>
+    `).join('');
+}
+
+/**
+ * 更新所有分析数据
+ */
+function updateAllAnalysis() {
+    console.log('[Dashboard] Updating all analysis...');
+    
+    // 更新留存分析
+    const retentionTab = document.getElementById('retention-tab');
+    if (retentionTab && retentionTab.classList.contains('active')) {
+        initializeRetentionAnalysis();
+    }
+    
+    // 更新转化漏斗分析
+    const funnelTab = document.getElementById('funnel-tab');
+    if (funnelTab && funnelTab.classList.contains('active')) {
+        initializeConversionFunnelAnalysis();
+    }
+}
+
+// 在标签页切换时更新分析
+document.addEventListener('DOMContentLoaded', function() {
+    // 添加标签页切换事件监听
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const tabName = this.getAttribute('data-tab');
+            
+            // 延迟更新，确保DOM已更新
+            setTimeout(() => {
+                if (tabName === 'retention') {
+                    initializeRetentionAnalysis();
+                } else if (tabName === 'funnel') {
+                    initializeConversionFunnelAnalysis();
+                }
+            }, 100);
+        });
+    });
+});
+

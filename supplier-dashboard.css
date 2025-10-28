@@ -919,3 +919,138 @@ body {
     min-width: 20px;
 }
 
+
+
+
+/* ============================================================================
+   留存分析和转化漏斗样式
+   ============================================================================ */
+
+/* 留存表格样式 */
+.retention-table-container {
+    overflow-x: auto;
+    margin-top: var(--spacing-md);
+}
+
+.retention-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+}
+
+.retention-table thead {
+    background-color: var(--bg-secondary);
+}
+
+.retention-table th {
+    padding: var(--spacing-md);
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.retention-table td {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.retention-table tbody tr:hover {
+    background-color: var(--bg-secondary);
+}
+
+/* 产品漏斗表格样式 */
+.product-funnel-table-container {
+    overflow-x: auto;
+    margin-top: var(--spacing-md);
+}
+
+.product-funnel-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+}
+
+.product-funnel-table thead {
+    background-color: var(--bg-secondary);
+}
+
+.product-funnel-table th {
+    padding: var(--spacing-md);
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.product-funnel-table td {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.product-funnel-table tbody tr:hover {
+    background-color: var(--bg-secondary);
+}
+
+/* 漏斗详情样式 */
+.funnel-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.funnel-step {
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--primary-color);
+    padding: var(--spacing-lg);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.funnel-step:hover {
+    box-shadow: var(--shadow-light);
+    transform: translateY(-2px);
+}
+
+.funnel-step-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.funnel-step-value {
+    font-size: var(--font-size-2xl);
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.funnel-step-rate {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .retention-table,
+    .product-funnel-table {
+        font-size: var(--font-size-sm);
+    }
+
+    .retention-table th,
+    .retention-table td,
+    .product-funnel-table th,
+    .product-funnel-table td {
+        padding: var(--spacing-sm);
+    }
+
+    .funnel-details {
+        grid-template-columns: 1fr;
+    }
+}
+
