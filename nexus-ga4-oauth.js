@@ -135,14 +135,7 @@ function isAuthorized() {
     return !!localStorage.getItem('ga4_refresh_token');
 }
 
-// Exported functions for use in other scripts
-export { 
-    initiateOAuthFlow, 
-    exchangeCodeForToken, 
-    getValidAccessToken, 
-    isAuthorized,
-    saveTokenData
-};
+
 
 // Note: The actual GA4 Data API calls are handled by nexus-ga4-sync.js, 
 // which will use the token provided by getValidAccessToken.
